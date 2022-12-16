@@ -83,7 +83,6 @@ a:hover {
 .heropage {
     width:1483px;
     height:760px;
-    background-color: #08041e;
     padding:2px;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.70), rgba(0, 0, 0, 0.5)), url(https://www.lifesize.com/wp-content/uploads/2020/10/Virtual-Backgrounds_Blog_Landscape_A-1-2.jpeg);
 }
@@ -213,7 +212,6 @@ a:hover {
     top:25px; 
 }
 .heroblogbody1 {
-    background-color: #55ACEE;
     margin-left: 3%;
     margin-top: 5%;
     padding: 20px;
@@ -251,7 +249,6 @@ a:hover {
     color:lightgreen;
 }
 .heroblogbody2 {
-    background-color: #55ACEE;
     margin-left: 3%;
     margin-top: 5%;
     padding: 20px;
@@ -265,7 +262,6 @@ a:hover {
    
 }
 .heroblogbody3 {
-    background-color: #55ACEE;
     margin-left: 3%;
     margin-top: 5%;
     padding: 20px;
