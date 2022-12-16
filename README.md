@@ -1,6 +1,6 @@
 # my100dayproject
 
-My Website Used for the students who doesn't know about trading and by this platform they can easily learn about forex trading 
+My Website Used for the students who doesn't know anything about trading and by this platform they can easily learn about forex trading 
 
 Problem Statement : https://docs.google.com/document/d/1_Pf7rj0uLbtha-u43U9Gfg2aqMGiZrUlP3q7xX30esU/edit?usp=share_link
 
