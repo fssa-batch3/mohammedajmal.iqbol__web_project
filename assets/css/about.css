@@ -59,12 +59,10 @@ a:hover {
     background-color: #245de7;
     color: white;
     border-radius: 20px;
-    font-weight: 600;
     border: none;
     position: relative;
     bottom: 15px;
     font-family: 'Poppins', sans-serif;
-    font-weight: 300;
     font-weight: bold;
     cursor: pointer;
 }
@@ -75,17 +73,14 @@ a:hover {
     background-color: #245de7;
     color: white;
     border-radius: 20px;
-    font-weight: 600;
     border: none;
     position: relative;
     bottom: 15px;
     font-family: 'Poppins', sans-serif;
-    font-weight: 300;
     font-weight: bold;
     cursor: pointer;
 }
 .heropagediv1 {
-    background-image: url("https://as2.ftcdn.net/v2/jpg/01/43/81/33/1000_F_143813336_RgOXba1OWTP0vnPK9cAqefhYcOBwxSxF.jpg");
     background-color: #08041e;
     width: 100%;
     height: 760px;

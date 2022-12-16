@@ -59,12 +59,10 @@ a:hover {
     background-color: #245de7;
     color: white;
     border-radius: 20px;
-    font-weight: 600;
     border: none;
     position: relative;
     bottom: 15px;
     font-family: 'Poppins', sans-serif;
-    font-weight: 300;
     font-weight: bold;
     cursor: pointer;
 }
@@ -75,12 +73,10 @@ a:hover {
     background-color: #245de7;
     color: white;
     border-radius: 20px;
-    font-weight: 600;
     border: none;
     position: relative;
     bottom: 15px;
     font-family: 'Poppins', sans-serif;
-    font-weight: 300;
     font-weight: bold;
     cursor: pointer;
 }
@@ -89,7 +85,6 @@ a:hover {
     height:760px;
     background-color: #08041e;
     padding:2px;
-    background-image: url("https://www.lifesize.com/wp-content/uploads/2020/10/Virtual-Backgrounds_Blog_Landscape_A-1-2.jpeg");
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.70), rgba(0, 0, 0, 0.5)), url(https://www.lifesize.com/wp-content/uploads/2020/10/Virtual-Backgrounds_Blog_Landscape_A-1-2.jpeg);
 }
 .heroheadingh1 {
@@ -111,8 +106,7 @@ a:hover {
 .heroheadingbtn {
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
-    font-size: 15px;
-    color: white; 
+    font-size: 15px; 
     background-color: #55ACEE;
     color:black;
     padding: 10px;
@@ -127,7 +121,6 @@ a:hover {
 }
 .heroblogdiv1 {
     background-color: #55ACEE;
-    color:lightgreen;
     margin-right:78%;
     padding: 20px;
    color:black;
@@ -220,9 +213,7 @@ a:hover {
     top:25px; 
 }
 .heroblogbody1 {
-    background-color: #55ACEE;
-    color:lightgreen;
-    
+    background-color: #55ACEE; 
     margin-left: 3%;
     margin-top: 5%;
     padding: 20px;
@@ -230,7 +221,6 @@ a:hover {
    border-radius: 20px;
    width:500px;
    height:300px;
-   background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSo3JvTiarxgtd68lbgsyzbtXc602HRfGZhJA&usqp=CAU");
    background: linear-gradient(0deg, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.5)), url(https://as2.ftcdn.net/v2/jpg/01/43/81/33/1000_F_143813336_RgOXba1OWTP0vnPK9cAqefhYcOBwxSxF.jpg);
    background-repeat: no-repeat;
    background-size: 600px;
@@ -262,16 +252,13 @@ a:hover {
 }
 .heroblogbody2 {
     background-color: #55ACEE;
-    color:lightgreen;
-   
-    margin-left: 3%;
+ margin-left: 3%;
     margin-top: 5%;
     padding: 20px;
    color:black;
    border-radius: 20px;
    width:300px;
    height:330px;
-   background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSo3JvTiarxgtd68lbgsyzbtXc602HRfGZhJA&usqp=CAU");
    background: linear-gradient(0deg, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.5)), url(https://as2.ftcdn.net/v2/jpg/01/43/81/33/1000_F_143813336_RgOXba1OWTP0vnPK9cAqefhYcOBwxSxF.jpg);
    background-repeat: no-repeat;
    background-size: 670px;
@@ -279,8 +266,6 @@ a:hover {
 }
 .heroblogbody3 {
     background-color: #55ACEE;
-    color:lightgreen;
-   
     margin-left: 3%;
     margin-top: 5%;
     padding: 20px;
@@ -288,7 +273,6 @@ a:hover {
    border-radius: 20px;
    width:400px;
    height:300px;
-   background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSo3JvTiarxgtd68lbgsyzbtXc602HRfGZhJA&usqp=CAU");
    background: linear-gradient(0deg, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.5)), url(https://as2.ftcdn.net/v2/jpg/01/43/81/33/1000_F_143813336_RgOXba1OWTP0vnPK9cAqefhYcOBwxSxF.jpg);
    background-repeat: no-repeat;
    background-size: 600px;

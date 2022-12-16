@@ -57,14 +57,12 @@ a:hover {
     width: 100px;
     height: 45px;
     background-color: #245de7;
-    color: white;
     border-radius: 20px;
     font-weight: 600;
     border: none;
     position: relative;
     bottom: 15px;
     font-family: 'Poppins', sans-serif;
-    font-weight: 300;
     font-weight: bold;
     cursor: pointer;
 }
@@ -73,14 +71,12 @@ a:hover {
     width: 150px;
     height: 45px;
     background-color: #245de7;
-    color: white;
     border-radius: 20px;
     font-weight: 600;
     border: none;
     position: relative;
     bottom: 15px;
     font-family: 'Poppins', sans-serif;
-    font-weight: 300;
     font-weight: bold;
     cursor: pointer;
 }
@@ -89,7 +85,6 @@ a:hover {
     height:760px;
     background-color: #08041e;
     padding:2px;
-    background-image: url("https://www.lifesize.com/wp-content/uploads/2020/10/Virtual-Backgrounds_Blog_Landscape_A-1-2.jpeg");
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.70), rgba(0, 0, 0, 0.5)), url(https://www.lifesize.com/wp-content/uploads/2020/10/Virtual-Backgrounds_Blog_Landscape_A-1-2.jpeg);
 }
 .heroheadingh1 {
@@ -111,8 +106,7 @@ a:hover {
 .heroheadingbtn {
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
-    font-size: 15px;
-    color: white; 
+    font-size: 15px; 
     background-color: #55ACEE;
     color:black;
     padding: 10px;
@@ -127,7 +121,6 @@ a:hover {
 }
 .heroblogdiv1 {
     background-color: #55ACEE;
-    color:lightgreen;
     margin-right:78%;
     padding: 20px;
    color:black;
@@ -252,8 +245,6 @@ a:hover {
 }
 .heroblogbody1 {
     background-color: #55ACEE;
-    color:lightgreen;
-    
     margin-left: 3%;
     margin-top: 5%;
     padding: 20px;
@@ -292,8 +283,6 @@ a:hover {
 }
 .heroblogbody2 {
     background-color: #55ACEE;
-    color:lightgreen;
-   
     margin-left: 3%;
     margin-top: 5%;
     padding: 20px;
@@ -308,8 +297,6 @@ a:hover {
 }
 .heroblogbody3 {
     background-color: #55ACEE;
-    color:lightgreen;
-   
     margin-left: 3%;
     margin-top: 5%;
     padding: 20px;
