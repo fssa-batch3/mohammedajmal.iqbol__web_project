@@ -117,7 +117,7 @@ a:hover {
     color:black;
     padding: 10px;
     border-radius: 30px;
-    width: 320px;
+    width: 220px;
     height:50px;
     border: 5px solid #55ACEE;
 }
@@ -211,38 +211,7 @@ a:hover {
     color:blue;
     text-decoration:underline;
 }
-/*thirdpage styles start*/
-.tab {
-    overflow: hidden;
-    border: 1px solid #ccc;
-    background-color: #f1f1f1;
-  }
-  .tab button {
-    background-color: inherit;
-    float: left;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 16px;
-    transition: 0.3s;
-    font-size: 17px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-  }
-  .tab button:hover {
-    background-color: #ddd;
-  }
-  .tab button.active {
-    background-color: #55ACEE;
-  }
-  .tabcontent {
-    display: none;
-    padding: 6px 12px;
-    border: 1px solid #ccc;
-    border-top: none;
-  }
-  /*thirdpage end*/
-  .thirdh1 {
+.thirdh1 {
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
     font-size: 30px;
@@ -261,7 +230,8 @@ a:hover {
    border-radius: 20px;
    width:500px;
    height:300px;
-   background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSo3JvTiarxgtd68lbgsyzbtXc602HRfGZhJA&usqp=CAU");
+   background-image: url("https://cdn.coingape.com/wp-content/uploads/2022/11/14122834/bitcoin1.jpg");
+   background: linear-gradient(0deg, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.5)), url(https://cdn.coingape.com/wp-content/uploads/2022/11/14122834/bitcoin1.jpg);
    background-repeat: no-repeat;
    background-size: 600px;
    
@@ -301,7 +271,8 @@ a:hover {
    border-radius: 20px;
    width:300px;
    height:330px;
-   background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSo3JvTiarxgtd68lbgsyzbtXc602HRfGZhJA&usqp=CAU");
+   background-image: url("https://cdn.coingape.com/wp-content/uploads/2022/11/14122834/bitcoin1.jpg");
+   background: linear-gradient(0deg, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.5)), url(https://cdn.coingape.com/wp-content/uploads/2022/11/14122834/bitcoin1.jpg);
    background-repeat: no-repeat;
    background-size: 670px;
    
@@ -317,7 +288,8 @@ a:hover {
    border-radius: 20px;
    width:400px;
    height:300px;
-   background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSo3JvTiarxgtd68lbgsyzbtXc602HRfGZhJA&usqp=CAU");
+   background-image: url("https://cdn.coingape.com/wp-content/uploads/2022/11/14122834/bitcoin1.jpg");
+   background: linear-gradient(0deg, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.5)), url(https://cdn.coingape.com/wp-content/uploads/2022/11/14122834/bitcoin1.jpg);
    background-repeat: no-repeat;
    background-size: 600px;
    
