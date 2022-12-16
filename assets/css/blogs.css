@@ -327,7 +327,7 @@ a:hover {
     background-color: black;
     color: white;
     border-radius: 50%;
-
+    
 }
 
 .fa-facebook:hover {
@@ -419,7 +419,7 @@ a:hover {
 .faq,
 .privacypolicy,
 .riskwarning {
-    color: #0094ff;
+    color: white;
     opacity: 0.7;
 }
 
