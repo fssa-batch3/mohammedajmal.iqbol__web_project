@@ -47,6 +47,7 @@ a:hover {
     gap: 30px;
     margin-top: 2.8%;
     margin-left: 20%;
+<<<<<<< HEAD
 }
 
 .navbtnanker {
@@ -59,12 +60,39 @@ a:hover {
     background-color: #245de7;
     border-radius: 20px;
     font-weight: 600;
+=======
+}
+
+.navbtnanker {
+    border-bottom: 0px;
+}
+
+.navbtn1 {
+    width: 100px;
+    height: 45px;
+    background-color: #245de7;
+    border-radius: 20px;
     border: none;
     position: relative;
     bottom: 15px;
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
     cursor: pointer;
+}
+
+.navbtn2 {
+    width: 150px;
+    height: 45px;
+    background-color: #245de7;
+    border-radius: 20px;
+>>>>>>> 50473a6eeb4d1f8f7b7377208b9bb8f3b5491f01
+    border: none;
+    position: relative;
+    bottom: 15px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+<<<<<<< HEAD
 }
 
 .navbtn2 {
@@ -126,6 +154,54 @@ a:hover {
    color:black;
    border-radius: 20px;
 }
+=======
+}
+.heropage {
+    width:1483px;
+    height:760px;
+    padding:2px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.70), rgba(0, 0, 0, 0.5)), url(https://www.lifesize.com/wp-content/uploads/2020/10/Virtual-Backgrounds_Blog_Landscape_A-1-2.jpeg);
+}
+.heroheadingh1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 50px;
+    color: white;
+}
+.heroheadingpara {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 30px;
+    color: white; 
+}
+.heroheadingdiv {
+    margin-left: 10%;
+    margin-top: 8%;
+}
+.heroheadingbtn {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 15px; 
+    background-color: #55ACEE;
+    color:black;
+    padding: 10px;
+    border-radius: 30px;
+    width: 220px;
+    height:50px;
+    border: 5px solid #55ACEE;
+}
+.heroheadingbtn:hover {
+    transform: scale(1.05);
+    opacity: 0.95;
+}
+.heroblogdiv1 {
+    background-color: #55ACEE;
+    margin-right:78%;
+    padding: 20px;
+   color:black;
+   border-radius: 20px;
+}
+>>>>>>> 50473a6eeb4d1f8f7b7377208b9bb8f3b5491f01
 .heroblog1para3 {
     color:white;
     font-family: 'Poppins', sans-serif;

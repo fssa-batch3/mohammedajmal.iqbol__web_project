@@ -59,12 +59,10 @@ a:hover {
     background-color: #245de7;
     color: white;
     border-radius: 20px;
-    font-weight: 600;
     border: none;
     position: relative;
     bottom: 15px;
     font-family: 'Poppins', sans-serif;
-    font-weight: 300;
     font-weight: bold;
     cursor: pointer;
 }
@@ -75,12 +73,10 @@ a:hover {
     background-color: #245de7;
     color: white;
     border-radius: 20px;
-    font-weight: 600;
     border: none;
     position: relative;
     bottom: 15px;
     font-family: 'Poppins', sans-serif;
-    font-weight: 300;
     font-weight: bold;
     cursor: pointer;
 }
@@ -98,7 +94,11 @@ a:hover {
     gap: 30px;
     font-family: 'Poppins', sans-serif;
     font-weight: 300;
+<<<<<<< HEAD
     margin-left: 15%;
+=======
+      margin-left: 15%;
+>>>>>>> 50473a6eeb4d1f8f7b7377208b9bb8f3b5491f01
     position: relative;
     bottom: 35px;
 }
@@ -130,7 +130,6 @@ a:hover {
     background-color: #245de7;
     color: white;
     border-radius: 40px;
-    font-weight: 600;
     border: none;
     position: relative;
     bottom: 15px;
@@ -147,7 +146,6 @@ a:hover {
     background-color: black;
     color: white;
     border-radius: 20px;
-    font-weight: 600;
     border: none;
     position: relative;
     bottom: 10px;
