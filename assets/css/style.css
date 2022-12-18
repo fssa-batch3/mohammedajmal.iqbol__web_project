@@ -5,7 +5,7 @@ body {
     padding: 0px;
 
 }
-
+/*navbar start*/
 a {
     text-decoration: none;
     color: white;
@@ -84,7 +84,8 @@ a:hover {
     font-weight: bold;
     cursor: pointer;
 }
-
+/*navbar end*/
+/*herosection start*/
 .heropage {
     background-color: #08041e;
     width: 100%;
@@ -97,7 +98,11 @@ a:hover {
     gap: 30px;
     font-family: 'Poppins', sans-serif;
     font-weight: 300;
+    margin-left: 15%;
+    position: relative;
+    bottom: 35px;
 }
+
 
 .heroh1 {
     color: white;
@@ -152,18 +157,12 @@ a:hover {
 
 }
 
-.herobtns {
-    margin-left: 15%;
-    position: relative;
-    bottom: 35px;
-}
-
 .herodashboard {
     margin-left: 10%;
     width: 1200px;
     border-radius: 20px;
 }
-
+/*herosection end*/
 .secondpage {
     margin-top: 20%;
 }
