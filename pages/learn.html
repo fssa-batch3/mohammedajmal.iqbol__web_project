@@ -18,964 +18,488 @@
        <!--socialmediafontawesome start-->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
      <!--socialmediafontawesome end-->
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 </head>
 <body>
-     <!--navbar start-->
- <div class="navbar">
-    <div class="navlogodiv">
-      <img class="navlogo" src="../assets/website images/freshstocks-removebg-preview.png" alt="websitelogo">
+  <nav>
+    <div class="logo">
+        <img src="../images/freshstocks1 (7).png" alt="" class="navimg">
     </div>
-
     <div class="navlinks">
-      <div><a href="../index.html">Home</a></div>
-      <div><a href="../pages/about.html">About</a></div>
-      <div><a href="../pages/assets.html">Assets</a></div>
-      <div><a href="../pages/news.html">News</a></div>
-      <div><a href="../pages/learn.html">Learn</a></div>
-      <div><a href="../pages/blogs.html">Blog</a></div>
-      <div><a href="#/footer">Contact</a></div>
+      <a href="../homepage.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="../assets.html">Assets</a>
+        <div class="dropdown">
+          <a class="dropbtn" id="learnanker" href="news.html">News<span class="material-symbols-outlined">expand_more</span></a>
+          <a id="learnanker1" href="learn.html">Learn<span class="material-symbols-outlined">expand_more</span></a>
+          <div class="dropdown-content">
+         <div class="flexlink">
+            <div><a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+            <a href="#">Link 4</a>
+            <a href="#">Link 5</a>
+            <a href="#">Link 6</a>
+            <a href="#">Link 7</a>
+            <a href="#">Link 8</a>
+            <a href="#">Link 9</a>
+        </div>
+
+        <div><a href="#">Link 10</a>
+            <a href="#">Link 11</a>
+            <a href="#">Link 12</a>
+            <a href="#">Link 13</a>
+            <a href="#">Link 14</a>
+            <a href="#">Link 15</a>
+            <a href="#">Link 16</a>
+            <a href="#">Link 17</a>
+            <a href="#">Link 18</a>
+        </div>
+        <div><a href="#">Link 10</a>
+            <a href="#">Link 11</a>
+            <a href="#">Link 12</a>
+            <a href="#">Link 13</a>
+            <a href="#">Link 14</a>
+            <a href="#">Link 15</a>
+            <a href="#">Link 16</a>
+            <a href="#">Link 17</a>
+            <a href="#">Link 18</a>
+        </div>
+        <div><a href="#">Link 10</a>
+            <a href="#">Link 11</a>
+            <a href="#">Link 12</a>
+            <a href="#">Link 13</a>
+            <a href="#">Link 14</a>
+            <a href="#">Link 15</a>
+            <a href="#">Link 16</a>
+            <a href="#">Link 17</a>
+            <a href="#">Link 18</a>
+        </div>
+        <div><a href="#">Link 10</a>
+            <a href="#">Link 11</a>
+            <a href="#">Link 12</a>
+            <a href="#">Link 13</a>
+            <a href="#">Link 14</a>
+            <a href="#">Link 15</a>
+            <a href="#">Link 16</a>
+            <a href="#">Link 17</a>
+            <a href="#">Link 18</a>
+        </div>
     </div>
 
-    <div class="navbtns">
-      <form action="../pages/login.html">
-        <div><button class="navbtn1">Log In</button></div>
-      </form>
-      <form action="../pages/newregister.html">
-        <div><button class="navbtn2">Registration</button></div>
-      </form>
-    </div>
+          </div>
+        </div>
+        
 
-  </div>
-  <!--navbar end-->
+        <a id="learnanker1" href="donate.html">Donate</a>
+        <a id="learnanker1" href="shop.html">Shop</a>
+        <a id="learnanker1" href="contact.html">Contact</a>
+        <a id="learnanker1" href=""><span class="material-symbols-outlined">
+            language
+            </span></a>
+
+            
+    </div>
+    
+    <div class="navrighticons">
+      <span class="material-symbols-outlined" id="support"><a href="">
+        <img class="righticons" src="../images/support_agent_FILL0_wght400_GRAD0_opsz48.svg" alt="">
+        </a></span>
+
+
+  <span class="material-symbols-outlined" id="userprofile"><a href="../userprofile.html">
+    <img class="righticons" src="../images/account_circle_FILL0_wght400_GRAD0_opsz48.svg" alt="">
+  </a></span>
+    
+
+   
+      <span class="material-symbols-outlined" id="settings"><a href="">
+        <img class="righticons" src="../images/settings_FILL0_wght400_GRAD0_opsz48.svg" alt="">
+        </a></span>
+     
+    </div>
+</nav>
+<!--navbar end-->
 
 <!--heropage start-->
 <div class="heropage">
+    
+    <h1 class="heropageh1">LEARNING & DEVELOPMENT</h1>
 
-<div class="heroheadingdiv">
-<h1 class="heroheadingh1">Discover Our Market Related<br><span style="background-color:#9DE1FD; color:black; border-radius: 10px; padding:5px; "> learings</span>
-    about trading from the<br> Experienced traders</h1>
-    <p class="heroheadingpara">All Informations located here<br> Start learn and Develop yourself</p>
-    <button class="heroheadingbtn">Discover Our L&D learning</button>
+<!--tab start-->
+    <div class="tab">
+        <button class="tablinks" onclick="openCity(event, 'latest_news')"> Latest News </button>
+        <button class="tablinks" onclick="openCity(event, 'stocks')"> Stocks </button>
+        <button class="tablinks" onclick="openCity(event, 'forex')"> forex </button>
+        <button class="tablinks" onclick="openCity(event, 'cryptos')"> Cryptos </button>
+        <button class="tablinks" onclick="openCity(event, 'gold_commodities')">Futures </button>
+        <button class="tablinks" onclick="openCity(event, 'currency_pairs')">Indicators</button>
+        <button class="tablinks" onclick="openCity(event, 'indices')"> How to Invest </button>
+        <button class="tablinks" onclick="openCity(event, 'bonds')"> Trading Videos </button>
+        <button class="tablinks" onclick="openCity(event, '401k')"> 401(k)-auto enrollment </button>
+        <button class="tablinks" onclick="openCity(event, 'company')"> Strategies </button>
+        <button class="tablinks" onclick="openCity(event, 'mutual_funds')"> Mutual funds </button>
+      </div>
+ <!--tab end-->     
+    
+    
+<div class="learnrow1">
+
+
+<div class="learnrow1div1">
+<p class="learncategory">Latest Releases</p>
+<img class="learndiv1img" src="https://www.vantagemarkets.com/storage/2022/09/Scalping-vs-Day-Trading-2.png" alt="trading image">
+<p class="learnrow1div1h1">Scalping vs Day Trading: What is<br> the Difference?</p>
+<p class="learnrow1div1para"> There are many styles of trading: scalping, day trading, swing trading,<br> and position trading. The difference that sets these styles apart is the<br> length of time that trades are held <a style="color:blue; text-decoration: underline;" href="#">READ MORE</a></p>
 </div>
 
-<div class="heroblogsdiv">
+<div class="learnrow1column2">
 
-<div class="heroblogdiv1">
-<p class="heroblog1para1">Learn to Use Indicators</p>
-<img class="heroblog1img" src="https://www.onblastblog.com/wp-content/uploads/2017/12/trading-blog.jpeg" alt="bitcoin image">
-<p class="heroblog1para2">8 must know PRICE ACTION Signals explained</p>
-<p class="heroblog1para3">It is time for another price action video! In this new video, we are taking a look at 8 of</p>
-<P class="heroblog1para4">READ MORE...</P>
+<div class="learnrowdiv2">
+    <img class="learndiv2img" src="https://www.vantagemarkets.com/storage/2022/09/types-of-trading-in-the-stock-market.png" alt="trading image">
+    <p class="learnrow1div2h1">5 Types of Trading in the Stock Market</p>
+    <p class="learnrow1div2para">Intrinsic to this is how you decide to trade as there are<br> several different types of trading in stock markets. …</p>
+</div>
+
+<div class="learnrowdiv2">
+    <img class="learndiv2img" src="https://www.vantagemarkets.com/storage/2022/09/types-of-trading-in-the-stock-market.png" alt="trading image">
+    <p class="learnrow1div2h1">5 Types of Trading in the Stock Market</p>
+    <p class="learnrow1div2para">Intrinsic to this is how you decide to trade as there are<br> several different types of trading in stock markets. …</p>
+</div>
+
 </div>
 
 
+<div class="learnrow1column2">
 
-<div class="heroblogdiv2">
-    <p class="heroblog1para1">Learn to Use Candlesticks</p>
-    <img class="heroblog1img" src="https://www.onblastblog.com/wp-content/uploads/2017/12/trading-blog.jpeg" alt="bitcoin image">
-    <p class="heroblog1para2">8 must know PRICE ACTION Signals explained</p>
-    <p class="heroblog1para3">It is time for another price action video! In this new video, we are taking a look at 8 of</p>
-    <P class="heroblog1para4">READ MORE...</P>
+    <div class="learnrowdiv2">
+        <img class="learndiv2img" src="https://www.vantagemarkets.com/storage/2022/09/types-of-trading-in-the-stock-market.png" alt="trading image">
+        <p class="learnrow1div2h1">5 Types of Trading in the Stock Market</p>
+        <p class="learnrow1div2para">Intrinsic to this is how you decide to trade as there are<br> several different types of trading in stock markets. …</p>
+    </div>
+    
+    <div class="learnrowdiv2">
+        <img class="learndiv2img" src="https://www.vantagemarkets.com/storage/2022/09/types-of-trading-in-the-stock-market.png" alt="trading image">
+        <p class="learnrow1div2h1">5 Types of Trading in the Stock Market</p>
+        <p class="learnrow1div2para">Intrinsic to this is how you decide to trade as there are<br> several different types of trading in stock markets. …</p>
+    </div>
     
     </div>
 
-</div>
-
 
 </div>
 
 
 
-
 </div>
-
-</div>
-
 <!--heropage end-->
 <!--secondpage start-->
+
 <div class="secondpage">
 
-<div class="categorychoose">
-    <div><h1 class="categoryh1">Category</h1></div>
+<div class="threecoursescontainer">
 
-    <div class="stockcategory">
-        <div><img class="stockimg" src="https://wp-asset.groww.in/wp-content/uploads/2019/06/16192032/Most-Expensive-Stocks-in-India.jpg" alt="stocks image"></div>
-        <div>
-            <a class="categoryanker" href="../pages/blogspages/stocksblog.html"><h2 class="stockh1">Stocks</h2></a>
-            <p class="stockpara">Daily & Latest Updates</p>
-        </div>
-
-    </div>
-
-    <div class="stockcategory">
-        <div><img class="stockimg" src="https://wp-asset.groww.in/wp-content/uploads/2019/06/16192032/Most-Expensive-Stocks-in-India.jpg" alt="stocks image"></div>
-        <div>
-            <a class="categoryanker" href="../pages/blogspages/forexblog.html"><h2 class="stockh1">forex</h2></a>
-            <p class="stockpara">Daily & Latest Updates</p>
-        </div>
-
-    </div>
+<div class="course1div">
+<p class="learnrow2div1category">Market News and Analysis</p>
+<div class="row2divletters">
+<img class="learnrow2div1img" src="https://www.vantagemarkets.com/storage/2022/12/VAN-Tesla-23Dec22.jpg" alt="trading chart image">
+<p class="learnrow2div1h1">Market Recap (2022): Rates shock as the<br> punchbowl is no more</p>
+<p class="learnrow2div1para">It's been quite a year. Rampant inflation (how many<br> times have we said that?), surging energy prices and intensifying growth headwinds have been ignited by …</p>
+</div></div>
 
 
-    <div class="stockcategory">
-        <div><img class="stockimg" src="https://wp-asset.groww.in/wp-content/uploads/2019/06/16192032/Most-Expensive-Stocks-in-India.jpg" alt="stocks image"></div>
-        <div>
-            <a class="categoryanker" href="../pages/blogspages/cryptosblog.html"><h2 class="stockh1">Cryptos</h2></a>
-            <p class="stockpara">Daily & Latest Updates</p>
-        </div>
-
-    </div>
-
-    <div class="stockcategory">
-        <div><img class="stockimg" src="https://wp-asset.groww.in/wp-content/uploads/2019/06/16192032/Most-Expensive-Stocks-in-India.jpg" alt="stocks image"></div>
-        <div>
-            <a class="categoryanker" href="../pages/blogspages/goldcommoditiesblog.html"><h2 class="stockh1">Gold/Commodities</h2></a>
-            <p class="stockpara">Daily & Latest<br> Updates</p>
-        </div>
-
-    </div>
+<div class="course2div">
+    <div class="row2divletters">
+    <img class="learnrow2div1img" src="https://www.vantagemarkets.com/storage/2022/12/VAN-Tesla-23Dec22.jpg" alt="trading chart image">
+    <p class="learnrow2div1h1">Market Recap (2022): Rates shock as the<br> punchbowl is no more</p>
+    <p class="learnrow2div1para">It's been quite a year. Rampant inflation (how many<br> times have we said that?), surging energy prices and intensifying growth headwinds have been ignited by …</p>
+    </div></div>
 
 
-    <div class="stockcategory">
-        <div><img class="stockimg" src="https://wp-asset.groww.in/wp-content/uploads/2019/06/16192032/Most-Expensive-Stocks-in-India.jpg" alt="stocks image"></div>
-        <div>
-            <a class="categoryanker" href="../pages/blogspages/mutual_funds.html"><h2 class="stockh1">Mutual</h2></a>
-            <p class="stockpara">Daily & Latest Updates</p>
-        </div>
-
-    </div>
+    <div class="course2div">
+        <div class="row2divletters">
+        <img class="learnrow2div1img" src="https://www.vantagemarkets.com/storage/2022/12/VAN-Tesla-23Dec22.jpg" alt="trading chart image">
+        <p class="learnrow2div1h1">Market Recap (2022): Rates shock as the<br> punchbowl is no more</p>
+        <p class="learnrow2div1para">It's been quite a year. Rampant inflation (how many<br> times have we said that?), surging energy prices and intensifying growth headwinds have been ignited by …</p>
+        </div></div>
 
 
 </div>
-<hr style="width:1450px; margin-left: 15px;">
+
+
+
+
+<div class="threecoursescontainer2">
+
+    <div class="course1div">
+    <p class="learnrow2div1category">Market News and Analysis</p>
+    <div class="row2divletters">
+    <img class="learnrow2div1img" src="https://www.vantagemarkets.com/storage/2022/12/VAN-Tesla-23Dec22.jpg" alt="trading chart image">
+    <p class="learnrow2div1h1">Market Recap (2022): Rates shock as the<br> punchbowl is no more</p>
+    <p class="learnrow2div1para">It's been quite a year. Rampant inflation (how many<br> times have we said that?), surging energy prices and intensifying growth headwinds have been ignited by …</p>
+    </div></div>
+    
+    
+    <div class="course2div">
+        <div class="row2divletters">
+        <img class="learnrow2div1img" src="https://www.vantagemarkets.com/storage/2022/12/VAN-Tesla-23Dec22.jpg" alt="trading chart image">
+        <p class="learnrow2div1h1">Market Recap (2022): Rates shock as the<br> punchbowl is no more</p>
+        <p class="learnrow2div1para">It's been quite a year. Rampant inflation (how many<br> times have we said that?), surging energy prices and intensifying growth headwinds have been ignited by …</p>
+        </div></div>
+    
+    
+    
+        <div class="course2div">
+            <div class="row2divletters">
+            <img class="learnrow2div1img" src="https://www.vantagemarkets.com/storage/2022/12/VAN-Tesla-23Dec22.jpg" alt="trading chart image">
+            <p class="learnrow2div1h1">Market Recap (2022): Rates shock as the<br> punchbowl is no more</p>
+            <p class="learnrow2div1para">It's been quite a year. Rampant inflation (how many<br> times have we said that?), surging energy prices and intensifying growth headwinds have been ignited by …</p>
+            </div></div>
+    
+    
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </div>
-<!--secondpage end-->
 
-<!--THIRDPAGE start-->
-<div class="thirdpage">
 
-    <div class="tab">
-        <button class="tablinks" onclick="openCity(event, 'stocks')"> Learn about Stocks </button>
-        <button class="tablinks" onclick="openCity(event, 'forex')"> Learn about forex </button>
-        <button class="tablinks" onclick="openCity(event, 'cryptos')"> Learn about Cryptos </button>
-        <button class="tablinks" onclick="openCity(event, 'gold_commodities')"> Learn about Gold/Commodities </button>
-        <button class="tablinks" onclick="openCity(event, 'mutual_funds')"> Learn about Mutual funds </button>
-      </div>
-      
-      <div id="stocks" class="tabcontent">
-        <!--fourthpage start-->
-<div class="thirdpage">
+<div id="latest_news" class="tabcontent"></div>
+<div id="stocks" class="tabcontent"></div>
+  <div id="forex" class="tabcontent"></div>
+  <div id="cryptos" class="tabcontent"></div>
+  <div id="gold_commodities" class="tabcontent"></div>
+  <div id="currency_pairs" class="tabcontent"></div>
+  <div id="indices" class="tabcontent"></div>
+  <div id="bonds" class="tabcontent"></div>
+  <div id="401k" class="tabcontent"></div>
+  <div id="mutual_funds" class="tabcontent"></div>
+  <div id="company" class="tabcontent"></div>
 
-    <h1 class="thirdh1">Learn about Stocks </h1>
-    
-    <div class="blogsrow1container">
-    <div class="heroblogbody1">
-        <p class="heroblogbodypara1">TOP NEWS</p>
-        <p class="heroblogbodypara2">8 must know PRICE ACTION Signals explained</p>
-        <p class="heroblogbodypara3">t is time for another price action video! In this new video, we are taking a look at 8 of my favorite price action strategies and concepts.
-    
-            Each price action principles shows you a different and unique market pattern.</p>
-        <P class="heroblogbodypara4">READ MORE...</P>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <footer id="/footer">
+    <!--footer start-->
+    <div class="footer">
+  
+      <div class="footercontainer">
+  
+        <div class="footerlogodiv">
+          <img class="footerlogo" src="../images/freshstocks1 (7).png" alt="footer logo"/>
+          <p class="footerletters">freshstocks is a platform that supports Equities, Futures, Forex,
+            CFD's,ETFs, Derivatives,Options,Funds and Many more...</p>
         </div>
-    
-    
-        <div class="heroblogbody2">
-            <p class="heroblogbodypara1">TOP NEWS</p>
-            <p class="heroblogbodypara2">8 must know PRICE ACTION Signals explained</p>
-            <p class="heroblogbodypara3">t is time for another price action video! In this new video, we are taking a look at 8 of my favorite price action strategies and concepts.
-        
-                Each price action principles shows you a different and unique market pattern.</p>
-            <P class="heroblogbodypara4">READ MORE...</P>
+  
+        <div class="footerlinkdiv">
+  
+          <div class="footerpagelink1and2flex">
+            <div class="footerpagelinks1">
+  
+              <div>
+                <p style="opacity:0.7; color:white; margin-left: 15px;  font-family: 'Poppins', sans-serif;
+                font-weight: 700; font-size: 16px;">COMPANY</p>
+              </div><br>
+              <div>
+                <p style="margin-top:5px;"><a class="footerlink1" href="">Home</a></p>
+              </div>
+              <div>
+                <p style="margin-top:5px;"><a class="footerlink1" href="">About</a></p>
+              </div>
+              <div>
+                <p style="margin-top:5px;"><a class="footerlink1" href="">Assets</a></p>
+              </div>
+              <div>
+                <p style="margin-top:5px;"><a class="footerlink1" href="">News</a></p>
+              </div>
+              <div>
+                <p style="margin-top:5px;"><a class="footerlink1" href="">Learn</a></p>
+              </div>
+              <div>
+                <p style="margin-top:5px;"><a class="footerlink1" href="">Blogs</a></p>
+              </div>
+  
+  
             </div>
-    
-    
-            <div class="heroblogbody3">
-                <p class="heroblogbodypara1">TOP NEWS</p>
-                <p class="heroblogbodypara2">8 must know PRICE ACTION Signals explained</p>
-                <p class="heroblogbodypara3">t is time for another price action video! In this new video, we are taking a look at 8 of my favorite price action strategies and concepts.
-            
-                    Each price action principles shows you a different and unique market pattern.</p>
-                <P class="heroblogbodypara4">READ MORE...</P>
+  
+           
+  
+  
+  
+            <div class="footerpagelink3and4flex">
+              <div class="footerpagelinks3">
+  
+                <div>
+                  <p style="opacity:0.7; color:white; margin-left: 15px; font-family: 'Poppins', sans-serif;
+                  font-weight: 700; font-size: 16px;" class="footheading">LEARNING LINKS</p>
+                </div><br>
+                <div>
+                  <p style="margin-top:5px;"><a class="footerlink1" href="">How to Invest</a></p>
                 </div>
-    
+                <div>
+                  <p style="margin-top:5px;"><a class="footerlink1" href="">Trading Videos</a></p>
+                </div>
+                <div>
+                  <p style="margin-top:5px;"><a class="footerlink1" href="">Strategies</a></p>
+                </div>
+                <div>
+                  <p style="margin-top:5px;"><a class="footerlink1" href="">Indicators</a></p>
+                </div>
+                <div>
+                  <p style="margin-top:5px;"><a class="footerlink1" href="">Budgeting/Saving</a></p>
+                </div>
+                <div>
+                  <p style="margin-top:5px;"><a class="footerlink1" href="">Blogs</a></p>
+                </div>
+  
+  
+  
+  
+              </div>
             </div>
-    <!--blogsrow1end-->
-    <div class="blogsrow1container">
-        <div class="heroblogbody1">
-            <p class="heroblogbodypara1">TOP NEWS</p>
-            <p class="heroblogbodypara2">8 must know PRICE ACTION Signals explained</p>
-            <p class="heroblogbodypara3">t is time for another price action video! In this new video, we are taking a look at 8 of my favorite price action strategies and concepts.
-        
-                Each price action principles shows you a different and unique market pattern.</p>
-            <P class="heroblogbodypara4">READ MORE...</P>
+  
+  
+            <div class="footerpagelinks4">
+  
+              <div>
+                <p style="opacity:0.7; color:white; font-family: 'Poppins', sans-serif;
+                font-weight: 700; font-size: 16px;">SOCIAL-MEDIA CONNECT LINKS</p>
+              </div><br>
+              <div style="display:flex; flex-wrap: wrap; margin-left:-10px;">
+                <div><a href="#" class="fa fa-facebook" aria-label="footer social media links"></a></div>
+                <div><a href="#" class="fa fa-twitter" aria-label="footer social media links" ></a></div>
+                <div><a href="#" class="fa fa-linkedin" aria-label="footer social media links" ></a></div>
+                <div><a href="#" class="fa fa-youtube" aria-label="footer social media links" ></a></div>
+                <div><a href="#" class="fa fa-instagram" aria-label="footer social media links" ></a></div>
+              </div>
+  
+            <div class="newsletter">
+              <input class="footeremail" type="email" name="email" placeholder="Type your E-mail Here"/>
+              <button class="submitbtn">
+                Submit
+              </button>
             </div>
-        
-        
-            <div class="heroblogbody2">
-                <p class="heroblogbodypara1">TOP NEWS</p>
-                <p class="heroblogbodypara2">8 must know PRICE ACTION Signals explained</p>
-                <p class="heroblogbodypara3">t is time for another price action video! In this new video, we are taking a look at 8 of my favorite price action strategies and concepts.
-            
-                    Each price action principles shows you a different and unique market pattern.</p>
-                <P class="heroblogbodypara4">READ MORE...</P>
-                </div>
-        
-        
-                <div class="heroblogbody3">
-                    <p class="heroblogbodypara1">TOP NEWS</p>
-                    <p class="heroblogbodypara2">8 must know PRICE ACTION Signals explained</p>
-                    <p class="heroblogbodypara3">t is time for another price action video! In this new video, we are taking a look at 8 of my favorite price action strategies and concepts.
-                
-                        Each price action principles shows you a different and unique market pattern.</p>
-                    <P class="heroblogbodypara4">READ MORE...</P>
-                    </div>
-        
-                </div>
-    
-    <!--blogsrow2end-->
-    <div class="blogsrow1container">
-        <div class="heroblogbody1">
-            <p class="heroblogbodypara1">TOP NEWS</p>
-            <p class="heroblogbodypara2">8 must know PRICE ACTION Signals explained</p>
-            <p class="heroblogbodypara3">t is time for another price action video! In this new video, we are taking a look at 8 of my favorite price action strategies and concepts.
-        
-                Each price action principles shows you a different and unique market pattern.</p>
-            <P class="heroblogbodypara4">READ MORE...</P>
+  
+  
             </div>
-        
-        
-            <div class="heroblogbody2">
-                <p class="heroblogbodypara1">TOP NEWS</p>
-                <p class="heroblogbodypara2">8 must know PRICE ACTION Signals explained</p>
-                <p class="heroblogbodypara3">t is time for another price action video! In this new video, we are taking a look at 8 of my favorite price action strategies and concepts.
-            
-                    Each price action principles shows you a different and unique market pattern.</p>
-                <P class="heroblogbodypara4">READ MORE...</P>
-                </div>
-        
-        
-                <div class="heroblogbody3">
-                    <p class="heroblogbodypara1">TOP NEWS</p>
-                    <p class="heroblogbodypara2">8 must know PRICE ACTION Signals explained</p>
-                    <p class="heroblogbodypara3">t is time for another price action video! In this new video, we are taking a look at 8 of my favorite price action strategies and concepts.
-                
-                        Each price action principles shows you a different and unique market pattern.</p>
-                    <P class="heroblogbodypara4">READ MORE...</P>
-                    </div>
-        
-                </div>
-    <!--blogsrow3end-->
-    </div>
-    <!--fourthpage end-->
-      </div>
-      
-      <div id="forex" class="tabcontent">
-       <!--fourthpage start-->
-<div class="thirdpage">
-
-    <h1 class="thirdh1">Learn about forex </h1>
-    
-    <div class="blogsrow1container">
-    <div class="heroblogbody1">
-        <p class="heroblogbodypara1">TOP NEWS</p>
-        <p class="heroblogbodypara2">8 must know PRICE ACTION Signals explained</p>
-        <p class="heroblogbodypara3">t is time for another price action video! In this new video, we are taking a look at 8 of my favorite price action strategies and concepts.
-    
-            Each price action principles shows you a different and unique market pattern.</p>
-        <P class="heroblogbodypara4">READ MORE...</P>
+          </div>
+  
+          <div class="info">
+            <div class="privacypolicy">
+              <p><a style="margin-left:20px; color:#0094ff; text-decoration: none; position: relative; bottom:3px;"
+                  href="https://www.termsfeed.com/live/7c509de1-e109-4917-8118-fda89327ef34" target="_blank" rel="noopener">Privacy
+                  policy</a></p>
+            </div>
+            <div class="faq">
+              <p style="margin-left:20px;">FAQ'S</p>
+            </div>
+            <div class="riskwarning">
+              <p style="margin-left:20px;">Risk Warning</p>
+            </div>
+          </div>
+  
+  
         </div>
-    
-    
-        <div class="heroblogbody2">
-            <p class="heroblogbodypara1">TOP NEWS</p>
-            <p class="heroblogbodypara2">8 must know PRICE ACTION Signals explained</p>
-            <p class="heroblogbodypara3">t is time for another price action video! In this new video, we are taking a look at 8 of my favorite price action strategies and concepts.
-        
-                Each price action principles shows you a different and unique market pattern.</p>
-            <P class="heroblogbodypara4">READ MORE...</P>
-            </div>
-    
-    
-            <div class="heroblogbody3">
-                <p class="heroblogbodypara1">TOP NEWS</p>
-                <p class="heroblogbodypara2">8 must know PRICE ACTION Signals explained</p>
-                <p class="heroblogbodypara3">t is time for another price action video! In this new video, we are taking a look at 8 of my favorite price action strategies and concepts.
-            
-                    Each price action principles shows you a different and unique market pattern.</p>
-                <P class="heroblogbodypara4">READ MORE...</P>
-                </div>
-    
-            </div>
-    <!--blogsrow1end-->
-    <div class="blogsrow1container">
-        <div class="heroblogbody1">
-            <p class="heroblogbodypara1">TOP NEWS</p>
-            <p class="heroblogbodypara2">8 must know PRICE ACTION Signals explained</p>
-            <p class="heroblogbodypara3">t is time for another price action video! In this new video, we are taking a look at 8 of my favorite price action strategies and concepts.
-        
-                Each price action principles shows you a different and unique market pattern.</p>
-            <P class="heroblogbodypara4">READ MORE...</P>
-            </div>
-        
-        
-            <div class="heroblogbody2">
-                <p class="heroblogbodypara1">TOP NEWS</p>
-                <p class="heroblogbodypara2">8 must know PRICE ACTION Signals explained</p>
-                <p class="heroblogbodypara3">t is time for another price action video! In this new video, we are taking a look at 8 of my favorite price action strategies and concepts.
-            
-                    Each price action principles shows you a different and unique market pattern.</p>
-                <P class="heroblogbodypara4">READ MORE...</P>
-                </div>
-        
-        
-                <div class="heroblogbody3">
-                    <p class="heroblogbodypara1">TOP NEWS</p>
-                    <p class="heroblogbodypara2">8 must know PRICE ACTION Signals explained</p>
-                    <p class="heroblogbodypara3">t is time for another price action video! In this new video, we are taking a look at 8 of my favorite price action strategies and concepts.
-                
-                        Each price action principles shows you a different and unique market pattern.</p>
-                    <P class="heroblogbodypara4">READ MORE...</P>
-                    </div>
-        
-                </div>
-    
-    <!--blogsrow2end-->
-    <div class="blogsrow1container">
-        <div class="heroblogbody1">
-            <p class="heroblogbodypara1">TOP NEWS</p>
-            <p class="heroblogbodypara2">8 must know PRICE ACTION Signals explained</p>
-            <p class="heroblogbodypara3">t is time for another price action video! In this new video, we are taking a look at 8 of my favorite price action strategies and concepts.
-        
-                Each price action principles shows you a different and unique market pattern.</p>
-            <P class="heroblogbodypara4">READ MORE...</P>
-            </div>
-        
-        
-            <div class="heroblogbody2">
-                <p class="heroblogbodypara1">TOP NEWS</p>
-                <p class="heroblogbodypara2">8 must know PRICE ACTION Signals explained</p>
-                <p class="heroblogbodypara3">t is time for another price action video! In this new video, we are taking a look at 8 of my favorite price action strategies and concepts.
-            
-                    Each price action principles shows you a different and unique market pattern.</p>
-                <P class="heroblogbodypara4">READ MORE...</P>
-                </div>
-        
-        
-                <div class="heroblogbody3">
-                    <p class="heroblogbodypara1">TOP NEWS</p>
-                    <p class="heroblogbodypara2">8 must know PRICE ACTION Signals explained</p>
-                    <p class="heroblogbodypara3">t is time for another price action video! In this new video, we are taking a look at 8 of my favorite price action strategies and concepts.
-                
-                        Each price action principles shows you a different and unique market pattern.</p>
-                    <P class="heroblogbodypara4">READ MORE...</P>
-                    </div>
-        
-                </div>
-    <!--blogsrow3end-->
-    </div>
-    <!--fourthpage end-->
       </div>
-      
-      <div id="cryptos" class="tabcontent">
-       <!--fourthpage start-->
-<div class="thirdpage">
-
-    <h1 class="thirdh1">Learn about Cryptocurrencies </h1>
-    
-    <div class="blogsrow1container">
-    <div class="heroblogbody1">
-        <p class="heroblogbodypara1">TOP NEWS</p>
-        <p class="heroblogbodypara2">8 must know PRICE ACTION Signals explained</p>
-        <p class="heroblogbodypara3">t is time for another price action video! In this new video, we are taking a look at 8 of my favorite price action strategies and concepts.
-    
-            Each price action principles shows you a different and unique market pattern.</p>
-        <P class="heroblogbodypara4">READ MORE...</P>
-        </div>
-    
-    
-        <div class="heroblogbody2">
-            <p class="heroblogbodypara1">TOP NEWS</p>
-            <p class="heroblogbodypara2">8 must know PRICE ACTION Signals explained</p>
-            <p class="heroblogbodypara3">t is time for another price action video! In this new video, we are taking a look at 8 of my favorite price action strategies and concepts.
-        
-                Each price action principles shows you a different and unique market pattern.</p>
-            <P class="heroblogbodypara4">READ MORE...</P>
-            </div>
-    
-    
-            <div class="heroblogbody3">
-                <p class="heroblogbodypara1">TOP NEWS</p>
-                <p class="heroblogbodypara2">8 must know PRICE ACTION Signals explained</p>
-                <p class="heroblogbodypara3">t is time for another price action video! In this new video, we are taking a look at 8 of my favorite price action strategies and concepts.
-            
-                    Each price action principles shows you a different and unique market pattern.</p>
-                <P class="heroblogbodypara4">READ MORE...</P>
-                </div>
-    
-            </div>
-    <!--blogsrow1end-->
-    <div class="blogsrow1container">
-        <div class="heroblogbody1">
-            <p class="heroblogbodypara1">TOP NEWS</p>
-            <p class="heroblogbodypara2">8 must know PRICE ACTION Signals explained</p>
-            <p class="heroblogbodypara3">t is time for another price action video! In this new video, we are taking a look at 8 of my favorite price action strategies and concepts.
-        
-                Each price action principles shows you a different and unique market pattern.</p>
-            <P class="heroblogbodypara4">READ MORE...</P>
-            </div>
-        
-        
-            <div class="heroblogbody2">
-                <p class="heroblogbodypara1">TOP NEWS</p>
-                <p class="heroblogbodypara2">8 must know PRICE ACTION Signals explained</p>
-                <p class="heroblogbodypara3">t is time for another price action video! In this new video, we are taking a look at 8 of my favorite price action strategies and concepts.
-            
-                    Each price action principles shows you a different and unique market pattern.</p>
-                <P class="heroblogbodypara4">READ MORE...</P>
-                </div>
-        
-        
-                <div class="heroblogbody3">
-                    <p class="heroblogbodypara1">TOP NEWS</p>
-                    <p class="heroblogbodypara2">8 must know PRICE ACTION Signals explained</p>
-                    <p class="heroblogbodypara3">t is time for another price action video! In this new video, we are taking a look at 8 of my favorite price action strategies and concepts.
-                
-                        Each price action principles shows you a different and unique market pattern.</p>
-                    <P class="heroblogbodypara4">READ MORE...</P>
-                    </div>
-        
-                </div>
-    
-    <!--blogsrow2end-->
-    <div class="blogsrow1container">
-        <div class="heroblogbody1">
-            <p class="heroblogbodypara1">TOP NEWS</p>
-            <p class="heroblogbodypara2">8 must know PRICE ACTION Signals explained</p>
-            <p class="heroblogbodypara3">t is time for another price action video! In this new video, we are taking a look at 8 of my favorite price action strategies and concepts.
-        
-                Each price action principles shows you a different and unique market pattern.</p>
-            <P class="heroblogbodypara4">READ MORE...</P>
-            </div>
-        
-        
-            <div class="heroblogbody2">
-                <p class="heroblogbodypara1">TOP NEWS</p>
-                <p class="heroblogbodypara2">8 must know PRICE ACTION Signals explained</p>
-                <p class="heroblogbodypara3">t is time for another price action video! In this new video, we are taking a look at 8 of my favorite price action strategies and concepts.
-            
-                    Each price action principles shows you a different and unique market pattern.</p>
-                <P class="heroblogbodypara4">READ MORE...</P>
-                </div>
-        
-        
-                <div class="heroblogbody3">
-                    <p class="heroblogbodypara1">TOP NEWS</p>
-                    <p class="heroblogbodypara2">8 must know PRICE ACTION Signals explained</p>
-                    <p class="heroblogbodypara3">t is time for another price action video! In this new video, we are taking a look at 8 of my favorite price action strategies and concepts.
-                
-                        Each price action principles shows you a different and unique market pattern.</p>
-                    <P class="heroblogbodypara4">READ MORE...</P>
-                    </div>
-        
-                </div>
-    <!--blogsrow3end-->
-    </div>
-    <!--fourthpage end-->
+      <div class="copyrights">
+        <p class="copyrightpara">
+          &copy; 2020 - 2025 freshstocks Inc.  All Rights Reserved
+        </p>
       </div>
+      <!--footer page end-->
+      <!--footer end-->
+  </footer>
+  
+  
+<!--js start-->
+<script>
+    function openCity(evt, cityName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(cityName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+    </script>
+    <!--js end-->
 
-      <div id="gold_commodities" class="tabcontent">
-       <!--fourthpage start-->
-<div class="thirdpage">
 
-    <h1 class="thirdh1">Learn about Gold/Commodities </h1>
-    
-    <div class="blogsrow1container">
-    <div class="heroblogbody1">
-        <p class="heroblogbodypara1">TOP NEWS</p>
-        <p class="heroblogbodypara2">8 must know PRICE ACTION Signals explained</p>
-        <p class="heroblogbodypara3">t is time for another price action video! In this new video, we are taking a look at 8 of my favorite price action strategies and concepts.
-    
-            Each price action principles shows you a different and unique market pattern.</p>
-        <P class="heroblogbodypara4">READ MORE...</P>
-        </div>
-    
-    
-        <div class="heroblogbody2">
-            <p class="heroblogbodypara1">TOP NEWS</p>
-            <p class="heroblogbodypara2">8 must know PRICE ACTION Signals explained</p>
-            <p class="heroblogbodypara3">t is time for another price action video! In this new video, we are taking a look at 8 of my favorite price action strategies and concepts.
-        
-                Each price action principles shows you a different and unique market pattern.</p>
-            <P class="heroblogbodypara4">READ MORE...</P>
-            </div>
-    
-    
-            <div class="heroblogbody3">
-                <p class="heroblogbodypara1">TOP NEWS</p>
-                <p class="heroblogbodypara2">8 must know PRICE ACTION Signals explained</p>
-                <p class="heroblogbodypara3">t is time for another price action video! In this new video, we are taking a look at 8 of my favorite price action strategies and concepts.
-            
-                    Each price action principles shows you a different and unique market pattern.</p>
-                <P class="heroblogbodypara4">READ MORE...</P>
-                </div>
-    
-            </div>
-    <!--blogsrow1end-->
-    <div class="blogsrow1container">
-        <div class="heroblogbody1">
-            <p class="heroblogbodypara1">TOP NEWS</p>
-            <p class="heroblogbodypara2">8 must know PRICE ACTION Signals explained</p>
-            <p class="heroblogbodypara3">t is time for another price action video! In this new video, we are taking a look at 8 of my favorite price action strategies and concepts.
-        
-                Each price action principles shows you a different and unique market pattern.</p>
-            <P class="heroblogbodypara4">READ MORE...</P>
-            </div>
-        
-        
-            <div class="heroblogbody2">
-                <p class="heroblogbodypara1">TOP NEWS</p>
-                <p class="heroblogbodypara2">8 must know PRICE ACTION Signals explained</p>
-                <p class="heroblogbodypara3">t is time for another price action video! In this new video, we are taking a look at 8 of my favorite price action strategies and concepts.
-            
-                    Each price action principles shows you a different and unique market pattern.</p>
-                <P class="heroblogbodypara4">READ MORE...</P>
-                </div>
-        
-        
-                <div class="heroblogbody3">
-                    <p class="heroblogbodypara1">TOP NEWS</p>
-                    <p class="heroblogbodypara2">8 must know PRICE ACTION Signals explained</p>
-                    <p class="heroblogbodypara3">t is time for another price action video! In this new video, we are taking a look at 8 of my favorite price action strategies and concepts.
-                
-                        Each price action principles shows you a different and unique market pattern.</p>
-                    <P class="heroblogbodypara4">READ MORE...</P>
-                    </div>
-        
-                </div>
-    
-    <!--blogsrow2end-->
-    <div class="blogsrow1container">
-        <div class="heroblogbody1">
-            <p class="heroblogbodypara1">TOP NEWS</p>
-            <p class="heroblogbodypara2">8 must know PRICE ACTION Signals explained</p>
-            <p class="heroblogbodypara3">t is time for another price action video! In this new video, we are taking a look at 8 of my favorite price action strategies and concepts.
-        
-                Each price action principles shows you a different and unique market pattern.</p>
-            <P class="heroblogbodypara4">READ MORE...</P>
-            </div>
-        
-        
-            <div class="heroblogbody2">
-                <p class="heroblogbodypara1">TOP NEWS</p>
-                <p class="heroblogbodypara2">8 must know PRICE ACTION Signals explained</p>
-                <p class="heroblogbodypara3">t is time for another price action video! In this new video, we are taking a look at 8 of my favorite price action strategies and concepts.
-            
-                    Each price action principles shows you a different and unique market pattern.</p>
-                <P class="heroblogbodypara4">READ MORE...</P>
-                </div>
-        
-        
-                <div class="heroblogbody3">
-                    <p class="heroblogbodypara1">TOP NEWS</p>
-                    <p class="heroblogbodypara2">8 must know PRICE ACTION Signals explained</p>
-                    <p class="heroblogbodypara3">t is time for another price action video! In this new video, we are taking a look at 8 of my favorite price action strategies and concepts.
-                
-                        Each price action principles shows you a different and unique market pattern.</p>
-                    <P class="heroblogbodypara4">READ MORE...</P>
-                    </div>
-        
-                </div>
-    <!--blogsrow3end-->
-    </div>
-    <!--fourthpage end-->
-      </div>
-
-      <div id="mutual_funds" class="tabcontent">
-      <!--fourthpage start-->
-<div class="thirdpage">
-
-    <h1 class="thirdh1">Learn about Mutual funds </h1>
-    
-    <div class="blogsrow1container">
-    <div class="heroblogbody1">
-        <p class="heroblogbodypara1">TOP NEWS</p>
-        <p class="heroblogbodypara2">8 must know PRICE ACTION Signals explained</p>
-        <p class="heroblogbodypara3">t is time for another price action video! In this new video, we are taking a look at 8 of my favorite price action strategies and concepts.
-    
-            Each price action principles shows you a different and unique market pattern.</p>
-        <P class="heroblogbodypara4">READ MORE...</P>
-        </div>
-    
-    
-        <div class="heroblogbody2">
-            <p class="heroblogbodypara1">TOP NEWS</p>
-            <p class="heroblogbodypara2">8 must know PRICE ACTION Signals explained</p>
-            <p class="heroblogbodypara3">t is time for another price action video! In this new video, we are taking a look at 8 of my favorite price action strategies and concepts.
-        
-                Each price action principles shows you a different and unique market pattern.</p>
-            <P class="heroblogbodypara4">READ MORE...</P>
-            </div>
-    
-    
-            <div class="heroblogbody3">
-                <p class="heroblogbodypara1">TOP NEWS</p>
-                <p class="heroblogbodypara2">8 must know PRICE ACTION Signals explained</p>
-                <p class="heroblogbodypara3">t is time for another price action video! In this new video, we are taking a look at 8 of my favorite price action strategies and concepts.
-            
-                    Each price action principles shows you a different and unique market pattern.</p>
-                <P class="heroblogbodypara4">READ MORE...</P>
-                </div>
-    
-            </div>
-    <!--blogsrow1end-->
-    <div class="blogsrow1container">
-        <div class="heroblogbody1">
-            <p class="heroblogbodypara1">TOP NEWS</p>
-            <p class="heroblogbodypara2">8 must know PRICE ACTION Signals explained</p>
-            <p class="heroblogbodypara3">t is time for another price action video! In this new video, we are taking a look at 8 of my favorite price action strategies and concepts.
-        
-                Each price action principles shows you a different and unique market pattern.</p>
-            <P class="heroblogbodypara4">READ MORE...</P>
-            </div>
-        
-        
-            <div class="heroblogbody2">
-                <p class="heroblogbodypara1">TOP NEWS</p>
-                <p class="heroblogbodypara2">8 must know PRICE ACTION Signals explained</p>
-                <p class="heroblogbodypara3">t is time for another price action video! In this new video, we are taking a look at 8 of my favorite price action strategies and concepts.
-            
-                    Each price action principles shows you a different and unique market pattern.</p>
-                <P class="heroblogbodypara4">READ MORE...</P>
-                </div>
-        
-        
-                <div class="heroblogbody3">
-                    <p class="heroblogbodypara1">TOP NEWS</p>
-                    <p class="heroblogbodypara2">8 must know PRICE ACTION Signals explained</p>
-                    <p class="heroblogbodypara3">t is time for another price action video! In this new video, we are taking a look at 8 of my favorite price action strategies and concepts.
-                
-                        Each price action principles shows you a different and unique market pattern.</p>
-                    <P class="heroblogbodypara4">READ MORE...</P>
-                    </div>
-        
-                </div>
-    
-    <!--blogsrow2end-->
-    <div class="blogsrow1container">
-        <div class="heroblogbody1">
-            <p class="heroblogbodypara1">TOP NEWS</p>
-            <p class="heroblogbodypara2">8 must know PRICE ACTION Signals explained</p>
-            <p class="heroblogbodypara3">t is time for another price action video! In this new video, we are taking a look at 8 of my favorite price action strategies and concepts.
-        
-                Each price action principles shows you a different and unique market pattern.</p>
-            <P class="heroblogbodypara4">READ MORE...</P>
-            </div>
-        
-        
-            <div class="heroblogbody2">
-                <p class="heroblogbodypara1">TOP NEWS</p>
-                <p class="heroblogbodypara2">8 must know PRICE ACTION Signals explained</p>
-                <p class="heroblogbodypara3">t is time for another price action video! In this new video, we are taking a look at 8 of my favorite price action strategies and concepts.
-            
-                    Each price action principles shows you a different and unique market pattern.</p>
-                <P class="heroblogbodypara4">READ MORE...</P>
-                </div>
-        
-        
-                <div class="heroblogbody3">
-                    <p class="heroblogbodypara1">TOP NEWS</p>
-                    <p class="heroblogbodypara2">8 must know PRICE ACTION Signals explained</p>
-                    <p class="heroblogbodypara3">t is time for another price action video! In this new video, we are taking a look at 8 of my favorite price action strategies and concepts.
-                
-                        Each price action principles shows you a different and unique market pattern.</p>
-                    <P class="heroblogbodypara4">READ MORE...</P>
-                    </div>
-        
-                </div>
-    <!--blogsrow3end-->
-    </div>
-    <!--fourthpage end-->
-      </div>
-      
-      <script>
-      function openCity(evt, cityName) {
-        var i, tabcontent, tablinks;
-        tabcontent = document.getElementsByClassName("tabcontent");
-        for (i = 0; i < tabcontent.length; i++) {
-          tabcontent[i].style.display = "none";
+    <!--navjs strat-->
+    <script>
+      function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
         }
-        tablinks = document.getElementsByClassName("tablinks");
-        for (i = 0; i < tablinks.length; i++) {
-          tablinks[i].className = tablinks[i].className.replace(" active", "");
-        }
-        document.getElementById(cityName).style.display = "block";
-        evt.currentTarget.className += " active";
       }
       </script>
-         
+    <!--nav js end-->
 
 
-</div>
-<!--thirdpage end-->
-<!--fourthpage start-->
-<div class="thirdpage">
-
-    <h1 class="thirdh1">Latest,New & top demanding strategy Learning</h1>
-    
-    <div class="blogsrow1container">
-    <div class="heroblogbody1">
-        <p class="heroblogbodypara1">TOP NEWS</p>
-        <p class="heroblogbodypara2">8 must know PRICE ACTION Signals explained</p>
-        <p class="heroblogbodypara3">t is time for another price action video! In this new video, we are taking a look at 8 of my favorite price action strategies and concepts.
-    
-            Each price action principles shows you a different and unique market pattern.</p>
-        <P class="heroblogbodypara4">READ MORE...</P>
-        </div>
-    
-    
-        <div class="heroblogbody2">
-            <p class="heroblogbodypara1">TOP NEWS</p>
-            <p class="heroblogbodypara2">8 must know PRICE ACTION Signals explained</p>
-            <p class="heroblogbodypara3">t is time for another price action video! In this new video, we are taking a look at 8 of my favorite price action strategies and concepts.
-        
-                Each price action principles shows you a different and unique market pattern.</p>
-            <P class="heroblogbodypara4">READ MORE...</P>
-            </div>
-    
-    
-            <div class="heroblogbody3">
-                <p class="heroblogbodypara1">TOP NEWS</p>
-                <p class="heroblogbodypara2">8 must know PRICE ACTION Signals explained</p>
-                <p class="heroblogbodypara3">t is time for another price action video! In this new video, we are taking a look at 8 of my favorite price action strategies and concepts.
-            
-                    Each price action principles shows you a different and unique market pattern.</p>
-                <P class="heroblogbodypara4">READ MORE...</P>
-                </div>
-    
-            </div>
-    <!--blogsrow1end-->
-    <div class="blogsrow1container">
-        <div class="heroblogbody1">
-            <p class="heroblogbodypara1">TOP NEWS</p>
-            <p class="heroblogbodypara2">8 must know PRICE ACTION Signals explained</p>
-            <p class="heroblogbodypara3">t is time for another price action video! In this new video, we are taking a look at 8 of my favorite price action strategies and concepts.
-        
-                Each price action principles shows you a different and unique market pattern.</p>
-            <P class="heroblogbodypara4">READ MORE...</P>
-            </div>
-        
-        
-            <div class="heroblogbody2">
-                <p class="heroblogbodypara1">TOP NEWS</p>
-                <p class="heroblogbodypara2">8 must know PRICE ACTION Signals explained</p>
-                <p class="heroblogbodypara3">t is time for another price action video! In this new video, we are taking a look at 8 of my favorite price action strategies and concepts.
-            
-                    Each price action principles shows you a different and unique market pattern.</p>
-                <P class="heroblogbodypara4">READ MORE...</P>
-                </div>
-        
-        
-                <div class="heroblogbody3">
-                    <p class="heroblogbodypara1">TOP NEWS</p>
-                    <p class="heroblogbodypara2">8 must know PRICE ACTION Signals explained</p>
-                    <p class="heroblogbodypara3">t is time for another price action video! In this new video, we are taking a look at 8 of my favorite price action strategies and concepts.
-                
-                        Each price action principles shows you a different and unique market pattern.</p>
-                    <P class="heroblogbodypara4">READ MORE...</P>
-                    </div>
-        
-                </div>
-    
-    <!--blogsrow2end-->
-    <div class="blogsrow1container">
-        <div class="heroblogbody1">
-            <p class="heroblogbodypara1">TOP NEWS</p>
-            <p class="heroblogbodypara2">8 must know PRICE ACTION Signals explained</p>
-            <p class="heroblogbodypara3">t is time for another price action video! In this new video, we are taking a look at 8 of my favorite price action strategies and concepts.
-        
-                Each price action principles shows you a different and unique market pattern.</p>
-            <P class="heroblogbodypara4">READ MORE...</P>
-            </div>
-        
-        
-            <div class="heroblogbody2">
-                <p class="heroblogbodypara1">TOP NEWS</p>
-                <p class="heroblogbodypara2">8 must know PRICE ACTION Signals explained</p>
-                <p class="heroblogbodypara3">t is time for another price action video! In this new video, we are taking a look at 8 of my favorite price action strategies and concepts.
-            
-                    Each price action principles shows you a different and unique market pattern.</p>
-                <P class="heroblogbodypara4">READ MORE...</P>
-                </div>
-        
-        
-                <div class="heroblogbody3">
-                    <p class="heroblogbodypara1">TOP NEWS</p>
-                    <p class="heroblogbodypara2">8 must know PRICE ACTION Signals explained</p>
-                    <p class="heroblogbodypara3">t is time for another price action video! In this new video, we are taking a look at 8 of my favorite price action strategies and concepts.
-                
-                        Each price action principles shows you a different and unique market pattern.</p>
-                    <P class="heroblogbodypara4">READ MORE...</P>
-                    </div>
-        
-                </div>
-    <!--blogsrow3end-->
-    </div>
-    <!--fourthpage end-->
-    
-      <!--footer start-->
-      <div class="footer" id="/footer">
-    
-        <div class="footercontainer">
-    
-          <div class="footerlogodiv">
-            <img class="footerlogo" src="../assets/website images/freshstocks-removebg-preview.png" alt="company logo"/>
-            <p class="footerletters">© 2022 freshstocks All Rights Reserved</p>
-          </div>
-    
-          <div class="footerlinkdiv">
-    
-            <div style="display:flex;">
-              <div class="footerpagelinks1">
-    
-                <div>
-                  <h4 style="opacity:0.7;"  class="footerheading" >COMPANY</h4>
-                </div><br>
-                <div>
-                  <p style="margin-top:5px;"><a href="">Home</a></p>
-                </div>
-                <div>
-                  <p style="margin-top:5px;"><a href="">About</a></p>
-                </div>
-                <div>
-                  <p style="margin-top:5px;"><a href="">Assets</a></p>
-                </div>
-                <div>
-                  <p style="margin-top:5px;"><a href="">News</a></p>
-                </div>
-                <div>
-                  <p style="margin-top:5px;"><a href="">Learn</a></p>
-                </div>
-                <div>
-                  <p style="margin-top:5px;"><a href="">Blogs</a></p>
-                </div>
-    
-    
-              </div>
-    
-              <div style="display:flex;">
-                <div class="footerpagelinks2">
-    
-                  <div>
-                    <h4 style="opacity:0.7;" class="footerheading" >DROPDOWN LINKS</h4>
-                  </div><br>
-                  <div>
-                    <p style="margin-top:5px;"><a href="">Stocks</a> / <a href="">News</a> / <a href="">Blogs</a> </p>
-                  </div>
-                  <div>
-                    <p style="margin-top:5px;"><a href="">Cryptocurrencies</a> / <a href="">News</a> / <a
-                        href="">Blogs</a>
-                    </p>
-                  </div>
-                  <div>
-                    <p style="margin-top:5px;"><a href="">forex</a> / <a href="">News</a> / <a href="">Blogs</a> </p>
-                  </div>
-                  <div>
-                    <p style="margin-top:5px;"><a href="">Gold</a> / <a href="">News</a> / <a href="">Blogs</a> </p>
-                  </div>
-                  <div>
-                    <p style="margin-top:5px;"><a href="">Commodities</a> / <a href="">News</a> / <a href="">Blogs</a>
-                    </p>
-                  </div>
-                  <div>
-                    <p style="margin-top:5px;"><a href="">Currency</a> / <a href="">News</a> / <a href="">Blogs</a> </p>
-                  </div>
-    
-    
-    
-    
-                </div>
-              </div>
-    
-    
-    
-              <div style="display:flex;">
-                <div class="footerpagelinks3">
-    
-                  <div>
-                    <h4 style="opacity:0.7;" class="footerheading" >LEARNING LINKS</h4>
-                  </div><br>
-                  <div>
-                    <p style="margin-top:5px;"><a href="">How to Invest</a></p>
-                  </div>
-                  <div>
-                    <p style="margin-top:5px;"><a href="">Trading Videos</a></p>
-                  </div>
-                  <div>
-                    <p style="margin-top:5px;"><a href="">Strategies</a></p>
-                  </div>
-                  <div>
-                    <p style="margin-top:5px;"><a href="">Indicators</a></p>
-                  </div>
-                  <div>
-                    <p style="margin-top:5px;"><a href="">Budgeting/Saving</a></p>
-                  </div>
-                  <div>
-                    <p style="margin-top:5px;"><a href="">Blogs</a></p>
-                  </div>
-    
-    
-    
-    
-                </div>
-              </div>
-    
-    
-              <div class="footerpagelinks4">
-    
-                <div>
-                  <h4 style="opacity:0.7;" class="footerheading" >SOCIAL-MEDIA CONNECT LINKS</h4>
-                </div><br>
-                <div style="display:flex; flex-wrap: wrap; margin-left:20px;">
-                  <div><a href="#" class="fa fa-facebook"></a></div>
-                  <div><a href="#" class="fa fa-twitter"></a></div>
-                  <div><a href="#" class="fa fa-linkedin"></a></div>
-                  <div><a href="#" class="fa fa-youtube"></a></div>
-                  <div><a href="#" class="fa fa-instagram"></a></div>
-                </div>
-    
-    
-    
-    
-              </div>
-            </div>
-    
-            <div class="info">
-              <div class="privacypolicy">
-                <p><a style="margin-left:20px; color:#0094ff; text-decoration: none;"
-                    href="https://www.termsfeed.com/live/7c509de1-e109-4917-8118-fda89327ef34" target="_blank" rel="noopener">Privacy
-                    policy</a></p>
-              </div>
-              <div class="faq">
-                <p style="margin-left:20px;">FAQ'S</p>
-              </div>
-              <div class="riskwarning">
-                <p style="margin-left:20px;">Risk Warning</p>
-              </div>
-            </div>
-    
-    
-          </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-        </div>
-        <!--footer page end-->
-        <!--footer end-->
+</body>
+</html>

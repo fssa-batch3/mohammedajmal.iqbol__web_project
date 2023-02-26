@@ -1,0 +1,229 @@
+.heropage {
+    width: 100%;
+    height: 100%;
+    background-color: #0e0f12;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+input:invalid {
+    border-color:red;
+}
+.checkboxdiv {
+    position: relative;
+    bottom:40px;
+}
+.loginimg {
+    width:55%;
+    height:865px;
+    position: fixed;
+}
+.logininside {
+    background-color: white;
+    color: black;
+    width: 350px;
+    height: 600px;
+    position: relative;
+    top:100px;
+    left:63%;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 15px -3px black;
+}
+.logoimg {
+    width: 450px;
+    margin-left: 500px;
+    position: relative;
+    bottom: 130px;
+    height: 400px;
+
+}
+
+input[type=email],
+input[type=password],
+input[type=text],
+input[type=number] {
+    width: 320px;
+    height: 30px;
+    padding: 10px;
+}
+
+input[type=checkbox] {
+    width: 15px;
+    height: 15px;
+    margin-top: 1.5px;
+}
+
+.loginbtn {
+    background-color: #0094ff;
+    color: white;
+    width: 350px;
+    height: 35px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    position: relative;
+    bottom:40px;
+}
+
+.loginbtn:hover {
+    opacity: 0.7;
+
+}
+
+.loginwholediv {
+    height: 859px;
+}
+
+.radiowholediv {
+    display: flex;
+}
+
+input[type=radio] {
+    width: 15px;
+    height: 15px;
+    position: relative;
+    top: 3px;
+    font-family: 'Hammersmith One', sans-serif;
+}
+.backtohomebtn{
+    position: absolute;
+    top:4%;
+    left:82%;
+    padding:10px;
+    background-color: #0094ff;
+    color: white;
+    font-family: 'Hammersmith One', sans-serif;
+    font-weight: 500;
+    border-radius: 10px;
+    transition: all 0.5s;
+    border: none;
+    transform: scale(1.03);
+}
+.backtohomebtn:hover {
+    border:2px solid #0094ff;
+    transform: scale(1.05);
+    box-shadow: 0px 0px 10px -3px black;
+}
+
+
+
+
+
+
+
+
+@media all and (max-width: 600px) {
+.heropage {
+    width: 100%;
+    height: 100%;
+    background-color: #0e0f12;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.loginimg {
+    width:55%;
+    height:865px;
+    position: fixed;
+    display:none;
+}
+.logininside {
+    background-color: white;
+    color: black;
+    width: 250px;
+    height: 650px;
+    position: relative;
+    top:70px;
+    left:8%;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 15px -3px black;
+    position: fixed;
+}
+.logoimg {
+    width: 450px;
+    margin-left: 500px;
+    position: relative;
+    bottom: 130px;
+    height: 400px;
+
+}
+
+input[type=email],
+input[type=password],
+input[type=text],
+input[type=number] {
+    width: 230px;
+    height: 30px;
+    padding: 10px;
+}
+
+input[type=checkbox] {
+    width: 15px;
+    height: 15px;
+    margin-top: 1.5px;
+}
+
+.loginbtn {
+    background-color: #0094ff;
+    color: white;
+    width: 250px;
+    height: 35px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+   
+}
+
+.loginbtn:hover {
+    opacity: 0.7;
+
+}
+
+.loginwholediv {
+    height: 859px;
+}
+
+.radiowholediv {
+    display: flex;
+}
+
+input[type=radio] {
+    width: 15px;
+    height: 15px;
+    position: relative;
+    top: 3px;
+    font-family: 'Hammersmith One', sans-serif;
+}
+.backtohomebtn{
+    position: absolute;
+    top:2%;
+    left:62%;
+    padding:10px;
+    background-color: #0094ff;
+    color: white;
+    font-family: 'Hammersmith One', sans-serif;
+    font-weight: 500;
+    border-radius: 10px;
+    transition: all 0.5s;
+    border: none;
+    transform: scale(1.03);
+    position: fixed;
+}
+.backtohomebtn:hover {
+    border:2px solid #0094ff;
+    transform: scale(1.05);
+    box-shadow: 0px 0px 10px -3px black;
+}
+
+}

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile | freshstocks</title>
+    <link rel="stylesheet" href="userprofileform.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="wholeprofilecontainer">
+
+   
+
+    
+
+   <div class="userdetails">
+     
+  <h1 class="profileh1">Profile Settings</h1>
+<form  id="form">
+  <div class="namesurflex">
+    <div>
+<label for="name">Name</label><br>
+  <input type="text" class="name" id="name" placeholder=" enter your name" ><br>
+</div>
+<div>
+<label for="surname">Surname</label><br>
+  <input type="text" class="surname" id="surname" placeholder=" enter your surname" ><br>
+</div>
+</div>
+
+<label for="mobilenumber">Mobile Number</label><br>
+<input type="number" class="mobilenumber" id="mobilenumber" placeholder=" enter your mobilenumber" ><br>
+
+<label for="addressline1">Address Line 1</label><br>
+<input type="text" class="addressline1" id="addressline1" placeholder=" enter your addressline1" ><br>
+
+<label for="addressline2">Address Line 2</label><br>
+<input type="text" class="addressline2" id="addressline2" placeholder=" enter your addressline2" ><br>
+
+<label for="postalcode">Postcode</label><br>
+<input type="number" class="postalcode" id="postalcode" placeholder=" enter your postalcode" ><br>
+
+<label for="state">State</label><br>
+<input type="text" class="state" id="state" placeholder=" enter your State" ><br>
+
+<label for="area">Area</label><br>
+<input type="text" class="area" id="area" placeholder=" enter your Area" ><br>
+
+<label for="emailid">Email ID</label><br>
+<input type="email" class="emailid" id="emailid" placeholder=" enter your Email ID" ><br>
+
+<label for="education">Education</label><br>
+<input type="text" class="education" id="education" placeholder="Education" ><br>  
+
+
+<div class="countrystateflex">
+<div>
+<label for="country">Country</label><br>
+<input type="text" class="country" id="country" placeholder="Country" ><br>
+</div>
+<div>
+<label for="stateregion">State/Region</label><br>
+<input type="text" class="stateregion" id="stateregion" placeholder="State/Region" ><br>
+</div>
+</div>
+  <button class="submit" type="submit" >Submit</button>
+
+</form>
+</div>
+
+
+   <div class="userexperience">
+
+    <h1 class="thirdcolumnh1">Edit Experience</h1>
+
+    <label for="experience">Experience in Trading</label><br>
+    <input type="text" class="experience" id="experience" placeholder="For Ex: 0 or 1 year of experience"  /><br>
+  <br>
+    <label for="additional">Additional Details</label><br>
+   <textarea name="additional" id="additional" cols="30" rows="10" placeholder="Write Any Slogans You Like to Add into your profile section.So, other users can see your comments." ></textarea><br>
+   </div>
+
+
+</div>
+
+
+
+<script>
+    // function functionsubmit() {
+    //     alert("Your Changes has been Saved")
+    // }
+
+
+  //  let user_info = JSON.parse(localStorage.getItem("user_info"));
+
+  //  let Email = user_info[user_info.length - 1 ]["email"];
+  //  console.log(Email);
+
+  //   let userform = document.getElementById("form");
+  //   userform = addEventListener("submit", function (event) {
+  //   event.preventDefault();
+    
+  //   let arr = [];
+
+  //   if(localStorage.getItem("user_detail_form") != null ) {
+  //     arr = JSON.parse(localStorage.getItem("user_detail_form"));
+  //   }
+
+  //   let name = document.getElementById("name").value;
+  //   let surName = document.getElementById("surname").value;
+  //   let mobileNumber = document.getElementById("mobilenumber").value;
+  //   let addressLine1 = document.getElementById("addressline1").value;
+  //   let addressLine2 = document.getElementById("addressline2").value;
+  //   let postalCode = document.getElementById("postalcode").value;
+  //   let state = document.getElementById("state").value;
+  //   let area = document.getElementById("area").value;
+  //   let emailID = document.getElementById("emailid").value;
+  //   let education = document.getElementById("education").value;
+  //   let country = document.getElementById("country").value;
+  //   let stateRegion = document.getElementById("stateregion").value;
+    
+
+  //   let Obj =  {
+  //     name,
+  //     surName,
+  //     mobileNumber,
+  //     addressLine1,
+  //     addressLine2,
+  //     postalCode,
+  //     state,
+  //     area,
+  //     emailID,
+  //     education,
+  //     country,
+  //     stateRegion
+  //   };
+
+  //   console.log(Obj)
+
+  //   arr.push(Obj);
+
+  //   let user_detail_form = JSON.stringify(arr);
+  //   localStorage.setItem("user_detail_form",user_detail_form);
+  //   // window.location.href = "C:/Users/MohammedAjmalIqbol/Documents/demo100dayproject/homepage.html";
+  //   window.location.href = "../homepage.html";
+
+    
+  
+
+  
+
+
+
+  //   });
+</script>
+</body>
+</html>
