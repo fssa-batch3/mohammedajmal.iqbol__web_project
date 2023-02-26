@@ -1,0 +1,218 @@
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+  font-size: 14px;
+}
+
+a:hover {
+    border-bottom: 2px solid #55ACEE;
+}
+
+.navbar {
+    display: flex;
+    background-color: #08041e;
+    width: 100%;
+    height: 60px;
+    justify-content: center;
+    position:fixed;
+    z-index: 500;
+    top:0;
+}
+
+.navlogo {
+    width: 200px;
+    height: 200px;
+   position: relative;
+   bottom:75px;
+    cursor: pointer;
+}
+
+.navlinks {
+    display: flex;
+    justify-content: center;
+    margin-top: 3.2%;
+    gap: 30px;
+    margin-left: 100px;
+    position: relative;
+    bottom:30px;
+}
+
+.navbtns {
+    display: flex;
+    gap: 15px;
+    margin-top: 2%;
+    margin-left: 8%;
+}
+
+.navbtnanker {
+    border-bottom: 0px;
+}
+
+.navbtnanker {
+    border-bottom: 0px;
+}
+
+.navbtn1 {
+    width: 90px;
+    height: 30px;
+    background-color: #245de7;
+    color:white;
+    border-radius: 20px;
+    border: none;
+    position: relative;
+    bottom: 15px;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    font-weight: 300;
+}
+.navbtn1:hover,.navbtn2:hover {
+    opacity: 0.8;   
+}
+.navbtn2 {
+    width: 140px;
+    height: 30px;
+    background-color: #245de7;
+    color:white;
+    border-radius: 20px;
+    font-weight: 600;
+    border: none;
+    position: relative;
+    bottom: 15px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    cursor: pointer;
+}
+.heroh1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+  font-size: 30px;
+  position: relative;
+  top:80px;
+  text-align: center;
+}
+.notediv {
+background-color: #86bee8;
+width:950px;
+position: relative;
+top:90px;
+margin-left: 19%;
+border-radius: 5px;
+}
+.notepara {
+    font-family:  sans-serif;
+    font-weight: 300;
+    cursor: pointer;
+  font-size: 20px;
+  text-align: center;
+  padding: 10px;
+  
+}
+.paymentbody {
+    margin-top: 10%;
+    margin-left: 19%;
+}
+input[id=radioactive] {
+    accent-color: #007CEE;
+    width:20px;
+    height:20px;
+    margin-top: 21px;
+}
+.creditcarddiv {
+    display: flex;
+    box-shadow: 2px 2px 8px #007CEE;
+    padding:10px;
+    margin-top: 3%;
+}
+.creditcardimg {
+    width:200px;
+    height:40px;
+    margin-left: 5%;
+    margin-top: 10px;
+}
+.creditcardpara {
+    font-family:  sans-serif;
+    font-weight: 300;
+    cursor: pointer;
+  font-size: 20px;
+}
+.expirydiv {
+    display: flex;
+}
+input[id=cardnumber] {
+    padding:10px;
+    width:400px;
+    font-family:  monospace;
+    font-weight: 300;
+    cursor: pointer;
+}
+select[id=month] {
+    padding:10px;
+    width:100px;
+    font-family:  monospace;
+    font-weight: 700;
+    cursor: pointer;
+}
+select[id=year] {
+    padding:10px;
+    width:100px;
+    font-family:  monospace;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 63px;
+    margin-right: 20px;
+}
+input[id=securitycode] {
+    padding:10px;
+    width:145px;
+    font-family:  monospace;
+    font-weight: 700;
+    cursor: pointer; 
+}
+.paymenttwocontainer {
+    display: flex;
+}
+.creditrightdiv {
+    margin-left: 5%;
+}
+.creditcarddiv2 {
+    display: flex;
+    box-shadow: 2px 2px 8px #007CEE;
+    padding:10px;
+    margin-top: 3%;
+    width:440px;
+}
+.termsandconditions {
+    font-family:  sans-serif;
+    font-weight: 300;
+    cursor: pointer;
+    margin-top: 40px;
+}
+.paybtn {
+    width:200px;
+    height:40px;
+    border-radius: 3px;
+    border: none;
+    background-color:  #86bee8;
+    position: relative;
+    top:20px;
+    margin-left:25%;
+    font-family:  sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 17px;
+}
+.paybtn:hover {
+    transform: scale(1.05);
+    opacity: 0.8;
+}
