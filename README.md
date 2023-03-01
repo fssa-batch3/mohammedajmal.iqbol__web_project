@@ -8,3 +8,8 @@ Userflow : https://drive.google.com/file/d/1VGj0WTJ-2hqjLlILjD8hWP6FKHCaY3Ur/vie
 
 Wireframe : https://drive.google.com/file/d/1-7wSzABWOs9dMf2X6TWQoBv0x9tKjAra/view?usp=share_link
 
+// My web progress table
+
+CRUD For User signing page => Create user account [completed] => Read User Data For Profile Page [completed] => Update user details For Edit Page [completed] => Delete user details For deactivate [completed]
+
+CRUD For User Features page => Create chat Feature [completed] => Read chat Feature [completed] => Update chat feature [completed] => Delete chat feature [completed]
