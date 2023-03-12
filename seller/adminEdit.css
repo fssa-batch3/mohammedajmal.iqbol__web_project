@@ -1,0 +1,60 @@
+form {
+    background-color:antiquewhite;
+    width:50%;
+    height:700px;
+    margin-left: 350px;
+    margin-top: 100px;
+    display: flex;
+}
+.contact-h1 {
+    text-align: center;
+}
+.image-url {
+    margin-left: 70px;
+    margin-top: 10px;
+    padding:10px;
+    border-radius: 5px;
+    border: none;
+    width:230px;
+}
+.product-desc {
+    margin-left: 70px;
+    margin-top: 10px;
+    padding:10px;
+    border-radius: 5px;
+    border: none;
+    width:550px; 
+}
+.submit {
+    background-color:burlywood;
+    color:white;
+   width:100px;
+   height:40px;
+   border-radius: 5px;
+    border: none;
+    margin-left: 100px;
+    margin-top: 5px;
+}
+.submit:hover {
+    transform: scale(1.05);
+}
+.product-label {
+    margin-left: 70px;
+}
+.textarea-desc {
+    margin-left: 70px;
+    margin-top: 10px;
+    padding:10px;
+    border-radius: 5px;
+    border: none;
+    width:230px;
+    height: 100px; 
+}
+.second-row {
+    margin-top: 80px;
+}
+#delete {
+    margin-left: 53%;
+position: relative;
+bottom: 100px;
+}

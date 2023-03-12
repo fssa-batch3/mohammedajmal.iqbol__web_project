@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Addform</title>
+    <link rel="stylesheet" href="../seller/addform.css">
+</head>
+<body>
+    
+
+
+
+    
+
+
+    <form class="form" id="form">
+        <br>
+        <div>
+        <h1 class="contact-h1">ADD NEW COURSE FORM</h1>
+        <br><label for="image-url" class="product-label" >Course Image URL</label>
+        <br><input name="image-url" class="image-url" id="image-url" type="text" placeholder="course Image Url" required>
+
+        <br><br><label for="course-name" class="product-label">Course Name</label>
+        <br><input name="product-name" class="image-url" id="course-name" type="text" placeholder="course name" required>
+
+        <br><br><label for="course-timing" class="product-label">Course Timing</label>
+        <br><input name="product-owned-by" class="image-url" id="course-timing" type="text" placeholder="course timing" required>
+
+        <br><br><label for="course-language" class="product-label">Course Language</label>
+        <br><input name="price" class="image-url" type="text" id="course-language" placeholder="course price" required>
+
+        <br><br><label for="course-intake" class="product-label">Course Intaking Per Batch</label>
+        <br><input name="price" class="image-url" type="text" id="course-intake" placeholder="course intake" required>
+
+        <br><br><label for="course-cost" class="product-label">Course Cost</label>
+        <br><input name="email" class="image-url" type="text" id="course-cost" placeholder="course cost" required><br>
+<br></div>
+   
+   <div class="second-row">
+    <br><label for="old-cost" class="product-label" >Old Cost</label>
+    <br><input name="image-url" class="image-url" id="old-cost" type="text" placeholder="course Image Url" required>
+
+    <br><br><label for="course-description" class="product-label">Course Description</label>
+    <br><textarea name="product-name" class="textarea-desc" id="course-description" type="text" placeholder="course Description" required></textarea>
+
+
+
+    <br><br><label for="top-skills" class="product-label">Top Skills You'll learn</label>
+    <br><textarea name="product-name" class="textarea-desc" id="top-skills" type="text" placeholder="course Description" required></textarea>
+
+    <br><br><label for="course-videos" class="product-label">Course Videos</label>
+    <br><input name="price" class="image-url" type="file" id="course-videos" placeholder="course videos" required>
+
+    <button class="submit" type="submit" id="btn">Submit</button>   
+</div>
+
+
+    </form>
+
+
+
+
+<script>
+
+   
+
+   let form = document.getElementById("form");
+   form.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+
+    
+    let course_data =[];
+     
+
+    if(localStorage.getItem("course_data") !== null ){
+       course_data = JSON.parse(localStorage.getItem("course_data"));
+
+    let img = document.getElementById("image-url").value;
+    let title = document.getElementById("course-name").value;
+    let timing = document.getElementById("course-timing").value;
+    let language = document.getElementById("course-language").value;
+    let enrolled = document.getElementById("course-intake").value;
+    let cost = document.getElementById("course-cost").value;
+    let old_cost = document.getElementById("old-cost").value;
+    let Description= document.getElementById("course-description").value;
+    let top_skills = document.getElementById("top-skills").value;
+    let videos = document.getElementById("course-videos").value;
+    let id= Date.now();
+    let date1 = new Date();
+    let datestring = date1.toDateString();
+    datestring.slice(4,);
+
+
+       let course_obj = {
+        img,title,timing,language,enrolled,cost,old_cost,Description,top_skills,videos,id,datestring
+    };
+
+    course_data.push(course_obj);
+    console.log(course_data)
+
+    const add_data = JSON.stringify(course_data);
+    localStorage.setItem("course_data",add_data);
+    } else {
+
+    let img = document.getElementById("image-url").value;
+    let title = document.getElementById("course-name").value;
+    let timing = document.getElementById("course-timing").value;
+    let language = document.getElementById("course-language").value;
+    let enrolled = document.getElementById("course-intake").value;
+    let cost = document.getElementById("course-cost").value;
+    let old_cost = document.getElementById("old-cost").value;
+    let Description= document.getElementById("course-description").value;
+    let top_skillls = document.getElementById("top-skills").value;
+    let videos = document.getElementById("course-videos").value;
+    let date1 = new Date();
+    let datestring = date1.toDateString();
+    datestring.slice(4,);
+    
+
+
+        let course_obj = {
+        img,title,timing,language,enrolled,cost,old_cost,Description,top_skills,videos,id,datestring
+    };
+
+    course_data.push(course_obj);
+
+    const add_data = JSON.stringify(course_data);
+    localStorage.setItem("course_data",add_data);
+    
+    }
+
+    window.location.href = "../seller/adminCoursesAdd.html";
+    
+
+   
+
+   
+
+   });
+
+
+
+
+
+
+  
+</script>
+</body>
+</html>
