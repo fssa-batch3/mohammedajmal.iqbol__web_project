@@ -1,83 +1,38 @@
-.namesurflex,.countrystateflex {
-    display: flex;
-    gap:20px;
-}
-.wholeprofilecontainer {
-    display: flex;
-}
-
-.userimground {
+.user-row {
+    margin-bottom: 14px;
+  }
+  
+  table {
     margin-left: 100px;
-    margin-top: 70px;
-    cursor: pointer;
-}
-.username {
-font-family: 'Poppins',sans-serif;
-font-size: 30px;
-font-weight: 700;
-position: relative;
-right:20px;
-margin-left: 120px;
-cursor: pointer;
-}
-.useremail {
-    font-family: 'Poppins',sans-serif;
-    font-size: 15px;
-    font-weight: 300;
-    position: relative;
-    right:45px;
-    margin-left: 150px;
-    cursor: pointer;
-}
-.userdetails {
-    margin-top: 5px;
-    margin-left: 50px;
-   
-}
-.profileh1 {
-    font-family: 'Poppins',sans-serif;
-font-size: 30px;
-font-weight: 700;
-}
-label {
-    font-family: 'Poppins',sans-serif;
-    font-size: 15px;
-    font-weight: 300;
-}
-input {
-    width: 250px;
-    height:30px;
-    padding: 5px;
-}
-.submit {
-    width:150px;
-    height:50px;
-    padding:10px;
-    border-radius: 5px;
-    border: none;
-    background-color: #0069D9;
-    color: white;
-    font-family: 'Poppins',sans-serif;
-    font-size: 18px;
-    font-weight: 300;
-    transition: all 0.3s ease-in-out;
+  }
+  .table-user-information > tbody > tr {
+    border-top: 1px solid #ccc;
+  }
+  
+  .table-user-information > tbody > tr:first-child {
+    border-top: 0;
+  }
+  
+  .table-user-information > tbody > tr > td {
+    border-top: 0;
+  }
+  
+  .panel {
     margin-top: 20px;
-    margin-left: 200px;
-    cursor: pointer;
-}
-.submit:hover {
- transform: scale(0.9);
-}
-.userexperience {
-    margin-left: 50px;
-    margin-top: 5px;
-}
-.thirdcolumnh1 {
-    font-family: 'Poppins',sans-serif;
-    font-size: 30px;
-    font-weight: 700;
-}
-textarea {
-    width: 250px;
-    height:100px;
-}
+  }
+  .panel-title {
+    margin-top: 100px;
+  }
+  .edit , .delete {
+    padding:5px;
+    width:100px;
+  }
+  .edit:hover ,.delete:hover {
+    transform: scale(1.05);
+  }
+ .img-circle {
+  width:150px;
+  height:150px;
+  border-radius: 50%;
+ }
+

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src=”https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js”></script>
+</head>
+<body>
+    
+
+<p>
+    <!-- <a href="https://newsdata.io/api/1/news?apikey=pub_178143a0e055e7ef61bd3cefe3ae8e0a2cdc1&q=pegasus&language=en">hello</a> -->
+</p>
+
+
+    <div>
+        <h1 class="news1"></h1>
+        <canvas id="myChart" style="width:100%;max-width:600px; max-height:500px;"></canvas>
+        <img class="news3" src="">
+        <h1 class="news4"></h1>
+    </div>
+
+
+
+
+    <script>
+
+// const options = {
+// 	method: 'GET',
+// 	headers: {
+// 		'X-RapidAPI-Key': 'SIGN-UP-FOR-KEY',
+// 		'X-RapidAPI-Host': 'myallies-breaking-news-v1.p.rapidapi.com'
+// 	}
+// };
+
+
+
+// fetch('https://myallies-breaking-news-v1.p.rapidapi.com/GetCompanyDetailsBySymbol?symbol=twtr', options)
+// 	.then(response => response.json())
+// 	.then(response => console.log(response))
+// 	.catch(err => console.error(err));
+
+
+ const url = "https://www.alphavantage.co/query?function=FX_DAILY&from_symbol=EUR&to_symbol=USD&apikey=XQJN6X4YXV76D14M";
+ let x = "";
+ fetch(url)
+ .then((response) => {
+    //  console.log(response);
+   return response.json();
+ })
+ .then((parsedData) => {
+     console.log(parsedData);
+    //  console.log(typeof(parsedData))
+     x = parsedData;
+     document.querySelector(".news1").innerHTML = parsedData["title"];
+    //  document.querySelector(".news2").innerHTML = parsedData.feed[0]["summary"];
+    //  document.querySelector(".news3").src = parsedData.feed[0]["banner_image"];
+//    return  parsedData.json();
+// Define the JSON object as a string
+
+
+ })
+// .then((x)=>{
+//     console.log(x)
+//  })
+.catch((err) => {
+    console.log(err + "OOps Something went wrong..!!");
+});
+
+
+
+
+
+
+
+    </script>
+
+
+
+<script>
+    var xValues = [50,60,70,80,90,100,110,120,130,140,150];
+    var yValues = [7,8,8,9,9,9,10,11,14,14,15];
+    
+    new Chart("myChart", {
+      type: "line",
+      data: {
+        labels: xValues,
+        datasets: [{
+          fill: false,
+          lineTension: 0,
+          backgroundColor: "rgba(0,0,255,1.0)",
+          borderColor: "rgba(0,0,255,0.1)",
+          data: yValues
+        }]
+      },
+      options: {
+        legend: {display: false},
+        scales: {
+          yAxes: [{ticks: {min: 6, max:16}}],
+        }
+      }
+    });
+    </script>
+    
+
+</body>
+</html>
+
+
+
+
