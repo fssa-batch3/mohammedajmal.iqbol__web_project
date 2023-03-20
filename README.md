@@ -12,4 +12,10 @@ Wireframe : https://drive.google.com/file/d/1-7wSzABWOs9dMf2X6TWQoBv0x9tKjAra/vi
 
 CRUD For User signing page => Create user account [completed] => Read User Data For Profile Page [completed] => Update user details For Edit Page [completed] => Delete user details For deactivate [completed]
 
-CRUD For User Features page => Create chat Feature [completed] => Read chat Feature [completed] => Update chat feature [completed] => Delete chat feature [completed]
+CRUD For Seller Features page => Create Course Feature [completed] => Read Course Feature [completed] => Update Course feature [completed] => Delete Course feature [completed]
+
+CRUD For User Features page => Create Course in Cart Feature [completed] => Read Course in Cart Feature [completed] => Delete Course in Cart feature [completed]
+
+CRUD For User Features page => Create Comment Feature [completed] => Read Comment Feature [completed] => Update Comment feature [completed] => Delete Comment feature [completed]
+
+Courses Filter tabs feature [completed] 
