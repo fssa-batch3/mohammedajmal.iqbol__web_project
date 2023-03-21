@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In | freshstocks</title>
+    <link rel="stylesheet" href="../assets/css/signin.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+<body>
+<main class="fullpage">
+
+<div>
+    <img class="nav-logo" src="../assets/images/Screenshot_2023-02-11_021952-removebg-preview-removebg-preview.png" alt="">
+</div>
+ <div class="signup">
+
+<h1 class="create-h1"><br>Log In to your account</h1>
+<!-- form start -->
+<form  id="form">
+<div class="form-floating mb-3" id="emailinput">
+    <input type="email" class="form-control" id="email" placeholder="name@example.com">
+    <label for="email">Email address</label>
+  </div>
+  <div class="form-floating" id="passinput">
+    <input type="password" class="form-control" id="password" placeholder="Password">
+    <label for="password">Password</label>
+  </div>
+
+
+  <div class="remember-forgot-div">
+    <p class="remember-p"><input type="checkbox">&nbsp;Remember Me</p>
+    <a class="forgot-p">Forgot Password?</a>
+  </div>
+
+  <button class="submit-signup" type="submit">Log In</button>
+</form>
+  <div class="signin-link"><a href="register.html">Dont Have an Account ? Sign Up</a></div>
+ </div>  
+ 
+ 
+ <div id="google_translate_element"></div>
+
+
+</main>
+
+   
+ 
+
+
+
+<script>
+
+   let login = document.getElementById("form");
+   login.addEventListener("submit",event => {
+   event.preventDefault();
+
+     let register_data = JSON.parse(localStorage.getItem("register_arr"));
+    console.log(register_data);
+
+    
+     let email = document.getElementById("email").value;
+     let password = document.getElementById("password").value;
+
+     let match = false;
+     for(let i=0;i<register_data.length;i++){
+      if( email == register_data[i]["email"] && password == register_data[i]["password"]){
+         match = true;  
+         localStorage.setItem("login_arr",JSON.stringify(register_data[i]["email"]));
+         break;
+
+      } else {
+        match = false;
+      }
+     };
+
+     if( match == true ){
+       alert("user login successfully");
+       window.location.href = "userHome.html";
+     } else {
+      alert("invalid user credentials")
+     }
+
+   });
+
+ 
+</script>
+
+<!-- bpptstrap calling  -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+crossorigin="anonymous"></script>
+</body>
+</html>

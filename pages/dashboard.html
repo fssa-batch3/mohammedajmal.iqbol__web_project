@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+    <!-- g fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;0,800;0,900;1,600&display=swap" rel="stylesheet">
+<!-- g fonts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="sidebar">
+              
+        <div class="company-logo">
+            <img  src="../assets/images/Screenshot 2023-02-11 021952.png" alt="" class="nav-logo">
+            <hr class="navhr">
+        </div>
+
+        <div class="side-bar-content">
+            <div class="firstrow-sidebar">
+                <img class="dash-img" src="../assets/images/icons8-home-page-32 (1).png" alt="">
+                <a class="dash-name">Home</a>
+            </div>
+            <hr>
+            <br>
+            
+            <div class="firstrow-sidebar">
+                <img class="dash-img" src="../assets/images/icons8-dashboard-layout-24.png" alt="">
+                <a class="dash-name">Dashboard</a>
+            </div>
+            
+            <hr>
+            <br>
+            <div class="firstrow-sidebar">
+                <img class="dash-img" src="../assets/images/icons8-shopping-cart-64.png" alt="">
+                <a class="dash-name">Market</a>
+            </div>
+            
+            
+            <hr>
+            <br>
+            <div class="firstrow-sidebar">
+                <img class="dash-img" src="../assets/images/icons8-trade-64.png" alt="">
+                <a class="dash-name">Trade</a>
+            </div>
+            
+            <hr>
+            <br>
+            <div class="firstrow-sidebar">
+                <img class="dash-img" src="../assets/images/icons8-newspaper-50.png" alt="">
+                <a class="dash-name">News</a>
+            </div>
+            
+            
+            <hr>
+            <br>
+            
+            <div class="firstrow-sidebar">
+                <img class="dash-img" src="../assets/images/icons8-futures-50.png" alt="">
+                <a class="dash-name">Learn</a>
+            </div>
+            
+            
+            <hr>
+            <br>
+            <div class="firstrow-sidebar">
+                <img class="dash-img" src="../assets/images/icons8-group-50.png" alt="">
+                <a class="dash-name">Invite friends</a>
+            </div>
+            
+            
+            <hr>
+            <br>
+            <div class="firstrow-sidebar">
+                <img class="dash-img" src="../assets/images/icons8-group-message-50.png" alt="">
+                <a class="dash-name">Messages</a>
+            </div>
+            
+            
+          
+            <hr class="help-support-hr">
+            <br>
+            <div class="firstrow-sidebar"  id="help-support">
+
+                
+                
+                <img class="dash-img" src="../assets/images/icons8-online-support-50.png" alt="">
+                <a class="dash-name">Support</a>
+            </div>
+            
+            
+            <br>
+           
+            <div class="firstrow-sidebar">
+                <img class="dash-img" src="../assets/images/icons8-gears-30.png" alt="">
+                <a class="dash-name">Settings</a>
+            </div>
+            
+            <br>
+           
+            <div class="firstrow-sidebar">
+                <img class="dash-img" src="../assets/images/icons8-logout-rounded-50 (1).png" alt="">
+                <a class="dash-name-logout">Logout</a>
+            </div>
+            
+            </div>
+
+
+
+
+
+        </div>
+        <div class="right-content">
+
+
+             <div class="navbar">
+                <div class="search-input">
+                   <img class="searchimg" src="../assets/images/icons8-search-50.png" alt="">
+                    <input type="search" name="search" id="search" placeholder="Search here...">
+                </div>
+                <div class="notification">
+                    <img class="notificationimg" onclick="profile1()" src="../assets/images/icons8-notification-50.png" alt="">
+                </div>
+                <div class="notification">
+                    <img class="user-profile" id="user-profile" onclick="profile()" src="../assets/images/icons8-male-user-48.png" alt="">
+                </div>
+                
+
+              <!--  -->
+              <div class="user-tab" id="user-tab">
+
+                <div class="side-bar-content">
+                    <div class="firstrow-sidebar">
+                        <img class="dash-img" src="../assets/images/icons8-home-page-32 (1).png" alt="">
+                        <a class="dash-name">User Profile</a>
+                    </div>
+                    <hr>
+                    <br>
+                    
+                    <div class="firstrow-sidebar">
+                        <img class="dash-img" src="../assets/images/icons8-dashboard-layout-24.png" alt="">
+                        <a class="dash-name">Edit Profile</a>
+                    </div>
+                    
+                    <hr>
+                    <br>
+                    <div class="firstrow-sidebar">
+                        <img class="dash-img" src="../assets/images/icons8-shopping-cart-64.png" alt="">
+                        <a class="dash-name">Settings</a>
+                    </div>
+                    
+                    
+                    <hr>
+                    <br>
+                    <div class="firstrow-sidebar">
+                        <img class="dash-img" src="../assets/images/icons8-home-page-32 (1).png" alt="">
+                        <a class="dash-name">Log Out</a>
+                    </div>
+                    <hr>
+                    <br>
+                    
+                    
+                    
+                    </div>
+
+              </div>
+              <!--  -->
+
+
+
+              <!-- notification start -->
+              
+              <div class="user-tab" id="user-notification">
+
+
+                <div class="side-bar-content">
+                    <div class="firstrow-sidebar">
+                        <!-- <img class="dash-img" src="images/icons8-home-page-32 (1).png" alt=""> -->
+
+                        <a class="dash-name">Latest Notifications</a>
+                    </div>
+                    <hr>
+                   
+
+                <div class="side-bar-content">
+                    <div class="firstrow-sidebar">
+                        <!-- <img class="dash-img" src="images/icons8-home-page-32 (1).png" alt=""> -->
+                      
+                        <a class="dash-name">Get upto 30% off in trading t-shirts</a>
+                    </div>
+                    <hr>
+                    <br>
+                    
+                    <div class="firstrow-sidebar">
+                        <!-- <img class="dash-img" src="images/icons8-dashboard-layout-24.png" alt=""> -->
+                        <a class="dash-name">Still feared about trading ?</a>
+                    </div>
+                    
+                    <hr>
+                    <br>
+                    <div class="firstrow-sidebar">
+                        <!-- <img class="dash-img" src="images/icons8-shopping-cart-64.png" alt=""> -->
+                        <a class="dash-name">best ever blogs of 2023</a>
+                    </div>
+                    
+                    
+                    <hr>
+                    <br>
+                    <div class="firstrow-sidebar">
+                        <!-- <img class="dash-img" src="images/icons8-home-page-32 (1).png" alt=""> -->
+                        <a class="dash-name">bitcoin again went down in this month </a>
+                    </div>
+                    <hr>
+                    <br>
+                    
+                    
+                    
+                    </div> 
+
+              <!-- notify end -->
+             </div>
+                
+             
+          
+        </div>
+    </header>
+
+    <main class="maindata">
+        <div class="Trending-coins">
+            <h1 class="Trending-coins-h1">Top Trending</h1>
+       
+
+        <div class="coins-divs">
+            <div class="coin-div">
+
+            </div>
+            <div class="coin-div2">
+                
+            </div>
+            <div class="coin-div1">
+                
+            </div>
+        </div>
+    </div>
+
+
+        <div class="Trending-coins1">
+            <h1 class="Trending-coins-h1">Your Learning</h1>
+        
+
+        <div class="coins-divs">
+            <div class="coin-div-right">
+                <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+
+<section class="recent-watchlist-section">
+    <div class="recent-watchlist">
+        <h1 class="recent-watchlist-h1">Recent Watchlist</h1>
+       
+    
+        <div class="coins-divs-watchlist">
+            <div class="coin-div-recent-watchlist">
+               
+                <div class="watchlist-label">
+                    <div class="label1">
+                       Favourites
+                    </div>
+    
+                   <div class="label2">
+                    <p>#</p>
+                   </div>
+    
+                   <div class="label2">
+                    <p>Coin Name</p>
+                   </div>
+    
+                   <div class="label2">
+                    <p>Coin Price</p>
+                   </div>
+
+                   <div style="font-weight: 700;">
+                    <p> 1h %</p>
+                 </div>
+ 
+                <div style="font-weight: 700;">
+                 <p>24h %</p>
+                </div>
+ 
+                <div style="font-weight: 700;">
+                 <p>7d %</p>
+                </div>
+ 
+                <div class="label2">
+                 <p>Market  Cap</p>
+                </div>
+
+                <div class="label1">
+                    Volume(24h)
+                 </div>
+ 
+                <div class="label2">
+                 <p>Circulation Supply</p>
+                </div>
+                   
+                </div>
+            
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- watchlist end -->
+<div class="profit-calculator-wholddiv">
+<div class="forex-profit-container">
+    <h1 class="profit-calculator-h1">forex Profit Calculator</h1>
+    <div class="profit-calculator">
+       
+        <form action="">
+            
+            <div class="left-profit">
+                <br>
+            <label for="currency-choose">Account Currency</label><br>
+            <select name="currency-choose" id="currency-choose">
+                <option value="usd">USD</option>
+                <option value="eur">EUR</option>
+                <option value="gbp">GBP</option>
+                <option value="chf">CHF</option>
+                <option value="jpy">JPY</option>
+                <option value="aud">AUD</option>
+            </select><br>
+
+            <label for="open-price">Opening Price</label><br>
+            <input type="text" name="open-price" id="open-price" placeholder="for ex : 1.27456"><br>
+            
+            <label for="currency-buy-sell">Buy or Sell?</label><br>
+            <select name="currency-buy-sell" id="currency-buy-sell">
+                <option value="usd">BUY</option>
+                <option value="eur">SELL</option>
+            </select><br>
+
+            <label for="currency-pair">Currency Pair</label><br>
+            <select name="currency-pair" id="currency-pair">
+                <option value="usd">EURUSD</option>
+                <option value="eur">EURGBP</option>
+                <option value="gbp">GBPUSD</option>
+                <option value="chf">USDJPY</option>
+                <option value="jpy">EURJPY</option>
+                <option value="aud">AUDUSD</option>
+                <option value="aud">AUDCAD</option>
+                <option value="usd">EURUSD</option>
+                <option value="eur">EURGBP</option>
+                <option value="gbp">GBPUSD</option>
+                <option value="chf">USDJPY</option>
+                <option value="jpy">EURJPY</option>
+                <option value="aud">AUDUSD</option>
+                <option value="aud">AUDCAD</option>
+                <option value="usd">EURUSD</option>
+                <option value="eur">EURGBP</option>
+                <option value="gbp">GBPUSD</option>
+                <option value="chf">USDJPY</option>
+                <option value="jpy">EURJPY</option>
+                <option value="aud">AUDUSD</option>
+                <option value="aud">AUDCAD</option>
+            </select><br>
+
+            <label for="close-price">Closing Price</label><br>
+            <input type="text" name="close-price" id="close-price"  placeholder="for ex : 1.27556"><br>
+
+            <label for="lot-size">Lot Size</label><br>
+            <input type="text" name="lot-size" id="lot-size"  placeholder="for ex : 0.1"><br>
+            
+            <input class="submit-btn" type="submit" placeholder="Calculate" value="Calculate"><br>
+        </div>
+        <div class="right-profit">
+            <br>
+            <label for="pips">pips</label><br>
+            <input type="text" name="pips" id="pips" placeholder="for ex : 10,000"><br>
+
+            <label for="my-profit">$ Your Profit $</label><br>
+            <input type="text" name="my-profit" id="my-profit" placeholder="$"><br>
+        </div>
+        </form>
+
+
+    </div>
+</div>
+
+
+<div class="forex-profit-container1">
+    <h1 class="profit-calculator-h1">Currency Exchange Calculator</h1>
+    <div class="profit-calculator">
+       
+        <form1 action="">
+            
+            <div class="left-profit1">
+                <br><br><br>
+
+                <label for="amount">Amount</label><br>
+              <input type="text" id="amount" name="amount" placeholder="for ex : $ 100"><br><br>
+
+
+            <label for="currency-from">From Currency</label><br>
+            <select name="currency-from" id="currency-from">
+                <option value="usd">USD</option>
+                <option value="eur">EUR</option>
+                <option value="gbp">GBP</option>
+                <option value="chf">CHF</option>
+                <option value="jpy">JPY</option>
+                <option value="aud">AUD</option>
+                <option value="usd">USD</option>
+                <option value="eur">INR</option>
+                <option value="gbp">GBP</option>
+                <option value="chf">CHF</option>
+                <option value="jpy">JPY</option>
+                <option value="aud">AUD</option>
+            </select><br><br>
+
+            <label for="currency-to">To Currency</label><br>
+            <select name="currency-to" id="currency-to">
+                <option value="usd">EUR</option>
+                <option value="eur">GBP</option>
+                <option value="gbp">USD</option>
+                <option value="chf">JPY</option>
+                <option value="jpy">AUD</option>
+                <option value="aud">CHF</option>
+                <option value="usd">EUR</option>
+                <option value="eur">GBP</option>
+                <option value="gbp">USD</option>
+                <option value="chf">JPY</option>
+                <option value="jpy">AUD</option>
+                <option value="aud">CHF</option>
+                <option value="usd">EUR</option>
+                <option value="eur">GBP</option>
+                <option value="gbp">USD</option>
+                <option value="chf">JPY</option>
+                <option value="jpy">AUD</option>
+                <option value="aud">CHF</option>
+            </select><br>
+            
+            <input class="submit-btn1" type="submit" placeholder="Calculate" value="Calculate"><br>
+        </div>
+        
+            
+        </form1>
+
+
+    </div>
+</div>
+</div>
+
+<h1 class="last-watched-h1">Last  Analysis Made By You</h1>
+
+
+<div class="graph-whole-container">
+
+<div class="graph-stock-div">
+
+
+<div class="analysis-div">
+    
+    <p class="apple-tech-analysis"><br>Technical Analysis for Apple</p>
+
+</div>
+
+
+<div class="analysis-company">
+<div>
+    <img class="apple-logo" src="https://s3-symbol-logo.tradingview.com/apple--big.svg" alt="">
+</div>
+<div class="company-price">
+   <div><h1 class="analysis-h1">&emsp;Apple Inc.</h1></div>
+   <div class="company-price-div"><h1 class="stock-price" id="stock-price" >152.55<sup>D</sup><sub>USD</sub></h1><span class="analysis-percent">-0.16 -0.75% <sub>Today</sub></span></div>
+</div>
+
+
+</div>
+
+<div class="days-periods">
+    <div class="oneday-period active">
+        <p>1D</p>
+    </div>
+    <div class="oneday-period">
+        <p>1M</p>
+    </div>
+    <div class="oneday-period">
+        <p>3M</p>
+    </div>
+    <div class="oneday-period">
+        <p>1Y</p>
+    </div>
+    <div class="oneday-period">
+        <p>5Y</p>
+    </div>
+    <div class="oneday-period">
+        <p>All</p>
+    </div>
+</div>
+
+<div class="graph-container">
+    <div class="graph">
+        <canvas id="myChart1" style="width:100%; max-width: 1300px; "></canvas>
+    </div>
+</div>
+
+
+</div>
+<!-- tradingview gainers and losers -->
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+
+function profile() {
+    
+ x  = document.getElementById("user-tab");
+
+ if(x.style.display === "none"){
+   x.style.display = "block";
+ } else {
+    x.style.display = "none";
+ }
+}
+
+function profile1() {
+    
+    x  = document.getElementById("user-notification");
+   
+    if(x.style.display === "none"){
+      x.style.display = "block";
+    } else {
+       x.style.display = "none";
+    }
+   }
+
+    </script>
+
+<script>
+    var xValues = ["Watched Videos", "courses completed","stock market course", "candlesticks course", "forex course", "Saving & Budgeting course","mutual funds course"];
+    var yValues = [10, 5, 10, 25, 15, 25, 10];
+    var barColors = [
+      "#b91d47",
+      "#00aba9",
+      "#2b5797",
+      "#e8c3b9",
+      "#1e7145",
+      "#b91d47",
+      "#2b5797"
+    ];
+    
+    new Chart("myChart", {
+      type: "doughnut",
+      data: {
+        labels: xValues,
+        datasets: [{
+          backgroundColor: barColors,
+          data: yValues
+        }]
+      },
+      options: {
+        title: {
+          display: true,
+          text: "This Month Learning In Our Platform"
+        }
+      }
+    });
+    </script>
+
+
+<script>
+         
+         let div1;
+
+for(i=0;i< 20;i++){
+
+    div1 = document.createElement("div");
+    div1.setAttribute("class","watchlist-label1");
+    div1.innerHTML = `
+                <div>
+                    <img class="star-img" src="images/icons8-hand-drawn-star-24.png" alt="">
+                </div>
+
+               <div>
+                <p>#1</p>
+               </div>
+
+               <div>
+                <p>Bitcoin</p>
+               </div>
+
+               <div>
+                <p>$24,720.56</p>
+               </div>
+               <div>
+                    <p>0.57%</p>
+                 </div>
+ 
+                <div>
+                 <p>1.78%</p>
+                </div>
+ 
+                <div>
+                 <p>14.03%</p>
+                </div>
+ 
+                <div>
+                 <p>$476.32B</p>
+                </div>
+
+                <div>
+                    <p>$26,777,540,133</p>
+                 </div>
+ 
+                <div>
+                 <p>19,295,037</p>
+                </div>`; 
+    console.log(div1);
+
+
+    document.querySelector(".coin-div-recent-watchlist").append(div1);
+}
+
+
+// analysis chart
+
+var xValues = [50,60,70,80,90,100,110,120,130,140,150];
+var yValues = [7,8,8,9,9,9,10,11,14,14,15];
+
+new Chart("myChart1", {
+  type: "line",
+  data: {
+    labels: xValues,
+    datasets: [{
+      fill: true,
+      lineTension: 0,
+      backgroundColor: "dodgerblue",
+      borderColor: "black",
+      data: yValues
+    }]
+  },
+  options: {
+    legend: {display: false},
+    scales: {
+      yAxes: [{ticks: {min: 6, max:16}}],
+    }
+  }
+});
+</script>
+<script>
+
+document.getElementById("stock-price").innerHTML = Math.random() * 2.5 + 152 ;
+   
+</script>
+
+</body>
+</html>

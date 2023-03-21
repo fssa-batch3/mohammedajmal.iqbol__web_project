@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn</title>
+    <link rel="stylesheet" href="../assets/css/learn.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;0,800;0,900;1,600&family=Tilt+Neon&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div class="navbar">
+            <img class="nav-logo" src="../assets/../assets/images/Screenshot 2023-02-11 021952.png" alt="">
+            <input class="search" list="search" type="text" placeholder="Search for courses,videos & Blogs">
+            <datalist id="search">
+                <option value="warren buffett in anual letter,stays upbeat......">
+                <option value="tesla elon musk fans tout cybertruck demand......">
+                <option value="how to buy a stock and make your money four......">
+                <option value="Dow Jones falters on hot inflation boeing groundened......">
+                <option value="What's going on microsoft and between apple shares......">
+                <option value="Big Tech hits $1.5 trillion in sales last year......">
+                <option value="Sirius XM (SIRI) and Toyoto collaborate to celebrate......">
+                <option value="Futures fall ahead of key inflation report investor's......">
+                <option value="Netflix lands first partnership with NFL: how patrick......">
+                <option value="Whatsapp to bring i-Message-like-feature to android and iPhone......">
+            </datalist>
+            <div class="notification">
+              &emsp;&emsp;&emsp; <img class="notificationimg" onclick="profile1()" src="../assets/images/icons8-notification-50.png" alt="">
+            </div>
+            <div class="notification">
+                <div class="dropdown">
+                <img class="notificationimg" onclick="profile1()" src="../assets/images/icons8-translator-50.png" alt="">
+                <div class="dropdown-content-lang"><br>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; English </a>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; France</a>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Italy</a>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Arabic</a>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Espanol</a>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Algeria</a>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Albania</a>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Japanese</a>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Hindi</a>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Tamil</a>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Portuguese</a>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Spanish</a>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Russian</a>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; German</a>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Korean</a>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Telugu</a>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Turkish</a>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Ukranian</a>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Malayalam</a>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Kannada</a>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Chinese</a><br>
+                    </div>
+                    </div>
+            </div>
+            <div class="notification">
+                <div class="dropdown">
+                <img class="notificationimg" onclick="profile1()" src="../assets/images/icons8-online-support-50.png" alt="">
+                <div class="dropdown-content"><br>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-group-50.png">&nbsp; Connect With Us</a>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-group-message-50.png">&nbsp; Chat With Us</a>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-invite-50.png">&nbsp; Write a Mail</a>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-online-support-50.png">&nbsp; Support Center</a><br>
+                    </div>
+                    </div>
+            </div>
+            <div class="notification">
+                <div class="dropdown" id="dropuser">
+                    
+                    <div class="dropdown-content"><br>
+                      <a href="../pages/userprofile.html"><img class="user-dropdown" src="../assets/images/icons8-group-50.png">&nbsp; Accounts</a>
+                      <a href="#"><img class="user-dropdown" src="../assets/images/icons8-logout-rounded-50.png">&nbsp; Personal Details</a>
+                      <a href="#"><img class="user-dropdown" src="../assets/images/icons8-invite-50.png">&nbsp; Invite & Earn</a>
+                      <a href="#"><img class="user-dropdown" src="../assets/images/icons8-membership-card-30.png">&nbsp; Membership</a>
+                      <a href="#"><img class="user-dropdown" src="../assets/images/icons8-light-mode-78.png">&nbsp; Appearance : Light</a>
+                      <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Language : English</a>
+                      <a href="#"><img class="user-dropdown" src="../assets/images/icons8-user-location-30.png">&nbsp; Location : India</a>
+                      <a href="#"><img class="user-dropdown" src="../assets/images/icons8-gears-30.png">&nbsp; Settings</a>
+                      <a href="#"><img class="user-dropdown" src="../assets/images/icons8-online-support-50.png">&nbsp; Help</a>
+                      <a href="#"><img class="user-dropdown" src="../assets/images/icons8-group-50.png">&nbsp; Send feedback</a>
+                      <a href="#"><img class="user-dropdown" src="../assets/images/icons8-logout-rounded-50 (1).png">&nbsp; Log Out</a><br>
+                    </div>
+                  </div>
+            </div>
+
+        </div>
+
+        <div class="tab">
+            <button class="tablinks active" id="tab-courses" onclick="homeon()">All Courses</button>
+            <button class="tablinks" onclick="openCity(event, 'free-courses')">Free Courses</button>
+            <button class="tablinks" onclick="openCity(event, 'live-courses')">Live Courses</button>
+            <svg height="100" width="100" class="blinking">
+                <circle cx="50" cy="50" r="10" fill="red" /></svg>
+            <!-- <button class="tablinks" onclick="openCity(event, 'Indices')"></button> -->
+            <!-- <button class="tablinks" onclick="openCity(event, 'Futures')"></button> -->
+            <button class="tablinks" onclick="openCity(event, 'latest-courses')">&emsp;Latest Courses</button>
+            <button class="tablinks" onclick="openCity(event, 'my-courses')">My Courses</button>
+            <button class="tablinks" onclick="openCity(event, 'blogs')">Blogs</button>
+            <button class="tablinks" onclick="openCity(event, 'youtube-videos')">Youtube Videos</button>
+                        <!-- <button class="tablinks" onclick="openCity(event, 'budget-saving')"> &emsp;Profit Calculator</button> -->
+
+          </div> 
+    </nav>
+    <main>
+
+        <div class="bread-crumb">
+            <div><span class="slash">=></span> <a class="bread-crumb1" href="#">Home</a></div><span class="slash">/</span>
+            <div><a class="bread-crumb1" href="#">Dashboard</a></div><span class="slash">/</span>
+            <div><a class="bread-crumb1" >Learn</a></div>
+        </div>
+
+  
+        <div id="default">
+            <!-- <h1 class="home-news-h1" >All News</h1> -->
+          
+
+          <div class="course-selection-div">
+            <h1 class="course-category"><br>&emsp;&emsp;Grow Your Money with Our Courses</h1>
+            <p class="course-desc">Take one of NSE's range of Our Latest courses and learn how to trade using this incredibly useful tips. Its simple logic and readability makes trading perfect for Stocks, forex, futures, and Crytocurrencies. You'll learn how to trade in all assets and markets with using these courses...</p>
+            <button class="course-btn">
+                Explore All Courses
+            </button>
+
+
+            <div class="scroll-courses-div-stocks">
+               
+
+            </div>
+          </div>
+
+
+
+
+        </div>
+
+          
+          <div id="live-courses" class="tabcontent">
+
+
+            <div class="course-selection-div-videos">
+                <h1 class="course-category"><br>&emsp;&emsp;Explore Our Variety of Youtube Videos Posted By Proffessional Traders</h1>
+                <p class="course-desc">Take one of NSE's range of Market Trading Videos and learn how to trade using this incredibly useful tips. Its simple logic and readability makes trading perfect for Stocks, forex and Crytocurrencies. You'll learn how to trade in all assets and markets  using our Videos...</p>
+                <button class="course-btn">
+                    Explore Learing Videos
+                </button>
+    
+    
+                <div class="scroll-courses-div-videos">
+                   
+    
+                </div>
+              </div>
+              <!-- videos end -->
+           
+    
+            
+    
+          </div>
+
+          <div id="free-courses" class="tabcontent">
+
+
+            <div class="course-selection-div-videos">
+                <h1 class="course-category"><br>&emsp;&emsp;Grow Your Money with Our Latest Courses</h1>
+                <p class="course-desc">Take one of NSE's range of Our Latest courses and learn how to trade using this incredibly useful tips. Its simple logic and readability makes trading perfect for Stocks, forex, futures, and Crytocurrencies. You'll learn how to trade in all assets and markets with using these courses...</p>
+                <button class="course-btn">
+                    Explore Latest Courses
+                </button>
+                
+    
+    
+                <div class="scroll-courses-div">
+                   
+    
+                </div>
+              </div>
+    
+    
+    
+    
+            <!-- stocks end -->
+
+          <!-- <div id="my-courses" class="tabcontent">
+
+
+
+            <div class="course-selection-div">
+                <h1 class="course-category"><br>&emsp;&emsp;Expand your career opportunities with Stocks</h1>
+                <p class="course-desc">Take one of NSE's range of Stock Market courses and learn how to trade using this incredibly useful tips. Its simple logic and readability makes trading perfect for Stocks, forex, futures, and Crytocurrencies. You'll learn how to trade in all assets and markets with using stocks...</p>
+                <button class="course-btn">
+                    Explore Stocks
+                </button>
+    
+    
+                <div class="scroll-courses-div">
+                   
+    
+                </div>
+              </div> -->
+    
+    
+    
+    
+            <!-- stocks end -->
+            
+           
+    
+            
+    
+          </div>
+          <div id="youtube-videos" class="tabcontent">
+           
+            <div class="course-selection-div-latestcourses">
+              <h1 class="course-category"><br>&emsp;&emsp;Grow Your Money with Our Courses</h1>
+              <p class="course-desc">Take one of NSE's range of Our Latest courses and learn how to trade using this incredibly useful tips. Its simple logic and readability makes trading perfect for Stocks, forex, futures, and Crytocurrencies. You'll learn how to trade in all assets and markets with using these courses...</p>
+              <button class="course-btn">
+                  Explore Our Youtube Videos
+              </button>
+  
+  
+              <div class="scroll-courses-div-youtube">
+                 
+  
+              </div>
+            </div>
+            
+    
+          </div>
+          <div id="latest-courses" class="tabcontent">
+           
+            <div class="course-selection-div-latestcourses">
+              <h1 class="course-category"><br>&emsp;&emsp;Grow Your Money with Our Courses</h1>
+              <p class="course-desc">Take one of NSE's range of Our Latest courses and learn how to trade using this incredibly useful tips. Its simple logic and readability makes trading perfect for Stocks, forex, futures, and Crytocurrencies. You'll learn how to trade in all assets and markets with using these courses...</p>
+              <button class="course-btn">
+                  Explore All Courses
+              </button>
+  
+  
+              <div class="scroll-courses-div5">
+                 
+  
+              </div>
+            </div>
+            
+    
+          </div>
+          <div id="blogs" class="tabcontent">
+           
+            <div class="blogs-selection-div">
+                <h1 class="course-category"><br>&emsp;&emsp;Explore Our Variety of Blogs Posted By Proffessional Traders</h1>
+                <p class="course-desc">Take one of NSE's range of Market Trading Blogs and learn how to trade using this incredibly useful tips. Its simple logic and readability makes trading perfect for Stocks, forex and Crytocurrencies. You'll learn how to trade in all assets and markets using our Blogs...</p>
+                <button class="course-btn">
+                    Explore Our Blogs
+                </button>
+    
+    
+                <div class="scroll-courses-div4">
+                   
+    
+                </div>
+              </div>
+            
+    
+          </div>
+
+          <div id="my-courses" class="tabcontent">
+           
+            <div class="blogs-selection-div">
+              <h1 class="course-category"><br>&emsp;&emsp;Explore Our Variety of Blogs Posted By Proffessional Traders</h1>
+              <p class="course-desc">Take one of NSE's range of Market Trading Blogs and learn how to trade using this incredibly useful tips. Its simple logic and readability makes trading perfect for Stocks, forex and Crytocurrencies. You'll learn how to trade in all assets and markets using our Blogs...</p>
+              <button class="course-btn">
+                  Explore Our Blogs
+              </button>
+  
+  
+              <div class="scroll-courses-div-mycourses">
+                 
+  
+              </div>
+            </div>
+            
+    
+          </div>
+    
+    
+    
+    </main>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <script>
+            function openCity(evt, cityName) {
+              var i, tabcontent, tablinks;
+              tabcontent = document.getElementsByClassName("tabcontent");
+              for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+              }
+              tablinks = document.getElementsByClassName("tablinks");
+              for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace("active", "");
+              }
+              document.getElementById(cityName).style.display = "block";
+              evt.currentTarget.className += " active";
+    
+             
+              document.getElementById("default").style.display = "none";
+              
+            }
+    
+    function homeon() {
+      
+      document.getElementById("default").style.display = "block";
+      document.getElementById("my-courses").style.display = "none";
+      document.getElementById("blogs").style.display = "none";
+      document.getElementById("latest-courses").style.display = "none";
+      document.getElementById("youtube-videos").style.display = "none";
+      document.getElementById("free-courses").style.display = "none";
+      document.getElementById("live-courses").style.display = "none";
+            
+    }
+          
+            </script>
+    
+    
+
+
+<!-- <script>
+
+
+const course_data = JSON.parse(localStorage.getItem("course_data")); 
+
+
+       let course_div;
+for(i=0;i<course_data.length;i++){
+       course_div = document.createElement("a");
+       course_div.setAttribute("class","first-course");
+       course_div.setAttribute("href","details.html?name=" + course_data[i]["title"]);
+       course_div.innerHTML = `<div>
+                        <img class="course-img" src=${course_data[i]["img"]} alt="">
+                    </div>
+                    <div>
+                        <h3 class="course-title">${course_data[i]["title"]}</h3>
+                        <div class="course-details">
+                            <p class="course-timing">${course_data[i]["timing"]}</p>
+                            <p class="course-ln">${course_data[i]["language"]}</p>
+                            <p class="course-enrolled">${course_data[i]["enrolled"]}</p>
+                        </div>
+                     <h3 class="course-cost">${course_data[i]["cost"]}</h3>
+                    </div> `;
+            // console.log(course_div);
+
+ 
+            document.querySelector(".scroll-courses-div").append(course_div);
+
+        };
+
+        
+</script> -->
+
+<!-- <script>
+       let course_div2;
+for(i=0;i<15;i++){
+       course_div2 = document.createElement("div");
+       course_div2.setAttribute("class","first-course");
+       course_div2.innerHTML = `<div>
+                        <img class="course-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDyUbxTWch3IxpNAoPaAzAttyMB8K4F3reGg&usqp=CAU" alt="">
+                    </div>
+                    <div>
+                        <h3 class="course-title">forex trading Course By NSE</h3>
+                        <div class="course-details">
+                            <p class="course-timing">6 Hrs</p>
+                            <p class="course-ln">English</p>
+                            <p class="course-enrolled">4660080 Enrolled</p>
+                        </div>
+                     <h3 class="course-cost">Learn for FREE</h3>
+                    </div> `;
+            // console.log(course_div2);
+
+ 
+            document.querySelector(".scroll-courses-div2").append(course_div2);
+
+        }
+</script> -->
+<!-- <script>
+    let course_div3;
+for(i=0;i<15;i++){
+    course_div3 = document.createElement("div");
+    course_div3.setAttribute("class","first-course2");
+    course_div3.innerHTML = `<iframe width="300" height="325" src="https://www.youtube.com/embed/LLIBSVexU78" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> `;
+        //  console.log(course_div3);
+
+
+         document.querySelector(".scroll-courses-div3").append(course_div3);
+
+     }
+</script> -->
+<!-- <script>
+    let course_div_videos;
+for(i=0;i<12;i++){
+    course_div_videos = document.createElement("div");
+    course_div_videos.setAttribute("class","first-course2-videos");
+    course_div_videos.innerHTML = `<iframe width="380" height="325" src="https://www.youtube.com/embed/LLIBSVexU78" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> `;
+        //  console.log(course_div_videos);
+
+
+         document.querySelector(".scroll-courses-div-videos").append(course_div_videos);
+
+     }
+</script> -->
+<script>
+
+
+const blogs_data = [
+
+  {
+   img:'https://tradeciety.com/hubfs/Imported_Blog_Media/947cUtXZwI-HD.jpeg',
+   blog_title :'How Professional Traders use..',
+   blog_timing:'5 Min Read',
+   blog_language:'English',
+   blog_hashtag:' #finance #forex',
+   blog_cost:'Read for FREE'
+  },
+  {
+    img:'https://tradeciety.com/hubfs/Folie13.png',
+   blog_title :'6 Forex Price Action Trading..',
+   blog_timing:'5 Min Read',
+   blog_language:'English',
+   blog_hashtag:' #finance #forex',
+   blog_cost:'Read for FREE'
+  },
+  {
+    img:'https://tradeciety.com/hubfs/cuphandle%20%282%29.png',
+   blog_title :'Learn How To Use The Stocha..',
+   blog_timing:'5 Min Read',
+   blog_language:'English',
+   blog_hashtag:' #finance #money',
+   blog_cost:'Read for FREE'
+  },
+  {
+    img:'https://tradeciety.com/hubfs/Imported_Blog_Media/Stoch_MA-1.png',
+   blog_title :'3 Great Reversal Strategies..',
+   blog_timing:'5 Min Read',
+   blog_language:'English',
+   blog_hashtag:' #money #Indicator',
+   blog_cost:'Read for FREE'
+  },
+  {
+    img:'https://tradeciety.com/hubfs/XAUUSD_2023-01-11_11-36-40.png',
+   blog_title :'8 must know PRICE ACTION..',
+   blog_timing:'5 Min Read',
+   blog_language:'English',
+   blog_hashtag:' #finance #money',
+   blog_cost:'Read for FREE'
+  },
+  {
+   img:'https://tradeciety.com/hubfs/Imported_Blog_Media/OvBP_gJnU9E-HD-1.jpeg',
+   blog_title :'Start Trading like a Pro with..',
+   blog_timing:'5 Min Read',
+   blog_language:'English',
+   blog_hashtag:'#PriceAction',
+   blog_cost:'Read for FREE'
+  },
+  {
+    img:'https://tradeciety.com/hubfs/Imported_Blog_Media/aDih3RZkt9I-HD-1.jpeg',
+   blog_title :'How to Trade STRONG Trends..',
+   blog_timing:'5 Min Read',
+   blog_language:'English',
+   blog_hashtag:' #finance #money',
+   blog_cost:'Read for FREE'
+  },
+  {
+    img:'https://tradeciety.com/hubfs/Imported_Blog_Media/OY-RwsKwm2o-HD.jpeg',
+   blog_title :'Ultimate free Price Action..',
+   blog_timing:'5 Min Read',
+   blog_language:'English',
+   blog_hashtag:' #finance #money',
+   blog_cost:'Read for FREE'
+  },
+  {
+    img:'https://tradeciety.com/hubfs/Imported_Blog_Media/JDpYMDGawMI-HD.jpeg',
+   blog_title :'Chart Pattern Trading – Full..',
+   blog_timing:'5 Min Read',
+   blog_language:'English',
+   blog_hashtag:' #finance #money',
+   blog_cost:'Read for FREE'
+  },
+  {
+    img:'https://tradeciety.com/hubfs/Imported_Blog_Media/Ethcv9JS4Zs-HD.jpeg',
+   blog_title :'9 best Day Trading tips to use..',
+   blog_timing:'5 Min Read',
+   blog_language:'English',
+   blog_hashtag:' #finance #money',
+   blog_cost:'Read for FREE'
+  }
+ 
+];
+
+ 
+
+
+    let course_div4;
+for(i=0;i<blogs_data.length;i++){
+    course_div4 = document.createElement("div");
+    course_div4.setAttribute("class","first-course3");
+    course_div4.setAttribute("href","details.html?name=" + blogs_data[i]["blog_title"]);
+    course_div4.innerHTML = `<div>
+                     <img class="course-img" src=${blogs_data[i]["img"]} alt="">
+                 </div>
+                 <div>
+                     <h3 class="course-title">${blogs_data[i]["blog_title"]}</h3>
+                     <div class="course-details">
+                         <p class="course-timing">${blogs_data[i]["blog_timing"]}</p>
+                         <p class="course-ln">${blogs_data[i]["blog_language"]}</p>
+                         <p class="course-enrolled">${blogs_data[i]["blog_hashtag"]}</p>
+                     </div>
+                  <h3 class="course-cost">${blogs_data[i]["blog_cost"]}</h3>
+                 </div> `;
+        //  console.log(course_div4);
+
+
+         document.querySelector(".scroll-courses-div4").append(course_div4);
+
+     };
+
+</script>
+
+<script>
+       
+const course_data = JSON.parse(localStorage.getItem("course_data"));
+    
+let course_div_stocks;
+
+           
+           for(i=0;i<course_data.length;i++){
+                  course_div_stocks = document.createElement("a");
+                  course_div_stocks.setAttribute("class","first-course2-stocks");
+                  course_div_stocks.setAttribute("href","details.html?name=" + course_data[i]["title"]);
+                  let cost ="";
+                  let discount ="";
+
+if(course_data[i]["cost"] === "learn for free"){
+   cost += " ";
+   discount += 100;
+}
+else {
+  cost +=  "₹" + " ";
+  discount += 100 - ( ((course_data[i]["cost"])  / (course_data[i]["old_cost"])) * 100 );
+};
+                  course_div_stocks.innerHTML = `<div>
+                                   <img class="course-img-stocks" src=${course_data[i]["img"]} alt="">
+                               </div>
+                               <div>
+                                   <h3 class="course-title">${course_data[i]["title"]}</h3>
+                                   <div class="course-details">
+                                       <p class="course-timing">${ "<b>Dur :</b>" + course_data[i]["timing"]}</p>
+                                       <p class="course-ln">&emsp;${ "<b>Lang : </b>" + course_data[i]["language"]}</p>
+                                       <p class="course-enrolled">&emsp;${"<b>Enr :</b>" + course_data[i]["enrolled"] + " " + "Enrolled"}</p>
+                                   </div>
+                                   <div class="flexcost">
+                                    <h3 class="course-cost">${cost + " " + course_data[i]["cost"]}</h3>
+                                <strike class="course-oldcost" >${ "₹" + " " + course_data[i]["old_cost"]}</strike>
+                                <p class="course-discount" >${ discount + " " + "% discount"  }</p>
+                                </div>
+                               </div> `;
+                       console.log(course_div_stocks);
+           
+            
+                       document.querySelector(".scroll-courses-div-stocks").append(course_div_stocks);
+
+
+                   };
+
+                  
+
+
+    </script>
+
+    <script>
+
+const register_arr = JSON.parse(localStorage.getItem("register_arr"));
+    console.log(register_arr);
+
+    const login_arr = JSON.parse(localStorage.getItem("login_arr"));
+    console.log(login_arr);
+
+    const get_obj = register_arr.find( event => event.email === login_arr);
+    console.log(get_obj);
+     
+
+      let user_profile;
+
+
+      user_profile = document.createElement("img");
+      user_profile.setAttribute("id","user-profile");
+      user_profile.setAttribute("class","dropbtn");
+      user_profile.setAttribute("onclick","profile()");
+      user_profile.setAttribute("src", get_obj["profile_pic"]);
+      document.querySelector("#dropuser").prepend(user_profile);
+   
+   
+// search filter start free courses
+
+  const course_data_arr = JSON.parse(localStorage.getItem("course_data"));
+
+
+  let obj = {
+
+    cost:'learn for free',
+
+  };
+
+   
+  const filtervalues = course_data_arr.filter( (course) => course.cost === obj.cost );
+  console.log(filtervalues);
+
+
+  let course_div_freecourses;
+           
+           for(i=0;i<filtervalues.length;i++){
+                  course_div_freecourses = document.createElement("a");
+                  course_div_freecourses.setAttribute("class","first-course2-stocks");
+                  course_div_freecourses.setAttribute("href","details.html?name=" + filtervalues[i]["title"]);
+                  let discount = 100;
+                  course_div_freecourses.innerHTML = `<div>
+                                   <img class="course-img-stocks" src=${filtervalues[i]["img"]} alt="">
+                               </div>
+                               <div>
+                                   <h3 class="course-title">${filtervalues[i]["title"]}</h3>
+                                   <div class="course-details">
+                                       <p class="course-timing">${ "<b>Dur :</b>" + filtervalues[i]["timing"]}</p>
+                                       <p class="course-ln">&emsp;${ "<b>Lang : </b>" + filtervalues[i]["language"]}</p>
+                                       <p class="course-enrolled">&emsp;${"<b>Enr :</b>" + filtervalues[i]["enrolled"] + " " + "Enrolled"}</p>
+                                   </div>
+                                <div class="flexcost">
+                                <h3 class="course-cost">${ " " + filtervalues[i]["cost"]}</h3>
+                                <strike class="course-oldcost" >${ "₹" + " " + filtervalues[i]["old_cost"]}</strike>
+                                <p class="course-discount" >${ discount  + " " + "% discount"  }</p>
+                                </div>
+                               </div> `;
+                      //  console.log(course_div_stocks);
+           
+            
+                       document.querySelector(".scroll-courses-div").append(course_div_freecourses);
+
+
+                   };
+
+
+                   //end
+
+
+    // search filter start live courses
+
+
+let live_obj = {
+
+  timing:'live',
+
+};
+
+ 
+const filtervalue = course_data_arr.filter( (course) => course.timing === live_obj.timing );
+console.log(filtervalue);
+
+
+let course_div_livecourses;
+         
+         for(i=0;i<filtervalue.length;i++){
+                course_div_livecourses = document.createElement("a");
+                course_div_livecourses.setAttribute("class","first-course2-stocks");
+                course_div_livecourses.setAttribute("href","details.html?name=" + filtervalue[i]["title"]);
+                let cost = "";
+                let discount ="";
+
+if(filtervalue[i]["cost"] === "learn for free"){
+   cost += " ";
+   discount += 100;
+}
+else {
+  cost +=  "₹" + " ";
+  discount += 100 - ( ((course_data[i]["cost"])  / (course_data[i]["old_cost"])) * 100 );
+};
+                course_div_livecourses.innerHTML = `<div>
+                                 <img class="course-img-stocks" src=${filtervalue[i]["img"]} alt="">
+                             </div>
+                             <div>
+                                 <h3 class="course-title">${filtervalue[i]["title"]}</h3>
+                                 <div class="course-details">
+                                       <p class="course-timing">${ "<b>Dur :</b>" + filtervalue[i]["timing"]}</p>
+                                       <p class="course-ln">&emsp;${ "<b>Lang : </b>" + filtervalue[i]["language"]}</p>
+                                       <p class="course-enrolled">&emsp;${"<b>Enr :</b>" + filtervalue[i]["enrolled"] + " " + "Enrolled"}</p>
+                                   </div>
+                                 <div class="flexcost">
+                                <h3 class="course-cost">${ cost + " " + filtervalue[i]["cost"]}</h3>
+                                <strike class="course-oldcost" >${ "₹" + " " + filtervalue[i]["old_cost"]}</strike>
+                                <p class="course-discount" >${ discount  + " " + "% discount"  }</p>
+                                </div>
+                             </div> `;
+                    //  console.log(course_div_stocks);
+         
+          
+                     document.querySelector(".scroll-courses-div-videos").append(course_div_livecourses);
+
+
+                 };
+
+
+
+   //  search filter start latest courses
+
+  
+   const newdate = new Date();
+   let newdate1 = newdate.toDateString();
+  //  const newdate1 = newdate.getDate() - 5;
+   console.log(newdate1);
+
+
+   const filterlatest = course_data_arr.filter((latcourse) => latcourse.datestring === newdate1 );
+  console.log(filterlatest);
+
+  let course_div_latestcourses;
+         
+         for(i=course_data_arr.length-8;i<course_data_arr.length;i++){
+                course_div_latestcourses = document.createElement("a");
+                course_div_latestcourses.setAttribute("class","first-course2-stocks");
+                course_div_latestcourses.setAttribute("href","details.html?name=" + course_data_arr[i]["title"]);
+                let cost = "";
+                let discount ="";
+
+if(course_data_arr[i]["cost"] === "learn for free"){
+   cost += " ";
+   discount += 100;
+}
+else {
+  cost +=  "₹" + " ";
+  discount += 100 - ( ((course_data[i]["cost"])  / (course_data[i]["old_cost"])) * 100 );
+};
+                course_div_latestcourses.innerHTML = `<div>
+                                 <img class="course-img-stocks" src=${course_data_arr[i]["img"]} alt="">
+                             </div>
+                             <div>
+                                 <h3 class="course-title">${course_data_arr[i]["title"]}</h3>
+                                 <div class="course-details">
+                                       <p class="course-timing">${ "<b>Dur :</b>" + course_data_arr[i]["timing"]}</p>
+                                       <p class="course-ln">&emsp;${ "<b>Lang : </b>" + course_data_arr[i]["language"]}</p>
+                                       <p class="course-enrolled">&emsp;${"<b>Enr :</b>" + course_data_arr[i]["enrolled"] + " " + "Enrolled"}</p>
+                                   </div>
+                                 <div class="flexcost">
+                                <h3 class="course-cost">${ cost + " " + course_data_arr[i]["cost"]}</h3>
+                                <strike class="course-oldcost" >${ "₹" + " " + course_data_arr[i]["old_cost"]}</strike>
+                                <p class="course-discount" >${ discount  + " " + "% discount"  }</p>
+                                </div>
+                             </div> `;
+                    //  console.log(course_div_stocks);
+         
+          
+                     document.querySelector(".scroll-courses-div5").append(course_div_latestcourses);
+
+
+                 };
+            
+ </script>
+
+ <script>
+
+
+
+// const videos_data = [
+
+//   {
+//    source:'https://www.youtube.com/embed/dV00JxVDBd',
+//    video_title :'How to Start Trading Stocks..',
+//    video_creator:'Ricky Gutierezz',
+//    video_language:'English',
+//    video_hashtag:' #finance #forex'
+//   },
+//   {
+//     source:'https://www.youtube.com/embed/tDmMOzNgTHI',
+//    video_title :'How to learn Day Trading..',
+//    video_creator:'The Urban Fight',
+//    video_language:'English',
+//    video_hashtag:' #finance #forex'
+//   },
+//   {
+//     source:'https://www.youtube.com/embed/eynxyoKgpng',
+//    video_title :'Learn to do Technical Ana..',
+//    video_creator:'The Trading Channel',
+//    video_language:'English',
+//    video_hashtag:' #finance #money'
+//   },
+//   {
+//     source:'https://www.youtube.com/embed/9-LagvSLbOA',
+//    video_title :'How To Read Stock Charts..',
+//    video_creator:'Learn App',
+//    video_language:'English',
+//    video_hashtag:' #money #Indicator'
+//   },
+//   {
+//     source:'https://www.youtube.com/embed/hEUALimWs7E',
+//    video_title :'The best CandleSticks Pat..',
+//    video_creator:'The Trading Channel',
+//    video_language:'English',
+//    video_hashtag:' #finance #money'
+//   },
+//   {
+//    source:'https://www.youtube.com/embed/MSzOocvljqc',
+//    video_title :'What is Support & Resistance..',
+//    video_creator:'The Trading Channel',
+//    video_language:'English',
+//    video_hashtag:'#PriceAction'
+//   },
+//   {
+//     source:'https://www.youtube.com/embed/p7HKvqRI_Bo',
+//    video_title :'How does the market work..',
+//    video_creator:'TedED',
+//    video_language:'English',
+//    video_hashtag:' #finance #money'
+//   },
+//   {
+//     source:'https://www.youtube.com/embed/CMQLdJa64Wk',
+//    video_title :'How do investors choose..',
+//    video_creator:'TedED',
+//    video_language:'English',
+//    video_hashtag:' #finance #money'
+//   },
+//   {
+//     source:'https://www.youtube.com/embed/5Hah_jffaHg',
+//    video_title :'Learn about Short Sell..',
+//    video_creator:'CA Rachana Ranade',
+//    video_language:'English',
+//    video_hashtag:' #finance #money'
+//   },
+//   {
+//     source:'https://www.youtube.com/embed/5hnyb78_sMc',
+//    video_title :'What is Futures and Options..',
+//    video_creator:'5 Min Read',
+//    video_language:'English',
+//    video_hashtag:' #finance #money'
+//   }
+ 
+// ];
+
+ 
+
+
+//     let course_div5;
+// for(i=0;i<videos_data.length;i++){
+//     course_div5 = document.createElement("div");
+//     course_div5.setAttribute("class","first-course3");
+//     course_div5.setAttribute("href","details.html?name=" + videos_data[i]["video_title"]);
+//     course_div5.innerHTML = `<div>
+//       <iframe class="course-img" width="560" height="315" src=${videos_data[i]["source"]}  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+//                  </div>
+//                  <div>
+//                      <h3 class="course-title">${videos_data[i]["video_title"]}</h3>
+//                      <div class="course-details-videos">
+//                          <p class="course-timing">${videos_data[i]["video_creator"]}</p>
+//                         <div class="course-details">
+//                          <p class="course-ln">${videos_data[i]["video_language"]}</p>
+//                          <p class="course-enrolled">${videos_data[i]["video_hashtag"]}</p>
+//                      </div>
+//                      </div>
+//                  </div> `;
+//         //  console.log(course_div4);
+
+
+//          document.querySelector(".scroll-courses-div-youtube").append(course_div5);
+
+//      };
+   
+
+     //my courses start
+
+     const mycourses = JSON.parse(localStorage.getItem("add-to-card"));
+     console.log(mycourses);
+
+    
+    
+
+     let my_courses;
+         
+         for(i=0;i<mycourses.length;i++){
+                my_courses = document.createElement("a");
+                my_courses.setAttribute("class","first-course2-stocks");
+                // console.log(mycourses[i]["title"]);
+                my_courses.setAttribute("href","details.html?name=" + mycourses[i]["title"]);
+                let cost = "";
+                let discount ="";
+
+if(mycourses[i]["cost"] === "learn for free"){
+   cost += " ";
+   discount += 100;
+}
+else {
+  cost +=  "₹" + " ";
+  discount += 100 - ( ((course_data[i]["cost"])  / (course_data[i]["old_cost"])) * 100 );
+};
+                my_courses.innerHTML = `<div>
+                             <img class="course-img-stocks" src=${mycourses[i]["img"]} alt="">
+                             </div>
+                             <div>
+                                 <h3 class="course-title">${mycourses[i]["title"]}</h3>
+                                 <div class="course-details">
+                                       <p class="course-timing">${ "<b>Dur :</b>" + mycourses[i]["timing"]}</p>
+                                       <p class="course-ln">&emsp;${ "<b>Lang : </b>" + mycourses[i]["language"]}</p>
+                                       <p class="course-enrolled">&emsp;${"<b>Enr :</b>" + mycourses[i]["enrolled"] + " " + "Enrolled"}</p>
+                                   </div>
+                                 <div class="flexcost">
+                                <h3 class="course-cost">${ cost + " " + mycourses[i]["cost"]}</h3>
+                                <strike class="course-oldcost" >${ "₹" + " " + mycourses[i]["old_cost"]}</strike>
+                                <p class="course-discount" >${ discount  + " " + "% discount"  }</p>
+                                </div>
+                             </div> `;
+                    //  console.log(course_div_stocks);
+         
+          
+                     document.querySelector(".scroll-courses-div-mycourses").append(my_courses);
+
+
+
+                 };
+
+
+
+                      //delete my courses
+                //       const get_mycourses = mycourses.find((event) => event["id"] === get_courses["id"] );
+                // console.log(get_mycourses);
+
+                    //  let delete_mycourses = document.getElementById("delete");
+                //  delete_mycourses.addEventListener("click", deletecourse => {
+                //  deletecourse.preventDefault();
+
+                // //  let index = mycourses.indexOf(get_mycourses);
+                // //  console.log(index);
+
+                // //  mycourses.splice(index,1);
+
+                // //  localStorage.setItem("add-to-card",JSON.stringify(mycourses));
+                // //  window.location.href = "learn.html";
+          
+                 
+                //  });
+                
+
+                
+
+
+//tabs preventdefault 
+
+// const freecourses = document.getElementById("my-courses");
+// freecourses.addEventListener("change",(event) => {
+//   event.preventDefault();
+
+// });
+                 
+              
+
+       
+
+ </script>
+  
+</body>
+</html>

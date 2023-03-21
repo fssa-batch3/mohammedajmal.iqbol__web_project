@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News</title>
+    <link rel="stylesheet" href="../assets/css/news.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;0,800;0,900;1,600&family=Tilt+Neon&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div class="navbar">
+            <img class="nav-logo" src="../assets/images/Screenshot 2023-02-11 021952.png" alt="">
+            <input class="search" list="search" type="text" placeholder="Search for topics,location & sources">
+            <datalist id="search">
+                <option value="warren buffett in anual letter,stays upbeat......">
+                <option value="tesla elon musk fans tout cybertruck demand......">
+                <option value="how to buy a stock and make your money four......">
+                <option value="Dow Jones falters on hot inflation boeing groundened......">
+                <option value="What's going on microsoft and between apple shares......">
+                <option value="Big Tech hits $1.5 trillion in sales last year......">
+                <option value="Sirius XM (SIRI) and Toyoto collaborate to celebrate......">
+                <option value="Futures fall ahead of key inflation report investor's......">
+                <option value="Netflix lands first partnership with NFL: how patrick......">
+                <option value="Whatsapp to bring i-Message-like-feature to android and iPhone......">
+            </datalist>
+            <div class="notification">
+                &emsp;&emsp;&emsp; <img class="notificationimg" onclick="profile1()" src="../assets/images/icons8-notification-50.png" alt="">
+              </div>
+              <div class="notification">
+                  <div class="dropdown">
+                  <img class="notificationimg" onclick="profile1()" src="../assets/images/icons8-translator-50.png" alt="">
+                  <div class="dropdown-content-lang"><br>
+                      <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; English </a>
+                      <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; France</a>
+                      <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Italy</a>
+                      <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Arabic</a>
+                      <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Espanol</a>
+                      <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Algeria</a>
+                      <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Albania</a>
+                      <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Japanese</a>
+                      <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Hindi</a>
+                      <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Tamil</a>
+                      <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Portuguese</a>
+                      <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Spanish</a>
+                      <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Russian</a>
+                      <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; German</a>
+                      <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Korean</a>
+                      <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Telugu</a>
+                      <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Turkish</a>
+                      <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Ukranian</a>
+                      <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Malayalam</a>
+                      <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Kannada</a>
+                      <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Chinese</a><br>
+                      </div>
+                      </div>
+              </div>
+              <div class="notification">
+                  <div class="dropdown">
+                  <img class="notificationimg" onclick="profile1()" src="../assets/images/icons8-online-support-50.png" alt="">
+                  <div class="dropdown-content"><br>
+                      <a href="#"><img class="user-dropdown" src="../assets/images/icons8-group-50.png">&nbsp; Connect With Us</a>
+                      <a href="#"><img class="user-dropdown" src="../assets/images/icons8-group-message-50.png">&nbsp; Chat With Us</a>
+                      <a href="#"><img class="user-dropdown" src="../assets/images/icons8-invite-50.png">&nbsp; Write a Mail</a>
+                      <a href="#"><img class="user-dropdown" src="../assets/images/icons8-online-support-50.png">&nbsp; Support Center</a><br>
+                      </div>
+                      </div>
+              </div>
+              <div class="notification">
+                  <div class="dropdown" id="dropuser">
+                      
+                      <div class="dropdown-content"><br>
+                        <a href="../pages/userprofile.html"><img class="user-dropdown" src="../assets/images/icons8-group-50.png">&nbsp; Accounts</a>
+                        <a href="#"><img class="user-dropdown" src="../assets/images/icons8-logout-rounded-50.png">&nbsp; Personal Details</a>
+                        <a href="#"><img class="user-dropdown" src="../assets/images/icons8-invite-50.png">&nbsp; Invite & Earn</a>
+                        <a href="#"><img class="user-dropdown" src="../assets/images/icons8-membership-card-30.png">&nbsp; Membership</a>
+                        <a href="#"><img class="user-dropdown" src="../assets/images/icons8-light-mode-78.png">&nbsp; Appearance : Light</a>
+                        <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Language : English</a>
+                        <a href="#"><img class="user-dropdown" src="../assets/images/icons8-user-location-30.png">&nbsp; Location : India</a>
+                        <a href="#"><img class="user-dropdown" src="../assets/images/icons8-gears-30.png">&nbsp; Settings</a>
+                        <a href="#"><img class="user-dropdown" src="../assets/images/icons8-online-support-50.png">&nbsp; Help</a>
+                        <a href="#"><img class="user-dropdown" src="../assets/images/icons8-group-50.png">&nbsp; Send feedback</a>
+                        <a href="#"><img class="user-dropdown" src="../assets/images/icons8-logout-rounded-50 (1).png">&nbsp; Log Out</a><br>
+                      </div>
+                    </div>
+              </div>
+
+        </div>
+
+        <div class="tab">
+            <button class="tablinks active" onclick="homeon()">Home</button>
+            <button class="tablinks" onclick="openCity(event, 'Stocks')">Stocks</button>
+            <button class="tablinks" onclick="openCity(event, 'forex')">forex</button>
+            <button class="tablinks" onclick="openCity(event, 'Cryptocurrencies')">Cryptocurrencies</button>
+            <button class="tablinks" onclick="openCity(event, 'Indices')">Indices</button>
+            <button class="tablinks" onclick="openCity(event, 'Futures')">Futures</button>
+            <button class="tablinks" onclick="openCity(event, 'Bonds')">Bonds</button>
+            <button class="tablinks" onclick="openCity(event, 'Company')">Company</button>
+            <button class="tablinks" onclick="openCity(event, 'Technology')">Technology</button>
+            <button class="tablinks" onclick="openCity(event, 'IPO News')">IPO News</button>
+            <button class="tablinks" onclick="openCity(event, 'Market News')">Market News</button>
+            <button class="tablinks" onclick="openCity(event, 'Live News')">Live News</button>
+            <svg height="100" width="100" class="blinking">
+                <circle cx="50" cy="50" r="10" fill="red" /></svg> 
+          </div> 
+    </nav>
+
+<main>
+
+    <div class="bread-crumb">
+        <div><span class="slash">=></span> <a class="bread-crumb1" href="#">Home</a></div><span class="slash">/</span>
+        <div><a class="bread-crumb1" href="#">Dashboard</a></div><span class="slash">/</span>
+        <div><a class="bread-crumb1" href="#">News</a></div>
+    </div>
+
+    <div id="default">
+        <!-- <h1 class="home-news-h1" >All News</h1> -->
+      
+
+
+
+
+    </div>
+      
+      <div id="default" class="tabcontent">
+
+        
+
+      </div>
+      
+      <div id="default" class="tabcontent">
+       
+
+        
+
+      </div>
+
+
+
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        function openCity(evt, cityName) {
+          var i, tabcontent, tablinks;
+          tabcontent = document.getElementsByClassName("tabcontent");
+          for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+          }
+          tablinks = document.getElementsByClassName("tablinks");
+          for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace("active", "");
+          }
+          document.getElementById(cityName).style.display = "block";
+          evt.currentTarget.className += " active";
+
+         
+          document.getElementById("default").style.display = "none";
+          
+        }
+
+function homeon() {
+  
+    document.getElementById("default").style.display = "block";
+}
+      
+        </script>
+
+
+<script>
+
+    const url = "https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=AAPL&apikey=XQJN6X4YXV76D14M";
+ let x ;
+ let parseD ;
+ fetch(url)
+ .then((response) => {
+    //  console.log(response);
+   return response.json();
+ })
+ .then((parsedData) => {
+
+    // for(i=0;i<=10;i++){
+    //  console.log(parsedData.feed[i]["title"]);
+    //  console.log(typeof(parsedData))
+     x = parsedData.feed;
+
+    console.log(x)
+    createtag(x)
+//   document.querySelector(".home-news-h1").innerHTML = parsedData.feed[i]["title"];
+    // }
+    //  document.querySelector(".news2").innerHTML = parsedData.feed[0]["summary"];
+    //  document.querySelector(".news3").src = parsedData.feed[0]["banner_image"];
+//    return  parsedData.json();
+// Define the JSON object as a string
+
+
+ })
+// .then((x)=>{
+//     console.log(x)
+//  })
+.catch((err) => {
+    console.log(err + "OOps Something went wrong..!!");
+});
+
+</script>
+
+
+<script>
+
+// <div class="home">
+//         <div>
+//             <img class="home-news-img" src="https://images.livemint.com/img/2023/02/25/90x90/lic_1657820107854_1677331972722_1677331972722.jpg" alt="">
+//         </div>
+//         <div>
+//             <a class="home-news-a" href="#"><h1 class="home-news-h1" >Hindenburg fallout: LIC stake value in Adani stocks drops ₹48,600 cr in a mnth</h1></a>
+//             <p class="home-news-p" >4 min read . 07:20 PM IST</p>
+//         </div>
+//     </div>
+
+
+
+  
+
+    function createtag(x){
+        let home_div;
+
+for(i=0;i<50;i++){
+   home_div = document.createElement("div");
+   home_div.setAttribute("class","home");
+  let date = x[i]["time_published"];
+  let spDate = date.split("T");
+  console.log(spDate)
+   let realDate = spDate[0][0]+spDate[0][1]+spDate[0][2]+spDate[0][3]+"-"+spDate[0][4]+spDate[0][5]+"-"+spDate[0][6]+spDate[0][7]
+   console.log(realDate);
+
+  let time =  spDate[1][0]+ spDate[1][1]+":"+spDate[1][2]+ spDate[1][3] + " UTC";
+  console.log(time);
+
+   home_div.innerHTML = ` <div>
+        <img class="home-news-img" src=${x[i]["banner_image"]} alt="">
+    </div>
+    <div class="home-letters-div">
+        <a class="home-news-h1" href=${x[i]["url"]}><h3 class="home-news-a">${x[i]["title"]} </h3></a>
+        <p class="home-news-p" ><span>${x[i]["authors"]}</span> &emsp;<span> </span> &emsp; <span>${realDate} &emsp; ${time}</span></p>
+    </div>`;
+//    console.log(home_div);
+    console.log(x)
+   document.querySelector("#default").append(home_div);
+
+   
+    }
+    }
+
+
+    //userprofile show
+
+
+    const register_arr = JSON.parse(localStorage.getItem("register_arr"));
+    console.log(register_arr);
+
+    const login_arr = JSON.parse(localStorage.getItem("login_arr"));
+    console.log(login_arr);
+
+    const get_obj = register_arr.find( event => event.email === login_arr);
+    console.log(get_obj);
+     
+
+      let user_profile;
+
+
+      user_profile = document.createElement("img");
+      user_profile.setAttribute("id","user-profile");
+      user_profile.setAttribute("class","dropbtn");
+      user_profile.setAttribute("onclick","profile()");
+      user_profile.setAttribute("src", get_obj["profile_pic"]);
+      document.querySelector("#dropuser").prepend(user_profile);
+   
+   
+
+
+</script>
+
+
+
+</body>
+</html>

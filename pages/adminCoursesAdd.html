@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin create-list</title>
+    <link rel="stylesheet" href="../assets/css/adminCoursesAdd.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;0,800;0,900;1,600&family=Tilt+Neon&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div class="navbar">
+            <img class="nav-logo" src="../assets/images/Screenshot 2023-02-11 021952.png" alt="">
+            <input class="search" list="search" type="text" placeholder="Search for courses,videos & Blogs">
+            <datalist id="search">
+                <option value="warren buffett in anual letter,stays upbeat......">
+                <option value="tesla elon musk fans tout cybertruck demand......">
+                <option value="how to buy a stock and make your money four......">
+                <option value="Dow Jones falters on hot inflation boeing groundened......">
+                <option value="What's going on microsoft and between apple shares......">
+                <option value="Big Tech hits $1.5 trillion in sales last year......">
+                <option value="Sirius XM (SIRI) and Toyoto collaborate to celebrate......">
+                <option value="Futures fall ahead of key inflation report investor's......">
+                <option value="Netflix lands first partnership with NFL: how patrick......">
+                <option value="Whatsapp to bring i-Message-like-feature to android and iPhone......">
+            </datalist>
+            <div class="notification">
+              &emsp;&emsp;&emsp; <img class="notificationimg" onclick="profile1()" src="../assets/images/icons8-notification-50.png" alt="">
+            </div>
+            <div class="notification">
+                <div class="dropdown">
+                <img class="notificationimg" onclick="profile1()" src="../assets/images/icons8-translator-50.png" alt="">
+                <div class="dropdown-content-lang"><br>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; English </a>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; France</a>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Italy</a>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Arabic</a>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Espanol</a>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Algeria</a>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Albania</a>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Japanese</a>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Hindi</a>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Tamil</a>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Portuguese</a>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Spanish</a>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Russian</a>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; German</a>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Korean</a>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Telugu</a>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Turkish</a>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Ukranian</a>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Malayalam</a>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Kannada</a>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Chinese</a><br>
+                    </div>
+                    </div>
+            </div>
+            <div class="notification">
+                <div class="dropdown">
+                <img class="notificationimg" onclick="profile1()" src="../assets/images/icons8-online-support-50.png" alt="">
+                <div class="dropdown-content"><br>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-group-50.png">&nbsp; Connect With Us</a>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-group-message-50.png">&nbsp; Chat With Us</a>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-invite-50.png">&nbsp; Write a Mail</a>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-online-support-50.png">&nbsp; Support Center</a><br>
+                    </div>
+                    </div>
+            </div>
+            <div class="notification">
+                <div class="dropdown">
+                    <img class="dropbtn" id="user-profile" onclick="profile()" src="../assets/images/icons8-male-user-48.png" alt="">
+                    <div class="dropdown-content"><br>
+                      <a href="../pages/userprofile.html"><img class="user-dropdown" src="../assets/images/icons8-group-50.png">&nbsp; Accounts</a>
+                      <a href="#"><img class="user-dropdown" src="../assets/images/icons8-logout-rounded-50.png">&nbsp; Personal Details</a>
+                      <a href="#"><img class="user-dropdown" src="../assets/images/icons8-invite-50.png">&nbsp; Invite & Earn</a>
+                      <a href="#"><img class="user-dropdown" src="../assets/images/icons8-membership-card-30.png">&nbsp; Membership</a>
+                      <a href="#"><img class="user-dropdown" src="../assets/images/icons8-light-mode-78.png">&nbsp; Appearance : Light</a>
+                      <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Language : English</a>
+                      <a href="#"><img class="user-dropdown" src="../assets/images/icons8-user-location-30.png">&nbsp; Location : India</a>
+                      <a href="#"><img class="user-dropdown" src="../assets/images/icons8-gears-30.png">&nbsp; Settings</a>
+                      <a href="#"><img class="user-dropdown" src="../assets/images/icons8-online-support-50.png">&nbsp; Help</a>
+                      <a href="#"><img class="user-dropdown" src="../assets/images/icons8-group-50.png">&nbsp; Send feedback</a>
+                      <a href="#"><img class="user-dropdown" src="../assets/images/icons8-logout-rounded-50 (1).png">&nbsp; Log Out</a><br>
+                    </div>
+                  </div>
+            </div>
+
+        </div>
+
+        <div class="tab">
+            <button class="tablinks active" onclick="homeon()">Home</button>
+            <a class="tablinks" href="addform.html" >Add Course</a>
+          </div> 
+    </nav>
+    <main>
+
+        <div class="bread-crumb">
+            <div><span class="slash">=></span> <a class="bread-crumb1" href="#">Admin Panel</a></div><span class="slash">/</span>
+            <div><a class="bread-crumb1" href="#">Home</a></div><span class="slash"></span>
+        </div>
+
+  
+        <div>
+
+
+            <div class="course-selection-div-videos">
+                <h1 class="course-category"><br>&emsp;&emsp;Grow Your Money with Our Latest Courses</h1>
+                <p class="course-desc">Take one of NSE's range of Our Latest courses and learn how to trade using this incredibly useful tips. Its simple logic and readability makes trading perfect for Stocks, forex, futures, and Crytocurrencies. You'll learn how to trade in all assets and markets with using these courses...</p>
+                <button class="course-btn">
+                    Explore Latest Courses
+                </button>
+                
+    
+    
+                <div class="scroll-courses-div-stocks">
+                   
+    
+                </div>
+              </div>
+    
+    
+    
+    </main>
+    
+    
+    
+    
+    
+       
+    
+    
+
+
+
+<script>
+
+
+
+       
+const course_data = JSON.parse(localStorage.getItem("course_data")); 
+    
+           let course_div_stocks;
+           
+    for(i=0;i<course_data.length;i++){
+           course_div_stocks = document.createElement("a");
+           course_div_stocks.setAttribute("class","first-course2-stocks");
+           course_div_stocks.setAttribute("href","../pages/adminEdit.html?id=" + course_data[i]["id"]);
+           course_div_stocks.innerHTML = `<div>
+                            <img class="course-img-stocks" src=${course_data[i]["img"]} alt="">
+                        </div>
+                        <div>
+                            <h3 class="course-title">${course_data[i]["title"]}</h3>
+                            <div class="course-details">
+                                <p class="course-timing">${course_data[i]["timing"]}</p>
+                                <p class="course-ln">${course_data[i]["language"]}</p>
+                                <p class="course-enrolled">${course_data[i]["enrolled"]}</p>
+                            </div>
+                         <h3 class="course-cost">${course_data[i]["cost"]}</h3>
+                        </div> `;
+                // console.log(course_div_stocks);
+    
+     
+                document.querySelector(".scroll-courses-div-stocks").append(course_div_stocks);
+    
+            };
+
+
+        
+
+    </script>
+
+
+
+
+
+  
+</body>
+</html>
