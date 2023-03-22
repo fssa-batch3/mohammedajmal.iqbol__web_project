@@ -1,0 +1,10 @@
+body {margin: 0; padding: 0; font-family: Arial, Tahoma; font-size: 16px; color: #000; background-color: #FFF; min-width: 1010px; }
+.top {background-color: #0055A7; }
+.top h1 {margin: 10px 20px 10px 10px; font-size: 25px; font-weight: normal; color: #FFF; display: inline-block; vertical-align: middle; }
+.top .menu, .top .menu li {margin: 0; padding: 0; list-style: none; display: inline-block; vertical-align: middle; }
+.top .menu li {margin: 0; padding: 0; list-style: none; display: inline-block; }
+.top .menu li a {padding: 20px; font-size: 16px; color: #FFF; text-decoration: none; text-align: center; display: block; }
+.top .menu li a:hover {background-color: #0B6ABF; }
+.top .menu li a.selected {background-color: #2989DF; color: #FFF; }
+.content { box-shadow: 0 0 20px rgba(0,0,0,0.5); position: fixed; width: 100%; top: 60px; bottom: 60px; }
+.footer {text-align: center; padding: 20px; color: #0A0A0A; font-size: 14px; position: fixed; bottom: 0; width: 100%; };
