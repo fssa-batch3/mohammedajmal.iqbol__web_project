@@ -158,7 +158,7 @@
     
         <p class="termsandconditions">By clicking the button,you agree to the Terms and Conditions</p>
     
-        <button id="paybtn" class="paybtn">Donate Now</button>
+        <button id="paybtn" class="paybtn">Pay Now</button>
      </form>
     </div>
     
@@ -253,25 +253,26 @@
       document.querySelector("#dropuser").prepend(user_profile);
 
 
-      //payment add course 
+         //payment add course 
 
       const course_data = JSON.parse(localStorage.getItem("course_data"));
      console.log(course_data);
 
-  const url = window.location.search;
-  const urlParams = new URLSearchParams(url);
-  const username = urlParams.get("name");
-  console.log(username);
-console.log(course_data[23]["title"])
-  const get_course_obj = course_data.find((event) => event["title"] == username);
-
-  console.log(get_course_obj);
-
-  const mycourses = JSON.parse(localStorage.getItem("add-to-card"));
+     const mycourses = JSON.parse(localStorage.getItem("add-to-card"));
      console.log(mycourses);
 
-     const existobj = mycourses.find((event) => event.id === course_data.id);
+     const url = window.location.search;
+     const urlParams = new URLSearchParams(url);
+     const username = urlParams.get("name");
+     console.log(username);
+
+     const get_course_obj = course_data.find((event) => event.title === username );
+     console.log(get_course_obj["id"]);
+
+
+     const existobj = mycourses.filter((event) => event["id"] === get_course_obj["id"] );
      console.log(existobj);
+
 
 
       const pay_btn = document.getElementById("paybtn");
@@ -297,7 +298,9 @@ console.log(course_data[23]["title"])
 
      localStorage.setItem("payment_arr",JSON.stringify(payment_arr));
 
-     if( existobj != undefined ){
+
+
+     if( existobj[0] == undefined ){
         mycourses.push(get_course_obj);
      localStorage.setItem("add-to-card",JSON.stringify(mycourses));
      } else {
@@ -341,6 +344,97 @@ console.log(course_data[23]["title"])
     window.location.href = "learn.html";
 
       });
+   
+  //     //payment add course 
+
+  //     const course_data = JSON.parse(localStorage.getItem("course_data"));
+  //    console.log(course_data);
+
+  // const url = window.location.search;
+  // const urlParams = new URLSearchParams(url);
+  // const username = urlParams.get("name");
+  // console.log(username);
+
+  // const get_course_obj = course_data.find((event) => event["title"] == username);
+  // console.log(get_course_obj);
+
+  // const mycourses = JSON.parse(localStorage.getItem("add-to-card"));
+  //    console.log(mycourses);
+
+  //    const existobj = mycourses.find((event) => event.id === get_course_obj.id);
+  //    console.log(existobj);
+
+
+  //     const pay_btn = document.getElementById("paybtn");
+  //     pay_btn.addEventListener("click", (event) => {
+  //     event.preventDefault();
+
+
+
+
+  //   //   let payment_arr = [];
+      
+  //     if(localStorage.getItem("payment_arr") !== null ){
+  //       payment_arr = JSON.parse(localStorage.getItem("payment_arr"));
+
+  //       let card_number = document.getElementById("cardnumber").value; 
+  //     let expiry_month = document.getElementById("month").value; 
+  //     let expiry_year = document.getElementById("year").value; 
+  //     let security_code = document.getElementById("securitycode").value; 
+  //     let payment_id = Date.now(); 
+
+  //    let payment_obj = {
+  //       card_number,expiry_month,expiry_year,security_code,payment_id
+  //    };
+
+  //    payment_arr.push(payment_obj);
+
+  //    localStorage.setItem("payment_arr",JSON.stringify(payment_arr));
+
+  //    if( existobj != undefined ){
+  //       mycourses.push(get_course_obj);
+  //    localStorage.setItem("add-to-card",JSON.stringify(mycourses));
+  //    } else {
+  //       alert("Course Already Added");
+  //       window.location.href = "learn.html";
+  //    }
+    
+
+
+  //     }
+
+  //     else {
+
+  //       let payment_arr = [];
+
+  //       let card_number = document.getElementById("cardnumber").value; 
+  //     let expiry_month = document.getElementById("month").value; 
+  //     let expiry_year = document.getElementById("year").value; 
+  //     let security_code = document.getElementById("securitycode").value; 
+  //     let payment_id = Date.now(); 
+
+
+  //    let payment_obj = {
+  //       card_number,expiry_month,expiry_year,security_code,payment_id
+  //    };
+
+  //    payment_arr.push(payment_obj);
+
+  //    localStorage.setItem("payment_arr",JSON.stringify(payment_arr));
+
+
+
+  //       mycourses.push(get_course_obj);
+  //    localStorage.setItem("add-to-card",JSON.stringify(mycourses));
+    
+    
+
+  //     }
+
+
+  //   window.location.href = "learn.html";
+
+  //     });
    
 </script>
 </body>

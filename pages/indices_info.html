@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Movers API</title>
+    <link rel="stylesheet" href="../assets/css/indices_info.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;0,800;0,900;1,600&family=Tilt+Neon&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div class="navbar">
+            <img class="nav-logo" src="../assets/images/Screenshot 2023-02-11 021952.png" alt="">
+            <input class="search" list="search" type="text" placeholder="Search for topics,location & sources">
+            <datalist id="search">
+                <option value="warren buffett in anual letter,stays upbeat......">
+                <option value="tesla elon musk fans tout cybertruck demand......">
+                <option value="how to buy a stock and make your money four......">
+                <option value="Dow Jones falters on hot inflation boeing groundened......">
+                <option value="What's going on microsoft and between apple shares......">
+                <option value="Big Tech hits $1.5 trillion in sales last year......">
+                <option value="Sirius XM (SIRI) and Toyoto collaborate to celebrate......">
+                <option value="Futures fall ahead of key inflation report investor's......">
+                <option value="Netflix lands first partnership with NFL: how patrick......">
+                <option value="Whatsapp to bring i-Message-like-feature to android and iPhone......">
+            </datalist>
+            <div class="notification">
+                &emsp;&emsp;&emsp; <img class="notificationimg" onclick="profile1()" src="../assets/images/icons8-notification-50.png" alt="">
+              </div>
+              <div class="notification">
+                  <div class="dropdown">
+                  <img class="notificationimg" onclick="profile1()" src="../assets/images/icons8-translator-50.png" alt="">
+                  <div class="dropdown-content-lang"><br>
+                      <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; English </a>
+                      <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; France</a>
+                      <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Italy</a>
+                      <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Arabic</a>
+                      <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Espanol</a>
+                      <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Algeria</a>
+                      <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Albania</a>
+                      <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Japanese</a>
+                      <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Hindi</a>
+                      <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Tamil</a>
+                      <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Portuguese</a>
+                      <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Spanish</a>
+                      <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Russian</a>
+                      <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; German</a>
+                      <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Korean</a>
+                      <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Telugu</a>
+                      <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Turkish</a>
+                      <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Ukranian</a>
+                      <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Malayalam</a>
+                      <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Kannada</a>
+                      <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Chinese</a><br>
+                      </div>
+                      </div>
+              </div>
+              <div class="notification">
+                  <div class="dropdown">
+                  <img class="notificationimg" onclick="profile1()" src="../assets/images/icons8-online-support-50.png" alt="">
+                  <div class="dropdown-content"><br>
+                      <a href="#"><img class="user-dropdown" src="../assets/images/icons8-group-50.png">&nbsp; Connect With Us</a>
+                      <a href="#"><img class="user-dropdown" src="../assets/images/icons8-group-message-50.png">&nbsp; Chat With Us</a>
+                      <a href="#"><img class="user-dropdown" src="../assets/images/icons8-invite-50.png">&nbsp; Write a Mail</a>
+                      <a href="#"><img class="user-dropdown" src="../assets/images/icons8-online-support-50.png">&nbsp; Support Center</a><br>
+                      </div>
+                      </div>
+              </div>
+              <div class="notification">
+                  <div class="dropdown" id="dropuser">
+                      
+                      <div class="dropdown-content"><br>
+                        <a href="../pages/userprofile.html"><img class="user-dropdown" src="../assets/images/icons8-group-50.png">&nbsp; Accounts</a>
+                        <a href="#"><img class="user-dropdown" src="../assets/images/icons8-logout-rounded-50.png">&nbsp; Personal Details</a>
+                        <a href="#"><img class="user-dropdown" src="../assets/images/icons8-invite-50.png">&nbsp; Invite & Earn</a>
+                        <a href="#"><img class="user-dropdown" src="../assets/images/icons8-membership-card-30.png">&nbsp; Membership</a>
+                        <a href="#"><img class="user-dropdown" src="../assets/images/icons8-light-mode-78.png">&nbsp; Appearance : Light</a>
+                        <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Language : English</a>
+                        <a href="#"><img class="user-dropdown" src="../assets/images/icons8-user-location-30.png">&nbsp; Location : India</a>
+                        <a href="#"><img class="user-dropdown" src="../assets/images/icons8-gears-30.png">&nbsp; Settings</a>
+                        <a href="#"><img class="user-dropdown" src="../assets/images/icons8-online-support-50.png">&nbsp; Help</a>
+                        <a href="#"><img class="user-dropdown" src="../assets/images/icons8-group-50.png">&nbsp; Send feedback</a>
+                        <a href="#"><img class="user-dropdown" src="../assets/images/icons8-logout-rounded-50 (1).png">&nbsp; Log Out</a><br>
+                      </div>
+                    </div>
+              </div>
+
+        </div>
+
+        <div class="tab">
+            <a class="tablinks1" href="stock_market_info.html">Stock Market Informations</a>
+            <a class="tablinks1" href="forex_market_info.html">All Stock Prices</a>
+            <a class="tablinks1" href="forex_market_info.html">All forex Prices</a>
+            <a class="tablinks1" href="crypto_market_info.html">All Crypto Prices</a>
+            <a class="tablinks1" href="etf_market_info.html">All ETF Prices</a>
+            <a class="tablinks1" href="indices_info.html">Indices Prices</a>
+            <a class="tablinks1" href="#">All Stock Live Prices</a>
+            <!-- <button class="tablinks" onclick="openCity(event, 'Cryptocurrencies')">Crypto Exchange Rates</button>
+            <button class="tablinks" onclick="openCity(event, 'Indices')">Commodities Rates</button>
+            <button class="tablinks" onclick="openCity(event, 'Futures')">Various Technical Indicators</button>
+            <button class="tablinks" onclick="openCity(event, 'Bonds')">Company Profile</button> -->
+          </div> 
+    </nav>
+
+
+<main>
+  <div class="stock-flex">
+    <h1 class="global-h1">Indices List</h1>
+    <a href="market.html"><p class="breadcrumb">Global Market list</p></a>
+    <p class="breadcrumb">/</p>
+    <a href="stock_market_info.html"><p class="breadcrumb">Stock Market List</p></a>
+    <p class="breadcrumb">/</p>
+    <a href="forex_market_info.html"><p class="breadcrumb">forex Market List</p></a>
+    <p class="breadcrumb">/</p>
+    <a href="crypto_market_info.html"><p class="breadcrumb">Crypto Market List</p></a>
+    <p class="breadcrumb">/</p>
+    <a href="etf_market_info.html"><p class="breadcrumb">ETF Market List</p></a>
+    <p class="breadcrumb">/</p>
+    <a href="indices_info.html"><p class="breadcrumb">Market Movers List</p></a>
+    <p class="breadcrumb">/</p>
+    <p class="breadcrumb">Indices List</p>
+  </div>
+<div id="forex">
+
+
+
+ 
+
+</div>
+
+
+
+</main>
+    <script>
+
+
+            //userprofile show
+
+
+    const register_arr = JSON.parse(localStorage.getItem("register_arr"));
+    console.log(register_arr);
+
+    const login_arr = JSON.parse(localStorage.getItem("login_arr"));
+    console.log(login_arr);
+
+    const get_obj = register_arr.find( event => event.email === login_arr);
+    console.log(get_obj);
+     
+
+      let user_profile;
+
+
+      user_profile = document.createElement("img");
+      user_profile.setAttribute("id","user-profile");
+      user_profile.setAttribute("class","dropbtn");
+      user_profile.setAttribute("onclick","profile()");
+      user_profile.setAttribute("src", get_obj["profile_pic"]);
+      document.querySelector("#dropuser").prepend(user_profile);
+   
+   
+
+//       //api call global market search
+
+//     const urll = "https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=BTC&to_currency=CNY&apikey=XQJN6X4YXV76D14M";
+
+//  let z;
+//  fetch(urll)
+//  .then((response) => {
+//    return response.json();
+//    console.log(response);
+//  })
+//  .then((parsedData) => {
+//      z = parsedData["Realtime Currency Exchange Rate"];
+
+//     console.log(z)
+//     createtags(z)
+//  })
+
+// .catch((err) => {
+//     console.log(err + "OOps Something went wrong..!!");
+// });
+
+
+//       //card create
+//       function createtags(z) {
+//         crypto_div = document.createElement("div");
+//       crypto_div.setAttribute("class","cardsforex");
+//       crypto_div.innerHTML = `
+//       <div class="cards-innerforex-div">
+//         <h1>${z["1. From_Currency Code"]}</h1>
+//         <p><b>Symbol : </b>&emsp;${z[i]["symbol"]}</p>
+//         <p><b>Currency_Base :</b>&emsp;&emsp;${z[i]["currency_base"]}</p>
+//         <p><b>Currency_Group :</b>&emsp;&emsp;${z[i]["currency_group"]}</p>
+//         <p><b>Currency_Quote : </b>&emsp;${z[i]["currency_quote"]}</p>
+//         </div>
+//       `;
+
+//       document.querySelector("#Cryptocurrencies").append(crypto_div);
+//       }
+
+
+
+
+
+    //  api call stock market search
+
+const urls = "https://api.twelvedata.com/indices";
+
+let y;
+fetch(urls)
+.then((response) => {
+  return response.json();
+  console.log(response);
+})
+.then((parsedData) => {
+    y = parsedData.data;
+
+   console.log(y)
+   createtags(y)
+})
+
+.catch((err) => {
+   console.log(err + "OOps Something went wrong..!!");
+});
+
+
+
+     //card create
+function createtags(y) {
+     for(let i=0;i<=500;i++){
+       next_div = document.createElement("div");
+     next_div.setAttribute("class","cardsforex");
+     next_div.innerHTML = `
+     <div class="cards-innerforex-div">
+       <h1 class="heading-card">${y[i]["name"]}</h1>
+       <p><b>Symbol : </b>&emsp;${y[i]["symbol"]}</p>
+       <p><b>Country : </b>&emsp;${y[i]["country"]}</p>
+       <p><b>Currency :</b>&emsp;&emsp;${y[i]["currency"]}</p>
+       <p><b>Exchange :</b>&emsp;&emsp;${y[i]["exchange"]}</p>
+       <p><b>Mic Code :</b>&emsp;&emsp;${y[i]["mic_code"]}</p>
+       </div>
+     `;
+
+     document.getElementById("forex").append(next_div);
+     }
+   };
+
+
+
+
+
+
+
+
+
+
+
+//       const url = "https://www.alphavantage.co/query?function=MARKET_STATUS&apikey=XQJN6X4YXV76D14M";
+//  let x ;
+//  let parseD ;
+//  fetch(url)
+//  .then((response) => {
+//     //  console.log(response);
+//    return response.json();
+//  })
+//  .then((parsedData) => {
+
+//     // for(i=0;i<=10;i++){
+//     //  console.log(parsedData.feed[i]["title"]);
+//     //  console.log(typeof(parsedData))
+//      x = parsedData.markets;
+
+//     console.log(x)
+//     createtag(x)
+// //   document.querySelector(".home-news-h1").innerHTML = parsedData.feed[i]["title"];
+//     // }
+//     //  document.querySelector(".news2").innerHTML = parsedData.feed[0]["summary"];
+//     //  document.querySelector(".news3").src = parsedData.feed[0]["banner_image"];
+// //    return  parsedData.json();
+// // Define the JSON object as a string
+
+
+//  })
+// // .then((x)=>{
+// //     console.log(x)
+// //  })
+// .catch((err) => {
+//     console.log(err + "OOps Something went wrong..!!");
+// });
+
+
+
+//       //card create
+// function createtag(x) {
+//       for(let i=0;i<=20;i++){
+//         default_div = document.createElement("div");
+//       default_div.setAttribute("class","cards");
+//       default_div.innerHTML = `
+//       <div class="cards-inner-div">
+//         <h1>${x[i]["market_type"]}</h1>
+//         <p><b>Current_Status : </b>&emsp;${x[i]["current_status"]}</p>
+//         <p><b>Local_Close :</b>&emsp;&emsp;${x[i]["local_close"]}</p>
+//         <p><b>Local_Open :</b>&emsp;&emsp;${x[i]["local_open"]}</p>
+//         <p><b>Primary_Exchanges : </b>&emsp;${x[i]["primary_exchanges"]}</p>
+//         <p><b>Region : </b>&emsp;&emsp;${x[i]["region"]}</p>
+//         </div>
+//       `;
+
+//       document.querySelector("#default").append(default_div);
+//       }
+//     };
+
+
+//     //api call forex market 1
+//     const urls = "https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=USD&to_currency=JPY&apikey=XQJN6X4YXV76D14M";
+
+//  let y ;
+//  fetch(urls)
+//  .then((response) => {
+//    return response.json();
+//  })
+//  .then((parsedData) => {
+//      y = parsedData["Realtime Currency Exchange Rate"];
+
+//     console.log(y)
+//     createtags(y)
+//  })
+
+// .catch((err) => {
+//     console.log(err + "OOps Something went wrong..!!");
+// });
+
+
+//     //api call forex market 2
+//     const urlss = "https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=USD&to_currency=INR&apikey=XQJN6X4YXV76D14M";
+
+//  let z ;
+//  fetch(urlss)
+//  .then((response) => {
+//    return response.json();
+//  })
+//  .then((parsedData) => {
+//      z = parsedData["Realtime Currency Exchange Rate"];
+
+//     console.log(z)
+//     createtags(z)
+//  })
+
+// .catch((err) => {
+//     console.log(err + "OOps Something went wrong..!!");
+// });
+
+
+//     //api call forex market 3
+//     const newurl = "https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=EUR&to_currency=USD&apikey=XQJN6X4YXV76D14M";
+
+//  let a ;
+//  fetch(newurl)
+//  .then((response) => {
+//    return response.json();
+//  })
+//  .then((parsedData) => {
+//      a = parsedData["Realtime Currency Exchange Rate"];
+
+//     console.log(a)
+//     createtags(a)
+//  })
+
+// .catch((err) => {
+//     console.log(err + "OOps Something went wrong..!!");
+// });
+
+//     //api call forex market 4
+//     const newurl1 = "https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=GBP&to_currency=USD&apikey=XQJN6X4YXV76D14M";
+
+//  let b ;
+//  fetch(newurl1)
+//  .then((response) => {
+//    return response.json();
+//  })
+//  .then((parsedData) => {
+//      b = parsedData["Realtime Currency Exchange Rate"];
+
+//     console.log(b)
+//     createtags(b)
+//  })
+
+// .catch((err) => {
+//     console.log(err + "OOps Something went wrong..!!");
+// });
+
+
+//     //api call forex market 5
+//     const newurl2 = "https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=USD&to_currency=CAD&apikey=XQJN6X4YXV76D14M";
+
+//  let c ;
+//  fetch(newurl2)
+//  .then((response) => {
+//    return response.json();
+//  })
+//  .then((parsedData) => {
+//      c = parsedData["Realtime Currency Exchange Rate"];
+
+//     console.log(c)
+//     createtags(c)
+//  })
+
+// .catch((err) => {
+//     console.log(err + "OOps Something went wrong..!!");
+// });
+
+
+//     //api call forex market 6
+//     const newurl3 = "https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=NZD&to_currency=USD&apikey=XQJN6X4YXV76D14M";
+
+//  let d ;
+//  fetch(newurl3)
+//  .then((response) => {
+//    return response.json();
+//  })
+//  .then((parsedData) => {
+//      d = parsedData["Realtime Currency Exchange Rate"];
+
+//     console.log(d)
+//     createtags(d)
+//  })
+
+// .catch((err) => {
+//     console.log(err + "OOps Something went wrong..!!");
+// });
+
+
+
+//     //api call forex market 7
+//     const newurl4 = "https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=AUD&to_currency=USD&apikey=XQJN6X4YXV76D14M";
+
+//  let e ;
+//  fetch(newurl4)
+//  .then((response) => {
+//    return response.json();
+//  })
+//  .then((parsedData) => {
+//      e = parsedData["Realtime Currency Exchange Rate"];
+
+//     console.log(e)
+//     createtags(e)
+//  })
+
+// .catch((err) => {
+//     console.log(err + "OOps Something went wrong..!!");
+// });
+
+
+
+//     //api call forex market 8
+//     const newurl5 = "https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=EUR&to_currency=INR&apikey=XQJN6X4YXV76D14M";
+
+//  let f ;
+//  fetch(newurl5)
+//  .then((response) => {
+//    return response.json();
+//  })
+//  .then((parsedData) => {
+//      f = parsedData["Realtime Currency Exchange Rate"];
+
+//     console.log(f)
+//     createtags(f)
+//  })
+
+// .catch((err) => {
+//     console.log(err + "OOps Something went wrong..!!");
+// });
+
+
+//     //api call forex market 9
+//     const newurl6 = "https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=EUR&to_currency=INR&apikey=XQJN6X4YXV76D14M";
+
+//  let g ;
+//  fetch(newurl6)
+//  .then((response) => {
+//    return response.json();
+//  })
+//  .then((parsedData) => {
+//      g = parsedData["Realtime Currency Exchange Rate"];
+
+//     console.log(g)
+//     createtags(g)
+//  })
+
+// .catch((err) => {
+//     console.log(err + "OOps Something went wrong..!!");
+// });
+
+
+
+// function createtags(y) {
+//         default_div = document.createElement("div");
+//       default_div.setAttribute("class","cardsforex");
+//       default_div.innerHTML = `
+//       <div class="cards-innerforex-div">
+//         <h1></h1>
+//         <p><b>From_Currency Code : </b>&emsp;${y["1. From_Currency Code"]}</p>
+//         <p><b>From_Currency Name :</b>&emsp;${y["2. From_Currency Name"]}</p>
+//         <p><b>To_Currency Code :</b>&emsp;&emsp;&nbsp;${y["3. To_Currency Code"]}</p>
+//         <p><b>To_Currency Name : </b>&emsp;&nbsp;${y["4. To_Currency Name"]}</p>
+//         <p><b>Exchange Rate : </b>&emsp;&emsp;&emsp;${y["5. Exchange Rate"]}</p>
+//         <p><b>Last Refreshed : </b>&emsp;&emsp;&emsp;${y["6. Last Refreshed"]}</p>
+//         <p><b>Time Zone : </b>&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;${y["7. Time Zone"]}</p>
+//         <p><b>Bid Price : </b>&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;${y["8. Bid Price"]}</p>
+//         <p><b>Ask Price : </b>&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;${y["9. Ask Price"]}</p>
+//         </div>
+//       `;
+
+//       document.querySelector("#forex").append(default_div);
+//       };
+
+//       function createtags(z) {
+//         default_div = document.createElement("div");
+//       default_div.setAttribute("class","cardsforex");
+//       default_div.innerHTML = `
+//       <div class="cards-innerforex-div">
+//         <h1></h1>
+//         <p><b>From_Currency Code : </b>&emsp;${z["1. From_Currency Code"]}</p>
+//         <p><b>From_Currency Name :</b>&emsp;${z["2. From_Currency Name"]}</p>
+//         <p><b>To_Currency Code :</b>&emsp;&emsp;&nbsp;${z["3. To_Currency Code"]}</p>
+//         <p><b>To_Currency Name : </b>&emsp;&nbsp;${z["4. To_Currency Name"]}</p>
+//         <p><b>Exchange Rate : </b>&emsp;&emsp;&emsp;${z["5. Exchange Rate"]}</p>
+//         <p><b>Last Refreshed : </b>&emsp;&emsp;&emsp;${z["6. Last Refreshed"]}</p>
+//         <p><b>Time Zone : </b>&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;${z["7. Time Zone"]}</p>
+//         <p><b>Bid Price : </b>&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;${z["8. Bid Price"]}</p>
+//         <p><b>Ask Price : </b>&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;${z["9. Ask Price"]}</p>
+//         </div>
+//       `;
+
+//       document.querySelector("#forex").append(default_div);
+//       };
+
+
+//       function createtags(a) {
+//         default_div = document.createElement("div");
+//       default_div.setAttribute("class","cardsforex");
+//       default_div.innerHTML = `
+//       <div class="cards-innerforex-div">
+//         <h1></h1>
+//         <p><b>From_Currency Code : </b>&emsp;${a["1. From_Currency Code"]}</p>
+//         <p><b>From_Currency Name :</b>&emsp;${a["2. From_Currency Name"]}</p>
+//         <p><b>To_Currency Code :</b>&emsp;&emsp;&nbsp;${a["3. To_Currency Code"]}</p>
+//         <p><b>To_Currency Name : </b>&emsp;&nbsp;${a["4. To_Currency Name"]}</p>
+//         <p><b>Exchange Rate : </b>&emsp;&emsp;&emsp;${a["5. Exchange Rate"]}</p>
+//         <p><b>Last Refreshed : </b>&emsp;&emsp;&emsp;${a["6. Last Refreshed"]}</p>
+//         <p><b>Time Zone : </b>&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;${a["7. Time Zone"]}</p>
+//         <p><b>Bid Price : </b>&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;${a["8. Bid Price"]}</p>
+//         <p><b>Ask Price : </b>&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;${a["9. Ask Price"]}</p>
+//         </div>
+//       `;
+
+//       document.querySelector("#forex").append(default_div);
+//       };
+
+
+//       function createtags(b) {
+//         default_div = document.createElement("div");
+//       default_div.setAttribute("class","cardsforex");
+//       default_div.innerHTML = `
+//       <div class="cards-innerforex-div">
+//         <h1></h1>
+//         <p><b>From_Currency Code : </b>&emsp;${b["1. From_Currency Code"]}</p>
+//         <p><b>From_Currency Name :</b>&emsp;${b["2. From_Currency Name"]}</p>
+//         <p><b>To_Currency Code :</b>&emsp;&emsp;&nbsp;${b["3. To_Currency Code"]}</p>
+//         <p><b>To_Currency Name : </b>&emsp;&nbsp;${b["4. To_Currency Name"]}</p>
+//         <p><b>Exchange Rate : </b>&emsp;&emsp;&emsp;${b["5. Exchange Rate"]}</p>
+//         <p><b>Last Refreshed : </b>&emsp;&emsp;&emsp;${b["6. Last Refreshed"]}</p>
+//         <p><b>Time Zone : </b>&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;${b["7. Time Zone"]}</p>
+//         <p><b>Bid Price : </b>&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;${b["8. Bid Price"]}</p>
+//         <p><b>Ask Price : </b>&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;${b["9. Ask Price"]}</p>
+//         </div>
+//       `;
+
+//       document.querySelector("#forex").append(default_div);
+//       };
+
+
+
+
+//       function createtags(c) {
+//         default_div = document.createElement("div");
+//       default_div.setAttribute("class","cardsforex");
+//       default_div.innerHTML = `
+//       <div class="cards-innerforex-div">
+//         <h1></h1>
+//         <p><b>From_Currency Code : </b>&emsp;${c["1. From_Currency Code"]}</p>
+//         <p><b>From_Currency Name :</b>&emsp;${c["2. From_Currency Name"]}</p>
+//         <p><b>To_Currency Code :</b>&emsp;&emsp;&nbsp;${c["3. To_Currency Code"]}</p>
+//         <p><b>To_Currency Name : </b>&emsp;&nbsp;${c["4. To_Currency Name"]}</p>
+//         <p><b>Exchange Rate : </b>&emsp;&emsp;&emsp;${c["5. Exchange Rate"]}</p>
+//         <p><b>Last Refreshed : </b>&emsp;&emsp;&emsp;${c["6. Last Refreshed"]}</p>
+//         <p><b>Time Zone : </b>&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;${c["7. Time Zone"]}</p>
+//         <p><b>Bid Price : </b>&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;${c["8. Bid Price"]}</p>
+//         <p><b>Ask Price : </b>&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;${c["9. Ask Price"]}</p>
+//         </div>
+//       `;
+
+//       document.querySelector("#forex").append(default_div);
+//       };
+
+
+//       function createtags(d) {
+//         default_div = document.createElement("div");
+//       default_div.setAttribute("class","cardsforex");
+//       default_div.innerHTML = `
+//       <div class="cards-innerforex-div">
+//         <h1></h1>
+//         <p><b>From_Currency Code : </b>&emsp;${d["1. From_Currency Code"]}</p>
+//         <p><b>From_Currency Name :</b>&emsp;${d["2. From_Currency Name"]}</p>
+//         <p><b>To_Currency Code :</b>&emsp;&emsp;&nbsp;${d["3. To_Currency Code"]}</p>
+//         <p><b>To_Currency Name : </b>&emsp;&nbsp;${d["4. To_Currency Name"]}</p>
+//         <p><b>Exchange Rate : </b>&emsp;&emsp;&emsp;${d["5. Exchange Rate"]}</p>
+//         <p><b>Last Refreshed : </b>&emsp;&emsp;&emsp;${d["6. Last Refreshed"]}</p>
+//         <p><b>Time Zone : </b>&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;${d["7. Time Zone"]}</p>
+//         <p><b>Bid Price : </b>&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;${d["8. Bid Price"]}</p>
+//         <p><b>Ask Price : </b>&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;${d["9. Ask Price"]}</p>
+//         </div>
+//       `;
+
+//       document.querySelector("#forex").append(default_div);
+//       };
+
+
+//       function createtags(e) {
+//         default_div = document.createElement("div");
+//       default_div.setAttribute("class","cardsforex");
+//       default_div.innerHTML = `
+//       <div class="cards-innerforex-div">
+//         <h1></h1>
+//         <p><b>From_Currency Code : </b>&emsp;${e["1. From_Currency Code"]}</p>
+//         <p><b>From_Currency Name :</b>&emsp;${e["2. From_Currency Name"]}</p>
+//         <p><b>To_Currency Code :</b>&emsp;&emsp;&nbsp;${e["3. To_Currency Code"]}</p>
+//         <p><b>To_Currency Name : </b>&emsp;&nbsp;${e["4. To_Currency Name"]}</p>
+//         <p><b>Exchange Rate : </b>&emsp;&emsp;&emsp;${e["5. Exchange Rate"]}</p>
+//         <p><b>Last Refreshed : </b>&emsp;&emsp;&emsp;${e["6. Last Refreshed"]}</p>
+//         <p><b>Time Zone : </b>&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;${e["7. Time Zone"]}</p>
+//         <p><b>Bid Price : </b>&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;${e["8. Bid Price"]}</p>
+//         <p><b>Ask Price : </b>&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;${e["9. Ask Price"]}</p>
+//         </div>
+//       `;
+
+//       document.querySelector("#forex").append(default_div);
+//       };
+
+
+//       function createtags(f) {
+//         default_div = document.createElement("div");
+//       default_div.setAttribute("class","cardsforex");
+//       default_div.innerHTML = `
+//       <div class="cards-innerforex-div">
+//         <h1></h1>
+//         <p><b>From_Currency Code : </b>&emsp;${f["1. From_Currency Code"]}</p>
+//         <p><b>From_Currency Name :</b>&emsp;${f["2. From_Currency Name"]}</p>
+//         <p><b>To_Currency Code :</b>&emsp;&emsp;&nbsp;${f["3. To_Currency Code"]}</p>
+//         <p><b>To_Currency Name : </b>&emsp;&nbsp;${f["4. To_Currency Name"]}</p>
+//         <p><b>Exchange Rate : </b>&emsp;&emsp;&emsp;${f["5. Exchange Rate"]}</p>
+//         <p><b>Last Refreshed : </b>&emsp;&emsp;&emsp;${f["6. Last Refreshed"]}</p>
+//         <p><b>Time Zone : </b>&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;${f["7. Time Zone"]}</p>
+//         <p><b>Bid Price : </b>&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;${f["8. Bid Price"]}</p>
+//         <p><b>Ask Price : </b>&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;${f["9. Ask Price"]}</p>
+//         </div>
+//       `;
+
+//       document.querySelector("#forex").append(default_div);
+//       };
+
+
+//       function createtags(g) {
+//         default_div = document.createElement("div");
+//       default_div.setAttribute("class","cardsforex");
+//       default_div.innerHTML = `
+//       <div class="cards-innerforex-div">
+//         <h1></h1>
+//         <p><b>From_Currency Code : </b>&emsp;${g["1. From_Currency Code"]}</p>
+//         <p><b>From_Currency Name :</b>&emsp;${g["2. From_Currency Name"]}</p>
+//         <p><b>To_Currency Code :</b>&emsp;&emsp;&nbsp;${g["3. To_Currency Code"]}</p>
+//         <p><b>To_Currency Name : </b>&emsp;&nbsp;${g["4. To_Currency Name"]}</p>
+//         <p><b>Exchange Rate : </b>&emsp;&emsp;&emsp;${g["5. Exchange Rate"]}</p>
+//         <p><b>Last Refreshed : </b>&emsp;&emsp;&emsp;${g["6. Last Refreshed"]}</p>
+//         <p><b>Time Zone : </b>&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;${g["7. Time Zone"]}</p>
+//         <p><b>Bid Price : </b>&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;${g["8. Bid Price"]}</p>
+//         <p><b>Ask Price : </b>&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;${g["9. Ask Price"]}</p>
+//         </div>
+//       `;
+
+//       document.querySelector("#forex").append(default_div);
+//       };
+
+
+
+
+        </script>
+
+
+
+
+        </body>
+        </html>
