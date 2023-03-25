@@ -14,19 +14,7 @@
     <nav>
         <div class="navbar">
             <img class="nav-logo" src="../assets/images/Screenshot 2023-02-11 021952.png" alt="">
-            <input class="search" list="search" type="text" placeholder="Search for topics,location & sources">
-            <datalist id="search">
-                <option value="warren buffett in anual letter,stays upbeat......">
-                <option value="tesla elon musk fans tout cybertruck demand......">
-                <option value="how to buy a stock and make your money four......">
-                <option value="Dow Jones falters on hot inflation boeing groundened......">
-                <option value="What's going on microsoft and between apple shares......">
-                <option value="Big Tech hits $1.5 trillion in sales last year......">
-                <option value="Sirius XM (SIRI) and Toyoto collaborate to celebrate......">
-                <option value="Futures fall ahead of key inflation report investor's......">
-                <option value="Netflix lands first partnership with NFL: how patrick......">
-                <option value="Whatsapp to bring i-Message-like-feature to android and iPhone......">
-            </datalist>
+            <input class="search"  type="text" placeholder="Search for topics,location & sources" id="searchbar">
             <div class="notification">
                 &emsp;&emsp;&emsp; <img class="notificationimg" onclick="profile1()" src="../assets/images/icons8-notification-50.png" alt="">
               </div>
@@ -239,7 +227,19 @@ function createtags(y) {
    };
 
 
+   let searchbar = document.getElementById("searchbar");
+    const cards = document.getElementsByClassName("cardsforex");
 
+    searchbar.addEventListener("input",() => {
+      for(let i=0;i< cards.length;i++){
+        const element = cards[i];
+         if(element.innerHTML.toLowerCase().includes(searchbar.value.toLowerCase())){
+            element.style.display = "block";
+         } else {
+          element.style.display = "none";
+         }
+      }
+    });
 
 
 

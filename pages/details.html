@@ -133,7 +133,6 @@
 </div>
 
 
-
 <div class="gift-div" id="gift-div">
   <h1 class="share-h1">Gift The Course</h1>
   <p class="share-p">You can Gift this Course to your friends and relatives<br> through these Social Media or using this link to get the course for free</p>
@@ -160,7 +159,6 @@
 </div>
 
 
-
 <script>
 
   
@@ -178,8 +176,7 @@ const course_data = JSON.parse(localStorage.getItem("course_data"));
 
 
 //card create
-
-
+let link = "../assets/images/sparkles_Full HD 1080p_MEDIUM_FR30_(1).mp4";
 
   let details_div;
   
@@ -197,11 +194,11 @@ const course_data = JSON.parse(localStorage.getItem("course_data"));
          <p class="days-left"><span class="days-left-span">30 days</span>&nbsp;left at this price!</p>
          <button class="add-to-cart" id="add-to-cart">Add to cart</button><br>
          <button id="deletecourse" class="delete">Delete from My Courses</button><br>
+         <button id="deletebookmark" class="delete">Remove from Bookmark</button><br>
          <a class="full-access-para" href="">Full Lifetime Access</a>
          <div>
             <button class="share" id="share" onclick="share()">Share</button><br>
             <button class="gift"  onclick="gift()">Gift this course</button><br>
-            <button class="earn-coupons">Earn Coupons</button>
          </div>`;
 
          document.querySelector(".course").append(details_div);
@@ -261,11 +258,11 @@ const course_data = JSON.parse(localStorage.getItem("course_data"));
           <h1>&emsp;Start Course</h1><br>
           <button class="accordion">Beginner level-1 Module</button>
 <div class="panel">
-  <a href="https://youtu.be/Xn7KWR9EOGQ" ><li class="begginer-module">Introduction</li></a>
-  <a href="https://youtu.be/bLl_VRQ7pBs" ><li class="begginer-module">Basics about Trading</li></a>
-  <a href="https://youtu.be/hBKqk5oYexw" ><li class="begginer-module">What is Stock</li></a>
-  <a href="https://youtu.be/8Qb24s6oWHs" ><li class="begginer-module">How to Analyze a Stock</li></a>
-  <a href="https://youtu.be/5Hah_jffaHg" ><li class="begginer-module">How to setup trading account</li></a>
+  <a href="videoplayer.html?link=${get_obj["videos"]}" onclick="openFile(event)"><li class="begginer-module">Introduction</li></button>
+  <a href="videoplayer.html?link=${get_obj["videos"]}" onclick="openFile(event)"><li class="begginer-module">Basics about Trading</li></a>
+  <a href="videoplayer.html?link=${get_obj["videos"]}" onclick="openFile(event)"><li class="begginer-module">What is Stock</li></a>
+  <a href="videoplayer.html?link=${get_obj["videos"]}" onclick="openFile(event)"><li class="begginer-module">How to Analyze a Stock</li></a>
+  <a href="videoplayer.html?link=${get_obj["videos"]}" onclick="openFile(event)"><li class="begginer-module">How to setup trading account</li></a>
 </div>
 
 <button class="accordion">Beginner level-2 Module</button>
@@ -478,6 +475,34 @@ if(msg != true ){
 } else {
   mycourses.splice(index,1);
 localStorage.setItem("add-to-card",JSON.stringify(mycourses));
+window.location.href = "learn.html";
+}
+
+ 
+});
+
+
+
+//delete course from bookmarks
+
+const bookmark = JSON.parse(localStorage.getItem("bookmarks"));
+console.log(bookmark);
+
+const get_bookmark = bookmark.find((course) => course.title === usernames );
+console.log(get_bookmark);
+
+let delete_bookmark = document.getElementById("deletebookmark");
+delete_bookmark.addEventListener("click",(deletecourse) => {
+  deletecourse.preventDefault();
+
+const index = bookmark.indexOf(get_bookmark);
+console.log(index);
+let msg = confirm("Are you sure You want to Remove this course from Your Bookmarks");
+if(msg != true ){
+  return false;
+} else {
+  bookmark.splice(index,1);
+localStorage.setItem("bookmarks",JSON.stringify(bookmark));
 window.location.href = "learn.html";
 }
 
@@ -766,6 +791,23 @@ function deletecomment(a) {
   // console.log(join_comment);
   
   // });
+
+
+  //openfile function 
+  		//file video reader
+      let openFile = function(event) {
+    let input = event.target;
+
+    let reader = new FileReader();
+    reader.onload = function(){
+      let dataURL = reader.result;
+      let output = document.getElementById('video');
+      let output2 = document.getElementById('video1');
+      output.src = dataURL;
+      output2.src = dataURL;
+    };
+    reader.readAsDataURL(input.files[0]);
+  };
   
 
 

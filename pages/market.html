@@ -14,18 +14,19 @@
     <nav>
         <div class="navbar">
             <img class="nav-logo" src="../assets/images/Screenshot 2023-02-11 021952.png" alt="">
-            <input class="search" list="search" type="text" placeholder="Search for topics,location & sources">
+            <input class="search" list="search" type="text" placeholder="Search for topics,location & sources"  id="searchbar"/>
+            <button id="search-btn">Search</button>
             <datalist id="search">
-                <option value="warren buffett in anual letter,stays upbeat......">
-                <option value="tesla elon musk fans tout cybertruck demand......">
-                <option value="how to buy a stock and make your money four......">
-                <option value="Dow Jones falters on hot inflation boeing groundened......">
-                <option value="What's going on microsoft and between apple shares......">
-                <option value="Big Tech hits $1.5 trillion in sales last year......">
-                <option value="Sirius XM (SIRI) and Toyoto collaborate to celebrate......">
-                <option value="Futures fall ahead of key inflation report investor's......">
-                <option value="Netflix lands first partnership with NFL: how patrick......">
-                <option value="Whatsapp to bring i-Message-like-feature to android and iPhone......">
+                <option value="" id="search-option-1">
+                <option value="" id="search-option-2">
+                <option value="" id="search-option-3">
+                <option value="" id="search-option-4">
+                <option value="" id="search-option-5">
+                <option value="" id="search-option-6">
+                <option value="" id="search-option-7">
+                <option value="" id="search-option-8">
+                <option value="" id="search-option-9">
+                <option value="" id="search-option-10">
             </datalist>
             <div class="notification">
                 &emsp;&emsp;&emsp; <img class="notificationimg" onclick="profile1()" src="../assets/images/icons8-notification-50.png" alt="">
@@ -107,6 +108,15 @@
 
 
 <main>
+  <h1 class="global-h1" id="search-h1" style="display:none">Search Results</h1>
+  <div id="forex" style="display:none">
+  
+  
+  
+   
+  
+  </div>
+
   <h1 class="global-h1">Global Market List</h1>
 <div id="default">
 
@@ -314,6 +324,84 @@ function createtag(x) {
       document.querySelector("#default").append(default_div);
       }
     };
+
+
+
+    //search filter
+    let searchbar = document.getElementById("searchbar");
+    const cards = document.getElementsByClassName("cards");
+
+   searchbar.addEventListener("input",() => {
+    for(let i=0;i<cards.length;i++){
+        const element = cards[i]
+        if(element.innerHTML.toLowerCase().includes(searchbar.value.toLowerCase())){
+           element.style.display = "block";
+        } else {
+          element.style.display = "none";
+        }
+    }
+   });
+
+
+
+    // searchbar.addEventListener("input",()=>{
+    // for (let i = 0; i < cards.length; i++) {
+    //   const element = cards[i]
+    //   if (element.innerHTML.toLowerCase().includes(searchbar.value.toLowerCase())) {
+    //     element.style.display = "block"
+    //     } else{
+    //       element.style.display = "none"
+    //     }
+    //   }
+    // });
+
+    // searchbtn.addEventListener("click",(event) => {
+      
+
+    // // let getsearch_obj = x.filter((e) => e.market_type === searchbar);
+    // // console.log(getsearch_obj);
+
+
+    // // for(let i=0;i<=10;i++){
+    // //     default_div = document.createElement("div");
+    // //   default_div.setAttribute("class","cards");
+    // //   default_div.innerHTML = `
+    // //   <div class="cards-inner-div">
+    // //     <h1>${getsearch_obj[i]["market_type"]}</h1>
+    // //     <p><b>Current_Status : </b>&emsp;${getsearch_obj[i]["current_status"]}</p>
+    // //     <p><b>Local_Close :</b>&emsp;&emsp;${getsearch_obj[i]["local_close"]}</p>
+    // //     <p><b>Local_Open :</b>&emsp;&emsp;${getsearch_obj[i]["local_open"]}</p>
+    // //     <p><b>Primary_Exchanges : </b>&emsp;${getsearch_obj[i]["primary_exchanges"]}</p>
+    // //     <p><b>Region : </b>&emsp;&emsp;${getsearch_obj[i]["region"]}</p>
+    // //     </div>
+    // //   `;
+      
+
+    // //   document.querySelector("#forex").prepend(default_div);
+    // //   document.getElementById("search-h1").style.display = "block";
+    // //   document.getElementById("forex").style.display = "flex";
+    // //   }
+
+    //   // location.reload();
+ 
+
+    // });
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 //     //api call forex market 1

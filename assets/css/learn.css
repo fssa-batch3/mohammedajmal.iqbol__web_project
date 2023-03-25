@@ -295,14 +295,14 @@ nav {
     display: flex;
     flex-wrap: wrap;
 }
-.scroll-courses-div-videos , .scroll-courses-div-stocks,.scroll-courses-div5 {
+.scroll-courses-div-videos , .scroll-courses-div-stocks,.scroll-courses-div5,.scroll-bookmarks-div4 {
     display: flex;
     flex-wrap: wrap;
 }
-.scroll-courses-div::-webkit-scrollbar,.scroll-courses-div2::-webkit-scrollbar,.scroll-courses-div3::-webkit-scrollbar,.scroll-courses-div4::-webkit-scrollbar,.scroll-courses-div5::-webkit-scrollbar,.scroll-courses-div-mycourses::-webkit-scrollbar {
+.scroll-courses-div::-webkit-scrollbar,.scroll-courses-div2::-webkit-scrollbar,.scroll-courses-div3::-webkit-scrollbar,.scroll-courses-div4::-webkit-scrollbar,.scroll-courses-div5::-webkit-scrollbar,.scroll-courses-div-mycourses::-webkit-scrollbar,.scroll-bookmarks-div4::-webkit-scrollbar {
     width: 29px;
   }
-  .scroll-courses-div::-webkit-scrollbar-thumb, .scroll-courses-div2::-webkit-scrollbar-thumb, .scroll-courses-div3::-webkit-scrollbar-thumb, .scroll-courses-div4::-webkit-scrollbar-thumb,.scroll-courses-div5::-webkit-scrollbar-thumb,.scroll-courses-div-mycourses::-webkit-scrollbar-thumb {
+  .scroll-courses-div::-webkit-scrollbar-thumb, .scroll-courses-div2::-webkit-scrollbar-thumb, .scroll-courses-div3::-webkit-scrollbar-thumb, .scroll-courses-div4::-webkit-scrollbar-thumb,.scroll-courses-div5::-webkit-scrollbar-thumb,.scroll-courses-div-mycourses::-webkit-scrollbar-thumb,.scroll-bookmarks-div4::-webkit-scrollbar-thumb {
     background-color: #1e90ff;
     border-radius: 10px;
     border: 3px solid #ffffff;
@@ -399,4 +399,20 @@ nav {
   width:60px;
   height:30px;
   margin-left: 10px;
+}
+.bookmark-icon {
+  position: absolute;
+  right:50;
+  margin-left: 340px;
+  margin-top: -10px;
+  border: 1px solid black;
+  background-color: white;
+  border-radius: 50%;
+  padding: 6px;
+  width:30px;
+  height:30px;
+}
+.card-a {
+  text-decoration: none;
+  color: black;
 }

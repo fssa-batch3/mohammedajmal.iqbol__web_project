@@ -51,7 +51,7 @@
     <br><textarea name="product-name" class="textarea-desc" id="top-skills" type="text" placeholder="course Description" required></textarea>
 
     <br><br><label for="course-videos" class="product-label">Course Videos</label>
-    <br><input name="price" class="image-url" type="file" id="course-videos" placeholder="course videos" required>
+    <br><input name="price" class="image-url" type="file"  id="course-videos" placeholder="course videos" required>
 
     <button class="submit" type="submit" id="btn">Submit</button>   
 </div>
@@ -63,6 +63,31 @@
 
 
 <script>
+
+
+
+
+  //file reader start
+  let base64String;
+  function convertFileToBase64(file) {
+  const reader = new FileReader();
+  reader.readAsDataURL(file);
+  reader.onload = () => {
+    base64String = reader.result;
+    console.log(base64String);
+    return base64String;
+    // Do something with the base64String
+  };
+}
+
+const inputFile = document.getElementById("course-videos"); // replace "input-file" with your HTML input element ID
+inputFile.addEventListener("change", () => {
+  const file = inputFile.files[0];
+  convertFileToBase64(file);
+});
+
+
+  //flie reader end
 
    
 
@@ -87,7 +112,8 @@
     let old_cost = document.getElementById("old-cost").value;
     let Description= document.getElementById("course-description").value;
     let top_skills = document.getElementById("top-skills").value;
-    let videos = document.getElementById("course-videos").value;
+    let top_skills1 = top_skills.split(".");
+    let videos = base64String.slice(1,20);
     let id= Date.now();
     let date1 = new Date();
     let datestring = date1.toDateString();
@@ -95,7 +121,7 @@
 
 
        let course_obj = {
-        img,title,timing,language,enrolled,cost,old_cost,Description,top_skills,videos,id,datestring
+        img,title,timing,language,enrolled,cost,old_cost,Description,top_skills1,videos,id,datestring
     };
 
     course_data.push(course_obj);
@@ -113,8 +139,10 @@
     let cost = document.getElementById("course-cost").value;
     let old_cost = document.getElementById("old-cost").value;
     let Description= document.getElementById("course-description").value;
-    let top_skillls = document.getElementById("top-skills").value;
-    let videos = document.getElementById("course-videos").value;
+    let top_skills = document.getElementById("top-skills").value;
+    let top_skills1 = top_skills.split(".");
+    let videos = base64String.slice(1,20);
+    let id= Date.now();
     let date1 = new Date();
     let datestring = date1.toDateString();
     datestring.slice(4,);
@@ -122,7 +150,7 @@
 
 
         let course_obj = {
-        img,title,timing,language,enrolled,cost,old_cost,Description,top_skills,videos,id,datestring
+        img,title,timing,language,enrolled,cost,old_cost,Description,top_skills1,videos,id,datestring
     };
 
     course_data.push(course_obj);
@@ -142,6 +170,29 @@
    });
 
 
+
+// filereader start
+
+
+
+// let openFile = function(event) {
+//     let input = event.target;
+
+//     let reader = new FileReader();
+//     reader.onload = function(){
+//       let dataURL = reader.result;
+//       let output = document.getElementById('course-videos');
+//       output.src = dataURL;
+//       console.log(output);
+//     };
+//     reader.readAsDataURL(input.files[0]);
+
+     
+//   };
+  
+
+
+//filereader end
 
 
 
