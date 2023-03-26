@@ -804,25 +804,31 @@ hr {
   }
   
   .faq,
-  .privacypolicy,
   .riskwarning {
-    color: #0094ff;
-    opacity: 0.9;
+    color: white;
+    
+  }
+  .privacypolicy {
+    margin-left:5px;
+     color:white;
+     text-decoration: none; 
+    position: relative; 
+    bottom:3px;
   }
   
   .faq:hover,
   .privacypolicy:hover,
   .riskwarning:hover {
-    opacity: 1;
+    color: dodgerblue;
   }
   
   .footerlink1 {
     color: white;
+    text-decoration: none;
   }
   
   .footerlink1:hover {
-    color: #0094ff;
-    border-bottom: 2px solid #55ACEE;
+    color: rgb(42, 137, 233);
   }
   
   .copyrightpara {
@@ -1487,7 +1493,7 @@ hr {
         width: 280px;
         height: 250px;
         margin-top: 100px;
-        margin-left: 50px;
+        margin-left: 10px;
         cursor: pointer;
         opacity: 0.8;
     }
@@ -1608,7 +1614,7 @@ hr {
     .info {
         display: block;
       position: relative;
-    left:30px;
+        left:30px;
         bottom: 70px;
         margin-right: 100px;
     }

@@ -21,39 +21,29 @@
      <nav>
         <div class="navbar">
             <img class="nav-logo" src="../assets/images/Screenshot 2023-02-11 021952.png" alt="">
-            <!-- <input class="search" list="search" type="text" placeholder="Search for courses,videos & Blogs"> -->
-            <datalist id="search">
-                <option value="warren buffett in anual letter,stays upbeat......">
-                <option value="tesla elon musk fans tout cybertruck demand......">
-                <option value="how to buy a stock and make your money four......">
-                <option value="Dow Jones falters on hot inflation boeing groundened......">
-                <option value="What's going on microsoft and between apple shares......">
-                <option value="Big Tech hits $1.5 trillion in sales last year......">
-                <option value="Sirius XM (SIRI) and Toyoto collaborate to celebrate......">
-                <option value="Futures fall ahead of key inflation report investor's......">
-                <option value="Netflix lands first partnership with NFL: how patrick......">
-                <option value="Whatsapp to bring i-Message-like-feature to android and iPhone......">
-            </datalist>
+           
             <div class="navlinks">
                 <a href="#" class="navlink">About</a>&emsp;
                 <!-- <a href="#" class="navlink">Market</a> -->
                 <div class="dropdown">
                     <a class="dropbtn" href="market.html">Market</a>
                     <div class="dropdown-content">
-                      <a href="#">Live Market Analyze</a>
-                      <a href="#">Stock Symbol Search </a>
-                      <a href="#">Currency Calculator</a>
-                      <a href="#">Company IPO </a>
-                      <a href="#">Winning Portfolio's </a>
+                      <a href="market.html">Global Market List</a>
+                      <a href="stock_market_info.html">Stock Informations</a>
+                      <a href="forex_market_info.html">forex Informations</a>
+                      <a href="crypto_market_info.html">Cryto Informations</a>
+                      <a href="etf_market_info.html">ETF Informations</a>
+                      <a href="indices_info.html">Indices Informations</a>
+                      <a href="mutual_funds_info.html">Exchange SymbolInformations</a>
                     </div>
                   </div>
                 <!-- <a href="#" class="navlink">Trade</a> -->
                 <div class="dropdown">
                     <a class="dropbtn" href="live_trading.html">Trade</a>
                     <div class="dropdown-content">
-                      <a href="#">Stocks</a>
-                      <a href="#">forex</a>
-                      <a href="#">Cryptos</a>
+                      <a href="live_trading.html">Stocks</a>
+                      <a href="live_trading.html">forex</a>
+                      <a href="live_trading.html">Cryptos</a>
                     </div>
                   </div>
                 <!-- <a href="#" class="navlink">News</a> -->
@@ -61,35 +51,77 @@
                 <div class="dropdown">
                     <a class="dropbtn" href="news.html">News</a>
                     <div class="dropdown-content">
-                      <a href="#">Latest News</a>
-                      <a href="#">Live News</a>
-                      <a href="#">Stocks News</a>
-                      <a href="#">forex News</a>
-                      <a href="#">Technology News</a>
-                      <a href="#">Company News</a>
-                      <a href="#">Crypto News</a>
-                      <a href="#">Futures News</a>
+                      <a href="news.html">Latest News</a>
+                      <a href="news.html">Live News</a>
+                      <a href="news.html">Stocks News</a>
+                      <a href="news.html">forex News</a>
+                      <a href="news.html">Technology News</a>
+                      <a href="news.html">Company News</a>
+                      <a href="news.html">Crypto News</a>
+                      <a href="news.html">Futures News</a>
                     </div>
                   </div>
                 <div class="dropdown">
                     <a class="dropbtn" href="learn.html">Learn</a>
                     <div class="dropdown-content">
-                      <a href="#">Youtube Videos</a>
-                      <a href="#">Explore Courses</a>
-                      <a href="#">Explore Blogs</a>
+                      <a href="learn.html">Youtube Videos</a>
+                      <a href="learn.html">Explore Courses</a>
+                      <a href="learn.html">Explore Blogs</a>
                     </div>
                   </div>
                 
             </div>
-            <div class="notification">
-              <form action="user_personas.html"><button class="login"  alt="">Log In</button></form>
+            
+            <!-- support images notification img start -->
+            <div class="notification"  id="notification-img">
+            <img class="notificationimg" onclick="profile1()" src="../assets/images/icons8-notification-50.png" alt="">
             </div>
+            <div class="notification">
+                <div class="dropdown1">
+                <img class="notificationimg" onclick="profile1()" src="../assets/images/icons8-translator-50.png" alt="">
+                <div class="dropdown-content-lang"><br>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; English </a>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; France</a>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Italy</a>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Arabic</a>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Espanol</a>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Algeria</a>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Albania</a>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Japanese</a>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Hindi</a>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Tamil</a>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Portuguese</a>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Spanish</a>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Russian</a>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; German</a>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Korean</a>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Telugu</a>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Turkish</a>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Ukranian</a>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Malayalam</a>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Kannada</a>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Chinese</a><br>
+                    </div>
+                    </div>
+            </div>
+            <div class="notification">
+                <div class="dropdown1">
+                <img class="notificationimg" onclick="profile1()" src="../assets/images/icons8-online-support-50.png" alt="">
+                <div class="dropdown-content" id="content-support"><br>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-group-50.png">&nbsp; Connect</a>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-group-message-50.png">&nbsp; Chat With Us</a>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-invite-50.png">&nbsp; Write a Mail</a>
+                    <a href="#"><img class="user-dropdown" src="../assets/images/icons8-online-support-50.png">&nbsp; Support Center</a><br>
+                    </div>
+                    </div>
+            </div>
+
             <div class="notification">
              
                 <!-- js code start userprofile -->
-            <form id="form" action="userprofile.html">
+            <a id="form" href="userprofile.html">
 
-            </form>
+            </a>
             </div>
 
         </div>
@@ -118,56 +150,7 @@
       <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
           <div class="tradingview-widget-copyright"><a href="https://in.tradingview.com/markets/" rel="noopener" target="_blank"><span class="blue-text"></span></a> </div>
-          <!-- <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
-          {
-          "symbols" : [
-            {
-              "proName": "FOREXCOM:SPXUSD",
-              "title": "S&P 500"
-            },
-            {
-              "proName": "FOREXCOM:NSXUSD",
-              "title": "US 100"
-            },
-            {
-              "description": "freshworks",
-              "proName": "NASDAQ:FRSH"
-            },
-            {
-              "description": "Amazon",
-              "proName": "NASDAQ:AMZN"
-            },
-            {
-              "description": "Gold",
-              "proName": "TVC:GOLD"
-            },
-            {
-              "description": "Tesla",
-              "proName": "NASDAQ:TSLA"
-            },
-            {
-              "description": "Meta",
-              "proName": "NASDAQ:META"
-            },
-            {
-              "description": "bitcoin",
-              "proName": "CRYPTOCAP:BTC"
-            },
-            {
-              "description": "Ethereum",
-              "proName": "CRYPTOCAP:ETH"
-            }
-          ],
-      
-          "showSymbolLogo": true,
-          "colorTheme": "dark",
-          "isTransparent": false,
-          "displayMode": "adaptive",
-          "locale": "in"
-        }
-          </script> -->
         </div>
-        <!-- TradingView Widget END -->
       </div>
       </div> 
       
@@ -517,22 +500,22 @@
                     font-weight: 700; font-size: 16px;">COMPANY</p>
                   </div><br>
                   <div>
-                    <p style="margin-top:5px;"><a class="footerlink1" href="">Home</a></p>
+                    <p style="margin-top:5px;"><a class="footerlink1" href="userHome.html">Home</a></p>
                   </div>
                   <div>
-                    <p style="margin-top:5px;"><a class="footerlink1" href="">About</a></p>
+                    <p style="margin-top:5px;"><a class="footerlink1" href="#">About</a></p>
                   </div>
                   <div>
-                    <p style="margin-top:5px;"><a class="footerlink1" href="">Assets</a></p>
+                    <p style="margin-top:5px;"><a class="footerlink1" href="market.html">Market</a></p>
                   </div>
                   <div>
-                    <p style="margin-top:5px;"><a class="footerlink1" href="">News</a></p>
+                    <p style="margin-top:5px;"><a class="footerlink1" href="live_trading.html">Trade</a></p>
                   </div>
                   <div>
-                    <p style="margin-top:5px;"><a class="footerlink1" href="">Learn</a></p>
+                    <p style="margin-top:5px;"><a class="footerlink1" href="news.html">News</a></p>
                   </div>
                   <div>
-                    <p style="margin-top:5px;"><a class="footerlink1" href="">Blogs</a></p>
+                    <p style="margin-top:5px;"><a class="footerlink1" href="learn.html">Learn</a></p>
                   </div>
       
       
@@ -550,22 +533,22 @@
                       font-weight: 700; font-size: 16px;" class="footheading">LEARNING LINKS</p>
                     </div><br>
                     <div>
-                      <p style="margin-top:5px;"><a class="footerlink1" href="">How to Invest</a></p>
+                      <p style="margin-top:5px;"><a class="footerlink1" href="learn.html">How to Invest</a></p>
                     </div>
                     <div>
-                      <p style="margin-top:5px;"><a class="footerlink1" href="">Trading Videos</a></p>
+                      <p style="margin-top:5px;"><a class="footerlink1" href="learn.html">Trading Videos</a></p>
                     </div>
                     <div>
-                      <p style="margin-top:5px;"><a class="footerlink1" href="">Strategies</a></p>
+                      <p style="margin-top:5px;"><a class="footerlink1" href="learn.html">Strategies</a></p>
                     </div>
                     <div>
-                      <p style="margin-top:5px;"><a class="footerlink1" href="">Indicators</a></p>
+                      <p style="margin-top:5px;"><a class="footerlink1" href="learn.html">Indicators</a></p>
                     </div>
                     <div>
-                      <p style="margin-top:5px;"><a class="footerlink1" href="">Budgeting/Saving</a></p>
+                      <p style="margin-top:5px;"><a class="footerlink1" href="learn.html">Budgeting/Saving</a></p>
                     </div>
                     <div>
-                      <p style="margin-top:5px;"><a class="footerlink1" href="">Blogs</a></p>
+                      <p style="margin-top:5px;"><a class="footerlink1" href="learn.html">Blogs</a></p>
                     </div>
       
       
