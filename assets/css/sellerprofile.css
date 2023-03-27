@@ -1,0 +1,38 @@
+.user-row {
+    margin-bottom: 14px;
+  }
+  
+  table {
+    margin-left: 100px;
+  }
+  .table-user-information > tbody > tr {
+    border-top: 1px solid #ccc;
+  }
+  
+  .table-user-information > tbody > tr:first-child {
+    border-top: 0;
+  }
+  
+  .table-user-information > tbody > tr > td {
+    border-top: 0;
+  }
+  
+  .panel {
+    margin-top: 20px;
+  }
+  .panel-title {
+    margin-top: 100px;
+  }
+  .edit , .delete {
+    padding:5px;
+    width:100px;
+  }
+  .edit:hover ,.delete:hover {
+    transform: scale(1.05);
+  }
+ .img-circle {
+  width:150px;
+  height:150px;
+  border-radius: 50%;
+ }
+
