@@ -12,6 +12,8 @@ Wireframe : https://drive.google.com/file/d/1-7wSzABWOs9dMf2X6TWQoBv0x9tKjAra/vi
 
 CRUD For User signing page => Create user account [completed] => Read User Data For Profile Page [completed] => Update user details For Edit Page [completed] => Delete user details For deactivate [completed]
 
+CRUD For Seller signing page => Create Seller account [completed] => Read Seller Data Page [completed] => Update Seller details Page [completed] => Delete Seller details For deactivate [completed]
+
 CRUD For Seller Features page => Create Course Feature [completed] => Read Course Feature [completed] => Update Course feature [completed] => Delete Course feature [completed]
 
 CRUD For User Features page => Create Course in Cart Feature [completed] => Read Course in Cart Feature [completed] => Delete Course in Cart feature [completed]
