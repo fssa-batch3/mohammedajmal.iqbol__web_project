@@ -416,3 +416,15 @@ nav {
   text-decoration: none;
   color: black;
 }
+#google_translate_element {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+.google-remover {
+  width:165px;
+  height:20px;
+  background-color: white;
+  position: absolute;
+  right: 250px;
+  top:45px;
+}

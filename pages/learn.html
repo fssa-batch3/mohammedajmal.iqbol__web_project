@@ -22,7 +22,9 @@
       <div class="notification">
         <img class="notificationimg" onclick="profile1()" src="../assets/images/icons8-notification-50.png" alt="">
       </div>
-      <div class="notification">
+      <div id="google_translate_element"></div>
+      <div class="google-remover"></div>
+      <!-- <div class="notification">
         <div class="dropdown">
           <img class="notificationimg" onclick="profile1()" src="../assets/images/icons8-translator-50.png" alt="">
           <div class="dropdown-content-lang"><br>
@@ -50,7 +52,7 @@
               Chinese</a><br>
           </div>
         </div>
-      </div>
+      </div> -->
       <div class="notification">
         <div class="dropdown">
           <img class="notificationimg" onclick="profile1()" src="../assets/images/icons8-online-support-50.png" alt="">
@@ -329,20 +331,13 @@
   </main>
 
 
-  <script>
 
-    openCity(evt, cityName);
-
-    home();
-
-
-    toggle(id);
-
-
-
-  </script>
-
-
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
   <script src="../assets/js/learn.js"></script>
 </body>
 </html>

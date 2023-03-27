@@ -114,6 +114,7 @@ inputFile.addEventListener("change", () => {
     let top_skills = document.getElementById("top-skills").value;
     let top_skills1 = top_skills.split(".");
     let videos = base64String.slice(1,20);
+    let bookmark_img = "../assets/images/icons8-add-bookmark-50.png";
     let id= Date.now();
     let date1 = new Date();
     let datestring = date1.toDateString();
@@ -121,7 +122,7 @@ inputFile.addEventListener("change", () => {
 
 
        let course_obj = {
-        img,title,timing,language,enrolled,cost,old_cost,Description,top_skills1,videos,id,datestring
+        img,title,timing,language,enrolled,cost,old_cost,Description,top_skills1,videos,id,datestring,bookmark_img
     };
 
     course_data.push(course_obj);
@@ -142,6 +143,7 @@ inputFile.addEventListener("change", () => {
     let top_skills = document.getElementById("top-skills").value;
     let top_skills1 = top_skills.split(".");
     let videos = base64String.slice(1,20);
+    let bookmark_img = "../assets/images/icons8-add-bookmark-50.png";
     let id= Date.now();
     let date1 = new Date();
     let datestring = date1.toDateString();
@@ -150,7 +152,7 @@ inputFile.addEventListener("change", () => {
 
 
         let course_obj = {
-        img,title,timing,language,enrolled,cost,old_cost,Description,top_skills1,videos,id,datestring
+        img,title,timing,language,enrolled,cost,old_cost,Description,top_skills1,videos,id,datestring,bookmark_img
     };
 
     course_data.push(course_obj);

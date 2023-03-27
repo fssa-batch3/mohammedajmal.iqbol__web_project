@@ -24,12 +24,12 @@
   <div class="input-display">
     <div>
 <div class="form-floating" id="emailinput">
-    <input type="text" class="form-control" id="name" placeholder="Password" required>
+    <input type="text" class="form-control" id="name" placeholder="Password" required pattern="[A-Za-z0-9]" title="Username (letters and numbers only, no punctuation or special characters)">
     <label for="name">Name</label>
   </div>
 
   <div class="form-floating mb-3" id="passinput">
-    <input type="number" class="form-control" id="age" placeholder="name@example.com" required>
+    <input type="number" class="form-control" id="age" placeholder="name@example.com" required  pattern="[0-9]{2}">
     <label for="age">Age</label>
   </div>
   <div class="form-floating mb-3" id="passinput">
@@ -41,13 +41,13 @@
     <label for="gender">Gender</label>
   </div>
   <div class="form-floating mb-3" id="passinput">
-    <input type="number" class="form-control" id="mobile-number" placeholder="name@example.com" required>
+    <input type="number" class="form-control" id="mobile-number" placeholder="name@example.com" required pattern="[0-9]{10}">
     <label for="mobile-number">Mobile Number</label>
   </div>
 </div>
 <div>
   <div class="form-floating mb-3" id="passinput">
-    <input type="text" class="form-control" id="about-me" placeholder="name@example.com">
+    <input type="text" class="form-control" id="about-me" placeholder="name@example.com" pattern="[A-Za-z]{20}" title="About Me (Must contain 150 to 200 words)" maxlength="150">
     <label for="about-me">About me</label>
   </div>
   <div class="form-floating mb-3" id="passinput">
@@ -59,11 +59,11 @@
     <label for="email">Email address</label>
   </div>
   <div class="form-floating" id="passinput">
-    <input type="password" class="form-control" id="password" placeholder="Password" required>
+    <input type="password" class="form-control" id="password" placeholder="Password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
     <label for="password">Password</label>
   </div>
   <div class="form-floating" id="passinput">
-    <input type="password" class="form-control" id="confirm-password" placeholder="Password" required>
+    <input type="password" class="form-control" id="confirm-password" placeholder="Password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
     <label for="confirm-password">Confirm Password</label>
   </div>
 </div>

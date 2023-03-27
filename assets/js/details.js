@@ -323,6 +323,9 @@ window.location.href = "learn.html";
 
 
 
+
+
+
 //delete course from bookmarks
 
 
@@ -334,6 +337,14 @@ console.log(bookmark);
 const get_bookmark = bookmark.find((course) => course.title === usernames );
 console.log(get_bookmark);
 
+//find bookmark obj with course_data
+const get_course = course_data.find((course) => course.title === usernames );
+console.log(get_course);
+
+
+// find index by match object from course_data
+const course_index = course_data.indexOf(get_course);
+console.log(course_index);
 
 // delete bookmark from bookmark tab
 let delete_bookmark = document.getElementById("deletebookmark");
@@ -352,10 +363,28 @@ if(msg != true ){
 return false;
 } else {
 
-    //if message true then do this
+//if message true then do this
 bookmark.splice(index,1);
 localStorage.setItem("bookmarks",JSON.stringify(bookmark));
+
+
+let bookmark_obj = {
+  bookmark_img : "../assets/images/icons8-add-bookmark-50.png",
+};
+
+//assign this source with previous source
+let assignObj = Object.assign(get_course,bookmark_obj);
+console.log(assignObj);
+
+//assign new value to old one
+course_data[course_index] = assignObj;
+
+//set new value to localstorage
+localStorage.setItem("course_data",JSON.stringify(course_data));
+
 window.location.href = "learn.html";
+
+
 }
 
 
@@ -378,8 +407,8 @@ document.getElementById("user-profile").src = get_objs.profile_pic;
 //  console.log(get_objs.email);
 
 
-// comment array parse JSON
-const comment = JSON.parse(localStorage.getItem("comments"));
+
+
 
 // comment card create when clicks 
 let createcomment = document.getElementById("submit-comment");
@@ -417,7 +446,7 @@ location.reload();
 } else {
 
     //else create an array
-const comment_arr = [];
+let comment_arr = [];
 
 let comment_input = document.getElementById("comment-input").value;
 let comment_id = Date.now();
@@ -443,6 +472,10 @@ localStorage.setItem("comments",JSON.stringify(comment_arr));
 // comment card create
 let comment_div;
 let comment_p;
+
+// comment array parse JSON
+const comment = JSON.parse(localStorage.getItem("comments"));
+
 
 for(let i=0;i<comment.length;i++){
 

@@ -18,4 +18,9 @@ CRUD For User Features page => Create Course in Cart Feature [completed] => Read
 
 CRUD For User Features page => Create Comment Feature [completed] => Read Comment Feature [completed] => Update Comment feature [completed] => Delete Comment feature [completed]
 
-Courses Filter tabs feature [completed] 
+Courses Filter Search tabs feature [completed] 
+
+
+CRUD For User Features page => Create Favourites Feature [completed] => Read Favourites Feature [completed] => Delete Favourites feature [completed]
+
+

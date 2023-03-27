@@ -180,7 +180,7 @@ for (i = 0; i < course_data.length; i++) {
   course_div_stocks.innerHTML = `
                   <img class="bookmark-icon" id="bookmark-icon" onclick="toggle(${
                     course_data[i]["id"]
-                  })" src="../assets/images/icons8-add-bookmark-50.png" alt="">
+                  })" src=${course_data[i]["bookmark_img"]} alt="">
                   <div>
                                    <img class="course-img-stocks" src=${
                                      course_data[i]["img"]
@@ -231,12 +231,33 @@ for (i = 0; i < course_data.length; i++) {
 
 function toggle(id) {
   let get_click_obj;
+  console.log(id);
 
   //find clicked course
   get_click_obj = course_data.find((e) => e.id === id);
+  console.log(get_click_obj);
 
   //adding key bookmark = true
   get_click_obj.bookmark = true;
+
+  //create object to assign
+  let bookmark_obj = {
+    bookmark_img : "../assets/images/icons8-add-bookmark-50_bookmarked.png",
+  };
+
+  //assign this source with previous source
+  let assignObj = Object.assign(get_click_obj,bookmark_obj);
+  console.log(assignObj);
+
+  //find clicked object index
+  let index = course_data.indexOf(get_click_obj);
+  console.log(index);
+
+  //assign new value to old one
+  course_data[index] = assignObj;
+
+  //set new value to localstorage
+  localStorage.setItem("course_data",JSON.stringify(course_data));
 
   console.log(get_click_obj);
 
@@ -281,17 +302,6 @@ function toggle(id) {
 const bookmarks = JSON.parse(localStorage.getItem("bookmarks"));
 console.log(bookmarks);
 
-// x global variable
-let x;
-for (let i = 0; i < bookmarks.length; i++) {
-  if (bookmarks[i]["bookmark"] === true) {
-    x = bookmarks[i];
-    document.getElementById("bookmark-icon").src =
-      "../assets/images/icons8-add-bookmark-50 (1).png";
-    //if true bookmark added toggle
-  }
-}
-console.log(x);
 
 //bookamrk card create from JSON object
 let bookmark_div;
