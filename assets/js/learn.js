@@ -743,59 +743,74 @@ for (i = course_data_arr.length - 1; i < course_data_arr.length; i++) {
 
 //my courses start
 
+
+let register = JSON.parse(localStorage.getItem("register_arr"));
+console.log(register);
+
+let loggin = JSON.parse(localStorage.getItem("login_arr"));
+console.log(loggin);
+
+const get_user_obj = register.find((event) => event.email === loggin);
+console.log(get_user_obj);
+
 //JSON data from localstorage parse
 const mycourses = JSON.parse(localStorage.getItem("add-to-card"));
 console.log(mycourses);
 
+
+const get_user_obj1 = course_data.filter((event) => event.user_id === get_user_obj.user_id );
+console.log(get_user_obj1);
+
+
 //card create from parsed object JSON
 let my_courses;
 
-for (i = 0; i < mycourses.length; i++) {
+for (i = 0; i < get_user_obj1.length; i++) {
   my_courses = document.createElement("a");
   my_courses.setAttribute("class", "first-course2-stocks");
   // console.log(mycourses[i]["title"]);
-  my_courses.setAttribute("href", "details.html?name=" + mycourses[i]["title"]);
+  my_courses.setAttribute("href", "details.html?name=" + get_user_obj1[i]["title"]);
   let cost = "";
   let discount = "";
 
-  if (mycourses[i]["cost"] === "learn for free") {
+  if (get_user_obj1[i]["cost"] === "learn for free") {
     cost += " ";
     discount += 100;
   } else {
     cost += "₹" + " ";
     discount +=
-      100 - (course_data[i]["cost"] / course_data[i]["old_cost"]) * 100;
+      100 - (get_user_obj1[i]["cost"] / get_user_obj1[i]["old_cost"]) * 100;
   }
   my_courses.innerHTML = `<div>
                              <img class="course-img-stocks" src=${
-                               mycourses[i]["img"]
+                               get_user_obj1[i]["img"]
                              } alt="">
                              </div>
                              <div>
                                  <h3 class="course-title">${
-                                   mycourses[i]["title"]
+                                   get_user_obj1[i]["title"]
                                  }</h3>
                                  <div class="course-details">
                                        <p class="course-timing">${
-                                         "<b>Dur :</b>" + mycourses[i]["timing"]
+                                         "<b>Dur :</b>" + get_user_obj1[i]["timing"]
                                        }</p>
                                        <p class="course-ln">&emsp;${
                                          "<b>Lang : </b>" +
-                                         mycourses[i]["language"]
+                                         get_user_obj1[i]["language"]
                                        }</p>
                                        <p class="course-enrolled">&emsp;${
                                          "<b>Enr :</b>" +
-                                         mycourses[i]["enrolled"] +
+                                         get_user_obj1[i]["enrolled"] +
                                          " " +
                                          "Enrolled"
                                        }</p>
                                    </div>
                                  <div class="flexcost">
                                 <h3 class="course-cost">${
-                                  cost + " " + mycourses[i]["cost"]
+                                  cost + " " + get_user_obj1[i]["cost"]
                                 }</h3>
                                 <strike class="course-oldcost" >${
-                                  "₹" + " " + mycourses[i]["old_cost"]
+                                  "₹" + " " + get_user_obj1[i]["old_cost"]
                                 }</strike>
                                 <p class="course-discount" >${
                                   discount + " " + "% discount"

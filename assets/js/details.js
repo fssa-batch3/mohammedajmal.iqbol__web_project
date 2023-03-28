@@ -157,6 +157,17 @@ details_div.innerHTML = `<div class="course-image">
 
      
 
+        console.log(get_obj);
+
+        let register = JSON.parse(localStorage.getItem("register_arr"));
+        console.log(register);
+
+        let loggin = JSON.parse(localStorage.getItem("login_arr"));
+        console.log(loggin);
+
+        const get_user_obj = register.find((event) => event.email === loggin);
+        console.log(get_user_obj);
+
 
 
 //add to cart  function start
@@ -164,14 +175,24 @@ let addtocart = document.getElementById("add-to-cart");
 addtocart.addEventListener("click",(cart) => {
 cart.preventDefault();
 
-// add to card array JSON parse
-const addtocard_arr = JSON.parse(localStorage.getItem("add-to-card"));
-console.log(addtocard_arr);
-console.log(get_obj);
 
-// find object from match id
-const varobj = addtocard_arr.find((e) => e.id === get_obj.id );
-    console.log(varobj);
+  
+        
+let user_obj = {
+  "user_id" : get_user_obj.user_id,
+};
+
+let user_id_assign = Object.assign(get_obj,user_obj);
+console.log(user_id_assign);
+
+let index = course_data.indexOf(get_obj);
+console.log(index);
+
+course_data[index] = user_id_assign;
+
+localStorage.setItem("course_data",JSON.stringify(course_data));
+
+
 
 // check if else by cost
 if(get_obj["cost"] != "learn for free"){
@@ -185,6 +206,16 @@ if(get_obj["cost"] != "learn for free"){
     
     
     if(localStorage.getItem("add-to-card") !== null ){
+
+      
+// add to card array JSON parse
+const addtocard_arr = JSON.parse(localStorage.getItem("add-to-card"));
+console.log(addtocard_arr);
+console.log(get_obj);
+
+// find object from match id
+const varobj = addtocard_arr.find((e) => e.id === get_obj.id );
+    console.log(varobj);
       
       addtocartarr = JSON.parse(localStorage.getItem("add-to-card"));
       
@@ -195,6 +226,7 @@ if(get_obj["cost"] != "learn for free"){
     console.log(addtocartarr);
 
 localStorage.setItem("add-to-card",JSON.stringify(addtocartarr));
+alert("Course Added to My Courses");
   window.location.href = "learn.html";
    } else {
     alert("course already added");
@@ -217,20 +249,13 @@ localStorage.setItem("add-to-card",JSON.stringify(addtocartarr));
 
   
   localStorage.setItem("add-to-card",JSON.stringify(addtocartarr));
+  alert("Course Added to My Courses");
+  window.location.href = "learn.html";
   
 }
 
 
-
-
 }
-
-
-
-
-
-
-
 
 
 });
@@ -279,11 +304,6 @@ document.querySelector("body").style.backgroundColor = "#F6F8FC";
 
 //delete course from my courses when clicking a button
 
-//JSON parse mycourses
-const mycourses = JSON.parse(localStorage.getItem("add-to-card")); 
-console.log(mycourses);
-
-
 // URL Params
 const urls = window.location.search;
 const urlparams = new URLSearchParams(urls);
@@ -291,15 +311,20 @@ const usernames = urlParams.get("name");
 console.log(usernames);
 
 
-//find clicked course by find method
-const get_mycourses = mycourses.find((course) => course.title === usernames );
-console.log(get_mycourses);
-
-
 // delete course eventlistener when click
 let delete_mycourses = document.getElementById("deletecourse");
 delete_mycourses.addEventListener("click",(deletecourse) => {
 deletecourse.preventDefault();
+
+//JSON parse mycourses
+const mycourses = JSON.parse(localStorage.getItem("add-to-card")); 
+console.log(mycourses);
+
+
+
+//find clicked course by find method
+const get_mycourses = mycourses.find((course) => course.title === usernames );
+console.log(get_mycourses);
 
 // find clicked index from mycourses array
 const index = mycourses.indexOf(get_mycourses);
@@ -311,11 +336,30 @@ if(msg != true ){
 return false;
 } else {
 
+
+  
+
+let user_obj = {
+  "user_id" : null,
+};
+
+let user_id_assign = Object.assign(get_obj,user_obj);
+console.log(user_id_assign);
+
+let index = course_data.indexOf(get_obj);
+console.log(index);
+
+course_data[index] = user_id_assign;
+
+localStorage.setItem("course_data",JSON.stringify(course_data));
+
+
+
     //if message == true do this
 mycourses.splice(index,1);
 localStorage.setItem("add-to-card",JSON.stringify(mycourses));
+alert("Course Removed to My Courses");
 window.location.href = "learn.html";
-
 }
 
 

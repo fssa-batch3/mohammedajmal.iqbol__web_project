@@ -81,6 +81,21 @@ CRUD For User Features page => Create Favourites Feature [completed] => Read Fav
         - The user is redirected to the Payment page.
         - The Course is Added to My Courses.
 
+### Delete a Course
+- Scenario 1: Successfully Delete a Course
+    - Steps:
+        1. Log in as a buyer.
+        2. Navigate to the Course listing page.
+        3. Select a Course to view its details.
+        4. Click the "Buy Now" button.
+        5. Course Added to My Courses ( If It's Free ).
+        6. You will be redirected to Payment Page ( If It's Cost ).
+        7. The Course is Added to My Courses.
+        8. Click the Course and it will redirect to details page
+        9. Click "Delete Course" to Delete Course from My Courses
+    - Expected Result:
+        - The Course is deleted by the user from My Courses tab.
+
 ### Add Courses to Bookmarks
 - Scenario 1: Successfully add Courses to Bookmarks
     - Steps:
@@ -110,6 +125,127 @@ CRUD For User Features page => Create Favourites Feature [completed] => Read Fav
     - Expected Result:
         - The Courses is removed from the user's Bookmarks.
 
+### Add Comments to the Courses
+- Scenario 1: Successfully add Comments to Courses
+    - Steps:
+        1. Log in as a buyer.
+        2. Navigate to the Courses page.
+        3. Click the course and it will redirect to Details Page.
+        4. Add Comments in the Comment Section Input.
+        5. Click "Submit" or Press "Enter" to Add the Comments.
+    - Expected Result:
+        - The Comment is added to the Course details Page.
+
+### View Comments In the Courses 
+- Scenario 1: Successfully View Comments In Courses
+    - Steps:
+        1. Log in as a buyer.
+        2. Navigate to the Courses page.
+        3. Click the course and it will redirect to Details Page.
+        4. Type Comment in the Comment Section Input.
+        5. Click "Submit" or Press "Enter" to Add the Comments.
+        6. the Comments are Visible in the Course Detail Page.
+    - Expected Result:
+        - The user can view the list of Comments in the Course Details Page.
+
+### Update Comments In the Courses
+- Scenario 1: Successfully Update Comments In Courses 
+    - Steps:
+        1. Log in as a buyer.
+        2. Navigate to the Courses page.
+        3. Click the course and it will redirect to Details Page.
+        4. Type Comment in the Comment Section Input.
+        5. Click "Submit" or Press "Enter" to Add the Comments.
+        6. the Comments are Visible in the Course Detail Page.
+        7. Click "Edit" button and the popup will appear
+        8. type edited Comment and Click "Submit" button.
+    - Expected Result:
+        - The Comment will be Edited and Displayed to Course Details Page.
+
+### Delete Comments from the Courses
+- Scenario 1: Successfully Delete Comments from Courses
+    - Steps:
+        1. Log in as a buyer.
+        2. Navigate to the Courses page.
+        3. Click the course and it will redirect to Details Page.
+        4. Type Comment in the Comment Section Input.
+        5. Click "Submit" or Press "Enter" to Add the Comments.
+        6. the Comments are Visible in the Course Detail Page.
+        7. Click "Edit" button and the popup will appear
+        8. type edited Comment and Click "Submit" button.
+        9. Click "Delete" button to Delete a Particular Comment.
+    - Expected Result:
+        - The Comment will be Deleted and Removed from the Comment Section.
+
+### Course Filter By Category
+- Scenario 1: Successfully Filter Course By Categories
+    - Steps:
+        1. Log in as a buyer.
+        2. Navigate to the Courses page.
+        3. Courses are Filtered By Categories by free, cost, live, latest etc.
+    - Expected Result:
+        - The Courses are filtered by Categories.
+
+### Search Filter
+- Scenario 1: Successfully Search Courses By Categories or Name
+    - Steps:
+        1. Log in as a buyer.
+        2. Navigate to the Courses page.
+        3. You can Search Courses Simply by Name in the Search Bar.
+    - Expected Result:
+        - The Courses are filtered by Search Bar Option.
+    
+## Seller
+
+### Create an account
+- Scenario 1: Successfully create an Seller account
+    - Steps:
+        1. Navigate to the registration page.
+        2. Enter the required information such as name, age, profile_pic, gender, mobile_number, about_me, date-of-birth, email, and password.
+        3. Click the "Create Account" button.
+    - Expected Result:
+        - The Seller is redirected to the login page.
+
+### Create an account
+- Scenario 1: Successfully login into Seller account
+    - Steps:
+        1. Navigate to the login page.
+        2. Enter the required information such as email, and password.
+        3. Click the "login" button.
+    - Expected Result:
+        - The Seller is redirected to the Seller HomePage page.
+ 
+### Add Courses to User Page
+- Scenario 1: Successfully Add Courses to User Page
+    - Steps:
+        1. Navigate to the Seller HomePage page.
+        2. Click "Add Course" button and it will redirect you to a 
+           Add Course form page.
+        3. Fill the form with required details and click "Submit"
+    - Expected Result:
+        - The Course Is added by the Seller and it's listed In the User 
+          Courses listing Page.
+
+### Update Courses In User Page
+- Scenario 1: Successfully Update Courses In User Page
+    - Steps:
+        1. Navigate to the Seller HomePage page.
+        2. Click the Course and it will redirect you to a Edit Course form page.
+        3. Edit the details of the Courses In the form and click "Submit".
+    - Expected Result:
+        - The Course Is Edited by the Seller and it's listed In User 
+          Courses listing Page.
+
+ ### Delete Courses from User Page
+- Scenario 1: Successfully Delete Courses from User Page
+    - Steps:
+        1. Navigate to the Seller HomePage page.
+        2. Click the Course and it will redirect you to a Edit Course form page.
+        3. Click "Delete" button to delete the Course from the User listing Page.
+    - Expected Result:
+        - The Course Is Deleted by the Seller In the User Courses listing Page.
+     
+ 
 
 
 
