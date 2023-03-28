@@ -115,7 +115,7 @@ CRUD For User Features page => Create Favourites Feature [completed] => Read Fav
     - Expected Result:
         - The user can view the list of Courses in the Bookmarks.
 
-### Remove item from Bookmarks
+### Remove Course from Bookmarks
 - Scenario 1: Successfully remove Courses from Bookmarks 
     - Steps:
         1. Log in as a buyer.
@@ -246,6 +246,82 @@ CRUD For User Features page => Create Favourites Feature [completed] => Read Fav
         - The Course Is Deleted by the Seller In the User Courses listing Page.
      
  
+
+
+
+## Seller
+
+### Create an account
+- Scenario 1: Successfully create an account
+    - Steps:
+        1. Navigate to the registration page.
+        2. Enter the required information such as name, age, profile_pic, gender, mobile_number, about_me, date-of-birth, email, and password.
+        3. Click the "Create Account" button.
+    - Expected Result:
+        - The Seller is redirected to the login page.
+
+### Create an account
+- Scenario 1: Successfully login in to account
+    - Steps:
+        1. Navigate to the login page.
+        2. Enter the required information such as email, and password.
+        3. Click the "login" button.
+    - Expected Result:
+        - The Seller is redirected to the Seller HomePage page.
+
+### Edit account details
+- Scenario 1: Successfully edit account details
+    - Steps:
+        1. Log in as a seller.
+        2. Navigate to the Seller Profile page.
+        3. Click the "Edit" button.
+        4. Update the account details.
+        5. Click the "Save" button.
+    - Expected Result:
+        - The Seller's account details are updated.
+
+### Create a new product to sell
+- Scenario 1: Successfully create a new product to sell
+    - Steps:
+        1. Log in as a seller.
+        2. Navigate to the Create Course page.
+        3. Enter the Course details such as name, description, price, 
+           old_price, timing, language, videos etc.
+        4. Upload Course image.
+        5. Click the "Submit" button.
+    - Expected Result:
+        - The new Course is created and added to the seller's list of products.
+
+### View list of Course
+- Scenario 1: Successfully view list of Course
+    - Steps:
+        1. Log in as a seller.
+        2. Navigate to the Course page.
+        3. View the list of Course.
+    - Expected Result:
+        - The seller can view their list of Course.
+
+### Edit Course details
+- Scenario 1: Successfully edit Course details
+    - Steps:
+        1. Log in as a seller.
+        2. Navigate to the Course page.
+        3. Select a Course to edit.
+        4. Click the "Edit Course" button.
+        5. Update the Course details.
+        6. Click the "Submit" button.
+    - Expected Result:
+        - The Course details are updated.
+
+### Delete list of Course
+- Scenario 1: Successfully Delete list of Course
+    - Steps:
+        1. Log in as a seller.
+        2. Navigate to the Course page.
+        3. View the list of Courses.
+        4. Click the "Delete" button.
+    - Expected Result:
+        - The seller can Delete the list of Courses.
 
 
 
