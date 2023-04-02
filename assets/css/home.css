@@ -183,7 +183,6 @@ hr {
   .herouserpara {
     font-family: 'Roboto',sans-serif;
       font-size: 15px;
-      opacity:0.8;
       color: black;
       position: relative;
     top:135px;
@@ -1652,7 +1651,7 @@ hr {
       .dropbtn {
         background-color: transparent;
         color: black;
-        font-family: 'POPPINS';
+        font-family: 'Poppins',sans-serif;
         padding: 16px;
         font-size: 16px;
         border: none;

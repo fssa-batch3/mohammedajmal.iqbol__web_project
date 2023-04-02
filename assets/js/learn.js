@@ -843,3 +843,12 @@ for (i = 0; i < addedCourses.length; i++) {
 }
 
 // create mycourses when finished payment or when click buy course button end
+
+
+//google translate start
+
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+
+//google translate end

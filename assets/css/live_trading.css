@@ -1,4 +1,4 @@
-body {margin: 0; padding: 0; font-family: Arial, Tahoma; font-size: 16px; color: #000; background-color: #FFF; min-width: 1010px; }
+body {margin: 0; padding: 0; font-family: Arial, Tahoma , sans-serif; font-size: 16px; color: #000; background-color: #FFF; min-width: 1010px; }
 .top {background-color: #0055A7; }
 .top h1 {margin: 10px 20px 10px 10px; font-size: 25px; font-weight: normal; color: #FFF; display: inline-block; vertical-align: middle; }
 .top .menu, .top .menu li {margin: 0; padding: 0; list-style: none; display: inline-block; vertical-align: middle; }
