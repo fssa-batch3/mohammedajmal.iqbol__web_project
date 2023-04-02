@@ -118,7 +118,7 @@ nav {
     text-decoration: none;
     font-size: 17px;
     font-weight: 700;
-    font-family: 'sans-serif';
+    font-family: sans-serif;
 }
 .bread-crumb1:hover {
     text-decoration: underline;
@@ -126,7 +126,7 @@ nav {
 .slash {
     font-weight: 500;
     font-size: 15px;
-    font-family: "Poppins";
+    font-family: "Poppins", sans-serif;
     color:black;
 }
 .course-selection-div {
@@ -160,11 +160,11 @@ nav {
     border-radius: 5px;
 }
 .course-category {
-    font-family: 'Poppins','sans-serif';
+    font-family: 'Poppins',sans-serif;
     font-size: 20px;
 }
 .course-desc {
-    font-family: 'Poppins','sans-serif';
+    font-family: 'Poppins',sans-serif;
     font-size: 17px;
     margin-left: 40px;
     width:60%;
@@ -176,7 +176,7 @@ nav {
     background-color: dodgerblue;
     color:white;
     border:1px solid dodgerblue;
-    font-family: 'Poppins','sans-serif';
+    font-family: 'Poppins',sans-serif;
 }
 
 .course-btn:hover {

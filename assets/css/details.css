@@ -176,7 +176,7 @@ nav {
     transition: all 0.2s;
 }
 .course-div{
-    width:400px;
+    width:410px;
     height:650px;
     background-color: white;
     color: black;
@@ -186,7 +186,7 @@ nav {
     border-radius: 15px;
 }
 .course-image {
-    width:400px;
+    width:410px;
     height:300px;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
@@ -196,8 +196,8 @@ nav {
     display: flex;
     justify-content: flex-start;
     gap:20px;
-    margin-left: 30px;
-    font-family: 'poppins';
+    margin-left: 10px;
+    font-family: 'poppins', sans-serif;
     font-size: 17px;
     margin-top: 10px;
 }
@@ -205,20 +205,20 @@ strike {
     margin-top: 17px;
 }
 .days-left {
-    margin-left: 40px;
+    text-align: center;
     margin-top: 5px;
-    font-family: 'poppins';
+    font-family: 'poppins', sans-serif;
     font-size: 17px;
     color:rgb(218, 20, 20);
 }
 .days-left-span {
-    font-family: 'poppins';
+    font-family: 'poppins', sans-serif;
     font-size: 17px;
     color:rgb(255, 0, 0);
     font-weight: bold;
 }
 .add-to-cart {
-    width:300px;
+    width:330px;
     height:30px;
     margin-left: 40px;
     background-color: dodgerblue;
@@ -234,11 +234,11 @@ strike {
     margin-top: 35px;
     font-family: sans-serif;
     font-size: 14px;
+    text-align: center;
 }
 
 .full-access-para {
-    margin-left: 130px;
-    margin-top: 5px;
+    margin-left: 150px;
     font-family: sans-serif;
     font-size: 14px;
     text-decoration: none;
@@ -249,7 +249,7 @@ strike {
     color:blue;
 }
 .share,.gift,.earn-coupons {
-    width:300px;
+    width:330px;
     height:30px;
     margin-left: 40px;  
     margin-top: 13px;
@@ -378,14 +378,14 @@ strike {
   margin-top: 6px;
   font-size: 18px;
   color:red;
-  font-family: 'poppins';
+  font-family: 'poppins', sans-serif;
 }
 .course-discount {
   margin-left: 20px;
   margin-top: 6px;
   font-size: 18px;
   color:green;
-  font-family: 'poppins';
+  font-family: 'poppins', sans-serif;
 }
 .course-cost {
   font-family: sans-serif;
@@ -465,7 +465,8 @@ strike {
   margin-left: 100px;
 }
 .delete {
-  margin-left: 110px;
+  margin-left: 90px;
+  width:230px;
   margin-top: 5px;
   padding: 5px;
   background-color: dodgerblue;

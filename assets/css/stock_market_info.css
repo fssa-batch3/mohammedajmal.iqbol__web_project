@@ -74,14 +74,14 @@ color:dodgerblue;
   margin-top: 6px;
   font-size: 18px;
   color:red;
-  font-family: 'poppins';
+  font-family: 'poppins', sans-serif;
 }
 .course-discount {
   margin-left: 20px;
   margin-top: 6px;
   font-size: 18px;
   color:green;
-  font-family: 'poppins';
+  font-family: 'poppins', sans-serif;
 }
 
 
@@ -105,7 +105,7 @@ color:dodgerblue;
 .slash {
   font-weight: 500;
   font-size: 15px;
-  font-family: "Poppins";
+  font-family: "Poppins", sans-serif;
   color:black;
 }
 

@@ -74,14 +74,14 @@ nav {
     margin-top: 6px;
     font-size: 18px;
     color:red;
-    font-family: 'poppins';
+    font-family: 'poppins', sans-serif;
   }
   .course-discount {
     margin-left: 20px;
     margin-top: 6px;
     font-size: 18px;
     color:green;
-    font-family: 'poppins';
+    font-family: 'poppins', sans-serif;
   }
  
  
@@ -113,7 +113,7 @@ nav {
     text-decoration: none;
     font-size: 17px;
     font-weight: 700;
-    font-family: 'sans-serif';
+    font-family: sans-serif;
 }
 .bread-crumb1:hover {
     text-decoration: underline;
@@ -121,7 +121,7 @@ nav {
 .slash {
     font-weight: 500;
     font-size: 15px;
-    font-family: "Poppins";
+    font-family: "Poppins", sans-serif;
     color:black;
 }
 

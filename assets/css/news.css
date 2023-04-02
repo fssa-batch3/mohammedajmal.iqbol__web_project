@@ -140,16 +140,13 @@ nav {
     /* margin-top: -5px; */
     margin-left: 15px;
     border-radius: 10px;
-    font-size: 11px;
+    /* font-size: 11px; */
     /* font-family: sans-serif; */
-    font-weight: 400;
+    /* font-weight: 400; */
 /* font-family: 'Tilt Neon', cursive; */
 
-width:100%;
     /* height:; */
     margin-top: -5px;
-    margin-left: 15px ;
-    border-radius: 10px;
     font-weight: 600;
     font-size: 20px;
     font-family: sans-serif;
@@ -198,7 +195,7 @@ width:100%;
     color:rgb(35, 25, 234);
     text-decoration: none;
     font-size: 17px;
-    font-family: 'sans-serif';
+    font-family: sans-serif;
 }
 .bread-crumb1:hover {
     text-decoration: underline;
@@ -206,7 +203,7 @@ width:100%;
 .slash {
     font-weight: 500;
     font-size: 15px;
-    font-family: "Poppins";
+    font-family: "Poppins", sans-serif;
     color:black;
 }
 .user-profile {

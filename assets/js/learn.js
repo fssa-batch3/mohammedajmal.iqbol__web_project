@@ -757,63 +757,83 @@ console.log(get_user_obj);
 const mycourses = JSON.parse(localStorage.getItem("add-to-card"));
 console.log(mycourses);
 
+let index = register.indexOf(get_user_obj);
+console.log(index);
 
-const get_user_obj1 = course_data.filter((event) => event.user_id === get_user_obj.user_id );
+const allCourses = JSON.parse(localStorage.getItem("course_data"));
+console.log(allCourses);
+
+
+const get_user_obj1 = register.filter(event => event.courses.some(course => course.id === allCourses.id  ));
 console.log(get_user_obj1);
 
+let addedCourses = [];
+let match = false;
+for(let i=0;i < allCourses.length; i++ ){
+  for(let j = 0; j< register[index].courses.length ; j++ ){
+  if( allCourses[i]["id"] === register[index].courses[j]["id"] ){
+       match = true;
+       addedCourses.push(allCourses[i]);
+       console.log(addedCourses);
+       console.log(match);
+       break;
+  }
+}
+
+}
 
 //card create from parsed object JSON
 let my_courses;
 
-for (i = 0; i < get_user_obj1.length; i++) {
+for (i = 0; i < addedCourses.length; i++) {
   my_courses = document.createElement("a");
   my_courses.setAttribute("class", "first-course2-stocks");
   // console.log(mycourses[i]["title"]);
-  my_courses.setAttribute("href", "details.html?name=" + get_user_obj1[i]["title"]);
+  my_courses.setAttribute("href", "details.html?name=" + addedCourses[i]["title"]);
   let cost = "";
   let discount = "";
 
-  if (get_user_obj1[i]["cost"] === "learn for free") {
+  if (addedCourses[i]["cost"] === "learn for free") {
     cost += " ";
     discount += 100;
   } else {
     cost += "₹" + " ";
     discount +=
-      100 - (get_user_obj1[i]["cost"] / get_user_obj1[i]["old_cost"]) * 100;
+      100 - (addedCourses[i]["cost"] / addedCourses[i]["old_cost"]) * 100;
   }
   my_courses.innerHTML = `<div>
                              <img class="course-img-stocks" src=${
-                               get_user_obj1[i]["img"]
+                               addedCourses[i]["img"]
                              } alt="">
                              </div>
                              <div>
                                  <h3 class="course-title">${
-                                   get_user_obj1[i]["title"]
+                                   addedCourses[i]["title"]
                                  }</h3>
                                  <div class="course-details">
                                        <p class="course-timing">${
-                                         "<b>Dur :</b>" + get_user_obj1[i]["timing"]
+                                         "<b>Dur :</b>" + addedCourses[i]["timing"]
                                        }</p>
                                        <p class="course-ln">&emsp;${
                                          "<b>Lang : </b>" +
-                                         get_user_obj1[i]["language"]
+                                         addedCourses[i]["language"]
                                        }</p>
                                        <p class="course-enrolled">&emsp;${
                                          "<b>Enr :</b>" +
-                                         get_user_obj1[i]["enrolled"] +
+                                         addedCourses[i]["enrolled"] +
                                          " " +
                                          "Enrolled"
                                        }</p>
                                    </div>
                                  <div class="flexcost">
                                 <h3 class="course-cost">${
-                                  cost + " " + get_user_obj1[i]["cost"]
+                                  cost + " " + addedCourses[i]["cost"]
                                 }</h3>
                                 <strike class="course-oldcost" >${
-                                  "₹" + " " + get_user_obj1[i]["old_cost"]
+                                  "₹" + " " + addedCourses[i]["old_cost"]
                                 }</strike>
                                 <p class="course-discount" >${
-                                  discount + " " + "% discount"
+                                 Math.floor(discount) + " " + "% discount"
                                 }</p>
                                 </div>
                              </div> `;

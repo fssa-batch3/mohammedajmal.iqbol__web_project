@@ -20,14 +20,25 @@ let details_div;
 
 details_div = document.createElement("div");
 details_div.setAttribute("class","course-div");
+let cost = "";
+let discount = "";
+
+if (get_obj["cost"] === "learn for free") {
+  cost += " ";
+  discount += 100;
+} else {
+  cost += "₹" + " ";
+  discount +=
+    100 - (get_obj["cost"] / get_obj["old_cost"]) * 100;
+};
 details_div.innerHTML = `<div class="course-image">
            <img src=${get_obj["img"]} alt="" class="course-image">
        </div>
        <div>
        <div class="course-price">
-           <p class="course-cost">${ "₹" + " " + get_obj["cost"]}</p>
+           <p class="course-cost">${ cost + " " + get_obj["cost"]}</p>
            <strike class="course-oldcost">${ "₹" + " " + get_obj["old_cost"]}</strike>
-           <p class="course-discount">${ 100 - ((get_obj["cost"])  / (get_obj["old_cost"]) * 100)  + " " + "% discount"  }</p>
+           <p class="course-discount">${ Math.floor(discount) + " " + "% discount"  }</p>
        </div>
        <p class="days-left"><span class="days-left-span">30 days</span>&nbsp;left at this price!</p>
        <button class="add-to-cart" id="add-to-cart">Add to cart</button><br>
@@ -168,6 +179,17 @@ details_div.innerHTML = `<div class="course-image">
         const get_user_obj = register.find((event) => event.email === loggin);
         console.log(get_user_obj);
 
+        let index = register.indexOf(get_user_obj);
+        console.log(index);
+
+        //find index 
+        let index1 = register.indexOf(get_user_obj);
+        console.log(index1);
+
+        const mycourses = JSON.parse(localStorage.getItem("add-to-card"));
+        console.log(mycourses);
+
+        //check ID is already exist
 
 
 //add to cart  function start
@@ -176,29 +198,76 @@ addtocart.addEventListener("click",(cart) => {
 cart.preventDefault();
 
 
-  
-        
-let user_obj = {
-  "user_id" : get_user_obj.user_id,
-};
-
-let user_id_assign = Object.assign(get_obj,user_obj);
-console.log(user_id_assign);
-
-let index = course_data.indexOf(get_obj);
-console.log(index);
-
-course_data[index] = user_id_assign;
-
-localStorage.setItem("course_data",JSON.stringify(course_data));
-
-
-
 // check if else by cost
 if(get_obj["cost"] != "learn for free"){
   alert("You have to make Payment to Access the Course");
   window.location.href = "coursePayment.html?name="+ username;
 } else {
+
+  let index = register.indexOf(get_user_obj);
+  console.log(index);
+
+console.log(register[index].courses);
+  
+  if( register[index].courses != null ) {   
+ 
+    let courses_id = {
+         "id" : get_obj.id,
+    } 
+
+    //check match is true / false
+    let match = false;
+for(let i=0;i< mycourses.length;i++){
+  for(let j = 0; j < register[index].courses.length; j++ ){
+  if( mycourses[i]["id"] === register[index].courses[j]["id"] ){
+    
+    //check mycourses === register/courses array
+    match = true;
+
+  } 
+}
+
+console.log(match);
+console.log(register[index1].courses);
+console.log(get_obj.id);
+};
+
+//checked it should return true
+
+   if(match){
+    
+    // alert("this course is already purchased by you");
+    //skip this part
+   } else {
+  register[index].courses.push(courses_id);
+    localStorage.setItem("register_arr",JSON.stringify(register));
+
+   } 
+
+} else {
+  let course_obj = [];
+
+  let courses_id = {
+         "id" : get_obj.id,
+    } 
+  
+  course_obj.push(courses_id);
+          
+  let user_obj = {
+  "courses" : course_obj,
+  };
+
+  let user_id_assign = Object.assign(get_user_obj,user_obj);
+  console.log(user_id_assign);
+  
+  let index = register.indexOf(get_user_obj);
+  console.log(index);
+  
+  register[index] = user_id_assign;
+  
+  localStorage.setItem("register_arr",JSON.stringify(register));
+  
+}
 
 
 
@@ -207,7 +276,6 @@ if(get_obj["cost"] != "learn for free"){
     
     if(localStorage.getItem("add-to-card") !== null ){
 
-      
 // add to card array JSON parse
 const addtocard_arr = JSON.parse(localStorage.getItem("add-to-card"));
 console.log(addtocard_arr);
@@ -216,6 +284,9 @@ console.log(get_obj);
 // find object from match id
 const varobj = addtocard_arr.find((e) => e.id === get_obj.id );
     console.log(varobj);
+
+    const id_obj = register_arr.find((event) => event.courses === get_obj.id );
+    console.log(register_arr);
       
       addtocartarr = JSON.parse(localStorage.getItem("add-to-card"));
       
@@ -227,7 +298,8 @@ const varobj = addtocard_arr.find((e) => e.id === get_obj.id );
 
 localStorage.setItem("add-to-card",JSON.stringify(addtocartarr));
 alert("Course Added to My Courses");
-  window.location.href = "learn.html";
+window.location.href = "learn.html";
+
    } else {
     alert("course already added");
     window.location.href = "learn.html";
@@ -250,12 +322,21 @@ alert("Course Added to My Courses");
   
   localStorage.setItem("add-to-card",JSON.stringify(addtocartarr));
   alert("Course Added to My Courses");
+
+
+  
+
   window.location.href = "learn.html";
   
 }
 
 
+
 }
+
+
+
+  
 
 
 });
@@ -311,16 +392,17 @@ const usernames = urlParams.get("name");
 console.log(usernames);
 
 
+// console.log(register[index1]);
+
 // delete course eventlistener when click
 let delete_mycourses = document.getElementById("deletecourse");
 delete_mycourses.addEventListener("click",(deletecourse) => {
 deletecourse.preventDefault();
 
+
 //JSON parse mycourses
 const mycourses = JSON.parse(localStorage.getItem("add-to-card")); 
 console.log(mycourses);
-
-
 
 //find clicked course by find method
 const get_mycourses = mycourses.find((course) => course.title === usernames );
@@ -329,6 +411,16 @@ console.log(get_mycourses);
 // find clicked index from mycourses array
 const index = mycourses.indexOf(get_mycourses);
 console.log(index);
+
+
+//find index 
+let index1 = register.indexOf(get_user_obj);
+console.log(index1);
+
+//courses id splice find object
+
+
+
 
 // confirm message when click delete button
 let msg = confirm("Are you sure You want to delete this course from My Courses");
@@ -339,29 +431,68 @@ return false;
 
   
 
-let user_obj = {
-  "user_id" : null,
-};
+// let user_obj = {
+//   "user_id" : null,
+// };
 
-let user_id_assign = Object.assign(get_obj,user_obj);
-console.log(user_id_assign);
+// let user_id_assign = Object.assign(get_obj,user_obj);
+// console.log(user_id_assign);
 
-let index = course_data.indexOf(get_obj);
-console.log(index);
+// let index = course_data.indexOf(get_obj);
+// console.log(index);
 
-course_data[index] = user_id_assign;
+// course_data[index] = user_id_assign;
 
-localStorage.setItem("course_data",JSON.stringify(course_data));
+// localStorage.setItem("course_data",JSON.stringify(course_data));
+
+// register[index1].courses.splice(index1,1);
+let findindex;
+let match = false;
+for(let i=0;i<mycourses.length;i++){
+  for(let j=0; j<register[index1].courses.length;j++){
+  // console.log(register[i].courses[i] );
+  if( mycourses[i]["id"] === register[index1].courses[j]["id"] ){
+   
+    findindex = mycourses[i]["id"];
+    match = true;
+
+  }
+}
+console.log(match);
+console.log(register[index1].courses);
+console.log(findindex);
+}
+
+let findObi = register[index1].courses.find(course => course.id === findindex );
+console.log(findObi);
+
+ let findDelIndex = mycourses.indexOf(findObi);
+ console.log(findDelIndex);
+
+  if(match){
+    register[index1].courses.splice(findDelIndex,1);
+    localStorage.setItem("register_arr",JSON.stringify(register));
+  }
+
 
 
 
     //if message == true do this
-mycourses.splice(index,1);
-localStorage.setItem("add-to-card",JSON.stringify(mycourses));
-alert("Course Removed to My Courses");
-window.location.href = "learn.html";
+    mycourses.splice(index,1);
+    localStorage.setItem("add-to-card",JSON.stringify(mycourses));
+    alert("Course Removed to My Courses");
+    
+    
+
+
 }
 
+
+
+
+
+
+window.location.href = "learn.html";
 
 });
 
