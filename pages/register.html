@@ -109,9 +109,7 @@
     let user_id = Date.now();
 
 
-    if( password != confirm_password ){
-         alert("password not match try again");
-    }
+
 
 
    let match = false;
@@ -128,6 +126,12 @@
    } else {
 
 
+    if( password != confirm_password ){
+         alert("password not match try again");
+         window.location.href="register.html";
+         
+    } else {
+
     let register_obj = {
       name,age,gender,mobile_number,about_me,date_of_birth,email,password,confirm_password,profile_pic,user_id
     };
@@ -141,13 +145,13 @@
 
     console.log(register);
 
-    
+   alert("User Registration Successful");
    window.location.href = "signin.html";
 
    }
 
 
-
+  }
 
    
    

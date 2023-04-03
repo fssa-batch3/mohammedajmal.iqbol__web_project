@@ -108,10 +108,7 @@
     let confirm_password = document.getElementById("confirm-password").value;
 
 
-    if( password != confirm_password ){
-         alert("password not match try again");
-    }
-
+   
 
    let match = false;
    for(let i=0;i<seller_register_arr.length;i++){
@@ -126,6 +123,11 @@
     alert("user already exists");
    } else {
 
+    if( password != confirm_password ){
+         alert("password not match try again");
+         window.location.href="sellerRegister.html";
+         
+    } else {
 
     let register_obj = {
       name,age,gender,mobile_number,about_me,date_of_birth,email,password,confirm_password,profile_pic
@@ -140,13 +142,13 @@
 
     console.log(register);
 
-    
+   alert("Seller Registration Successful");
    window.location.href = "../pages/sellerLogin.html";
 
    }
 
 
-
+  }
 
    
    

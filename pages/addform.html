@@ -32,15 +32,22 @@
         <br><input name="price" class="image-url" type="text" id="course-language" placeholder="course price" required>
 
         <br><br><label for="course-intake" class="product-label">Course Intaking Per Batch</label>
-        <br><input name="price" class="image-url" type="text" id="course-intake" placeholder="course intake" required>
+        <br><input name="price" class="image-url" type="number" id="course-intake" placeholder="course intake" required>
 
-        <br><br><label for="course-cost" class="product-label">Course Cost</label>
-        <br><input name="email" class="image-url" type="text" id="course-cost" placeholder="course cost" required><br>
+        <br><br><label for="course-cost-type" class="product-label">Course Cost type</label>
+        <input  list="course-cost-datalist" class="image-url" id="course-cost-type" placeholder="choose course cost" required>
+        <datalist id="course-cost-datalist">
+          <option value="learn for free">learn for free</option>
+          <option value="Paid">Paid</option>
+        </datalist>
+        
+        <br><br><label for="course-cost" class="product-label">Course Cost ( IF NOT FREE )</label>
+        <br><input name="email" class="image-url" type="number" id="course-cost" placeholder="course cost" required><br>
 <br></div>
    
    <div class="second-row">
     <br><label for="old-cost" class="product-label" >Old Cost</label>
-    <br><input name="image-url" class="image-url" id="old-cost" type="text" placeholder="course Image Url" required>
+    <br><input name="image-url" class="image-url" id="old-cost" type="number" placeholder="course Image Url" required>
 
     <br><br><label for="course-description" class="product-label">Course Description</label>
     <br><textarea name="product-name" class="textarea-desc" id="course-description" type="text" placeholder="course Description" required></textarea>
@@ -110,6 +117,7 @@ inputFile.addEventListener("change", () => {
     let timing = document.getElementById("course-timing").value;
     let language = document.getElementById("course-language").value;
     let enrolled = document.getElementById("course-intake").value;
+    let cost_type = document.getElementById("course-cost-type").value;
     let cost = document.getElementById("course-cost").value;
     let old_cost = document.getElementById("old-cost").value;
     let Description= document.getElementById("course-description").value;
@@ -124,7 +132,7 @@ inputFile.addEventListener("change", () => {
 
 
        let course_obj = {
-        img,title,timing,language,enrolled,cost,old_cost,Description,top_skills1,videos,id,datestring,bookmark_img
+        img,title,timing,language,enrolled,cost_type,cost,old_cost,Description,top_skills1,videos,id,datestring,bookmark_img
     };
 
     course_data.push(course_obj);
@@ -139,6 +147,7 @@ inputFile.addEventListener("change", () => {
     let timing = document.getElementById("course-timing").value;
     let language = document.getElementById("course-language").value;
     let enrolled = document.getElementById("course-intake").value;
+    let cost_type = document.getElementById("course-cost-type").value;
     let cost = document.getElementById("course-cost").value;
     let old_cost = document.getElementById("old-cost").value;
     let Description= document.getElementById("course-description").value;
@@ -154,7 +163,7 @@ inputFile.addEventListener("change", () => {
 
 
         let course_obj = {
-        img,title,timing,language,enrolled,cost,old_cost,Description,top_skills1,videos,id,datestring,bookmark_img
+        img,title,timing,language,enrolled,cost_type,cost,old_cost,Description,top_skills1,videos,id,datestring,bookmark_img
     };
 
     course_data.push(course_obj);
@@ -172,31 +181,6 @@ inputFile.addEventListener("change", () => {
    
 
    });
-
-
-
-// filereader start
-
-
-
-// let openFile = function(event) {
-//     let input = event.target;
-
-//     let reader = new FileReader();
-//     reader.onload = function(){
-//       let dataURL = reader.result;
-//       let output = document.getElementById('course-videos');
-//       output.src = dataURL;
-//       console.log(output);
-//     };
-//     reader.readAsDataURL(input.files[0]);
-
-     
-//   };
-  
-
-
-//filereader end
 
 
 

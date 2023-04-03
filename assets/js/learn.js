@@ -348,7 +348,7 @@ for (i = 0; i < bookmarks.length; i++) {
                                   </div>
                                <div class="flexcost">
                                <h3 class="course-cost">${
-                                 " " + bookmarks[i]["cost"]
+                                "₹" + " " + bookmarks[i]["cost"]
                                }</h3>
                                <strike class="course-oldcost" >${
                                  "₹" + " " + bookmarks[i]["old_cost"]
@@ -422,7 +422,7 @@ let obj = {
 
 //compare object get match objects
 const filtervalues = course_data_arr.filter(
-  (course) => course.cost === obj.cost
+  (course) => course.cost_type === obj.cost
 );
 console.log(filtervalues);
 
@@ -464,7 +464,7 @@ for (i = 0; i < filtervalues.length; i++) {
                                  </div>
                               <div class="flexcost">
                               <h3 class="course-cost">${
-                                " " + filtervalues[i]["cost"]
+                                "₹" + " " + filtervalues[i]["cost"]
                               }</h3>
                               <strike class="course-oldcost" >${
                                 "₹" + " " + filtervalues[i]["old_cost"]

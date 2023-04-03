@@ -216,32 +216,34 @@ console.log(register[index].courses);
     } 
 
     //check match is true / false
-    let match = false;
-for(let i=0;i< mycourses.length;i++){
+    let objMatch = false;
+  for(let i=0;i< mycourses.length;i++){
   for(let j = 0; j < register[index].courses.length; j++ ){
-  if( mycourses[i]["id"] === register[index].courses[j]["id"] ){
+  if( mycourses[i]["id"] !== register[index].courses[j]["id"] ){
     
     //check mycourses === register/courses array
-    match = true;
+    objMatch = true;
 
   } 
 }
 
-console.log(match);
+console.log(objMatch);
 console.log(register[index1].courses);
 console.log(get_obj.id);
 };
 
 //checked it should return true
 
-   if(match){
+   if(objMatch === true){
     
     // alert("this course is already purchased by you");
     //skip this part
-   } else {
-  register[index].courses.push(courses_id);
-    localStorage.setItem("register_arr",JSON.stringify(register));
+   
 
+   } else {
+    //skip part
+    register[index].courses.push(courses_id);
+    localStorage.setItem("register_arr",JSON.stringify(register));
    } 
 
 } else {
@@ -446,34 +448,17 @@ return false;
 // localStorage.setItem("course_data",JSON.stringify(course_data));
 
 // register[index1].courses.splice(index1,1);
-let findindex;
-let match = false;
-for(let i=0;i<mycourses.length;i++){
-  for(let j=0; j<register[index1].courses.length;j++){
-  // console.log(register[i].courses[i] );
-  if( mycourses[i]["id"] === register[index1].courses[j]["id"] ){
-   
-    findindex = mycourses[i]["id"];
-    match = true;
 
-  }
-}
-console.log(match);
-console.log(register[index1].courses);
-console.log(findindex);
-}
 
-let findObi = register[index1].courses.find(course => course.id === findindex );
-console.log(findObi);
+  let getObjs = register[index1].courses.find((event) => event.id === get_course.id );
+  console.log(getObjs);
 
- let findDelIndex = mycourses.indexOf(findObi);
- console.log(findDelIndex);
 
-  if(match){
-    register[index1].courses.splice(findDelIndex,1);
-    localStorage.setItem("register_arr",JSON.stringify(register));
-  }
+  let findValIndex = register[index1].courses.indexOf(getObjs);
+  console.log(findValIndex);
 
+  register[index1].courses.splice(findValIndex,1);
+  localStorage.setItem("register_arr",JSON.stringify(register));
 
 
 
