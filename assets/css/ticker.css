@@ -1,0 +1,31 @@
+.ticker1 {
+    background-color: white;
+    width:300px;
+    height:70px;
+    margin-top: 300px;
+    margin-left: 100px;
+    border-radius: 2px;
+    padding: 10px;
+}
+
+.ticker-name {
+    display: flex;
+    position: relative;
+    top:-10px;
+    left:10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.ticker-value {
+    display: flex;
+    position: relative;
+    top:-30px;
+    left:10px;
+    gap:20px;
+    font-family: Arial, sans-serif;
+}
+.price-p ,.price-percent {
+    position: relative;
+    top:3px;
+    left:10px;
+    margin-left: 10px;
+}

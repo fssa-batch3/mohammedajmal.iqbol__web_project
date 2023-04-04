@@ -3,6 +3,7 @@ body {
     /* background-color: pink; */
     margin: 0px;
     padding: 0px;
+    overflow-x: hidden;
 }
 nav {
     width:100%;
@@ -52,6 +53,14 @@ nav {
     border: 1px solid white;
     background-color: white;
     margin-top: 10px;
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    width:100%;
+    height:90px;
+  }
+  .tab::-webkit-scrollbar {
+    display: none;
   }
   
   /* Style the buttons inside the tab */
@@ -136,9 +145,9 @@ nav {
     border-radius: 10px;
 }
 .home-news-h1 {
-    width:100%;
+    width:50%;
     /* margin-top: -5px; */
-    margin-left: 15px;
+    margin-left: 105px;
     border-radius: 10px;
     /* font-size: 11px; */
     /* font-family: sans-serif; */
@@ -146,13 +155,20 @@ nav {
 /* font-family: 'Tilt Neon', cursive; */
 
     /* height:; */
-    margin-top: -5px;
-    font-weight: 600;
-    font-size: 20px;
-    font-family: sans-serif;
+    margin-top: 70px;
+    font-weight: 500;
+    font-size: 28px;
+    font-family: 'Poppins',sans-serif;
     color:black;
     text-decoration: none;
 /* font-family: 'Tilt Neon', cursive; */
+}
+#date-p {
+  margin-left: 105px;
+  font-weight: 500;
+  font-size: 15px;
+  font-family: sans-serif;
+  color:black;
 }
 .home-news-a {
     width:100%;
@@ -289,4 +305,224 @@ nav {
   height:25px;
   position: relative;
   top: 5px;
+}
+.news1 {
+  background-color: white;
+  color: black;
+  width:50%;
+  height:150px;
+  margin-left: 6.5%;
+  margin-top: 1%;
+  transition: all 0.8s;
+  border-radius: 10px;
+}
+.newsright {
+  background-color: white;
+  color: black;
+  width:600px;
+  height:150px;
+  margin-left: 1.5%;
+  margin-top: 1%;
+  transition: all 0.8s;
+  border-radius: 10px;
+}
+.news1:hover , .newsright:hover {
+  /* transform: scale(1.01); */
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  background-color: #87CEEB;
+  color: white;
+}
+.newsh1 {
+   font-size: 20px;
+   font-family: 'Poppins',sans-serif;
+   font-weight: 600;
+   margin-left: 30px;
+   position: relative;
+   top:20px;
+   width:700px;
+}
+.newsh1right {
+  font-size: 18px;
+  font-family: 'Poppins',sans-serif;
+  font-weight: 600;
+  margin-left: 25px;
+  position: relative;
+  top:20px;
+  width:530px;
+}
+.newsanker {
+  text-decoration: none;
+  color: black;
+}
+.newsanker:hover {
+  text-decoration: underline;
+}
+.newsp {
+  font-size: 15px;
+   font-family: 'Poppins',sans-serif;
+   font-weight: 500;
+   margin-left: 30px;
+   position: relative;
+   top:20px;
+}
+.newspright {
+  font-size: 15px;
+   font-family: 'Poppins',sans-serif;
+   font-weight: 500;
+   margin-left: 25px;
+   position: relative;
+   top:20px;
+}
+.newsflex {
+  display: flex;
+  flex-wrap: wrap;
+}
+.overflow-rightdiv {
+  font-size: 18px;
+  height:700px;
+  width:40%;
+  font-family: 'Poppins',sans-serif;
+  font-weight: 600;
+  position: absolute;
+  top:175px;
+  right:50px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.overflow-rightdiv::-webkit-scrollbar {
+  display: none;
+}
+
+
+/*newsletter card css start*/
+.card {
+  width: 450px;
+  height: 554px;
+  padding: 0 15px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 12px;
+  background: #fff;
+  border-radius: 20px;
+  position: absolute;
+  top:905px;
+  right:100px;
+}
+
+.card > * {
+  margin: 0;
+}
+
+.card__title {
+  font-size: 23px;
+  font-weight: 900;
+  color: #333;
+}
+
+.card__content {
+  font-size: 13px;
+  line-height: 18px;
+  color: #333;
+}
+
+.card__form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card__form input {
+  margin-top: 10px;
+  outline: 0;
+  background: rgb(255, 255, 255);
+  box-shadow: transparent 0px 0px 0px 1px inset;
+  padding: 0.6em;
+  border-radius: 14px;
+  border: 1px solid #333;
+  color: black;
+}
+
+.card__form button {
+  border: 0;
+  background: #111;
+  color: #fff;
+  padding: 0.68em;
+  border-radius: 14px;
+  font-weight: bold;
+}
+
+.sign-up:hover {
+  opacity: 0.8;
+} 
+/*newsletter card css end*/
+
+
+.newsposter {
+  width: 430px;
+  height: 854px;
+  position: absolute;
+  top:1305px;
+  right:200px;
+}
+.newsposter1 {
+  margin-top: 40%;
+  height:1000px;
+  width: 530px;
+}
+.newsposter2 {
+  margin-top: 3%;
+  height:1000px;
+  width: 530px;
+}
+.newsrightactive {
+  width: 430px;
+  height: 854px;
+  position: absolute;
+  top:1005px;
+  right:200px;
+}
+
+
+
+.ticker1 {
+  background-color: lightblue;
+  width:650px;
+  height:50px;
+  margin-top: 10px;
+  margin-left: 0px;
+  border-radius: 2px;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+.ticker-name {
+  display: flex;
+  position: relative;
+  top:-10px;
+  left:0px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 12px;
+  text-align: center;
+}
+.ticker-name-h1 {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 12px;
+  margin-top: 15px;
+}
+.ticker-value {
+  display: flex;
+  position: relative;
+  top:-30px;
+  left:0px;
+  gap:20px;
+  font-family: Arial, sans-serif;
+}
+.price-p ,.price-percent {
+  position: relative;
+  top:3px;
+  left:10px;
+  margin-left: 10px;
 }

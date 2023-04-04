@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "moment": "^2.29.4",
     "twelvedata": "^3.0.1"
   }
 }
