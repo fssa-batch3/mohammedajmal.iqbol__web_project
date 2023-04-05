@@ -86,6 +86,12 @@
 
 <script>
 
+  //add to card array to be empty
+  let addToCard = JSON.parse(localStorage.getItem("add-to-card"));
+  console.log(addToCard);
+
+
+
   let form = document.getElementById("form");
   form.addEventListener("submit", event => {
     event.preventDefault();
@@ -142,6 +148,8 @@
     let register = JSON.stringify(register_arr);
     localStorage.setItem("register_arr",register);
 
+    localStorage.removeItem("add-to-card");
+    localStorage.removeItem("bookmarks");
 
     console.log(register);
 

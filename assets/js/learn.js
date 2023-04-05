@@ -261,6 +261,90 @@ function toggle(id) {
 
   console.log(get_click_obj);
 
+
+
+  //setting bookmark array to bookmark key in user object start
+  let register = JSON.parse(localStorage.getItem("register_arr"));
+  console.log(register);
+
+  let loggin = JSON.parse(localStorage.getItem("login_arr"));
+  console.log(loggin);
+
+  const get_user_obj = register.find((event) => event.email === loggin);
+  console.log(get_user_obj);
+  
+  let index1 = register.indexOf(get_user_obj);
+  console.log(index1);
+
+  const bookmark = JSON.parse(localStorage.getItem("bookmarks"));
+  console.log(bookmark);
+
+console.log(register[index1].bookmarks);
+  
+  if( register[index1].bookmarks != null ) {   
+ 
+    let bookmark_id = {
+         "id" : id,
+    } 
+
+    //check match is true / false
+    let objMatch = false;
+  for(let i=0;i< bookmark.length;i++){
+  for(let j = 0; j < register[index1].bookmarks.length; j++ ){
+  if( bookmark[i]["id"] !== register[index1].bookmarks[j]["id"] ){
+    
+    //check mycourses === register/courses array
+    objMatch = true;
+
+  } 
+}
+
+console.log(objMatch);
+console.log(register[index1].bookmarks);
+console.log(id);
+};
+
+//checked it should return true
+
+   if(objMatch === true){
+    
+    // alert("this course is already purchased by you");
+    //skip this part
+   
+
+   } else {
+    //skip part
+    register[index1].bookmarks.push(bookmark_id);
+    localStorage.setItem("register_arr",JSON.stringify(register));
+   } 
+
+} else {
+  let bookmark_obj = [];
+
+  let bookmark_id = {
+         "id" : id,
+    } 
+  
+    bookmark_obj.push(bookmark_id);
+          
+  let user_obj = {
+  "bookmarks" : bookmark_obj,
+  };
+
+  let user_id_assign = Object.assign(get_user_obj,user_obj);
+  console.log(user_id_assign);
+  
+  let index = register.indexOf(get_user_obj);
+  console.log(index);
+  
+  register[index] = user_id_assign;
+  
+  localStorage.setItem("register_arr",JSON.stringify(register));
+  
+}
+
+//setting bookmark array contains id to bookmark key in user object end 
+
   if (localStorage.getItem("bookmarks") != null) {
     //arrary already exist
     get_click_obj_arr = JSON.parse(localStorage.getItem("bookmarks"));
@@ -302,56 +386,84 @@ function toggle(id) {
 const bookmarks = JSON.parse(localStorage.getItem("bookmarks"));
 console.log(bookmarks);
 
+let register_array = JSON.parse(localStorage.getItem("register_arr"));
+console.log(register_array);
+
+let login = JSON.parse(localStorage.getItem("login_arr"));
+  console.log(login);
+
+const get_user_objs = register_array.find((event) => event.email === login);
+  console.log(get_user_objs);
+  
+  let index1 = register_array.indexOf(get_user_objs);
+  console.log(index1);
+
+
+let addedBookmarks = [];
+let objMatch = false;
+for(let i=0;i < bookmarks.length; i++ ){
+  for(let j = 0; j< register_array[index1].bookmarks.length ; j++ ){
+  if( bookmarks[i]["id"] === register_array[index1].bookmarks[j]["id"] ){
+    objMatch = true;
+       addedBookmarks.push(bookmarks[i]);
+       console.log(addedBookmarks);
+       console.log(objMatch);
+       break;
+  }
+}
+
+}
+
 
 //bookamrk card create from JSON object
 let bookmark_div;
-for (i = 0; i < bookmarks.length; i++) {
+for (i = 0; i < addedBookmarks.length; i++) {
   bookmark_div = document.createElement("a");
   bookmark_div.setAttribute("class", "first-course2-stocks");
   bookmark_div.setAttribute(
     "href",
-    "details.html?name=" + bookmarks[i]["title"]
+    "details.html?name=" + addedBookmarks[i]["title"]
   );
   let cost = "";
   let discount = "";
 
-  if (bookmarks[i]["cost"] === "learn for free") {
+  if (addedBookmarks[i]["cost"] === "learn for free") {
     cost += " ";
     discount += 100;
   } else {
     cost += "₹" + " ";
-    discount += 100 - (bookmarks[i]["cost"] / bookmarks[i]["old_cost"]) * 100;
+    discount += 100 - (addedBookmarks[i]["cost"] / addedBookmarks[i]["old_cost"]) * 100;
   }
   bookmark_div.innerHTML = `<div>
                                   <img class="course-img-stocks" src=${
-                                    bookmarks[i]["img"]
+                                    addedBookmarks[i]["img"]
                                   } alt="">
                               </div>
                               <div>
                                   <h3 class="course-title">${
-                                    bookmarks[i]["title"]
+                                    addedBookmarks[i]["title"]
                                   }</h3>
                                   <div class="course-details">
                                       <p class="course-timing">${
-                                        "<b>Dur :</b>" + bookmarks[i]["timing"]
+                                        "<b>Dur :</b>" + addedBookmarks[i]["timing"]
                                       }</p>
                                       <p class="course-ln">&emsp;${
                                         "<b>Lang : </b>" +
-                                        bookmarks[i]["language"]
+                                        addedBookmarks[i]["language"]
                                       }</p>
                                       <p class="course-enrolled">&emsp;${
                                         "<b>Enr :</b>" +
-                                        bookmarks[i]["enrolled"] +
+                                        addedBookmarks[i]["enrolled"] +
                                         " " +
                                         "Enrolled"
                                       }</p>
                                   </div>
                                <div class="flexcost">
                                <h3 class="course-cost">${
-                                "₹" + " " + bookmarks[i]["cost"]
+                                "₹" + " " + addedBookmarks[i]["cost"]
                                }</h3>
                                <strike class="course-oldcost" >${
-                                 "₹" + " " + bookmarks[i]["old_cost"]
+                                 "₹" + " " + addedBookmarks[i]["old_cost"]
                                }</strike>
                                <p class="course-discount" >${
                                  Math.floor(discount) + " " + "% discount"
@@ -764,8 +876,8 @@ const allCourses = JSON.parse(localStorage.getItem("course_data"));
 console.log(allCourses);
 
 
-const get_user_obj1 = register.filter(event => event.courses.some(course => course.id === allCourses.id  ));
-console.log(get_user_obj1);
+// const get_user_obj1 = register.filter(event => event.courses.some(course => course.id === allCourses.id  ));
+// console.log(get_user_obj1);
 
 let addedCourses = [];
 let match = false;

@@ -199,7 +199,7 @@ cart.preventDefault();
 
 
 // check if else by cost
-if(get_obj["cost"] != "learn for free"){
+if(get_obj["cost"] != "0" ){
   alert("You have to make Payment to Access the Course");
   window.location.href = "coursePayment.html?name="+ username;
 } else {
@@ -522,6 +522,26 @@ let msg = confirm("Are you sure You want to Remove this course from Your Bookmar
 if(msg != true ){
 return false;
 } else {
+
+//find index 
+let index1 = register.indexOf(get_user_obj);
+console.log(index1);
+
+
+//remove bookmark id from bookmark key in user object 
+
+let getObjs = register[index1].bookmarks.find((event) => event.id === get_course.id );
+console.log(getObjs);
+
+
+let findValIndex = register[index1].bookmarks.indexOf(getObjs);
+console.log(findValIndex);
+
+register[index1].bookmarks.splice(findValIndex,1);
+localStorage.setItem("register_arr",JSON.stringify(register));
+
+
+
 
 //if message true then do this
 bookmark.splice(index,1);
