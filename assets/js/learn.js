@@ -500,28 +500,6 @@ searchbar.addEventListener("input", () => {
 
 // user profile show from user register-login
 
-//register array parse
-const register_arr = JSON.parse(localStorage.getItem("register_arr"));
-console.log(register_arr);
-
-//login array parse
-const login_arr = JSON.parse(localStorage.getItem("login_arr"));
-console.log(login_arr);
-
-//check user
-const get_obj = register_arr.find((event) => event.email === login_arr);
-console.log(get_obj);
-
-//img tag create in js
-let user_profile;
-
-user_profile = document.createElement("img");
-user_profile.setAttribute("id", "user-profile");
-user_profile.setAttribute("class", "dropbtn");
-user_profile.setAttribute("onclick", "profile()");
-user_profile.setAttribute("src", get_obj["profile_pic"]);
-document.querySelector("#dropuser").prepend(user_profile);
-
 // search filter start free courses
 
 //all courses JSON data parse
@@ -964,3 +942,7 @@ function googleTranslateElementInit() {
 }
 
 //google translate end
+
+
+     
+

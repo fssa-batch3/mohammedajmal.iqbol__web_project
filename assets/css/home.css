@@ -74,7 +74,7 @@ hr {
     margin-left: 230px;
   }
   .navlink {
-    margin-left: 40px;
+    margin-left: 30px;
     text-decoration: none;
     color:black;
     font-family: sans-serif;
@@ -82,8 +82,11 @@ hr {
     transition: all 0.2s;
     opacity: 0.8;
   }
+  #contact {
+    margin-left: 10px;
+  }
   .login {
-    margin-left: 350px;
+    margin-left: 300px;
     margin-top: 20px;
     padding: 5px;
     width:80px;
@@ -359,7 +362,7 @@ hr {
   .statsbtn1 {
     width: 160px;
     height: 35px;
-    background-color: #0069D9;
+    background-color: dodgerblue;
     color: white;
     border-radius: 40px;
     border: none;

@@ -19,78 +19,90 @@
     <div class="navbar">
       <img class="nav-logo" src="../assets/images/Screenshot 2023-02-11 021952.png" alt="">
       <input class="search" type="text" placeholder="Search for courses,videos & Blogs" id="searchbar">
-      <div class="notification">
-        <img class="notificationimg" onclick="profile1()" src="../assets/images/icons8-notification-50.png" alt="notification-img">
-      </div>
-      <div id="google_translate_element"></div>
-      <div class="google-remover"></div>
-      <!-- <div class="notification">
+      <div class="notification"  id="notification-img">
+              
         <div class="dropdown">
-          <img class="notificationimg" onclick="profile1()" src="../assets/images/icons8-translator-50.png" alt="">
-          <div class="dropdown-content-lang"><br>
-            <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; English </a>
-            <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; France</a>
-            <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Italy</a>
-            <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Arabic</a>
-            <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Espanol</a>
-            <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Algeria</a>
-            <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Albania</a>
-            <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Japanese</a>
-            <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Hindi</a>
-            <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Tamil</a>
-            <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Portuguese</a>
-            <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Spanish</a>
-            <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Russian</a>
-            <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; German</a>
-            <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Korean</a>
-            <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Telugu</a>
-            <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Turkish</a>
-            <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Ukranian</a>
-            <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Malayalam</a>
-            <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Kannada</a>
-            <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp;
-              Chinese</a><br>
-          </div>
-        </div>
-      </div> -->
-      <div class="notification">
-        <div class="dropdown">
-          <img class="notificationimg" onclick="profile1()" src="../assets/images/icons8-online-support-50.png" alt="support-img">
-          <div class="dropdown-content"><br>
-            <a href="#"><img class="user-dropdown" src="../assets/images/icons8-group-50.png" alt="connect-img" />&nbsp; Connect With Us</a>
-            <a href="#"><img class="user-dropdown" src="../assets/images/icons8-group-message-50.png" alt="chat-img" />&nbsp; Chat With
-              Us</a>
-            <a href="#"><img class="user-dropdown" src="../assets/images/icons8-invite-50.png" alt="mail-img" />&nbsp; Write a Mail</a>
-            <a href="#"><img class="user-dropdown" src="../assets/images/icons8-online-support-50.png" alt="support-img" />&nbsp; Support
-              Center</a><br>
-          </div>
-        </div>
-      </div>
-      <div class="notification">
-        <div class="dropdown" id="dropuser">
+          <img class="notificationimg" onclick="profile1()" src="../assets/images/icons8-notification-50.png" alt="notification-img">
+          <div class="dropdown-content-notification">
+            <a><div class="notify-head">
 
-          <div class="dropdown-content"><br>
-            <a href="../pages/userprofile.html"><img class="user-dropdown"
-                src="../assets/images/icons8-group-50.png" alt="icon-accounts-img" />&nbsp; Accounts</a>
-            <a href="#"><img class="user-dropdown" src="../assets/images/icons8-logout-rounded-50.png" alt="icon-accounts-img" />&nbsp; Personal
-              Details</a>
-            <a href="#"><img class="user-dropdown" src="../assets/images/icons8-invite-50.png" alt="icon-accounts-img" />&nbsp; Invite & Earn</a>
-            <a href="#"><img class="user-dropdown" src="../assets/images/icons8-membership-card-30.png" alt="icon-accounts-img" />&nbsp;
-              Membership</a>
-            <a href="#"><img class="user-dropdown" src="../assets/images/icons8-light-mode-78.png" alt="icon-accounts-img" />&nbsp; Appearance :
-              Light</a>
-            <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png" alt="icon-accounts-img" />&nbsp; Language :
-              English</a>
-            <a href="#"><img class="user-dropdown" src="../assets/images/icons8-user-location-30.png" alt="icon-accounts-img" />&nbsp; Location :
-              India</a>
-            <a href="#"><img class="user-dropdown" src="../assets/images/icons8-gears-30.png" alt="icon-accounts-img" />&nbsp; Settings</a>
-            <a href="#"><img class="user-dropdown" src="../assets/images/icons8-online-support-50.png" alt="icon-accounts-img" />&nbsp; Help</a>
-            <a href="#"><img class="user-dropdown" src="../assets/images/icons8-group-50.png" alt="icon-accounts-img" />&nbsp; Send feedback</a>
-            <a href="signin.html"><img class="user-dropdown" src="../assets/images/icons8-logout-rounded-50 (1).png" alt="icon-accounts-img" />&nbsp; Log
-              Out</a><br>
+             <h1 class="notify-user-h1">Notifications</h1>
+
+            </div></a>
+             <a href="#"><div class="notify-1">
+
+              <img class="notify-user-img" src="../assets/images/icons8-male-user-48.png" alt="">
+              <p class="notify-user-p"><b>Ajith</b> promoted your answer</p>
+
+            </div></a> 
+            <a href="#"><div class="notify-2">
+
+              <img class="notify-user-img" src="../assets/images/icons8-male-user-48.png" alt="">
+              <p class="notify-user-p"><b>Chnadru</b> promoted your answer</p>
+
+            </div></a> 
+            <a href="#"><div class="notify-1">
+
+              <img class="notify-user-img" src="../assets/images/icons8-male-user-48.png" alt="">
+              <p class="notify-user-p"><b>Kamalesh</b> promoted your answer</p>
+
+            </div></a> 
+            <a href="#"><div class="notify-2">
+
+              <img class="notify-user-img" src="../assets/images/icons8-male-user-48.png" alt="">
+              <p class="notify-user-p"><b>Durga</b> promoted your answer</p>
+
+            </div></a> 
+            <a href="#"><div class="notify-1">
+
+              <img class="notify-user-img" src="../assets/images/icons8-male-user-48.png" alt="">
+              <p class="notify-user-p"><b>Vanitha</b> promoted your answer</p>
+
+            </div></a> 
+            <a href="#"><div class="notify-2">
+
+              <img class="notify-user-img" src="../assets/images/icons8-male-user-48.png" alt="">
+              <p class="notify-user-p"><b>Vicky</b> promoted your answer</p>
+
+            </div></a> 
+            <a href="#"><div class="notify-1">
+
+              <img class="notify-user-img" src="../assets/images/icons8-male-user-48.png" alt="">
+              <p class="notify-user-p"><b>Susi kumar</b> promoted your answer</p>
+
+            </div></a> 
+            <a href="#"><div class="notify-2">
+
+              <img class="notify-user-img" src="../assets/images/icons8-male-user-48.png" alt="">
+              <p class="notify-user-p"><b>Akshaya</b> promoted your answer</p>
+
+            </div></a> 
           </div>
         </div>
+  
       </div>
+      <div class="notification">
+          <div class="dropdown1">
+          <img class="notificationimg" onclick="profile1()" src="../assets/images/icons8-translator-50.png" alt="translator-img">
+          <div class="dropdown-content-lang"><br>
+            <div id="google_translate_element" id="lang"></div>
+              </div>
+              </div>
+      </div>
+      <div class="notification">
+
+        <a id="notificationimg" href="contact.html">
+          <img class="notificationimg" src="../assets/images/icons8-online-support-50.png" alt="support-img">
+        </a>
+
+      </div>
+        <div class="notification">
+            <a class="dropdown" id="dropuser" href="userprofile.html">
+                
+              
+            </a>
+
+  </div>
 
     </div>
 
@@ -334,5 +346,41 @@
 
 <!-- <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script> -->
   <script src="../assets/js/learn.js"></script>
+
+  <script>
+    //register array parse
+const register_arr = JSON.parse(localStorage.getItem("register_arr"));
+console.log(register_arr);
+
+//login array parse
+const login_arr = JSON.parse(localStorage.getItem("login_arr"));
+console.log(login_arr);
+
+//check user
+const get_obj = register_arr.find((event) => event.email === login_arr);
+console.log(get_obj);
+
+//img tag create in js
+let user_profile;
+
+user_profile = document.createElement("img");
+user_profile.setAttribute("id", "user-profile");
+user_profile.setAttribute("class", "dropbtn");
+user_profile.setAttribute("onclick", "profile()");
+user_profile.setAttribute("src", get_obj["profile_pic"]);
+document.querySelector("#dropuser").prepend(user_profile);
+
+console.log(get_user_objs["profile_pic"]);
+
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+
+
+  </script>
+  
+ 
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 </body>
 </html>
