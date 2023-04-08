@@ -170,24 +170,7 @@ details_div.innerHTML = `<div class="course-image">
 
         console.log(get_obj);
 
-        let register = JSON.parse(localStorage.getItem("register_arr"));
-        console.log(register);
 
-        let loggin = JSON.parse(localStorage.getItem("login_arr"));
-        console.log(loggin);
-
-        const get_user_obj = register.find((event) => event.email === loggin);
-        console.log(get_user_obj);
-
-        let index = register.indexOf(get_user_obj);
-        console.log(index);
-
-        //find index 
-        let index1 = register.indexOf(get_user_obj);
-        console.log(index1);
-
-        const mycourses = JSON.parse(localStorage.getItem("add-to-card"));
-        console.log(mycourses);
 
         //check ID is already exist
 
@@ -204,135 +187,229 @@ if(get_obj["cost"] != "0" ){
   window.location.href = "coursePayment.html?name="+ username;
 } else {
 
-  let index = register.indexOf(get_user_obj);
+  let registerArr = JSON.parse(localStorage.getItem("register_arr"));
+  console.log(registerArr);
+
+  let loggin = JSON.parse(localStorage.getItem("login_arr"));
+  console.log(loggin);
+
+  const get_user_obj = registerArr.find((event) => event.email === loggin);
+  console.log(get_user_obj);
+
+  let index = registerArr.indexOf(get_user_obj);
   console.log(index);
 
-console.log(register[index].courses);
+  //find index 
+  let index1 = registerArr.indexOf(get_user_obj);
+  console.log(index1);
+
+  const mycourses = JSON.parse(localStorage.getItem("add-to-card"));
+  console.log(mycourses);
+
+// console.log(register1[index].courses);
+
   
-  if( register[index].courses != null ) {   
+//   if( register[index].courses != null ) {   
  
-    let courses_id = {
-         "id" : get_obj.id,
-    } 
+//     let courses_id = {
+//          "id" : get_obj.id,
+//     } 
 
-    //check match is true / false
-    let objMatch = false;
-  for(let i=0;i< mycourses.length;i++){
-  for(let j = 0; j < register[index].courses.length; j++ ){
-  if( mycourses[i]["id"] !== register[index].courses[j]["id"] ){
+//     //check match is true / false
+//     let objMatch = false;
+//   for(let i=0;i< mycourses.length;i++){
+//   for(let j = 0; j < register[index].courses.length; j++ ){
+//   if( mycourses[i]["id"] !== register[index].courses[j]["id"] ){
     
-    //check mycourses === register/courses array
-    objMatch = true;
+//     //check mycourses === register/courses array
+//     objMatch = true;
 
-  } 
-}
+//   } 
+// }
 
-console.log(objMatch);
-console.log(register[index1].courses);
-console.log(get_obj.id);
-};
+// console.log(objMatch);
+// console.log(register[index1].courses);
+// console.log(get_obj.id);
+// };
 
-//checked it should return true
+// //checked it should return true
 
-   if(objMatch === true){
+//    if(objMatch){
     
-    // alert("this course is already purchased by you");
-    //skip this part
+//     alert("this course is already purchased by you");
+//     //skip this part
    
 
-   } else {
-    //skip part
-    register[index].courses.push(courses_id);
-    localStorage.setItem("register_arr",JSON.stringify(register));
-   } 
+//    } else {
+//     //skip part
+//     register[index].courses.push(courses_id);
+//     localStorage.setItem("register_arr",JSON.stringify(register));
+//    } 
 
-} else {
-  let course_obj = [];
+// } else {
+//   let course_obj = [];
 
-  let courses_id = {
-         "id" : get_obj.id,
-    } 
+//   let courses_id = {
+//          "id" : get_obj.id,
+//     } 
   
-  course_obj.push(courses_id);
+//   course_obj.push(courses_id);
           
-  let user_obj = {
-  "courses" : course_obj,
-  };
+//   let user_obj = {
+//   "courses" : course_obj,
+//   };
 
-  let user_id_assign = Object.assign(get_user_obj,user_obj);
-  console.log(user_id_assign);
+//   let user_id_assign = Object.assign(get_user_obj,user_obj);
+//   console.log(user_id_assign);
   
-  let index = register.indexOf(get_user_obj);
-  console.log(index);
+//   let index = register.indexOf(get_user_obj);
+//   console.log(index);
   
-  register[index] = user_id_assign;
+//   register[index] = user_id_assign;
   
-  localStorage.setItem("register_arr",JSON.stringify(register));
+//   localStorage.setItem("register_arr",JSON.stringify(register));
   
-}
+// }
 
 
 
     //  alert("course already added");
     
     
-    if(localStorage.getItem("add-to-card") !== null ){
+//     if(localStorage.getItem("add-to-card") !== null ){
 
-// add to card array JSON parse
-const addtocard_arr = JSON.parse(localStorage.getItem("add-to-card"));
-console.log(addtocard_arr);
-console.log(get_obj);
+// // add to card array JSON parse
+// const addtocard_arr = JSON.parse(localStorage.getItem("add-to-card"));
+// console.log(addtocard_arr);
+// console.log(get_obj);
+
+
+//     const id_obj = register_arr.find((event) => event.courses === get_obj.id );
+//     console.log(register_arr);
+      
+//       addtocartarr = JSON.parse(localStorage.getItem("add-to-card"));
+      
+//    if(varobj == undefined ){
+    
+//     addtocartarr.push(get_obj);
+//     addtocart.innerHTML = "Course Added";
+//     console.log(addtocartarr);
+
+
+// localStorage.setItem("add-to-card",JSON.stringify(addtocartarr));
+// alert("Course Added to My Courses");
+// window.location.href = "learn.html";
+
+//    } else {
+//     alert("course already added");
+//     window.location.href = "learn.html";
+
+//    }
+//       // addtocartarr.push(get_obj);
+
+// } else {
+
+//   let addtocartarr = [];
+  
+
+//       addtocartarr.push(get_obj);
+
+//       addtocart.innerHTML = "Course Added";
+
+  
+//   localStorage.setItem("add-to-card",JSON.stringify(addtocartarr));
+//   alert("Course Added to My Courses");
+
+
+  
+
+//   window.location.href = "learn.html";
+  
+// }
+
+
+
+
+      //add to card user 
+
+      let register = JSON.parse(localStorage.getItem("register_arr"));
+console.log(register_arr);
 
 // find object from match id
-const varobj = addtocard_arr.find((e) => e.id === get_obj.id );
+const varobj = register[index]['courses'].find((e) => e.obj.id === get_obj.id );
     console.log(varobj);
 
-    const id_obj = register_arr.find((event) => event.courses === get_obj.id );
-    console.log(register_arr);
-      
-      addtocartarr = JSON.parse(localStorage.getItem("add-to-card"));
-      
-   if(varobj == undefined ){
+
+       
+      if( register[index].courses != null ) {   
+ 
+        let courses_id = {
+             "obj" : get_obj,
+        } 
     
-    addtocartarr.push(get_obj);
-    addtocart.innerHTML = "Course Added";
-    console.log(addtocartarr);
+        //check match is true / false
+        let objMatch = false;
+      for(let i=0;i< mycourses.length;i++){
+      for(let j = 0; j < register[index].courses.length; j++ ){
+      if( mycourses[i]["id"] !== register[index].courses[j]["id"] ){
+        
+        //check mycourses === register/courses array
+        objMatch = true;
+    
+      } 
+    }
+    
+    console.log(objMatch);
+    console.log(register[index1].courses);
+    console.log(get_obj);
+    };
+    
+    //checked it should return true
+    
+       if( varobj === undefined ){
+        
+        // alert("this course is already purchased by you");
+        register[index].courses.push(courses_id);
+        localStorage.setItem("register_arr",JSON.stringify(register));
+        //skip this part
+       
+           alert("course added to my courses");
 
-localStorage.setItem("add-to-card",JSON.stringify(addtocartarr));
-alert("Course Added to My Courses");
-window.location.href = "learn.html";
-
-   } else {
-    alert("course already added");
-    window.location.href = "learn.html";
-
-   }
-      // addtocartarr.push(get_obj);
-
+       } else {
+        //skip part
+        alert("you already added this course to my courses");
+        
+       } 
+    
+    } else {
+      let course_obj = [];
+    
+      let courses_id = {
+             "obj" : get_obj,
+        } 
       
-  
+      course_obj.push(courses_id);
+              
+      let user_obj = {
+      "courses" : course_obj,
+      };
+    
+      let user_id_assign = Object.assign(get_user_obj,user_obj);
+      console.log(user_id_assign);
+      
+      let index = register.indexOf(get_user_obj);
+      console.log(index);
+      
+      register[index] = user_id_assign;
+      
+      localStorage.setItem("register_arr",JSON.stringify(register));
 
-} else {
+      alert("course added to my courses");
+      
+    }
+    
 
-  let addtocartarr = [];
-  
-
-      addtocartarr.push(get_obj);
-
-      addtocart.innerHTML = "Course Added";
-
-  
-  localStorage.setItem("add-to-card",JSON.stringify(addtocartarr));
-  alert("Course Added to My Courses");
-
-
-  
-
-  window.location.href = "learn.html";
-  
-}
-
-
+       window.location.href = "learn.html";
 
 }
 
@@ -403,15 +480,25 @@ deletecourse.preventDefault();
 
 
 //JSON parse mycourses
-const mycourses = JSON.parse(localStorage.getItem("add-to-card")); 
-console.log(mycourses);
+let register = JSON.parse(localStorage.getItem("register_arr")); 
+console.log(register);
+
+let loggin = JSON.parse(localStorage.getItem("login_arr")); 
+console.log(loggin);
+
+const get_user_obj = register.find((event) => event.email === loggin);
+console.log(get_user_obj);
+
+
+let indexx = register.indexOf(get_user_obj);
+console.log(indexx);
 
 //find clicked course by find method
-const get_mycourses = mycourses.find((course) => course.title === usernames );
+const get_mycourses = register[indexx].courses.find((course) => course.obj.title === usernames );
 console.log(get_mycourses);
 
 // find clicked index from mycourses array
-const index = mycourses.indexOf(get_mycourses);
+let index = register[indexx].courses.indexOf(get_mycourses);
 console.log(index);
 
 
@@ -449,8 +536,13 @@ return false;
 
 // register[index1].courses.splice(index1,1);
 
+    // //if message == true do this
+    // mycourses.splice(index,1);
+    // localStorage.setItem("add-to-card",JSON.stringify(mycourses));
+   
+    
 
-  let getObjs = register[index1].courses.find((event) => event.id === get_course.id );
+  let getObjs = register[index1].courses.find((event) => event.obj.id === get_mycourses.obj.id );
   console.log(getObjs);
 
 
@@ -462,12 +554,8 @@ return false;
 
 
 
-    //if message == true do this
-    mycourses.splice(index,1);
-    localStorage.setItem("add-to-card",JSON.stringify(mycourses));
-    alert("Course Removed to My Courses");
-    
-    
+
+  alert("Course Removed to My Courses");
 
 
 }
@@ -489,12 +577,31 @@ window.location.href = "learn.html";
 //delete course from bookmarks
 
 
+
+
+// delete bookmark from bookmark tab
+let delete_bookmark = document.getElementById("deletebookmark");
+
+//delete bookmark when click button
+delete_bookmark.addEventListener("click",(deletecourse) => {
+deletecourse.preventDefault();
+
 //bookmark JSON parse from localstorage
-const bookmark = JSON.parse(localStorage.getItem("bookmarks"));
-console.log(bookmark);
+let register = JSON.parse(localStorage.getItem("register_arr"));
+console.log(register);
+
+
+let loggin = JSON.parse(localStorage.getItem("login_arr")); 
+console.log(loggin);
+
+const get_user_obj = register.find((event) => event.email === loggin);
+console.log(get_user_obj);
+
+let index1 = register.indexOf(get_user_obj);
+console.log(index1);
 
 //find bookmarrk object by title
-const get_bookmark = bookmark.find((course) => course.title === usernames );
+const get_bookmark = register[index1].bookmarks.find((course) => course.obj.title === usernames );
 console.log(get_bookmark);
 
 //find bookmark obj with course_data
@@ -506,15 +613,8 @@ console.log(get_course);
 const course_index = course_data.indexOf(get_course);
 console.log(course_index);
 
-// delete bookmark from bookmark tab
-let delete_bookmark = document.getElementById("deletebookmark");
-
-//delete bookmark when click button
-delete_bookmark.addEventListener("click",(deletecourse) => {
-deletecourse.preventDefault();
-
 // find index by match object from bookmark
-const index = bookmark.indexOf(get_bookmark);
+const index = register[index1].bookmarks.indexOf(get_bookmark);
 console.log(index);
 
 //confirm message to remove bookmark
@@ -527,10 +627,9 @@ return false;
 let index1 = register.indexOf(get_user_obj);
 console.log(index1);
 
-
 //remove bookmark id from bookmark key in user object 
 
-let getObjs = register[index1].bookmarks.find((event) => event.id === get_course.id );
+let getObjs = register[index1].bookmarks.find((event) => event.obj.id === get_bookmark.obj.id );
 console.log(getObjs);
 
 
@@ -544,8 +643,8 @@ localStorage.setItem("register_arr",JSON.stringify(register));
 
 
 //if message true then do this
-bookmark.splice(index,1);
-localStorage.setItem("bookmarks",JSON.stringify(bookmark));
+// bookmark.splice(index,1);
+// localStorage.setItem("bookmarks",JSON.stringify(bookmark));
 
 
 let bookmark_obj = {
