@@ -18,14 +18,14 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 </head>
 <body>
-     <nav>
+     <!-- <nav>
         <div class="navbar">
             <img class="nav-logo" src="../assets/images/Screenshot 2023-02-11 021952.png" alt="">
            
             <div class="navlinks">
                 <a href="../index.html" class="navlink">Home</a>&emsp;
                 <a href="about.html" class="navlink" id="active">About</a>&emsp;&emsp;
-                <!-- <a href="#" class="navlink">Market</a> -->
+                 <a href="#" class="navlink">Market</a> 
                 <div class="dropdown">
                     <a class="dropbtn" href="market.html">Market</a>&emsp;&emsp;
                     <div class="dropdown-content">
@@ -37,19 +37,19 @@
                       <a href="indices_info.html">Indices Informations</a>
                       <a href="mutual_funds_info.html">Exchange SymbolInformations</a>
                     </div>
-                  </div>
+                   </div> -->
                 <!-- <a href="#" class="navlink">Trade</a> -->
-                <div class="dropdown">
+                <!-- <div class="dropdown"> 
                     <a class="dropbtn" href="live_trading.html">Trade</a>&emsp;&emsp;
                     <div class="dropdown-content">
                       <a href="live_trading.html">Stocks</a>
                       <a href="live_trading.html">forex</a>
                       <a href="live_trading.html">Cryptos</a>
                     </div>
-                  </div>
+                  </div> -->
                 <!-- <a href="#" class="navlink">News</a> -->
                 <!-- <a href="#" class="navlink">Learn</a> -->
-                <div class="dropdown">
+                <!-- <div class="dropdown"> 
                     <a class="dropbtn" href="news.html">News</a>&emsp;&emsp;
                     <div class="dropdown-content">
                       <a href="news.html">Latest News</a>
@@ -76,7 +76,27 @@
            
 
         <hr>
-    </nav>
+    </nav> -->
+
+
+    <div class="topnav" id="myTopnav">
+      <a href="../index.html" class="active"><img class="nav-logo" src="../assets/images/Screenshot 2023-02-11 021952.png" alt=""></a>
+      <div class="navlinks">
+        <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+      <a href="../pages/about.html" class="navlink">About</a>
+      <a href="../pages/market.html" class="navlink">Market</a>
+      <a href="../pages/live_trading.html" class="navlink">Trade</a>
+      <a href="../pages/news.html" class="navlink">News</a>
+      <a href="../pages/learn.html" class="navlink">Learn</a>
+      <a href="../pages/contact.html" class="navlink">Contact</a>
+      <a class="login1" href="#contact"> <div class="notification">
+        <form action="../pages/user_personas.html"><button class="login"  alt="">Log In</button></form>
+      </div></a>
+      <a class="login2" href="#contact"><div class="notification">
+        <form action="../pages/user_personas.html"><button class="registration"  alt="">FREE TRIAL</button></form>
+        </div></a>
+      </div>
+    </div>
 
     <!-- nav end -->
 
@@ -112,6 +132,15 @@
 
 
 
-
+   <script>
+    function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+    </script>
     </body>
     </html>

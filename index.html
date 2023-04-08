@@ -18,25 +18,13 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 </head>
 <body>
-     <nav>
+     <!--  <nav>
         <div class="navbar">
-            <img class="nav-logo" src="../assets/images/Screenshot 2023-02-11 021952.png" alt="">
-            <!-- <input class="search" list="search" type="text" placeholder="Search for courses,videos & Blogs"> -->
-            <datalist id="search">
-                <option value="warren buffett in anual letter,stays upbeat......">
-                <option value="tesla elon musk fans tout cybertruck demand......">
-                <option value="how to buy a stock and make your money four......">
-                <option value="Dow Jones falters on hot inflation boeing groundened......">
-                <option value="What's going on microsoft and between apple shares......">
-                <option value="Big Tech hits $1.5 trillion in sales last year......">
-                <option value="Sirius XM (SIRI) and Toyoto collaborate to celebrate......">
-                <option value="Futures fall ahead of key inflation report investor's......">
-                <option value="Netflix lands first partnership with NFL: how patrick......">
-                <option value="Whatsapp to bring i-Message-like-feature to android and iPhone......">
-            </datalist>
+            
+            
             <div class="navlinks">
-                <a href="./pages/about.html" class="navlink">About</a>&emsp;
-                <!-- <a href="#" class="navlink">Market</a> -->
+                
+               <a href="#" class="navlink">Market</a> 
                 <div class="dropdown">
                     <button class="dropbtn">Market</button>
                     <div class="dropdown-content">
@@ -49,7 +37,7 @@
                       <a href="./pages/mutual_funds_info.html">Exchange SymbolInformations</a>
                     </div>
                   </div>
-                <!-- <a href="#" class="navlink">Trade</a> -->
+                 <a href="#" class="navlink">Trade</a> 
                 <div class="dropdown">
                     <button class="dropbtn">Trade</button>
                     <div class="dropdown-content">
@@ -59,8 +47,8 @@
                     </div>
                     <div></div>
                   </div>
-                <!-- <a href="#" class="navlink">News</a> -->
-                <!-- <a href="#" class="navlink">Learn</a> -->
+                 <a href="#" class="navlink">News</a> 
+                 <a href="#" class="navlink">Learn</a> 
                 <div class="dropdown">
                     <button class="dropbtn">News</button>
                     <div class="dropdown-content">
@@ -89,14 +77,34 @@
               <form action="./pages/user_personas.html"><button class="login"  alt="">Log In</button></form>
             </div>
             <div class="notification">
-             
             <form action="./pages/user_personas.html"><button class="registration"  alt="">FREE TRIAL</button></form>
             </div>
 
         </div>
 
         <hr>
-    </nav>
+    </nav> -->
+
+
+
+    <div class="topnav" id="myTopnav">
+      <a href="./index.html" class="active"><img class="nav-logo" src="../assets/images/Screenshot 2023-02-11 021952.png" alt=""></a>
+      <div class="navlinks">
+        <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+      <a href="./pages/about.html" class="navlink">About</a>
+      <a href="./pages/market.html" class="navlink">Market</a>
+      <a href="./pages/live_trading.html" class="navlink">Trade</a>
+      <a href="./pages/news.html" class="navlink">News</a>
+      <a href="./pages/learn.html" class="navlink">Learn</a>
+      <a class="login1" href="#contact"> <div class="notification">
+        <form action="./pages/user_personas.html"><button class="login"  alt="">Log In</button></form>
+      </div></a>
+      <a class="login2" href="#contact"><div class="notification">
+        <form action="./pages/user_personas.html"><button class="registration"  alt="">FREE TRIAL</button></form>
+        </div></a>
+      </div>
+    </div>
+
 
     <!-- nav end -->
 
@@ -632,6 +640,15 @@
 
 
 
-
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
 </body>
 </html>
