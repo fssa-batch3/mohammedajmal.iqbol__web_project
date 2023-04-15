@@ -59,127 +59,56 @@
 
    <!-- <br><br><label for="course-videos" class="product-label">Course Videos</label>
    <br><input name="price" class="image-url" type="file" id="course-videos" placeholder="course videos" required> -->
-        <button class="submit" type="submit" id="btn">Submit</button>
+       
       </div>
+
+      <div class="second-row">
+         <h3 class="videos-h1">Course Videos Section</h3>
+         <br><label for="old-cost" class="product-label">Begginer's Module</label>
+         <br><input name="image-url" class="image-url" id="video1" type="text" placeholder="Beginner's Module Video 1" required>
+         <br><input name="image-url" class="image-url" id="video2" type="text" placeholder="Begginer's Module Video 2" required>
+         <br><input name="image-url" class="image-url" id="video3" type="text" placeholder="Begginer's Module Video 3" required>
+       
+         <br><br><label for="old-cost" class="product-label" >Intermediate Module</label>
+         <br><input name="image-url" class="image-url" id="video4" type="text" placeholder="Intermediate Module Video 1" required>
+         <br><input name="image-url" class="image-url" id="video5" type="text" placeholder="Intermediate Module Video 2" required>
+         <br><input name="image-url" class="image-url" id="video6" type="text" placeholder="Intermediate Module Video 3" required>
+       
+         <br><br><label for="old-cost" class="product-label" >Advanced Module</label>
+         <br><input name="image-url" class="image-url" id="video7" type="text" placeholder="Advanced Module Video 1" required>
+         <br><input name="image-url" class="image-url" id="video8" type="text" placeholder="Advanced Module Video 2" required>
+         <br><input name="image-url" class="image-url" id="video9" type="text" placeholder="Advanced Module Video 3" required>
+       
+         
+       </div>
+
+       <div class="second-row">
+         <h3 class="videos-h1">Course Videos Section</h3>
+         <br><label for="old-cost" class="product-label">Begginer's Module</label>
+         <br><input name="image-url" class="image-url" id="video1name" type="text" placeholder="Beginner's Module Video 1 Name" required>
+         <br><input name="image-url" class="image-url" id="video2name" type="text" placeholder="Begginer's Module Video 2 Name" required>
+         <br><input name="image-url" class="image-url" id="video3name" type="text" placeholder="Begginer's Module Video 3 Name" required>
+       
+         <br><br><label for="old-cost" class="product-label" >Intermediate Module</label>
+         <br><input name="image-url" class="image-url" id="video4name" type="text" placeholder="Intermediate Module Video 4 Name" required>
+         <br><input name="image-url" class="image-url" id="video5name" type="text" placeholder="Intermediate Module Video 5 Name" required>
+         <br><input name="image-url" class="image-url" id="video6name" type="text" placeholder="Intermediate Module Video 6 Name" required>
+       
+         <br><br><label for="old-cost" class="product-label" >Advanced Module</label>
+         <br><input name="image-url" class="image-url" id="video7name" type="text" placeholder="Advanced Module Video 7 Name" required>
+         <br><input name="image-url" class="image-url" id="video8name" type="text" placeholder="Advanced Module Video 8 Name" required>
+         <br><input name="image-url" class="image-url" id="video9name" type="text" placeholder="Advanced Module Video 9 Name" required>
+       
+         
+       </div>
+
+       <button class="submit" type="submit" id="btn">Submit</button>
     </form>
-    <button class="submit" type="submit" id="delete">Delete</button>
+    <button class="delete" type="submit" id="delete">Delete</button>
 
 
 
 
-<script>
-   
-
-   const url = window.location.search;
-   const userparams = new URLSearchParams(url);
-   const id = parseInt(userparams.get("id"));
-   console.log(id);
-
-
-   const course_data = JSON.parse(localStorage.getItem("course_data"));
-console.log(course_data);
-   const get_obj = course_data.find((Reg) => Reg.id == id );
-   console.log(get_obj);
-
-   let img = document.getElementById("image-url");
-    let title = document.getElementById("course-name");
-    let timing = document.getElementById("course-timing");
-    let language = document.getElementById("course-language");
-    let enrolled = document.getElementById("course-intake");
-    let cost_type = document.getElementById("course-cost-type");
-    let cost = document.getElementById("course-cost");
-    let old_cost = document.getElementById("old-cost");
-    let Description= document.getElementById("course-description");
-    let top_skills1 = document.getElementById("top-skills");
-   //  let videos = document.getElementById("course-videos");
-    img.value = get_obj["img"];
-    title.value = get_obj["title"];
-    timing.value = get_obj["timing"];
-    language.value = get_obj["language"];
-    enrolled.value = get_obj["enrolled"];
-    cost_type.value = get_obj["cost_type"];
-    cost.value = get_obj["cost"];
-    old_cost.value = get_obj["old_cost"];
-    Description.value = get_obj["Description"];
-    top_skills1.value = get_obj["top_skills1"];
-   //  videos.value = get_obj["videos"];
-   
-   
-   
-
-   let form = document.getElementById("form");
-   form.addEventListener("submit", (event) => {
-    event.preventDefault();
-
- 
-
-    let img = document.getElementById("image-url").value;
-    let title = document.getElementById("course-name").value;
-    let timing = document.getElementById("course-timing").value;
-    let language = document.getElementById("course-language").value;
-    let enrolled = document.getElementById("course-intake").value;
-    let cost_type = document.getElementById("course-cost-type").value;
-    let cost = document.getElementById("course-cost").value;
-    let old_cost = document.getElementById("old-cost").value;
-    let Description= document.getElementById("course-description").value;
-    let top_skills1 = document.getElementById("top-skills").value;
-   //  let videos = document.getElementById("course-videos").value;
-
-
-
-       let course_obj = {
-        img,title,timing,language,enrolled,cost_type,cost,old_cost,Description,top_skills1,id 
-    };
-
-
-    
-   //find index
-   let index = course_data.indexOf(get_obj);
-   console.log(index);
-
-   course_data[index] = course_obj;
-
-   //set to Localstorage
-   localStorage.setItem("course_data",JSON.stringify(course_data));
-   alert("you have successfully updated your course");
-   location.reload();
-   
-   window.location.href = "../pages/adminCoursesAdd.html";
-   
-});
-
-// edit course end
-
-
-
-//delete course 
-
- let removeUser = document.getElementById("delete");
- removeUser.addEventListener("click", (event) => {
-    event.preventDefault();
-
- let index = course_data.indexOf(get_obj);
-   console.log(index);
-
-   let msg = confirm("are you sure you want to delete");
-   if(msg !== true ){
-      return false;
-   } else {
-    course_data.splice(index,1);
-    localStorage.setItem("course_data",JSON.stringify(course_data));
-    window.location.href = "../pages/adminCoursesAdd.html";
-
-   }
-
-
-
- });
-    
-
-
-
-
-  
-</script>
+<script src="../assets/js/editCourses.js"></script>
 </body>
 </html>

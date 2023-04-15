@@ -1,13 +1,16 @@
 form {
     background-color:antiquewhite;
-    width:50%;
+    width:90%;
     height:700px;
-    margin-left: 350px;
+    margin-left: 70px;
     margin-top: 100px;
     display: flex;
+    font-family: sans-serif
 }
 .contact-h1 {
     text-align: center;
+    font-size: 20px;
+    margin-top: 30px;
 }
 .image-url {
     margin-left: 70px;
@@ -28,14 +31,26 @@ form {
 .submit {
     background-color:burlywood;
     color:white;
+   width:150px;
+   height:40px;
+   border-radius: 5px;
+    border: none;
+    margin-left: 0px;
+    margin-top: 630px;
+    position: relative;
+    right: 350px;
+}
+.delete {
+    background-color:burlywood;
+    color:white;
    width:100px;
    height:40px;
    border-radius: 5px;
     border: none;
-    margin-left: 100px;
-    margin-top: 5px;
+    margin-left: 0px;
+    margin-top: 630px;
 }
-.submit:hover {
+.submit:hover ,.delete:hover {
     transform: scale(1.05);
 }
 .product-label {
@@ -48,7 +63,17 @@ form {
     border-radius: 5px;
     border: none;
     width:230px;
-    height: 100px; 
+    height: 160px; 
+    font-size: 15px;
+}
+.videos-h1 {
+    margin-left: 50px;
+    margin-top: -40px;
+    font-size: 20px;
+    font-family: sans-serif
+}
+#course-cost-label {
+    font-size: 13px;
 }
 .second-row {
     margin-top: 80px;
@@ -56,5 +81,8 @@ form {
 #delete {
     margin-left: 53%;
 position: relative;
-bottom: 100px;
+bottom: 700px;
+}
+body {
+    overflow: hidden;
 }

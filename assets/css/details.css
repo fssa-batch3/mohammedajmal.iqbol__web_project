@@ -369,6 +369,9 @@ strike {
   display: none;
   background-color: white;
   overflow: hidden;
+  margin-left: 20px;
+  padding: 10px;
+  padding-top: 10px;
 }
 .begginer-module {
   margin-top: 10px;
@@ -590,4 +593,14 @@ overflow-y: scroll;
 #user-profile {
   border-radius: 50%;
   margin-top: 10px;
+}
+.course-links {
+  text-decoration: none;
+  color: black;
+  font-size: 15px;
+  font-family: sans-serif;
+}
+.course-links:hover {
+    color: blue;
+    text-decoration: underline;
 }

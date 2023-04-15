@@ -409,87 +409,7 @@ alert("course Added to Bookmarks");
 
 //bookmark course function end
 
-//array JSON parse bookmarks
-const bookmarks = JSON.parse(localStorage.getItem("bookmarks"));
-console.log(bookmarks);
 
-let register_array = JSON.parse(localStorage.getItem("register_arr"));
-console.log(register_array);
-
-let login = JSON.parse(localStorage.getItem("login_arr"));
-  console.log(login);
-
-const get_user_objs = register_array.find((event) => event.email === login);
-  console.log(get_user_objs);
-  
-  let index1 = register_array.indexOf(get_user_objs);
-  console.log(index1);
-
-
-  // console.log(register_array[index]["bookmarks"]);
-
-
-// //bookamrk card create from JSON object
-let bookmark_div;
-for (i = 0; i < register_array[index1]["bookmarks"].length; i++) {
-  bookmark_div = document.createElement("a");
-  bookmark_div.setAttribute("class", "first-course2-stocks");
-  bookmark_div.setAttribute(
-    "href",
-    "details.html?name=" + register_array[index1]["bookmarks"][i]["obj"]["title"]
-  );
-  let cost = "";
-  let discount = "";
-
-  if (register_array[index1]["bookmarks"][i]["obj"]["cost"] === "learn for free") {
-    cost += " ";
-    discount += 100;
-  } else {
-    cost += "₹" + " ";
-    discount += 100 - (register_array[index1]["bookmarks"][i]["obj"]["cost"] / register_array[index1]["bookmarks"][i]["obj"]["old_cost"]) * 100;
-  }
-  bookmark_div.innerHTML = `<div>
-                                  <img class="course-img-stocks" src=${
-                                    register_array[index1]["bookmarks"][i]["obj"]["img"]
-                                  } alt="">
-                              </div>
-                              <div>
-                                  <h3 class="course-title">${
-                                    register_array[index1]["bookmarks"][i]["obj"]["title"]
-                                  }</h3>
-                                  <div class="course-details">
-                                      <p class="course-timing">${
-                                        "<b>Dur :</b>" + register_array[index1]["bookmarks"][i]["obj"]["timing"]
-                                      }</p>
-                                      <p class="course-ln">&emsp;${
-                                        "<b>Lang : </b>" +
-                                        register_array[index1]["bookmarks"][i]["obj"]["language"]
-                                      }</p>
-                                      <p class="course-enrolled">&emsp;${
-                                        "<b>Enr :</b>" +
-                                        register_array[index1]["bookmarks"][i]["obj"]["enrolled"] +
-                                        " " +
-                                        "Enrolled"
-                                      }</p>
-                                  </div>
-                               <div class="flexcost">
-                               <h3 class="course-cost">${
-                                "₹" + " " + register_array[index1]["bookmarks"][i]["obj"]["cost"]
-                               }</h3>
-                               <strike class="course-oldcost" >${
-                                 "₹" + " " + register_array[index1]["bookmarks"][i]["obj"]["old_cost"]
-                               }</strike>
-                               <p class="course-discount" >${
-                                 Math.floor(discount) + " " + "% discount"
-                               }</p>
-                               </div>
-                              </div> `;
-  console.log(bookmark_div);
-
-  document.querySelector(".scroll-bookmarks-div4").append(bookmark_div);
-}
-
-//bookamrk card create from JSON object end
 
 //search query for all courses start
 //search query
@@ -922,6 +842,91 @@ console.log(allCourses);
 //    localStorage.setItem("register_arr",JSON.stringify(assign_newCourseArray))
     
 // console.log(register[index]["coursesArray"]);
+
+
+
+
+let register_array = JSON.parse(localStorage.getItem("register_arr"));
+console.log(register_array);
+
+let login = JSON.parse(localStorage.getItem("login_arr"));
+  console.log(login);
+
+const get_user_objs = register_array.find((event) => event.email === login);
+  console.log(get_user_objs);
+  
+  let index1 = register_array.indexOf(get_user_objs);
+  console.log(index1);
+
+
+  // console.log(register_array[index]["bookmarks"]);
+
+
+// //bookamrk card create from JSON object
+let bookmark_div;
+for (i = 0; i < register_array[index1]["bookmarks"].length; i++) {
+  bookmark_div = document.createElement("a");
+  bookmark_div.setAttribute("class", "first-course2-stocks");
+  bookmark_div.setAttribute(
+    "href",
+    "details.html?name=" + register_array[index1]["bookmarks"][i]["obj"]["title"]
+  );
+  let cost = "";
+  let discount = "";
+
+  if (register_array[index1]["bookmarks"][i]["obj"]["cost"] === "learn for free") {
+    cost += " ";
+    discount += 100;
+  } else {
+    cost += "₹" + " ";
+    discount += 100 - (register_array[index1]["bookmarks"][i]["obj"]["cost"] / register_array[index1]["bookmarks"][i]["obj"]["old_cost"]) * 100;
+  }
+  bookmark_div.innerHTML = `<div>
+                                  <img class="course-img-stocks" src=${
+                                    register_array[index1]["bookmarks"][i]["obj"]["img"]
+                                  } alt="">
+                              </div>
+                              <div>
+                                  <h3 class="course-title">${
+                                    register_array[index1]["bookmarks"][i]["obj"]["title"]
+                                  }</h3>
+                                  <div class="course-details">
+                                      <p class="course-timing">${
+                                        "<b>Dur :</b>" + register_array[index1]["bookmarks"][i]["obj"]["timing"]
+                                      }</p>
+                                      <p class="course-ln">&emsp;${
+                                        "<b>Lang : </b>" +
+                                        register_array[index1]["bookmarks"][i]["obj"]["language"]
+                                      }</p>
+                                      <p class="course-enrolled">&emsp;${
+                                        "<b>Enr :</b>" +
+                                        register_array[index1]["bookmarks"][i]["obj"]["enrolled"] +
+                                        " " +
+                                        "Enrolled"
+                                      }</p>
+                                  </div>
+                               <div class="flexcost">
+                               <h3 class="course-cost">${
+                                "₹" + " " + register_array[index1]["bookmarks"][i]["obj"]["cost"]
+                               }</h3>
+                               <strike class="course-oldcost" >${
+                                 "₹" + " " + register_array[index1]["bookmarks"][i]["obj"]["old_cost"]
+                               }</strike>
+                               <p class="course-discount" >${
+                                 Math.floor(discount) + " " + "% discount"
+                               }</p>
+                               </div>
+                              </div> `;
+  console.log(bookmark_div);
+
+  document.querySelector(".scroll-bookmarks-div4").append(bookmark_div);
+}
+
+
+
+//bookamrk card create from JSON object end
+
+
 
 let registerArr = JSON.parse(localStorage.getItem("register_arr"));
 console.log(registerArr);

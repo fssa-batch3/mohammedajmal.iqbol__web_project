@@ -41,7 +41,7 @@
           <option value="Paid">Paid</option>
         </datalist>
         
-        <br><br><label for="course-cost" class="product-label">Course Cost ( IF NOT FREE )</label>
+        <br><br><label for="course-cost" class="product-label" id="course-cost-label">Course Cost ( if 'learn for free' put '0' here )</label>
         <br><input name="email" class="image-url" type="number" id="course-cost" placeholder="course cost" required><br>
 <br></div>
    
@@ -57,135 +57,57 @@
     <br><br><label for="top-skills" class="product-label">Top Skills You'll learn</label>
     <br><textarea name="product-name" class="textarea-desc" id="top-skills" type="text" placeholder="course Description" required></textarea>
 
-    <br><br><label for="course-videos" class="product-label">Course Videos</label>
-    <br><input name="price" class="image-url" type="file"  id="course-videos" placeholder="course videos" required>
+    <!-- <br><br><label for="course-videos" class="product-label">Course Videos</label>
+    <br><input name="price" class="image-url" type="file"  id="course-videos" placeholder="course videos" required> -->
 
-    <button class="submit" type="submit" id="btn">Submit</button>   
 </div>
 
+<div class="second-row">
+  <h3 class="videos-h1">Course Videos Section</h3>
+  <br><label for="old-cost" class="product-label">Begginer's Module</label>
+  <br><input name="image-url" class="image-url" id="video1" type="text" placeholder="Beginner's Module Video 1 link" required>
+  <br><input name="image-url" class="image-url" id="video2" type="text" placeholder="Begginer's Module Video 2 link" required>
+  <br><input name="image-url" class="image-url" id="video3" type="text" placeholder="Begginer's Module Video 3 link" required>
 
+  <br><br><label for="old-cost" class="product-label" >Intermediate Module</label>
+  <br><input name="image-url" class="image-url" id="video4" type="text" placeholder="Intermediate Module Video 4 link" required>
+  <br><input name="image-url" class="image-url" id="video5" type="text" placeholder="Intermediate Module Video 5 link" required>
+  <br><input name="image-url" class="image-url" id="video6" type="text" placeholder="Intermediate Module Video 6 link" required>
+
+  <br><br><label for="old-cost" class="product-label" >Advanced Module</label>
+  <br><input name="image-url" class="image-url" id="video7" type="text" placeholder="Advanced Module Video 7 link" required>
+  <br><input name="image-url" class="image-url" id="video8" type="text" placeholder="Advanced Module Video 8 link" required>
+  <br><input name="image-url" class="image-url" id="video9" type="text" placeholder="Advanced Module Video 9 link" required>
+
+  
+</div>
+
+<div class="second-row">
+  <h3 class="videos-h1">Course Videos Section</h3>
+  <br><label for="old-cost" class="product-label">Begginer's Module</label>
+  <br><input name="image-url" class="image-url" id="video1name" type="text" placeholder="Beginner's Module Video 1 Name" required>
+  <br><input name="image-url" class="image-url" id="video2name" type="text" placeholder="Begginer's Module Video 2 Name" required>
+  <br><input name="image-url" class="image-url" id="video3name" type="text" placeholder="Begginer's Module Video 3 Name" required>
+
+  <br><br><label for="old-cost" class="product-label" >Intermediate Module</label>
+  <br><input name="image-url" class="image-url" id="video4name" type="text" placeholder="Intermediate Module Video 4 Name" required>
+  <br><input name="image-url" class="image-url" id="video5name" type="text" placeholder="Intermediate Module Video 5 Name" required>
+  <br><input name="image-url" class="image-url" id="video6name" type="text" placeholder="Intermediate Module Video 6 Name" required>
+
+  <br><br><label for="old-cost" class="product-label" >Advanced Module</label>
+  <br><input name="image-url" class="image-url" id="video7name" type="text" placeholder="Advanced Module Video 7 Name" required>
+  <br><input name="image-url" class="image-url" id="video8name" type="text" placeholder="Advanced Module Video 8 Name" required>
+  <br><input name="image-url" class="image-url" id="video9name" type="text" placeholder="Advanced Module Video 9 Name" required>
+
+  
+</div>
+
+<button class="submit" type="submit" id="btn">Submit</button>   
     </form>
 
 
 
 
-<script>
-
-
- const register_arr = JSON.parse(localStorage.getItem("register_arr"));
- console.log(register_arr); 
-
-
-  //file reader start
-  let base64String;
-  function convertFileToBase64(file) {
-  const reader = new FileReader();
-  reader.readAsDataURL(file);
-  reader.onload = () => {
-    base64String = reader.result;
-    console.log(base64String);
-    return base64String;
-    // Do something with the base64String
-  };
-}
-
-const inputFile = document.getElementById("course-videos"); // replace "input-file" with your HTML input element ID
-inputFile.addEventListener("change", () => {
-  const file = inputFile.files[0];
-  convertFileToBase64(file);
-});
-
-
-  //flie reader end
-
-   
-
-   let form = document.getElementById("form");
-   form.addEventListener("submit", (event) => {
-    event.preventDefault();
-
-
-    
-    let course_data =[];
-     
-
-    if(localStorage.getItem("course_data") !== null ){
-       course_data = JSON.parse(localStorage.getItem("course_data"));
-
-    let img = document.getElementById("image-url").value;
-    let title = document.getElementById("course-name").value;
-    let timing = document.getElementById("course-timing").value;
-    let language = document.getElementById("course-language").value;
-    let enrolled = document.getElementById("course-intake").value;
-    let cost_type = document.getElementById("course-cost-type").value;
-    let cost = document.getElementById("course-cost").value;
-    let old_cost = document.getElementById("old-cost").value;
-    let Description= document.getElementById("course-description").value;
-    let top_skills = document.getElementById("top-skills").value;
-    let top_skills1 = top_skills.split(".");
-    let videos = base64String.slice(1,20);
-    let bookmark_img = "../assets/images/icons8-add-bookmark-50.png";
-    let id= Date.now();
-    let date1 = new Date();
-    let datestring = date1.toDateString();
-    datestring.slice(4,);
-
-
-       let course_obj = {
-        img,title,timing,language,enrolled,cost_type,cost,old_cost,Description,top_skills1,videos,id,datestring,bookmark_img
-    };
-
-    course_data.push(course_obj);
-    console.log(course_data)
-
-    const add_data = JSON.stringify(course_data);
-    localStorage.setItem("course_data",add_data);
-    } else {
-
-    let img = document.getElementById("image-url").value;
-    let title = document.getElementById("course-name").value;
-    let timing = document.getElementById("course-timing").value;
-    let language = document.getElementById("course-language").value;
-    let enrolled = document.getElementById("course-intake").value;
-    let cost_type = document.getElementById("course-cost-type").value;
-    let cost = document.getElementById("course-cost").value;
-    let old_cost = document.getElementById("old-cost").value;
-    let Description= document.getElementById("course-description").value;
-    let top_skills = document.getElementById("top-skills").value;
-    let top_skills1 = top_skills.split(".");
-    let videos = base64String.slice(1,20);
-    let bookmark_img = "../assets/images/icons8-add-bookmark-50.png";
-    let id= Date.now();
-    let date1 = new Date();
-    let datestring = date1.toDateString();
-    datestring.slice(4,);
-    
-
-
-        let course_obj = {
-        img,title,timing,language,enrolled,cost_type,cost,old_cost,Description,top_skills1,videos,id,datestring,bookmark_img
-    };
-
-    course_data.push(course_obj);
-
-    const add_data = JSON.stringify(course_data);
-    localStorage.setItem("course_data",add_data);
-    
-    }
-
-    window.location.href = "../pages/adminCoursesAdd.html";
-    
-
-   
-
-   
-
-   });
-
-
-
-
-  
-</script>
+<script src="../assets/js/addCourses.js"></script>
 </body>
 </html>
