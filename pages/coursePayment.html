@@ -270,8 +270,6 @@
      console.log(get_course_obj["id"]);
 
 
-     const existobj = mycourses.filter((event) => event["id"] === get_course_obj["id"] );
-     console.log(existobj);
 
 
 
@@ -378,75 +376,14 @@ console.log(index);
 
 
 
-     if( existobj[0] == undefined ){
-        mycourses.push(get_course_obj);
-     localStorage.setItem("add-to-card",JSON.stringify(mycourses));
-     } else {
-        alert("Course Already Added");
-        window.location.href = "learn.html";
-     }
+    //  if( existobj[0] == undefined ){
+    //     mycourses.push(get_course_obj);
+    //  localStorage.setItem("add-to-card",JSON.stringify(mycourses));
+    //  } else {
+    //     alert("Course Already Added");
+    //     window.location.href = "learn.html";
+    //  }
     
-
-
-     //after course payment it is added to user mycourses
-     if( register[index].courses != null ) {   
- 
- let courses_id = {
-      "obj" : get_course_obj,
- } 
-
-    //check match is true / false
-    let objMatch = false;
-for(let i=0;i<mycourses.length;i++){
-  for(let j = 0; j < register[index].courses.length ; j++ ){
-  if( mycourses[i]["id"] !== register[index].courses[j]["id"] ){
-    objMatch = true;
-
-  }
-}
-
-console.log(objMatch);
-console.log(register[index].courses);
-}
-
-//checked it should return true
-
-   if( existobj[0] == undefined  ){
-    
-    // alert("this course is already purchased by you");
-    register[index].courses.push(courses_id);
-    localStorage.setItem("register_arr",JSON.stringify(register));
-    //skip this part
-   } else {
-    //skip
-   } 
-
-} else {
-
-let course_obj = [];
-
-let courses_id = {
-      "obj" : get_course_obj,
- } 
-
-course_obj.push(courses_id);
-       
-let user_obj = {
-"courses" : course_obj,
-};
-
-let user_id_assign = Object.assign(get_user_obj,user_obj);
-console.log(user_id_assign);
-
-let index = register.indexOf(get_user_obj);
-console.log(index);
-
-register[index] = user_id_assign;
-
-localStorage.setItem("register_arr",JSON.stringify(register));
-
-}
-
 
       }
 
@@ -478,10 +415,98 @@ localStorage.setItem("register_arr",JSON.stringify(register));
 
       }
 
+
+
+
+     //after course payment it is added to user mycourses
+     if( register[index].courses != null ) {   
+ 
+ let courses_id = {
+      "obj" : get_course_obj,
+ } 
+
+    //check match is true / false
+    let objMatch = false;
+for(let i=0;i<mycourses.length;i++){
+  for(let j = 0; j < register[index].courses.length ; j++ ){
+  if( mycourses[i]["id"] !== register[index].courses[j]["id"] ){
+    objMatch = true;
+
+  }
+}
+
+console.log(objMatch);
+console.log(register[index].courses);
+}
+
+//checked it should return true
+const existobj = register[index].courses.find((event) => event["obj"]["id"] === get_course_obj["id"] );
+     console.log(existobj);
+
+
+
+   if( existobj === undefined  ){
+    
+    
+    register[index].courses.push(courses_id);
+    localStorage.setItem("register_arr",JSON.stringify(register));
+    alert("this course is added to mycourses");
+    //skip this part
+   } else {
+    //skip
+    alert("this course is already added");
+   } 
+
+} else {
+
+let course_obj = [];
+
+let courses_id = {
+      "obj" : get_course_obj,
+ } 
+
+course_obj.push(courses_id);
+       
+let user_obj = {
+"courses" : course_obj,
+};
+
+let user_id_assign = Object.assign(get_user_obj,user_obj);
+console.log(user_id_assign);
+
+let index = register.indexOf(get_user_obj);
+console.log(index);
+
+register[index] = user_id_assign;
+
+localStorage.setItem("register_arr",JSON.stringify(register));
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       window.location.href = "learn.html";
 
 
       });
+      
    
   //     //payment add course 
 

@@ -286,9 +286,7 @@ console.log(register[index1].bookmarks);
     const bookmarks = JSON.parse(localStorage.getItem("bookmarks"));
     console.log(bookmarks);
 
-    //check for duplicates
-    const already_exist_obj = bookmarks.find((e) => e.id === get_click_obj.id);
-    console.log(already_exist_obj);
+
   
  
 
@@ -354,8 +352,11 @@ console.log(id);
 };
 
 //checked it should return true
+    //check for duplicates
+    const already_exist_obj = register[index1].bookmarks.find((e) => e.obj.id === get_click_obj.id);
+    console.log(already_exist_obj);
 
- if(already_exist_obj == undefined){
+ if(already_exist_obj === undefined){
   
   // alert("this course is already purchased by you");
   let index = register.indexOf(get_user_obj);
@@ -1014,4 +1015,3 @@ function googleTranslateElementInit() {
 
 
      
-

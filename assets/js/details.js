@@ -636,7 +636,7 @@ console.log(getObjs);
 let findValIndex = register[index1].bookmarks.indexOf(getObjs);
 console.log(findValIndex);
 
-register[index1].bookmarks.splice(findValIndex,1);
+register[index1].bookmarks.splice(index,1);
 localStorage.setItem("register_arr",JSON.stringify(register));
 
 

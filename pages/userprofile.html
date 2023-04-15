@@ -16,6 +16,10 @@
 
 
 
+<div>
+   <button type="button" class="delUserProfile" id="delUserProfile">Delete User Profile</button>
+</div>
+
 
 
   
@@ -75,6 +79,10 @@
                       <td><input  id="panel-number" type="number" disabled >
                       </td>
                     </tr>
+                    <tr>
+                        <td id="panel-editprofile">New Profile Link</td>
+                        <td><input  id="panel-editprofile1" type="text" required></td>
+                      </tr>
                     <tr>
                       <td><button type="button"  class="edit" id="edit" >Edit</button></td>
                       <td><button type="submit" class="delete" id="delete">Delete</button></td>
@@ -152,10 +160,12 @@ document.getElementById("done").style.display = "none";
    document.getElementById("panel-email").disabled = true;
    document.getElementById("panel-number").disabled = false;
    document.getElementById("done").style.display = "block";
+   document.getElementById("panel-editprofile").style.display = "block";
+   document.getElementById("panel-editprofile1").style.display = "block";
 
    });
 
-
+    //check new link is inserted
    let done = document.getElementById("done");
    done.addEventListener("click",event => {
     event.preventDefault();
@@ -180,9 +190,48 @@ document.getElementById("done").style.display = "none";
   let gender = document.getElementById("panel-gender").value;
   let email = document.getElementById("panel-email").value;
   let mobile_number = document.getElementById("panel-number").value;
+  let profile_pic = document.getElementById("panel-editprofile1").value;
 
   let new_obj = {
-    age,about_me,gender,email,mobile_number
+    age,about_me,gender,email,mobile_number,profile_pic
+  };
+
+  console.log("hi");
+
+  if(profile_pic !== "" ){
+  //assign data
+  let assign_data = Object.assign(get_obj,new_obj);
+   console.log(assign_data);
+
+   let index = register_arr.indexOf(get_obj);
+   console.log(index);
+   
+  register_arr[index] = assign_data;
+
+   localStorage.setItem("register_arr",JSON.stringify(register_arr));
+   alert("your changes have been changed");
+   location.reload();
+
+  } else {
+         //skip part
+         alert("please add your profile link");
+  };
+   
+   });
+
+
+
+   //delete user profile
+   let deleteUserProfile = document.getElementById("delUserProfile");
+   console.log(deleteUserProfile);
+   deleteUserProfile.addEventListener("click",(event) => {
+    event.preventDefault();
+
+ let register = JSON.parse(localStorage.getItem("register_arr"));
+    // let profile_pic = "data:image/png;base64,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";
+console.log(get_obj["name"]);
+  let new_obj = {
+    profile_pic : `https://ui-avatars.com/api/?name=${get_obj["name"]}`
   };
 
   console.log("hi");
@@ -199,7 +248,7 @@ document.getElementById("done").style.display = "none";
    localStorage.setItem("register_arr",JSON.stringify(register_arr));
    alert("your changes have been changed");
    location.reload();
-   
+
    });
 
    

@@ -6,20 +6,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Cryptos</title>
-        <link href="../assets/css/styles.css" rel="stylesheet" />
+        <title>forex</title>
+        <link href="../assets/css/forexmarket.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     </head>
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-white">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3 bg-light text-dark" id="navbar-brand" href="charts.html">freshstocks</a>
+            <a class="navbar-brand ps-3 bg-light text-dark" id="navbar-brand" href="forexmarket.html">freshstocks</a>
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars text-dark"></i></button>
             <!-- Navbar Search-->
             <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
                 <div class="input-group">
-                    <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+                    <input class="form-control" id="searchbar" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
                     <button class="btn btn-dark" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
                 </div>
             </form>
@@ -49,35 +49,33 @@
                             </a>
                             
                             <div class="sb-sidenav-menu-heading">Your Tools</div>
-                            <a class="nav-link text-light" href="charts.html" id="active-tab">
+                            <a class="nav-link text-light" href="forexmarket.html" id="active-tab">
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area text-white"></i></div>
-                                Cryptocurrencies
-                            </a>
-                            <a class="nav-link" href="forexmarket.html">
-                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 forex
                             </a>
                             <a class="nav-link" href="stockmarket.html">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Stocks
                             </a>
-                            
                             <a class="nav-link" href="marketnews.html">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 News Daily & Updated
                             </a>
-
-                            <a class="nav-link">
-                                <div class="sb-nav-link-icon"></div>
-
+                            <a class="nav-link" href="charts.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                              Cryptocurrencies
                             </a>
                             <a class="nav-link">
                                 <div class="sb-nav-link-icon"></div>
-
+                             
                             </a>
                             <a class="nav-link">
                                 <div class="sb-nav-link-icon"></div>
-                                
+                               
+                            </a>
+                            <a class="nav-link">
+                                <div class="sb-nav-link-icon"></div>
+                               
                             </a>
 
                             <div class="sb-sidenav-menu-heading">Settings</div>
@@ -104,10 +102,10 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Cryptocurrencies</h1>
+                        <h1 class="mt-4">forex</h1>
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item"><a href="marketdata.html">Dashboard</a></li>
-                            <li class="breadcrumb-item active">Cryptocurrencies</li>
+                            <li class="breadcrumb-item active">forex</li>
                         </ol>
                         <!-- <div class="card mb-4">
                             <div class="card-body">
@@ -117,35 +115,16 @@
                         <div class="row" id="rowdiv">
 
                          
+                            
 
                               
                         </div>
-                        <!-- <div class="card mb-4" id="cardsdiv" class="cardsdiv">
+                        <div class="row" id="rowcardsdiv">
                             
-                        </div> -->
-                        <!-- <div class="row">
-                            <div class="col-lg-6">
-                                <div class="card mb-4">
-                                    <div class="card-header">
-                                        <i class="fas fa-chart-bar me-1"></i>
-                                        Revenue for the Courses In a Year
-                                    </div>
-                                    <div class="card-body"><canvas id="myBarChart" width="100%" height="50"></canvas></div>
-                                    <div class="card-footer small text-muted">Updated yesterday at 19:40 PM</div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="card mb-4">
-                                    <div class="card-header">
-                                        <i class="fas fa-chart-pie me-1"></i>
-                                        Total Courses Sold / bought In this Month
-                                    </div>
-                                    <div class="card-body"><canvas id="myPieChart" width="100%" height="50"></canvas></div>
-                                    <div class="card-footer small text-muted">Updated yesterday at 15:30 PM</div>
-                                </div>
-                            </div>
                         </div>
-                    </div> -->
+
+                        <!-- caraousel start -->
+
                 </main> 
                 <br>
                 <footer class="py-4 bg-light mt-auto">
@@ -168,63 +147,72 @@
         <script src="../assets/demo/chart-area-demo.js"></script>
         <script src="../assets/demo/chart-bar-demo.js"></script>
         <script src="../assets/demo/chart-pie-demo.js"></script>
+       
+        <script src="https://code.highcharts.com/stock/highstock.js"></script>
+<script src="https://code.highcharts.com/stock/modules/data.js"></script>
+<script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/stock/modules/accessibility.js"></script>
 
         <script>
-const options = {
+
+
+
+ //api call new
+ 
+ const options = {
 	method: 'GET',
 	headers: {
 		'X-RapidAPI-Key': '0dbd38fc8dmsh7004146a64a1761p17226ejsnceab381ff0ef',
-		'X-RapidAPI-Host': 'coinranking1.p.rapidapi.com'
+		'X-RapidAPI-Host': 'currency-conversion-and-exchange-rates.p.rapidapi.com'
 	}
 };
-
-fetch('https://coinranking1.p.rapidapi.com/coins?referenceCurrencyUuid=yhjMzLPhuIDl&timePeriod=24h&tiers%5B0%5D=1&orderBy=marketCap&orderDirection=desc&limit=50&offset=0', options)
+let x;
+let y;
+fetch('https://currency-conversion-and-exchange-rates.p.rapidapi.com/latest?from=USD&to=EUR%2CGBP', options)
 	.then(response => response.json())
-    .then(data => {
-		// Access the array of coins from the response object
-		const coins = data.data.coins;
+	.then(response => { console.log(response) 
+    
+        x = response;
 
-		// Extract the names of the coins using map()
-		const coinNames = coins.map(coin => coin);
-
-		console.log(coinNames); // Array of coin names
+    y = response.rates;
 
 
 
-           //api call
-   let rowdiv;
-
-for (let i = 0; i < 50; i++) {
- 
-let  rowdiv = document.createElement("a");
- rowdiv.setAttribute("id","card");
- rowdiv.setAttribute("href",`${coinNames[i]["coinrankingUrl"]}`);
- rowdiv.setAttribute("style",`background-color: ${coinNames[i]["color"]};`);
-//  rowdiv.innerHTML = `<div class="logo-title">
-//                                <img class="ticker-logo" id="ticker-logo" src=${coinNames[i]["iconUrl"]} alt="">
-//                                <div class="name-symbol">
-//                                <p class="ticker-title" id="ticker-title">${coinNames[i]["name"]}</p>
-//                                <p class="ticker-title" id="ticker-title">${coinNames[i]["symbol"]}</p>
-//                                </div>
-//                              </div>
-//                              <div class="price-div">
-//                                <h1 class="ticker-price">Price :<span id="ticker-price">${coinNames[i]["price"]}</span></h1>
-//                              </div>`;
-                            const cardPrice = parseFloat(coinNames[i]["price"]).toFixed(6)
-                             rowdiv.innerHTML = `<label><img id="avatar" src=${coinNames[i]["iconUrl"]}></label>
-  <label id="info">
-    <span id="info-1">${coinNames[i]["name"]}</span>
-    <span id="info-2">${coinNames[i]["symbol"]}</span>
-  </label>
-  <div id="content-1"> Coin Price :${cardPrice}</div>
-  <div id="content-2"> Coin Rank :${coinNames[i]["rank"]}</div>`;
- 
-
-document.querySelector("#rowdiv").append(rowdiv);
+    console.log(y);
 
 
- 
-}
+//card create
+for(let i=0;i<150;i++) {
+
+    let values = Object.keys(y)[i];
+
+        let rowdiv = document.createElement("div");
+    rowdiv.setAttribute("class","notifications-container");
+    rowdiv.setAttribute("id","first-card");
+    rowdiv.innerHTML = `  <div id="ticker-div">
+                                  <p  id="ticker-title">Base Currency : ${x.base}</p>
+                                  <p id="ticker-title2">Curreny to Convert :  ${values}</p>
+                                  <p id="ticker-title3">Currency Pair : ${x.base}/${values}</p>
+                                  <p id="ticker-price">Currency Price : ${y[values]}</p>
+                                 </div>
+                            
+                                    
+                                  
+                                </div>`;
+    
+
+  document.querySelector("#rowcardsdiv").append(rowdiv);
+
+
+                            }
+
+           
+
+
+
+
+
+
 
 
     })
@@ -233,16 +221,26 @@ document.querySelector("#rowdiv").append(rowdiv);
 
 
 
-
-
-
-
-
-
-
-
-
-
+    //search query for search bar code start
+  let searchbar = document.getElementById("searchbar");
+  const cards = document.getElementsByClassName("notifications-container");
+  searchbar.addEventListener("input", () => {
+    for (let i = 0; i < cards.length; i++) {
+      const element = cards[i];
+      if (
+        element.innerHTML.toLowerCase().includes(searchbar.value.toLowerCase())
+      ) {
+        element.style.display = "block";
+      } else {
+        element.style.display = "none";
+      }
+    }
+  });
+    
+    
+  
         </script>
+
+
     </body>
 </html>

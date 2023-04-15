@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <title>Admin Dashboard | freshstocks</title>
+        <link rel="icon" type="image/png" sizes="16x16" sizes="64x64"  href="../assets/images/favicon-16x16.png">
+        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
+        <link href="../assets/css/marketdata.css" rel="stylesheet" />
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    </head>
+    <body class="sb-nav-fixed">
+        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-white">
+            <!-- Navbar Brand-->
+            <a class="nav navbar-brand ps-3 text-dark bg-light" id="navh1" href="marketdata.html">freshstocks Trading</a>
+            <!-- Sidebar Toggle-->
+            <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars" id="toggleburger"></i></button>
+            <!-- Navbar Search-->
+            <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+                <div class="input-group">
+                    <input class="form-control" id="searchbar" type="text" placeholder="Search" />
+                    <button class="btn btn-dark" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
+                </div>
+            </form>
+            <!-- Navbar-->
+            <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="../assets/images/icons8-male-user-48.png" alt=""></a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="../pages/userprofile.html">My Profile</a></li>
+                        <li><a class="dropdown-item" href="marketdata.html">Activity</a></li>
+                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                        <li><hr class="dropdown-divider" /></li>
+                        <li><a class="dropdown-item" href="../index.html">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_nav">
+                <nav class="sb-sidenav accordion sb-sidenav-light" id="sidenavAccordion">
+                    <div class="sb-sidenav-menu">
+                        <div class="nav">
+                            <div class="sb-sidenav-menu-heading">All In One</div>
+                            <a class="nav-link bg-primary text-light" href="marketdata.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt bg-light" id="first-icon"></i></div>
+                                Dashboard
+                            </a>
+                            
+                            <div class="sb-sidenav-menu-heading">Your Tools</div>
+                            <a class="nav-link" href="admindashboard.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                                Stocks
+                            </a>
+                            <a class="nav-link" href="tables.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                forex
+                            </a>
+                            <a class="nav-link" href="charts.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                Cryptocurrencies
+                              </a>
+                              <a class="nav-link" href="marketnews.html">
+                                  <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                  News Daily & Updated
+                              </a>
+                              <a class="nav-link" href="live_trading.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                Trade
+                            </a>
+                            <a class="nav-link" href="learn.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                Learn
+                            </a>
+                            <a class="nav-link" >
+                              <div class="sb-nav-link-icon"></div>
+                              
+                          </a>
+                          <a class="nav-link" >
+                            <div class="sb-nav-link-icon"></div>
+                            
+                        </a>
+
+                            <div class="sb-sidenav-menu-heading">Settings</div>
+                            <a class="nav-link" href="../pages/contact.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                Support
+                            </a>
+                            <a class="nav-link" href="admindashboard.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                Settings
+                            </a>
+                            <a class="nav-link" href="../index.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                Logout
+                            </a>
+                        </div>
+                    </div>
+                    <div class="sb-sidenav-footer">
+                        <div class="small">Logged in as:</div>
+                        Mohammed Ajmal
+                    </div>
+                </nav>
+            </div>
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid px-4">
+                        <h1 class="mt-4">Trading Dashboard</h1>
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item active" id="time-li"></li>
+                        </ol>
+                        <div class="row" id="row">
+
+
+
+                              
+                        </div>
+                        <div class="row" id="rowchart">
+                            <div class="col-xl-12">
+                                <div class="card mb-4">
+                                    <div class="card-header">
+                                        <i class="fas fa-chart-area me-1"></i>
+                                        Microsoft Live Stock Price
+                                    </div>
+                                    <div class="card-body"><canvas id="lineChart" class="charts" width="100%" height="40"></canvas></div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6">
+                                <div class="card mb-4">
+                                    <div class="card-header">
+                                        <i class="fas fa-chart-bar me-1"></i>
+                                        Daily forex Prices and Volumes for Digital Currency
+                                    </div>
+                                    <div class="card-body"><canvas id="optionMoversChart"  class="charts" width="100%" height="40"></canvas></div>
+                                </div>
+                            </div>
+
+                            <div class="col-xl-6">
+                              <div class="card mb-4">
+                                  <div class="card-header">
+                                      <i class="fas fa-chart-bar me-1"></i>
+                                      Daily Cryptocurrencies Prices and Volumes for Digital Currency
+                                  </div>
+                                  <div class="card-body"><canvas id="cryptoChart"  class="charts" width="100%" height="40"></canvas></div>
+                              </div>
+                          </div>
+                        </div>
+
+                        <div class="row" id="rowchart">
+                            <div class="col-xl-6">
+                                <div class="card mb-4">
+                                    <div class="card-header">
+                                        <i class="fas fa-chart-area me-1"></i>
+                                        Commodities Daily Updates Crude Oil
+                                    </div>
+                                    <div class="card-body"><canvas id="crudeChart"  class="charts" width="100%" height="40"></canvas></div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6">
+                                <div class="card mb-4">
+                                    <div class="card-header">
+                                        <i class="fas fa-chart-bar me-1"></i>
+                                         Currency Converter
+                                    </div>
+                                    <div class="card-body">
+                                      <div id="oanda_ecc">
+                                        <!-- Note: If you alter or remove the following code, the embedded currency widget will not work-->
+                                        <span style="color:#000; text-decoration:none; font-size:9px; float:left;">Currency Converter <a id="oanda_cc_link" style="color:#000; font-size:9px;" href="https://www.oanda.com/currency/converter/">by OANDA</a></span>
+                                        <script src="https://www.oanda.com/embedded/converter/get/b2FuZGFlY2N1c2VyLy9kZWZhdWx0/?lang=en"></script></div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        
+                    </div>
+                </main>
+                <footer class="py-4 bg-light mt-auto">
+                    <div class="container-fluid px-4">
+                        <div class="d-flex align-items-center justify-content-between small">
+                            <div class="text-muted">Copyright &copy; freshstocks 2023</div>
+                            <div>
+                                <a href="#">Privacy Policy</a>
+                                &middot;
+                                <a href="#">Terms &amp; Conditions</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="../assets/js/scripts.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+        <script src="../assets/demo/chart-area-demo.js"></script>
+        <script src="../assets/demo/chart-bar-demo.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
+        <script src="../assets/js/datatables-simple-demo.js"></script>
+        <script src="../assets/js/moment/moment.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+        <script>
+
+            function renderclock() {
+            document.getElementById("time-li").innerText = `Dashboard Time Is : ${ moment().format('MMMM Do YYYY, h:mm:ss a') }`;
+
+            }
+
+            renderclock();
+            setInterval(renderclock,1000)
+
+         //get parsed data
+         const registerUsers = JSON.parse(localStorage.getItem("register_arr"));
+         console.log(registerUsers);
+
+
+          //get parsed data
+          const registerSellers = JSON.parse(localStorage.getItem("seller_register_arr"));
+         console.log(registerSellers);
+
+
+
+            var xValues = ["Total Users","Total Sellers"];
+var yValues = [registerUsers.length ,registerSellers.length];
+var barColors = [
+  "#2b5797",
+  
+  "#1e7145"
+];
+
+new Chart("myChart", {
+  type: "doughnut",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    title: {
+      display: true,
+      text: "No of Users / Sellers In Our Website"
+    }
+  }
+});
+
+
+
+
+var xValues = ["New Users Joined Past Week","New Sellers Joined Past Week"];
+var yValues = [registerUsers.length ,registerSellers.length];
+var barColors = [
+  "#2b5797",
+  
+  "#1e7145"
+];
+
+new Chart("myChart1", {
+  type: "doughnut",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    title: {
+      display: true,
+      text: "No of New Users / Sellers In Our Website"
+    }
+  }
+});
+
+
+
+
+var xValues = ["New Users Joined Past Week","New Sellers Joined Past Week"];
+var yValues = [registerUsers.length ,registerSellers.length];
+var barColors = [
+  "#2b5797",
+  
+  "#1e7145"
+];
+
+new Chart("myChart2", {
+  type: "doughnut",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    title: {
+      display: true,
+      text: "Web traffic in this Month"
+    }
+  }
+});
+
+
+
+
+
+
+//search query for search bar code start
+let searchbar = document.getElementById("searchbar");
+  const cards = document.getElementsByClassName("notifications-container");
+  searchbar.addEventListener("input", () => {
+    for (let i = 0; i < cards.length; i++) {
+      const element = cards[i];
+      if (
+        element.innerHTML.toLowerCase().includes(searchbar.value.toLowerCase())
+      ) {
+        element.style.display = "block";
+      } else {
+        element.style.display = "none";
+      }
+    }
+  });
+
+
+
+        </script>
+
+
+<script>
+      //api data
+      const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '0dbd38fc8dmsh7004146a64a1761p17226ejsnceab381ff0ef',
+		'X-RapidAPI-Host': 'alpha-vantage.p.rapidapi.com'
+	}
+};
+
+const optionmovers = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '0dbd38fc8dmsh7004146a64a1761p17226ejsnceab381ff0ef',
+		'X-RapidAPI-Host': 'bravenewcoin.p.rapidapi.com'
+	}
+};
+
+const optionsss = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '0dbd38fc8dmsh7004146a64a1761p17226ejsnceab381ff0ef',
+		'X-RapidAPI-Host': 'twelve-data1.p.rapidapi.com'
+	}
+};
+
+const optionsssss = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '0dbd38fc8dmsh7004146a64a1761p17226ejsnceab381ff0ef',
+		'X-RapidAPI-Host': 'twelve-data1.p.rapidapi.com'
+	}
+};
+
+
+// let x;
+// fetch('https://alpha-vantage.p.rapidapi.com/query?interval=5min&function=TIME_SERIES_INTRADAY&symbol=MSFT&datatype=json&output_size=compact', options)
+// 	.then(response => response.json())
+// 	.then(response => {
+
+//         console.log(response)  
+//         x = response["Time Series (5min)"];
+
+//         console.log(x)
+//         createchart(x)
+    
+//     })
+// 	.catch(err => console.error(err));
+
+
+	
+let x;
+let y;  
+let z;  
+let a;  
+let b;  
+let c;  
+let d; 
+let e;  
+let f;  
+let g;  
+let h;  
+let i;  
+let j;  
+Promise.all([
+  fetch('https://alpha-vantage.p.rapidapi.com/query?interval=5min&function=TIME_SERIES_INTRADAY&symbol=MSFT&datatype=json&output_size=compact', options ),
+  fetch('https://www.alphavantage.co/query?function=DIGITAL_CURRENCY_DAILY&symbol=BTC&market=USD&apikey=XQJN6X4YXV76D14M' ),
+  fetch('https://www.alphavantage.co/query?function=DIGITAL_CURRENCY_DAILY&symbol=BTC&market=CNY&apikey=XQJN6X4YXV76D14M' ),
+  fetch('https://www.alphavantage.co/query?function=WTI&interval=monthly&apikey=XQJN6X4YXV76D14M'),
+  fetch('https://api.twelvedata.com/logo?symbol=AAPL&apikey=b078605a87aa49e1921e6797102c2271' ),
+  fetch('https://api.twelvedata.com/logo?symbol=FRSH&apikey=b078605a87aa49e1921e6797102c2271' ),
+  fetch('https://api.twelvedata.com/logo?symbol=AMZN&apikey=b078605a87aa49e1921e6797102c2271' ),
+  fetch('https://api.twelvedata.com/logo?symbol=TSLA&apikey=b078605a87aa49e1921e6797102c2271' ),
+  fetch('https://api.twelvedata.com/price?symbol=AAPL&apikey=b078605a87aa49e1921e6797102c2271' ),
+  fetch('https://api.twelvedata.com/price?symbol=FRSH&apikey=b078605a87aa49e1921e6797102c2271' ),
+  fetch('https://api.twelvedata.com/price?symbol=AMZN&apikey=b078605a87aa49e1921e6797102c2271' ),
+  fetch('https://api.twelvedata.com/price?symbol=TSLA&apikey=b078605a87aa49e1921e6797102c2271' )
+])
+.then(responses => Promise.all(responses.map(res => res.json())))
+.then(data => {
+  const [data1, data2 ,data3 ,data4 ,data5 ,data6 ,data7, data8 ,data9 ,data10 ,data11 ,data12] = data;
+  console.log('Data 1:', data1["Time Series (5min)"]);
+  console.log('Data 2:', data2["Time Series (Digital Currency Daily)"]);
+  console.log('Data 3:', data3["Time Series (Digital Currency Daily)"]);
+  console.log('Data 4:', data4["data"]);
+  console.log('Data 5:', data5);
+  console.log('Data 6:', data6);
+  console.log('Data 7:', data7);
+  console.log('Data 8:', data8);
+  console.log('Data 9:', data9);
+  console.log('Data 10:', data10);
+  console.log('Data 11:', data11);
+  console.log('Data 12:', data12);
+
+  x = data1["Time Series (5min)"];
+  y = data2["Time Series (Digital Currency Daily)"];
+  z = data3['Time Series (Digital Currency Daily)'];
+  a = data4["data"];
+  b = data4;
+  c = data5;
+  d = data6;
+  e = data7;
+  f = data8;
+  g = data9;
+  h = data10;
+  i = data11;
+  j = data12;
+
+
+
+  // create(y)
+
+
+
+
+
+
+  const labels = Object.keys(x).reverse();
+      const prices = Object.values(x).map(item => parseFloat(item["4. close"])).reverse();
+      const ctx = document.getElementById('lineChart').getContext('2d');
+      new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: labels,
+          datasets: [{
+            label: 'MSFT Stock Price',
+            data: prices,
+            backgroundColor: '#E9FCD4', // Customize chart appearance
+            borderColor: 'rgba(75, 192, 192, 1)',
+            borderWidth: 0
+          }]
+        },
+        options: {
+          responsive: true,
+          scales: {
+            x: {
+              display: true,
+              title: 'Time'
+            },
+            y: {
+              display: true,
+              title: 'Price'
+            }
+          }
+        }
+      });
+
+
+
+      //forex data api show
+
+      const label = Object.keys(y).reverse();
+      const datas = Object.values(y).map(item => parseFloat(item["4a. close (USD)"])).reverse();
+      console.log(label);
+      console.log(datas);
+   
+      const ctx1 = document.getElementById('optionMoversChart').getContext('2d');
+				new Chart(ctx1, {
+					type: 'bar',
+					data: {
+						labels: label,
+						datasets: [{
+							label: 'Volume Gainers BTC-USD',
+							data: datas,
+							backgroundColor: 'rgba(75, 192, 192, 0.2)', // Set desired background color
+							borderColor: 'rgba(75, 192, 192, 1)', // Set desired border color
+							borderWidth: 1 // Set desired border width
+						}]
+					},
+					options: {
+						scales: {
+							y: {
+								beginAtZero: true
+							}
+						}
+					}
+				});
+
+
+
+        //api data call cryptos
+        // const pricesss = data3['Time Series (Digital Currency Daily)'];
+    const labelsss = Object.keys(z).reverse(); // Get the dates and reverse the order for chronological display
+    const valuesss = Object.keys(z).map(date => parseFloat(date['4b. close (CNY)'])); // Get the closing prices as values
+
+  // const exchangeRate = data3['Realtime Currency Exchange Rate']['5. Exchange Rate'];
+
+       
+      const ctx2 = document.getElementById('cryptoChart').getContext('2d');
+
+    // Create a chart using Chart.js
+  
+     new Chart(ctx2, {
+        type: 'line', // Use 'line' for a line chart
+        data: {
+            labels: labelsss,
+            datasets: [{
+                label: 'Bitcoin Price (CNY)',
+                data: valuesss,
+                backgroundColor: 'rgba(75, 192, 192, 0.2)', // You can customize the appearance of the chart
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1,
+                fill: true
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: false
+                }
+            }
+        }
+    });
+
+
+
+
+
+
+
+
+    //crude oil api 
+
+
+const crudelabels = [];
+const crudevalues = [];
+for (let i = 0; i < a.length; i++) {
+
+  crudelabels.push(a[i]["date"]);
+  crudevalues.push(a[i]["value"]);
+   
+}
+console.log(crudelabels);
+console.log(crudevalues);
+    // Get the dates and reverse the order for chronological display
+
+    const ctx3 = document.getElementById('crudeChart').getContext('2d');
+    new Chart(ctx3, {
+        type: 'line', // Use 'line' for a line chart
+        data: {
+            labels: crudelabels.reverse(),
+            datasets: [{
+                label: 'WTI Crude Oil Price (USD)',
+                data: crudevalues.reverse(),
+                backgroundColor: 'rgba(75, 192, 192, 0.2)', // You can customize the appearance of the chart
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1,
+                fill: true
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: false
+                }
+            }
+        }
+    });
+
+
+
+
+
+
+
+    //api call front card
+
+    let rowdiv = document.createElement("div");
+    rowdiv.setAttribute("class","notifications-container");
+    rowdiv.setAttribute("id","first-card");
+    rowdiv.innerHTML = `  <div class="logo-title">
+                                  <img class="ticker-logo" id="ticker-logo" src=${data5["url"]} alt="">
+                                  <h1 class="ticker-title" id="ticker-title">${data5["meta"]["symbol"]}</h1>
+                                </div>
+                                <div>
+                                  <h1 class="ticker-price">Price<br><span id="ticker-price"> $${data9["price"]}</span></h1>
+                                </div>`;
+    
+
+  document.querySelector("#row").append(rowdiv);
+
+
+  let rowdiv1 = document.createElement("div");
+    rowdiv1.setAttribute("class","notifications-container");
+    rowdiv1.setAttribute("id","second-card");
+    rowdiv1.innerHTML = `  <div class="logo-title">
+                                  <img class="ticker-logo" id="ticker-logo" src=${data6["url"]} alt="">
+                                  <h1 class="ticker-title" id="ticker-title">${data6["meta"]["symbol"]}</h1>
+                                </div>
+                                <div>
+                                  <h1 class="ticker-price">Price<br><span id="ticker-price"> $${data10["price"]}</span></h1>
+                                </div>`;
+    
+
+  document.querySelector("#row").append(rowdiv1);
+
+  let rowdiv2 = document.createElement("div");
+    rowdiv2.setAttribute("class","notifications-container");
+    rowdiv2.setAttribute("id","third-card");
+    rowdiv2.innerHTML = `  <div class="logo-title">
+                                  <img class="ticker-logo" id="ticker-logo" src=${data7["url"]} alt="">
+                                  <h1 class="ticker-title" id="ticker-title">${data7["meta"]["symbol"]}</h1>
+                                </div>
+                                <div>
+                                  <h1 class="ticker-price">Price<br><span id="ticker-price"> $${data11["price"]}</span></h1>
+                                </div>`;
+    
+
+  document.querySelector("#row").append(rowdiv2);
+
+  let rowdiv3 = document.createElement("div");
+    rowdiv3.setAttribute("class","notifications-container");
+    rowdiv3.setAttribute("id","last-card");
+    rowdiv3.innerHTML = `  <div class="logo-title">
+                                  <img class="ticker-logo" id="ticker-logo" src=${data8["url"]} alt="">
+                                  <h1 class="ticker-title" id="ticker-title">${data8["meta"]["symbol"]}</h1>
+                                </div>
+                                <div>
+                                  <h1 class="ticker-price">Price<br><span id="ticker-price"> $${data12["price"]}</span></h1>
+                                </div>`;
+    
+
+  document.querySelector("#row").append(rowdiv3);
+
+
+
+ 
+ 
+   
+  
+})
+.catch(error => {
+  console.error('Error:', error);
+});
+
+    // function create(y) {
+      
+     
+
+
+    // Function to create chart using Chart.js
+    // function createchart(x) {
+ 
+    // }
+
+</script>
+
+<!-- <script>
+
+  
+    
+   
+    
+
+
+</script> -->
+    </body>
+</html>

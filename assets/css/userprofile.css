@@ -34,4 +34,22 @@
   height:150px;
   border-radius: 50%;
  }
-
+ .editProfileInput {
+  margin-left: 20%;
+  position: absolute;
+  top:200px;
+  width: 350px;
+ }
+.submitEditProfile {
+  margin-left: 45%;
+  position: absolute;
+  top:198px;
+}
+#panel-editprofile , #panel-editprofile1 {
+  display: none;
+}
+.delUserProfile {
+  margin-left: 40%;
+  position: absolute;
+  top:600px;
+}
