@@ -7,7 +7,11 @@ let form = document.getElementById("form");
 form.addEventListener("submit", event => {
   event.preventDefault();
 
+  //try statement
+  try {
+
   let seller_register_arr = [];
+  let sellingCourses_arr = [];
 
   if(localStorage.getItem("seller_register_arr") !== null ){
       seller_register_arr = JSON.parse(localStorage.getItem("seller_register_arr"));
@@ -15,7 +19,6 @@ form.addEventListener("submit", event => {
 
   let name = document.getElementById("name").value;
   let age = document.getElementById("age").value;
-  let profile_pic = document.getElementById("profile-pic").value;
   let gender = document.getElementById("gender").value;
   let mobile_number = document.getElementById("mobile-number").value;
   let about_me = document.getElementById("about-me").value;
@@ -23,6 +26,7 @@ form.addEventListener("submit", event => {
   let email = document.getElementById("email").value;
   let password = document.getElementById("password").value;
   let confirm_password = document.getElementById("confirm-password").value;
+  let sellingCourses = sellingCourses_arr;
 
 
  
@@ -47,7 +51,7 @@ form.addEventListener("submit", event => {
   } else {
 
   let register_obj = {
-    name,age,gender,mobile_number,about_me,date_of_birth,email,password,confirm_password,profile_pic
+    name,age,gender,mobile_number,about_me,date_of_birth,email,password,confirm_password, profile_pic : `https://ui-avatars.com/api/?name=${name}`,sellingCourses
   };
 
   seller_register_arr.push(register_obj);
@@ -67,7 +71,12 @@ form.addEventListener("submit", event => {
 
 }
 
- 
+   //catch statement
+}  catch (error) {
+
+  console.log("Error" + error);
+
+}
  
 
 
@@ -85,6 +94,10 @@ form.addEventListener("submit", event => {
 let login = document.getElementById("form");
 login.addEventListener("submit",event => {
 event.preventDefault();
+
+
+  //try statement
+  try {
 
   let seller_register_arr = JSON.parse(localStorage.getItem("seller_register_arr"));
  console.log(seller_register_arr);
@@ -116,6 +129,13 @@ event.preventDefault();
    alert("invalid seller credentials");
   }
 
+
+    //catch statement
+}  catch (error) {
+
+  console.log("Error" + error);
+
+}
   
 
 });

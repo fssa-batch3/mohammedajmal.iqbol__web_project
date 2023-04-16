@@ -59,11 +59,100 @@ form.addEventListener("submit", (event) => {
      img,title,timing,language,enrolled,cost_type,cost,old_cost,Description,top_skills1,courseVideo1,courseVideo2,courseVideo3,courseVideo4,courseVideo5,courseVideo6,courseVideo7,courseVideo8,courseVideo9,courseVideoName1,courseVideoName2,courseVideoName3,courseVideoName4,courseVideoName5,courseVideoName6,courseVideoName7,courseVideoName8,courseVideoName9,id,datestring,bookmark_img
  };
 
- course_data.push(course_obj);
- console.log(course_data)
 
- const add_data = JSON.stringify(course_data);
- localStorage.setItem("course_data",add_data);
+
+
+
+
+
+
+
+ const seller_register_arr = JSON.parse(localStorage.getItem("seller_register_arr"));
+ console.log(seller_register_arr); 
+ 
+ const seller_login_arr = JSON.parse(localStorage.getItem("seller_login_arr"));
+ console.log(seller_login_arr);
+ 
+ let find_seller_obj = seller_register_arr.find((event) => event.email === seller_login_arr);
+ console.log(find_seller_obj);
+ 
+ let index = seller_register_arr.indexOf(find_seller_obj);
+ console.log(index);
+
+
+
+   //courses add to seller object inside array
+
+   if( seller_register_arr[index].sellingCourses != null ) {   
+ 
+    let courses_id = {
+         "obj" : course_obj,
+    } 
+
+// find object from match id
+const varobj = seller_register_arr[index]['sellingCourses'].find((e) => e.obj.title === course_obj.title );
+console.log(varobj);
+
+//checked it should return true
+
+   if( varobj === undefined ){
+    
+    // alert("this course is already purchased by you");
+    seller_register_arr[index].sellingCourses.push(courses_id);
+    localStorage.setItem("seller_register_arr",JSON.stringify(seller_register_arr));
+    //skip this part
+   
+    course_data.push(course_obj);
+    console.log(course_data);
+   
+    const add_data = JSON.stringify(course_data);
+    localStorage.setItem("course_data",add_data);
+    
+       alert("course added to my courses");
+
+   } else {
+    //skip part
+    alert("you already added this course to my courses");
+    
+   } 
+
+} else {
+  let course_obj = [];
+
+  let courses_id = {
+         "obj" : course_obj,
+    } 
+  
+  course_obj.push(courses_id);
+          
+  let user_obj = {
+  "sellingCourses" : course_obj,
+  };
+
+  let user_id_assign = Object.assign(find_seller_obj,user_obj);
+  console.log(user_id_assign);
+  
+  let index1 = seller_register_arr.indexOf(find_seller_obj);
+  console.log(index1);
+  
+  seller_register_arr[index] = user_id_assign;
+  
+  localStorage.setItem("seller_register_arr",JSON.stringify(seller_register_arr));
+
+  alert("course added to my courses");
+  
+}
+
+
+
+
+
+
+
+
+
+
+
  } else {
 
  let img = document.getElementById("image-url").value;
@@ -115,6 +204,12 @@ form.addEventListener("submit", (event) => {
  localStorage.setItem("course_data",add_data);
  
  }
+
+
+
+
+
+
 
  window.location.href = "../pages/adminCoursesAdd.html";
  

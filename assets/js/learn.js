@@ -1,5 +1,10 @@
 //js tabs code start
 function openCity(evt, cityName) {
+
+  //try statement
+  try {
+
+
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabcontent");
   for (i = 0; i < tabcontent.length; i++) {
@@ -13,10 +18,22 @@ function openCity(evt, cityName) {
   evt.currentTarget.className += " active";
 
   document.getElementById("default").style.display = "none";
+
+  //catch statement
+}  catch (error) {
+
+  console.log("Error" + error);
+
+}
+
 }
 
 //return to home tabs function
 function homeon() {
+
+  //try statement
+  try {
+
   document.getElementById("default").style.display = "block";
   document.getElementById("my-courses").style.display = "none";
   document.getElementById("blogs").style.display = "none";
@@ -24,6 +41,14 @@ function homeon() {
   document.getElementById("youtube-videos").style.display = "none";
   document.getElementById("free-courses").style.display = "none";
   document.getElementById("live-courses").style.display = "none";
+
+    //catch statement
+}  catch (error) {
+
+  console.log("Error" + error);
+
+}
+
 }
 
 //blogs data JSON
@@ -141,6 +166,8 @@ for (i = 0; i < blogs_data.length; i++) {
   const cards = document.getElementsByClassName("first-course3");
 
   searchbar.addEventListener("input", () => {
+
+
     for (let i = 0; i < cards.length; i++) {
       const element = cards[i];
       if (
@@ -230,6 +257,11 @@ for (i = 0; i < course_data.length; i++) {
 //bookmark icon toggle button function
 
 function toggle(id) {
+
+  //try statement
+  try {
+
+
   let get_click_obj;
   console.log(id);
 
@@ -276,55 +308,14 @@ function toggle(id) {
   let index1 = register.indexOf(get_user_obj);
   console.log(index1);
 
-  const bookmark = JSON.parse(localStorage.getItem("bookmarks"));
-  console.log(bookmark);
 
 console.log(register[index1].bookmarks);
 
 
-    //bookmark local parse array
-    const bookmarks = JSON.parse(localStorage.getItem("bookmarks"));
-    console.log(bookmarks);
 
 
   
  
-
-//setting bookmark array contains id to bookmark key in user object end 
-
-  // if (localStorage.getItem("bookmarks") != null) {
-  //   //arrary already exist
-  //   get_click_obj_arr = JSON.parse(localStorage.getItem("bookmarks"));
-
-
-
-  //   if (already_exist_obj == undefined) {
-  //     get_click_obj.bookmark = true;
-  //     get_click_obj_arr.push(get_click_obj);
-  //     localStorage.setItem("bookmarks", JSON.stringify(get_click_obj_arr));
-  //     alert("course Added to Bookmarks");
-  //     window.location.href = "learn.html";
-  //   } else {
-  //     alert("course Already Bookmarked");
-  //     window.location.href = "learn.html";
-  //   }
-
-//bookmark per user start
-    
-
-
-//   } else {
-//     //create bookmark array
-//     let get_click_obj_arr = [];
-
-//     get_click_obj.bookmark = true;
-//     get_click_obj_arr.push(get_click_obj);
-
-//     localStorage.setItem("bookmarks", JSON.stringify(get_click_obj_arr));
-//     alert("course Added to Bookmarks");
-//     window.location.href = "learn.html";
-//   }
-
 
 
 //user per count bookmark
@@ -334,22 +325,11 @@ if( register[index1].bookmarks != null ) {
        "obj" : get_click_obj,
   } 
 
-  //check match is true / false
-  let objMatch = false;
-for(let i=0;i< bookmark.length;i++){
-for(let j = 0; j < register[index1].bookmarks.length; j++ ){
-if( bookmark[i]["id"] !== register[index1].bookmarks[j]["id"] ){
-  
-  //check mycourses === register/courses array
-  objMatch = true;
 
-} 
-}
-
-console.log(objMatch);
+// console.log(objMatch);
 console.log(register[index1].bookmarks);
 console.log(id);
-};
+// };
 
 //checked it should return true
     //check for duplicates
@@ -402,7 +382,12 @@ alert("course Added to Bookmarks");
 
 }
 
+  //catch statement
+}  catch (error) {
 
+  console.log("Error" + error);
+
+}
 
 
 }
@@ -788,60 +773,6 @@ const allCourses = JSON.parse(localStorage.getItem("course_data"));
 console.log(allCourses);
 
 
-// const get_user_obj1 = register.filter(event => event.courses.some(course => course.id === allCourses.id  ));
-// console.log(get_user_obj1);
-
-// let addedCourses = [];
-// let match = false;
-// for(let i=0;i < allCourses.length; i++ ){
-//   for(let j = 0; j< register[index].courses.length ; j++ ){
-//   if( allCourses[i]["id"] === register[index].courses[j]["id"] ){
-//        match = true;
-//        addedCourses.push(allCourses[i]);
-//        console.log(addedCourses);
-//        console.log(match);
-//        break;
-//   }
-// }
-
-// }
-
- //cards display mycourses
-//  let newArr = [];
-//  let match1 = false;
- 
-//  let index11 = register.indexOf(get_user_obj);
-//  console.log(index);
- 
-//  console.log(register[index11].courses);
- 
- 
-//   for (const obj1 of mycourses ) {
-   
-//    let match = register[index11].courses.some( obj2 => obj2.id === obj1.id );
- 
-//    if(match){
-//           newArr.push(obj1);
-          
-//    }
-//   }
-  
-//     console.log(newArr);
- 
- 
-//  let newCourseid = {
-//   "coursesArray" : newArr,
-//  };
-
-
-//    let assign_newCourseArray = Object.assign(get_user_obj,newCourseid);
-//    console.log(assign_newCourseArray);
-
-//   register[index] = assign_newCourseArray;
-
-//    localStorage.setItem("register_arr",JSON.stringify(assign_newCourseArray))
-    
-// console.log(register[index]["coursesArray"]);
 
 
 
@@ -859,7 +790,7 @@ const get_user_objs = register_array.find((event) => event.email === login);
   console.log(index1);
 
 
-  // console.log(register_array[index]["bookmarks"]);
+
 
 
 // //bookamrk card create from JSON object

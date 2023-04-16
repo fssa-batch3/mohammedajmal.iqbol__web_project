@@ -81,6 +81,10 @@ form.addEventListener("submit", (event) => {
  event.preventDefault();
 
 
+ //try statement
+  try {
+
+
 
  let img = document.getElementById("image-url").value;
  let title = document.getElementById("course-name").value;
@@ -120,6 +124,26 @@ form.addEventListener("submit", (event) => {
  };
 
 
+ const seller_register_arr = JSON.parse(localStorage.getItem("seller_register_arr"));
+ console.log(seller_register_arr); 
+ 
+ const seller_login_arr = JSON.parse(localStorage.getItem("seller_login_arr"));
+ console.log(seller_login_arr);
+ 
+ let find_seller_obj = seller_register_arr.find((event) => event.email === seller_login_arr);
+ console.log(find_seller_obj);
+ 
+ let indexx = seller_register_arr.indexOf(find_seller_obj);
+ console.log(indexx);
+
+  let a = seller_register_arr[indexx]["sellingCourses"];
+
+ let findid = a.find((event) => event.obj.id === id );
+  console.log(findid);
+
+  let findindex = a.indexOf(findid);
+  console.log(findindex);
+
  
 //find index
 let index = course_data.indexOf(get_obj);
@@ -127,12 +151,28 @@ console.log(index);
 
 course_data[index] = course_obj;
 
+  let course_id = {
+    "obj" : course_obj,
+  };
+
+a[findindex] = course_id;
+
+
 //set to Localstorage
 localStorage.setItem("course_data",JSON.stringify(course_data));
+localStorage.setItem("seller_register_arr",JSON.stringify(seller_register_arr));
 alert("you have successfully updated your course");
 location.reload();
 
 window.location.href = "../pages/adminCoursesAdd.html";
+
+
+  //catch statement
+}  catch (error) {
+
+    console.log("Error" + error);
+  
+  }
 
 });
 
@@ -146,6 +186,26 @@ let removeUser = document.getElementById("delete");
 removeUser.addEventListener("click", (event) => {
  event.preventDefault();
 
+
+ try {
+
+
+const seller_register_arr = JSON.parse(localStorage.getItem("seller_register_arr"));
+console.log(seller_register_arr); 
+
+const seller_login_arr = JSON.parse(localStorage.getItem("seller_login_arr"));
+console.log(seller_login_arr);
+
+let find_seller_obj = seller_register_arr.find((event) => event.email === seller_login_arr);
+console.log(find_seller_obj);
+
+let indexx = seller_register_arr.indexOf(find_seller_obj);
+console.log(indexx);
+
+//find clicked course by find method
+const get_mycourses = seller_register_arr[indexx].sellingCourses.find((course) => course.obj.id === id );
+console.log(get_mycourses);
+
 let index = course_data.indexOf(get_obj);
 console.log(index);
 
@@ -153,12 +213,35 @@ let msg = confirm("are you sure you want to delete");
 if(msg !== true ){
    return false;
 } else {
+    
  course_data.splice(index,1);
  localStorage.setItem("course_data",JSON.stringify(course_data));
+
+
+ let getObjs = seller_register_arr[indexx].sellingCourses.find((event) => event.obj.id === get_mycourses.obj.id );
+ console.log(getObjs);
+
+
+ let findValIndex = seller_register_arr[indexx].sellingCourses.indexOf(getObjs);
+ console.log(findValIndex);
+
+ seller_register_arr[indexx].sellingCourses.splice(findValIndex,1);
+ localStorage.setItem("seller_register_arr",JSON.stringify(seller_register_arr));
+
+
+
+
  window.location.href = "../pages/adminCoursesAdd.html";
 
 }
 
+
+  //catch statement
+}  catch (error) {
+
+    console.log("Error" + error);
+  
+  }
 
 
 });
@@ -168,3 +251,6 @@ if(msg !== true ){
 
 
 //edit courses page js code end
+
+
+

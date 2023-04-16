@@ -5,6 +5,10 @@
 let form = document.getElementById("form");
 form.addEventListener("submit", event => {
   event.preventDefault();
+ 
+  //try block starts when code is running properly
+  try {
+
 
   let register_arr = [];
 
@@ -13,7 +17,6 @@ form.addEventListener("submit", event => {
   }
 
   let courses_arr = [];
-  let bookmarks_arr = [];
 
   let name = document.getElementById("name").value;
   let age = document.getElementById("age").value;
@@ -26,7 +29,6 @@ form.addEventListener("submit", event => {
   let password = document.getElementById("password").value;
   let confirm_password = document.getElementById("confirm-password").value;
   let courses = courses_arr;
-  let bookmarks = bookmarks_arr;
   let user_id = Date.now();
 
 
@@ -55,7 +57,7 @@ form.addEventListener("submit", event => {
 
   let register_obj = {
     name,age,gender,mobile_number,about_me,date_of_birth,email,password,confirm_password,
-    profile_pic : `https://ui-avatars.com/api/?name=${name}`,courses,bookmarks,user_id
+    profile_pic : `https://ui-avatars.com/api/?name=${name}`,courses,user_id
   };
 
   register_arr.push(register_obj);
@@ -75,10 +77,10 @@ form.addEventListener("submit", event => {
 
 }
 
- 
- 
-
-
+  //catch block starts when throws a error
+} catch (error) {
+  console.error("Error" + error);
+}
 
 }); 
 
@@ -97,6 +99,10 @@ form.addEventListener("submit", event => {
 let login = document.getElementById("form");
 login.addEventListener("submit",event => {
 event.preventDefault();
+
+//try statement 
+try {
+
 
   let register_data = JSON.parse(localStorage.getItem("register_arr"));
  console.log(register_data);
@@ -123,6 +129,13 @@ event.preventDefault();
   } else {
    alert("invalid user credentials")
   }
+
+  //catch statement
+} catch (error) {
+
+  console.log("Error" + error );
+
+}
 
 });
 

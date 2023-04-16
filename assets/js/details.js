@@ -1,4 +1,3 @@
-
 //course data JSON parse  
 const course_data = JSON.parse(localStorage.getItem("course_data"));
 console.log(course_data);
@@ -90,6 +89,9 @@ let register = JSON.parse(localStorage.getItem("register_arr"));
 let addtocart = document.getElementById("add-to-cart");
 addtocart.addEventListener("click",(cart) => {
 cart.preventDefault();
+
+
+  try {
 
 
 // check if else by cost
@@ -203,8 +205,14 @@ console.log(varobj);
 }
 
 
-
   
+
+    //catch statement
+}  catch (error) {
+
+  console.log("Error" + error);
+
+}
 
 
 });
@@ -265,6 +273,9 @@ console.log(usernames);
 let delete_mycourses = document.getElementById("deletecourse");
 delete_mycourses.addEventListener("click",(deletecourse) => {
 deletecourse.preventDefault();
+
+
+ try {
 
 
 //JSON parse mycourses
@@ -355,6 +366,15 @@ return false;
 
 window.location.href = "learn.html";
 
+
+
+   //catch statement
+}  catch (error) {
+
+  console.log("Error" + error);
+
+}
+
 });
 
 
@@ -373,6 +393,8 @@ let delete_bookmark = document.getElementById("deletebookmark");
 //delete bookmark when click button
 delete_bookmark.addEventListener("click",(deletecourse) => {
 deletecourse.preventDefault();
+
+ try {
 
 //bookmark JSON parse from localstorage
 let register = JSON.parse(localStorage.getItem("register_arr"));
@@ -454,6 +476,13 @@ window.location.href = "learn.html";
 
 }
 
+  //catch statement
+}  catch (error) {
+
+  console.log("Error" + error);
+
+}
+
 
 });
 
@@ -481,6 +510,8 @@ document.getElementById("user-profile").src = get_objs.profile_pic;
 let createcomment = document.getElementById("submit-comment");
 createcomment.addEventListener("click", event => {
 event.preventDefault();
+
+try {
 
 
 const comment_input = document.getElementById("comment-input").value;
@@ -528,6 +559,13 @@ comment_arr.push(comment_obj);
 
 //localstorage set comments
 localStorage.setItem("comments",JSON.stringify(comment_arr));
+
+}
+
+  //catch statement
+}  catch (error) {
+
+  console.log("Error" + error);
 
 }
 
@@ -590,6 +628,9 @@ console.log(comment);
 let editObj;
 //edit function new popup div
 function edit(a) {
+
+  try {
+
 document.querySelector(".course-container").style.opacity = "0.7";
 document.querySelector("body").style.backgroundColor = "black";
  document.getElementById("edit-comment").style.display = "block";
@@ -608,20 +649,39 @@ input.value = get_editobj["comment_input"];
 editObj = get_editobj;
 
 
+  //catch statement
+}  catch (error) {
+
+  console.log("Error" + error);
+
+}
+
 
 
 }
 
 function backedit() {
+
+  try {
+
 document.getElementById("edit-comment").style.display = "none";
 document.querySelector(".course-container").style.opacity = "1";
 document.querySelector("body").style.backgroundColor = "#F6F8FC";
+
+  //catch statement
+}  catch (error) {
+
+  console.log("Error" + error);
+
+}
 }
 
 
 
 // function after click submit button 
 function submitedit() {
+
+  try {
 
 
 // editSubmit(editObj);
@@ -649,6 +709,13 @@ localStorage.setItem("comments", JSON.stringify(comment));
 
 location.reload();
 
+  //catch statement
+}  catch (error) {
+
+  console.log("Error" + error);
+
+}
+
 
 
 };
@@ -662,6 +729,8 @@ console.log(editObj);
 // delete comment function when click delete button
 function deletecomment(a) {
 
+  try {
+
 const get_editobj = comment.find((e) => e.comment_id === a );
 console.log(get_editobj);
 
@@ -673,6 +742,13 @@ comment.splice(index,1);
 localStorage.setItem("comments",JSON.stringify(comment));
 
 location.reload();
+
+   //catch statement
+}  catch (error) {
+
+  console.log("Error" + error);
+
+}
 
 
 };
@@ -807,9 +883,18 @@ console.log(findcoursepurchased);
 let input = document.getElementById("comment-input");
 input.addEventListener("keypress", (event) => {
 
+  try {
+
 if( event.key === "Enter"){
   event.preventDefault();
   document.getElementById("submit-comment").click();
+}
+
+   //catch statement
+}  catch (error) {
+
+  console.log("Error" + error);
+
 }
 
 }); 
@@ -842,6 +927,9 @@ let i;
 
 for (i = 0; i < acc.length; i++) {
   acc[i].addEventListener("click", function() {
+
+    try {
+
     this.classList.toggle("active");
     let panel = this.nextElementSibling;
     if (panel.style.display === "block") {
@@ -849,6 +937,14 @@ for (i = 0; i < acc.length; i++) {
     } else {
       panel.style.display = "block";
     }
+
+      //catch statement
+}  catch (error) {
+
+  console.log("Error" + error);
+
+}
+
   });
 }
 
