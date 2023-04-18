@@ -194,58 +194,7 @@ CRUD For User Features page => Create Favourites Feature [completed] => Read Fav
         3. You can Search Courses Simply by Name in the Search Bar.
     - Expected Result:
         - The Courses are filtered by Search Bar Option.
-    
-## Seller
 
-### Create an account
-- Scenario 1: Successfully create an Seller account
-    - Steps:
-        1. Navigate to the registration page.
-        2. Enter the required information such as name, age, profile_pic, gender, mobile_number, about_me, date-of-birth, email, and password.
-        3. Click the "Create Account" button.
-    - Expected Result:
-        - The Seller is redirected to the login page.
-
-### Create an account
-- Scenario 1: Successfully login into Seller account
-    - Steps:
-        1. Navigate to the login page.
-        2. Enter the required information such as email, and password.
-        3. Click the "login" button.
-    - Expected Result:
-        - The Seller is redirected to the Seller HomePage page.
- 
-### Add Courses to User Page
-- Scenario 1: Successfully Add Courses to User Page
-    - Steps:
-        1. Navigate to the Seller HomePage page.
-        2. Click "Add Course" button and it will redirect you to a 
-           Add Course form page.
-        3. Fill the form with required details and click "Submit"
-    - Expected Result:
-        - The Course Is added by the Seller and it's listed In the User 
-          Courses listing Page.
-
-### Update Courses In User Page
-- Scenario 1: Successfully Update Courses In User Page
-    - Steps:
-        1. Navigate to the Seller HomePage page.
-        2. Click the Course and it will redirect you to a Edit Course form page.
-        3. Edit the details of the Courses In the form and click "Submit".
-    - Expected Result:
-        - The Course Is Edited by the Seller and it's listed In User 
-          Courses listing Page.
-
- ### Delete Courses from User Page
-- Scenario 1: Successfully Delete Courses from User Page
-    - Steps:
-        1. Navigate to the Seller HomePage page.
-        2. Click the Course and it will redirect you to a Edit Course form page.
-        3. Click "Delete" button to delete the Course from the User listing Page.
-    - Expected Result:
-        - The Course Is Deleted by the Seller In the User Courses listing Page.
-     
- 
 
 
 
