@@ -50,6 +50,69 @@ CRUD For User Features page => Create Favourites Feature [completed] => Read Fav
         - The user is redirected to the User HomePage page.
         
         
+### View account details
+- Scenario 1: Successfully View account details
+    - Steps:
+        1. Log in as a User.
+        2. Click the Profile icon in top-right.
+        3. Navigate to the User Profile page.
+    - Expected Result:
+        - The User can view his account details.
+
+### Edit account details
+- Scenario 1: Successfully edit account details
+    - Steps:
+        1. Log in as a User.
+        2. Navigate to the User Profile page.
+        3. Click the "Edit" button.
+        4. Update the account details.
+        5. Click the "Done" button.
+    - Expected Result:
+        - The User's account details are updated.
+        
+        
+### Delete account details
+- Scenario 1: Successfully Delete account details
+    - Steps:
+        1. Log in as a User.
+        2. Navigate to the User Profile page.
+        3. Click the "Delete" button.
+        4. Accept the Alert Confirmation.
+    - Expected Result:
+        - The User's account details is Deleted.
+        
+### View User Avatar
+- Scenario 1: Successfully View User Avatar
+    - Steps:
+        1. Log in as a User.
+        2. Click the Profile icon in top-right.
+        3. Navigate to the User Profile page.
+    - Expected Result:
+        - The User can view his User Avatar.
+
+### Edit User Avatar
+- Scenario 1: Successfully edit User Avatar
+    - Steps:
+        1. Log in as a User.
+        2. Navigate to the User Profile page.
+        3. Click the "Edit" button.
+        4. Update the User Avatar by Add New Profile Link.
+        5. Click the "Done" button.
+    - Expected Result:
+        - The User's New Avatar is updated.
+        
+        
+### Delete User Avatar
+- Scenario 1: Successfully Delete User Avatar
+    - Steps:
+        1. Log in as a User.
+        2. Navigate to the User Profile page.
+        3. Click the "Delete User Profile" button.
+        4. Accept the Alert Confirmation.
+    - Expected Result:
+        - The User's New Avatar is Deleted.
+        
+        
 ### View Courses
 - Scenario 1: Successfully view courses
     - Steps:
@@ -217,6 +280,16 @@ CRUD For User Features page => Create Favourites Feature [completed] => Read Fav
         3. Click the "login" button.
     - Expected Result:
         - The Seller is redirected to the Seller HomePage page.
+        
+        
+### View account details
+- Scenario 1: Successfully View account details
+    - Steps:
+        1. Log in as a seller.
+        2. Click the Profile icon in top-right.
+        3. Navigate to the Seller Profile page.
+    - Expected Result:
+        - The Seller can view his account details.
 
 ### Edit account details
 - Scenario 1: Successfully edit account details
@@ -225,9 +298,21 @@ CRUD For User Features page => Create Favourites Feature [completed] => Read Fav
         2. Navigate to the Seller Profile page.
         3. Click the "Edit" button.
         4. Update the account details.
-        5. Click the "Save" button.
+        5. Click the "Done" button.
     - Expected Result:
         - The Seller's account details are updated.
+        
+        
+### Delete account details
+- Scenario 1: Successfully Delete account details
+    - Steps:
+        1. Log in as a seller.
+        2. Navigate to the Seller Profile page.
+        3. Click the "Delete" button.
+        4. Accept the Alert Confirmation.
+    - Expected Result:
+        - The Seller's account details is Deleted.
+        
 
 ### Create a new product to sell
 - Scenario 1: Successfully create a new product to sell
