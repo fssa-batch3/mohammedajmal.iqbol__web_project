@@ -28,6 +28,7 @@
           <div>
             <div class="form-floating" id="emailinput">
               <input type="text" class="form-control" id="name" placeholder="Password" required
+              pattern="[A-Za-z0-9_]{1,15}"
                 title="Username (letters and numbers only, no punctuation or special characters)">
               <label for="name">Name</label>
             </div>
@@ -42,7 +43,7 @@
     <label for="profile-pic">Profile Pic</label>
   </div> -->
             <div class="form-floating mb-3" id="passinput">
-              <input type="text" class="form-control" id="gender" placeholder="name@example.com">
+              <input type="text" class="form-control" id="gender"  pattern="[A-Za-z]{1,10}" placeholder="name@example.com">
               <label for="gender">Gender</label>
             </div>
             <div class="form-floating mb-3" id="passinput">
@@ -54,7 +55,8 @@
           <div>
             <div class="form-floating mb-3" id="passinput">
               <input type="text" class="form-control" id="about-me" placeholder="name@example.com"
-                title="About Me (Must contain 150 to 200 words)" maxlength="150">
+              
+                title="About Me (Must contain 150 to 200 words)" >
               <label for="about-me">About me</label>
             </div>
             <div class="form-floating mb-3" id="passinput">

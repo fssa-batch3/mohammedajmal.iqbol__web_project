@@ -527,10 +527,14 @@ comment_arr = JSON.parse(localStorage.getItem("comments"));
 
 let comment_input = document.getElementById("comment-input").value;
 let comment_id = Date.now();
+let comment_pic = get_objs.profile_pic;
+let course_id = get_obj.id;
+let comment_time = moment().calendar();
+let course_title = get_obj.title;
 let user_id = get_objs.user_id;
 
 let comment_obj = {
-comment_input, comment_id , user_id
+comment_input, comment_id , user_id ,comment_pic ,course_id ,course_title ,comment_time
 };
 
 
@@ -548,10 +552,14 @@ let comment_arr = [];
 
 let comment_input = document.getElementById("comment-input").value;
 let comment_id = Date.now();
+let comment_pic = get_objs.profile_pic;
+let course_id = get_obj.id;
+let comment_time = moment().calendar();
+let course_title = get_obj.title;
 let user_id = get_objs.user_id;
 
 let comment_obj = {
-comment_input, comment_id , user_id
+comment_input, comment_id , user_id ,comment_pic ,course_id ,course_title ,comment_time
 };
 
 //comment push
@@ -582,7 +590,12 @@ let comment_p;
 const comment = JSON.parse(localStorage.getItem("comments"));
 
 
-for(let i=0;i<comment.length;i++){
+let findcomments = comment.filter((event) => event.course_title === get_obj.title);
+console.log(findcomments);
+
+
+
+for(let i=0;i<findcomments.length;i++){
 
 
  
@@ -591,16 +604,16 @@ for(let i=0;i<comment.length;i++){
  comment_div.setAttribute("id","comment-1");
 
   //user id same means edit delete button display block
-  if( comment[i]["user_id"] === get_objs.user_id  ){
+  if( findcomments[i]["user_id"] === get_objs.user_id  ){
     comment_div.innerHTML = `<div class="comment-img">
     <img class="profile-img_block" id="profile-pic" src=${get_objs.profile_pic}>
-    <p class="comment-letters" id="comment-letters">${comment[i]["comment_input"]}</p>
-    <button class="comment-edit-delete1_block" id="comment-edit-delete1" onclick="edit(${comment[i]["comment_id"]})">Edit</button>
-    <button class="comment-edit-delete3" id="comment-edit-delete3">Edited</button>
-    <button class="comment-edit-delete2_block" id="comment-edit-delete2" onclick="deletecomment(${comment[i]["comment_id"]})">Delete</button>
+    <p class="comment-letters" id="comment-letters">${findcomments[i]["comment_input"]}</p>
+    &emsp;<p class="datenow">${findcomments[i]["comment_time"]}</p>
+    <button class="comment-edit-delete1_block" id="comment-edit-delete1" onclick="edit(${findcomments[i]["comment_id"]})">Edit</button>
+    <button class="comment-edit-delete2_block" id="comment-edit-delete2" onclick="deletecomment(${findcomments[i]["comment_id"]})">Delete</button>
     </div>`;
     // onclick=`+comment[i]["comment_id"]+`
-    console.log(comment[i]["comment_input"]);
+    console.log(findcomments[i]["comment_input"]);
 
 
 } 
@@ -609,10 +622,10 @@ else{
  //user id same means edit delete button display none
 comment_div.innerHTML = `<div class="comment-img">
     <img class="profile-img_block" id="profile-pic" src="">
-    <p class="comment-letters" id="comment-letters">${comment[i]["comment_input"]}</p>
-    <button class="comment-edit-delete1_none" id="comment-edit-delete1" onclick="edit(${comment[i]["comment_id"]})">Edit</button>
-    <button class="comment-edit-delete3" id="comment-edit-delete3">Edited</button>
-    <button class="comment-edit-delete2_none" id="comment-edit-delete2" onclick="deletecomment(${comment[i]["comment_id"]})">Delete</button>
+    <p class="comment-letters" id="comment-letters">${findcomments[i]["comment_input"]}</p>
+    &emsp;<p class="datenow">${findcomments[i]["comment_time"]}</p>
+    <button class="comment-edit-delete1_none" id="comment-edit-delete1" onclick="edit(${findcomments[i]["comment_id"]})">Edit</button>
+    <button class="comment-edit-delete2_none" id="comment-edit-delete2" onclick="deletecomment(${findcomments[i]["comment_id"]})">Delete</button>
     </div>`;
 
   }
@@ -763,13 +776,16 @@ if(register[index]["courses"] !== null){
 
   let arr;
   
-let findcoursepurchased = register[index]["courses"].filter((item) => item.isCoursePurchased === true);
+let findcoursepurchased = register[index]["courses"].find((item) => item.obj.id === get_obj.id );
 console.log(findcoursepurchased);
 
-  if(findcoursepurchased.length !== 0 ){
+  if(findcoursepurchased !== undefined){
        
     arr = [get_obj["courseVideo1"],get_obj["courseVideo2"],get_obj["courseVideo3"],get_obj["courseVideo4"],get_obj["courseVideo5"],get_obj["courseVideo6"],get_obj["courseVideo7"],get_obj["courseVideo8"],get_obj["courseVideo9"]];
     console.log(arr);
+    
+
+   get_obj["courseVideo1"]
 
   } else {
   
@@ -779,6 +795,8 @@ console.log(findcoursepurchased);
   }
 
   console.log(arr);
+
+
 
 
   

@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "moment": "^2.29.4",
+    "nodemailer": "^6.9.1",
     "twelvedata": "^3.0.1"
   }
 }

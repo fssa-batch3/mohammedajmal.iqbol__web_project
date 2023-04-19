@@ -161,10 +161,26 @@
 
 
 
+<div data-tf-popover="r7f97B9Q" data-tf-opacity="100" data-tf-iframe-props="title=freshstocks Chat" data-tf-transitive-search-params data-tf-button-color="#0445AF" data-tf-medium="snippet" style="all:unset;"></div><script src="//embed.typeform.com/next/embed.js"></script>
 
 
 
+<script src="../assets/js/moment/moment.min.js"></script>
 <script src="../assets/js/details.js"></script>
+
+<script>
+
+  let comments = JSON.parse(localStorage.getItem("comments"));
+  console.log(comment);
+
+for(let i=0;i<comments.length;i++){
+
+
+   document.getElementsByClassName("datenow").innerText = moment().format('MMMM Do YYYY, h:mm:ss a');
+
+}
+
+</script>
 
 </body>
 </html>
