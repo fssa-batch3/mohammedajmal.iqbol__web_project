@@ -50,6 +50,69 @@ CRUD For User Features page => Create Favourites Feature [completed] => Read Fav
         - The user is redirected to the User HomePage page.
         
         
+### View account details
+- Scenario 1: Successfully View account details
+    - Steps:
+        1. Log in as a User.
+        2. Click the Profile icon in top-right.
+        3. Navigate to the User Profile page.
+    - Expected Result:
+        - The User can view his account details.
+
+### Edit account details
+- Scenario 1: Successfully edit account details
+    - Steps:
+        1. Log in as a User.
+        2. Navigate to the User Profile page.
+        3. Click the "Edit" button.
+        4. Update the account details.
+        5. Click the "Done" button.
+    - Expected Result:
+        - The User's account details are updated.
+        
+        
+### Delete account details
+- Scenario 1: Successfully Delete account details
+    - Steps:
+        1. Log in as a User.
+        2. Navigate to the User Profile page.
+        3. Click the "Delete" button.
+        4. Accept the Alert Confirmation.
+    - Expected Result:
+        - The User's account details is Deleted.
+        
+### View User Avatar
+- Scenario 1: Successfully View User Avatar
+    - Steps:
+        1. Log in as a User.
+        2. Click the Profile icon in top-right.
+        3. Navigate to the User Profile page.
+    - Expected Result:
+        - The User can view his User Avatar.
+
+### Edit User Avatar
+- Scenario 1: Successfully edit User Avatar
+    - Steps:
+        1. Log in as a User.
+        2. Navigate to the User Profile page.
+        3. Click the "Edit" button.
+        4. Update the User Avatar by Add New Profile Link.
+        5. Click the "Done" button.
+    - Expected Result:
+        - The User's New Avatar is updated.
+        
+        
+### Delete User Avatar
+- Scenario 1: Successfully Delete User Avatar
+    - Steps:
+        1. Log in as a User.
+        2. Navigate to the User Profile page.
+        3. Click the "Delete User Profile" button.
+        4. Accept the Alert Confirmation.
+    - Expected Result:
+        - The User's New Avatar is Deleted.
+        
+        
 ### View Courses
 - Scenario 1: Successfully view courses
     - Steps:
@@ -194,58 +257,7 @@ CRUD For User Features page => Create Favourites Feature [completed] => Read Fav
         3. You can Search Courses Simply by Name in the Search Bar.
     - Expected Result:
         - The Courses are filtered by Search Bar Option.
-    
-## Seller
 
-### Create an account
-- Scenario 1: Successfully create an Seller account
-    - Steps:
-        1. Navigate to the registration page.
-        2. Enter the required information such as name, age, profile_pic, gender, mobile_number, about_me, date-of-birth, email, and password.
-        3. Click the "Create Account" button.
-    - Expected Result:
-        - The Seller is redirected to the login page.
-
-### Create an account
-- Scenario 1: Successfully login into Seller account
-    - Steps:
-        1. Navigate to the login page.
-        2. Enter the required information such as email, and password.
-        3. Click the "login" button.
-    - Expected Result:
-        - The Seller is redirected to the Seller HomePage page.
- 
-### Add Courses to User Page
-- Scenario 1: Successfully Add Courses to User Page
-    - Steps:
-        1. Navigate to the Seller HomePage page.
-        2. Click "Add Course" button and it will redirect you to a 
-           Add Course form page.
-        3. Fill the form with required details and click "Submit"
-    - Expected Result:
-        - The Course Is added by the Seller and it's listed In the User 
-          Courses listing Page.
-
-### Update Courses In User Page
-- Scenario 1: Successfully Update Courses In User Page
-    - Steps:
-        1. Navigate to the Seller HomePage page.
-        2. Click the Course and it will redirect you to a Edit Course form page.
-        3. Edit the details of the Courses In the form and click "Submit".
-    - Expected Result:
-        - The Course Is Edited by the Seller and it's listed In User 
-          Courses listing Page.
-
- ### Delete Courses from User Page
-- Scenario 1: Successfully Delete Courses from User Page
-    - Steps:
-        1. Navigate to the Seller HomePage page.
-        2. Click the Course and it will redirect you to a Edit Course form page.
-        3. Click "Delete" button to delete the Course from the User listing Page.
-    - Expected Result:
-        - The Course Is Deleted by the Seller In the User Courses listing Page.
-     
- 
 
 
 
@@ -268,6 +280,16 @@ CRUD For User Features page => Create Favourites Feature [completed] => Read Fav
         3. Click the "login" button.
     - Expected Result:
         - The Seller is redirected to the Seller HomePage page.
+        
+        
+### View account details
+- Scenario 1: Successfully View account details
+    - Steps:
+        1. Log in as a seller.
+        2. Click the Profile icon in top-right.
+        3. Navigate to the Seller Profile page.
+    - Expected Result:
+        - The Seller can view his account details.
 
 ### Edit account details
 - Scenario 1: Successfully edit account details
@@ -276,9 +298,21 @@ CRUD For User Features page => Create Favourites Feature [completed] => Read Fav
         2. Navigate to the Seller Profile page.
         3. Click the "Edit" button.
         4. Update the account details.
-        5. Click the "Save" button.
+        5. Click the "Done" button.
     - Expected Result:
         - The Seller's account details are updated.
+        
+        
+### Delete account details
+- Scenario 1: Successfully Delete account details
+    - Steps:
+        1. Log in as a seller.
+        2. Navigate to the Seller Profile page.
+        3. Click the "Delete" button.
+        4. Accept the Alert Confirmation.
+    - Expected Result:
+        - The Seller's account details is Deleted.
+        
 
 ### Create a new product to sell
 - Scenario 1: Successfully create a new product to sell
