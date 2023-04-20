@@ -200,8 +200,31 @@ console.log(varobj);
 
  course_data.push(course_obj);
 
+ let courses_id = {
+   "obj" : course_obj,
+} 
+
+
+const seller_register_arr = JSON.parse(localStorage.getItem("seller_register_arr"));
+console.log(seller_register_arr); 
+
+const seller_login_arr = JSON.parse(localStorage.getItem("seller_login_arr"));
+console.log(seller_login_arr);
+
+let find_seller_obj = seller_register_arr.find((event) => event.email === seller_login_arr);
+console.log(find_seller_obj);
+
+let index = seller_register_arr.indexOf(find_seller_obj);
+console.log(index);
+
+     // alert("this course is already purchased by you");
+     seller_register_arr[index].sellingCourses.push(courses_id);
+     localStorage.setItem("seller_register_arr",JSON.stringify(seller_register_arr));
+
  const add_data = JSON.stringify(course_data);
  localStorage.setItem("course_data",add_data);
+
+ alert("course added to my courses");
  
  }
 
