@@ -594,6 +594,9 @@ let findcomments = comment.filter((event) => event.course_title === get_obj.titl
 console.log(findcomments);
 
 
+if(findcomments === null){
+  return
+}else{
 
 for(let i=0;i<findcomments.length;i++){
 
@@ -617,7 +620,6 @@ for(let i=0;i<findcomments.length;i++){
 
 
 } 
-
 else{
  //user id same means edit delete button display none
 comment_div.innerHTML = `<div class="comment-img">
@@ -632,6 +634,7 @@ comment_div.innerHTML = `<div class="comment-img">
 
 document.querySelector("#new-comments").append(comment_div);
 
+};
 };
 
 
