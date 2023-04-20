@@ -91,7 +91,7 @@ form.addEventListener("submit", event => {
 //seller login page js code start
 
 
-let login = document.getElementById("form");
+let login = document.getElementById("formlogin");
 login.addEventListener("submit",event => {
 event.preventDefault();
 
