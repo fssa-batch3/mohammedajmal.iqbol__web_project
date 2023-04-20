@@ -587,7 +587,7 @@ let comment_div;
 let comment_p;
 
 // comment array parse JSON
-const comment = JSON.parse(localStorage.getItem("comments"));
+const comment = JSON.parse(localStorage.getItem("comments")) ?? [];
 
 
 let findcomments = comment.filter((event) => event.course_title === get_obj.title);
