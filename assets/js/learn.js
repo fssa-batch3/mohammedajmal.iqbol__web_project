@@ -790,12 +790,14 @@ const get_user_objs = register_array.find((event) => event.email === login);
   console.log(index1);
 
 
+    let registerbookmark = register_array[index1]["bookmarks"] ?? [];
 
+    console.log(registerbookmark);
 
 
 // //bookamrk card create from JSON object
 let bookmark_div;
-for (i = 0; i < register_array[index1]["bookmarks"].length; i++) {
+for (i = 0; i < registerbookmark.length; i++) {
   bookmark_div = document.createElement("a");
   bookmark_div.setAttribute("class", "first-course2-stocks");
   bookmark_div.setAttribute(
