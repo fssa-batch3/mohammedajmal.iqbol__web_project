@@ -54,7 +54,7 @@ seller_profile.innerHTML = `
             </tr>
             <tr>
                 <td id="panel-editprofile">New Profile Link</td>
-                <td><input  id="panel-editprofile1" type="text" required></td>
+                <td><input  id="panel-editprofile1" type="url" placeholder="https://example.com" pattern="https://.*" required></td>
               </tr>
             <tr>
               <td><button type="button"  class="edit" id="edit" >Edit</button></td>
@@ -181,7 +181,10 @@ let new_obj = {
 
 console.log("hi");
 
-if (profile_pic !== "") {
+let proflink = profile_pic.includes("https://");
+console.log(proflink);
+
+if (proflink === true ) {
 //assign data
 let assign_data = Object.assign(get_obj,new_obj);
  console.log(assign_data);
@@ -195,7 +198,8 @@ seller_register_arr[index] = assign_data;
  alert("your changes have been changed");
  location.reload();
 } else {
-  alert("please add your profile link");
+  alert("please add your Valid profile link");
+  location.reload();
 }
 
    //catch statement

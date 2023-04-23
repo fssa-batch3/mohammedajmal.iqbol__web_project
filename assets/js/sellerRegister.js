@@ -44,10 +44,28 @@ form.addEventListener("submit", event => {
   alert("user already exists");
  } else {
 
+
+  let age = document.getElementById("age").value;
+  console.log(age);
+
+  let mobilenumber = document.getElementById("mobile-number").value;
+  console.log(mobilenumber);
+  
+
   if( password != confirm_password ){
        alert("password not match try again");
        window.location.href="sellerRegister.html";
        
+  }  else if(age.length > 3) {
+
+    alert("age must contains less than three");
+    location.reload();
+
+  } else if(mobilenumber.length > 11) {
+
+    alert("mobile number must contains 10 numbers");
+    location.reload();
+
   } else {
 
   let register_obj = {
