@@ -30,16 +30,7 @@ if (get_obj["cost"] === "learn for free") {
   discount +=
     100 - (get_obj["cost"] / get_obj["old_cost"]) * 100;
 };
-details_div.innerHTML = `<div class="course-image">
-           <img src=${get_obj["img"]} alt="" class="course-image">
-       </div>
-       <div>
-       <div class="course-price">
-           <p class="course-cost">${ cost + " " + get_obj["cost"]}</p>
-           <strike class="course-oldcost">${ "₹" + " " + get_obj["old_cost"]}</strike>
-           <p class="course-discount">${ Math.floor(discount) + " " + "% discount"  }</p>
-       </div>
-       <p class="days-left"><span class="days-left-span">30 days</span>&nbsp;left at this price!</p>
+details_div.innerHTML = `
        <button class="add-to-cart" id="add-to-cart">Add to cart</button><br>
        <button id="deletecourse" class="delete">Delete from My Courses</button><br>
        <button id="deletebookmark" class="delete">Remove from Bookmark</button><br>
@@ -80,6 +71,471 @@ let register = JSON.parse(localStorage.getItem("register_arr"));
      
 
         console.log(get_obj);
+
+
+
+
+
+// all js full page dynamic start
+
+
+
+//link to watch videos
+if(register[index]["courses"] !== null){
+
+  console.log("hii");
+
+  let detail_div;
+
+  let arr;
+  
+let findcoursepurchased = register[index]["courses"].find((item) => item.obj.id === get_obj.id );
+console.log(findcoursepurchased);
+
+  if(findcoursepurchased !== undefined){
+       
+    arr = [get_obj["courseVideo1"],get_obj["courseVideo2"],get_obj["courseVideo3"],get_obj["courseVideo4"],get_obj["courseVideo5"],get_obj["courseVideo6"],get_obj["courseVideo7"],get_obj["courseVideo8"],get_obj["courseVideo9"]];
+    console.log(arr);
+    
+
+   get_obj["courseVideo1"]
+
+  } else {
+  
+    arr = ["#","#","#","#","#","#","#","#","#"];
+    console.log(arr);
+
+  }
+
+  console.log(arr);
+
+
+
+  const quizquestions = JSON.parse(localStorage.getItem("quiz_questions_arr"));
+  console.log(quizquestions); 
+
+  const url = window.location.search;
+const userparams = new URLSearchParams(url);
+const titles = userparams.get("name");
+console.log(titles);
+
+
+// let element;
+// for(let i=0;i<3;i++){
+
+// element = quizquestions[i].subarrays[i][i].question;
+// // console.log(element);
+
+// }
+
+
+// const element = quizquestions.find(item => {
+  
+  // const nestedObject = item.subarrays.flat(2).find(obj => obj.question  === titles)?.subarrays;
+  // return nestedObject != null;
+  
+  // });
+
+  // const element = quizquestions.find(item => item.subarrays.some(item => item.obj) );
+  // console.log(element);
+
+  const question = quizquestions.find(obj1 => obj1.subarrays.find(obj2 => 
+    obj2.obj.find(obj3 => obj3.courseName === titles)));
+
+    console.log(question.subarrays[0].obj);
+
+
+  // let findquiz = quizquestions.filter((quiz) => quiz.some(obj => obj.courseName === titles));
+  // console.log(findquiz);
+
+  // console.log(findquiz[0]);
+
+  //  console.log(findquiz.length);
+
+
+// for findquiz[1] we encode array in URL Params
+
+  console.log(question.subarrays[0].obj);
+  console.log(question.subarrays[1].obj);
+  console.log(question.subarrays[2].obj);
+  console.log(question.subarrays[3].obj);
+  console.log(question.subarrays[4].obj);
+  console.log(question.subarrays[5].obj);
+
+
+
+ let heropage;
+
+ heropage = document.createElement("div");
+ heropage.setAttribute("class","heropage");
+ heropage.innerHTML = `
+ <div class="breadcrumb">
+ <a href="../pages/userHome.html" class="breadcrumblink">Home</a>
+ <a href="../pages/learn.html" class="breadcrumblink">Learn</a>
+ <a href="#" class="breadcrumblink">Details</a>
+</div>
+
+ <div class="course-details">
+ <p>Course Title :</p>
+    <h1>${get_obj["title"]}</h1>
+
+
+    <div class="course-detail-time">
+    <p><b>Course Timing</b>  <br><br>${get_obj["timing"]}</p>
+    <p><b>Course Language</b>  <br><br>${get_obj["language"]}</p>
+    <p><b>Students Intake</b>  <br><br>${get_obj["enrolled"]} Per Batch</p>
+    <p><b>Course Cost</b>  <br><br>&emsp; ₹ ${get_obj["cost"]}</p>
+
+
+
+    <div>
+    <div class="course-price" id="course-price">
+        <p><b>Course Cost</b>  <br><br>${ cost + " " + get_obj["cost"]}</p><br><br>
+        <p><b>Course Old Cost</b>  <br><br><strike>${ "₹" + " " + get_obj["old_cost"]}</strike></p><br><br>
+        <p><b>Course Discount</b>  <br><br>${ Math.floor(discount) + " " + "% discount"  }</p>
+    </div>
+    <p  id="course-days"><span><b>Days Left</b>  <br><br>30 days</span>&nbsp;left at this price!</p>
+
+    <div class="buttons-div">
+
+    <button class="add-to-cart" id="add-to-cart">Add to cart</button><br>
+       <button id="deletecourse" class="delete">Delete from My Courses</button><br>
+       <button id="deletebookmark" class="delete">Remove from Bookmark</button><br>
+       <a class="full-access-para" href="">Full Lifetime Access</a>
+          <button class="share" id="share" onclick="share()">Share</button><br>
+          <button class="gift"  onclick="gift()">Gift this course</button><br>
+
+       </div>
+ </div>
+
+
+
+
+    </div>
+
+    <br>
+
+
+    <div class="navlinks" id="navlinks">
+     <a href="#about" class="link1">About</a>
+     <a href="#instructor" class="link1">Instructor</a>
+     <a href="#offered-by" class="link1">Offered By</a>
+     <a href="#videos" class="link1">Videos</a>
+     <a href="#comment" class="link1">Comments</a>
+     <a href="#" class="link1">Contact</a>
+    </div>
+
+
+
+       <h1 class="learn-couse" id="about">About</h1>
+
+       <h1 class="learn-couse">What you'll learn from this course</h1>
+   
+       <ul class="list-learnings">
+         <h2 class="list-learning">Course Description</h2>
+       <p>${get_obj["Description"]}</p>
+         <br>
+         <h2 class="list-learning">Top Skills You'll Learn</h2>
+         <br>
+         <h2 class="list-learning">${get_obj["top_skills1"][0]}</h2>
+         <li class="list-learning">${get_obj["top_skills1"][1]}</li>
+         <li class="list-learning">${get_obj["top_skills1"][2]}</li>
+         <li class="list-learning">${get_obj["top_skills1"][3]}</li>
+         <li class="list-learning">${get_obj["top_skills1"][4]}</li>
+         <li class="list-learning">${get_obj["top_skills1"][5]}</li>
+         <li class="list-learning">${get_obj["top_skills1"][6]}</li>
+         <li class="list-learning">${get_obj["top_skills1"][7]}</li>
+         <li class="list-learning">${get_obj["top_skills1"][8]}</li>
+         <li class="list-learning">${get_obj["top_skills1"][9]}</li>
+       </ul>
+       
+
+       
+       
+       <ul class="list-learnings">
+         <br>
+         <h2 class="list-learning">Highlights</h2>
+         <li class="list-learning">100% worth of money</li>
+         <li class="list-learning">You will get a certificate once you completed the course</li>
+         <li class="list-learning">You always get 24/7 Chat Support</li>
+         <li class="list-learning">Participate the Live trading session</li>
+       </ul><br>
+
+
+
+       <div>
+       <p class="learn-couse" id="instructor">Instructor</p>
+
+       <div class="instructor-div">
+       <div>
+         <img src="${get_obj["img"]}" alt=""  id="instruct-image"  />
+       </div>
+       <div class="letters-instuct">
+         <a href="#" class="instruct-namelink"><h2>${get_obj["instructorname"]}</h2></a>
+         <p>${get_obj["instructordesc"]}</p>
+         <p>${get_obj["companycategory"]}</p>
+         <p class="courses-add"><b>4</b> Courses</p>
+       </div>
+
+       </div>
+
+       </div>
+
+
+
+
+
+       <div class="offered-by" id="offered-by">
+       <p class="learn-couse" id="about">Offered By</p>
+
+       <div class="instructor-div">
+       <div>
+         <img src="${get_obj["img"]}" alt=""  id="instruct-image"  />
+       </div>
+       <div class="letters-instuct">
+         <a href="#" class="instruct-namelink"><h2>${get_obj["offeredcompanyname"]}</h2></a>
+         <p>${get_obj["offeredcompanydesc"]}</p>
+         <p>${get_obj["companycategory"]}</p>
+         <p class="courses-add"><b>4</b> Courses</p>
+       </div>
+
+       </div>
+
+       </div>
+
+
+
+
+       <div class="offered-by" id="videos">
+       <p class="learn-couse" id="about">Videos</p>
+
+
+
+
+       <button class="accordion">Beginner's Module</button>
+<div class="panel">
+  <a href="${arr[0]}" class="course-links" id="course-links1" target="_blank"  onclick="openFile(event)"><li class="begginer-module">${get_obj["courseVideoName1"]}</li></a><a class="quiz-btn" id="quiz1" href="">take quiz</a><br><br>
+  <a href="${arr[1]}" class="course-links" id="course-links1" target="_blank" onclick="openFile(event)"><li class="begginer-module">${get_obj["courseVideoName2"]}</li></a><a class="quiz-btn" id="quiz2" href="">take quiz</a><br><br>
+  <a href="${arr[2]}" class="course-links" id="course-links1" target="_blank" onclick="openFile(event)"><li class="begginer-module">${get_obj["courseVideoName3"]}</li></a><a class="quiz-btn" id="quiz3" href="">take quiz</a><br><br>
+</div>
+
+<button class="accordion">Intermediate Module</button>
+<div class="panel">
+<a href="${arr[3]}" class="course-links" id="course-links1" target="_blank" onclick="openFile(event)"><li class="begginer-module">${get_obj["courseVideoName4"]}</li></a><a class="quiz-btn" id="quiz4" href="">take quiz</a><br><br>
+<a href="${arr[4]}" class="course-links" id="course-links1" target="_blank" onclick="openFile(event)"><li class="begginer-module">${get_obj["courseVideoName5"]}</li></a><a class="quiz-btn" id="quiz5" href="">take quiz</a><br><br>
+<a href="${arr[5]}" class="course-links" id="course-links1" target="_blank" onclick="openFile(event)"><li class="begginer-module">${get_obj["courseVideoName6"]}</li></a><a class="quiz-btn" id="quiz6" href="">take quiz</a><br><br>
+</div>
+
+<button class="accordion">Advanced Module</button>
+<div class="panel">
+<a href="${arr[6]}" class="course-links" id="course-links1" target="_blank" onclick="openFile(event)"><li class="begginer-module">${get_obj["courseVideoName7"]}</li></a><a class="quiz-btn" id="quiz7" href="">take quiz</a><br><br>
+<a href="${arr[7]}" class="course-links" id="course-links1" target="_blank" onclick="openFile(event)"><li class="begginer-module">${get_obj["courseVideoName8"]}</li></a><a class="quiz-btn" id="quiz8" href="">take quiz</a><br><br>
+<a href="${arr[8]}" class="course-links" id="course-links1" target="_blank" onclick="openFile(event)"><li class="begginer-module">${get_obj["courseVideoName9"]}</li></a><a class="quiz-btn" id="quiz9" href="">take quiz</a><br><br>
+</div>
+
+
+       </div>
+
+
+
+
+
+       
+       <div class="offered-by" id="comment">
+       <p class="learn-couse" id="about">Comments</p>
+
+
+
+       </div>
+
+
+
+
+`;
+
+document.querySelector(".heropage").append(heropage);
+
+
+
+
+let encodedArrayString;
+let encodedArrayString1;
+let encodedArrayString2;
+let encodedArrayString3;
+let encodedArrayString4;
+let encodedArrayString5;
+for(let i=0;i<question.subarrays.length;i++){
+
+  let findcoursepurchased = register[index]["courses"].find((item) => item.obj.id === get_obj.id );
+  console.log(findcoursepurchased);
+  
+    if(findcoursepurchased !== undefined){
+         
+     
+
+      
+  // console.log(question.subarrays[i]);
+
+  let myArray = question.subarrays[0].obj;
+  let myArray1 = question.subarrays[1].obj;
+  let myArray2 = question.subarrays[2].obj;
+  let myArray3 = question.subarrays[3].obj;
+  let myArray4 = question.subarrays[4].obj;
+  let myArray5 = question.subarrays[5].obj;
+  
+  // Convert array to string
+  const myArrayString = JSON.stringify(myArray);
+  const myArrayString1 = JSON.stringify(myArray1);
+  const myArrayString2 = JSON.stringify(myArray2);
+  const myArrayString3 = JSON.stringify(myArray3);
+  const myArrayString4 = JSON.stringify(myArray4);
+  const myArrayString5 = JSON.stringify(myArray5);
+  
+  // Encode string for use in URL
+   encodedArrayString = encodeURIComponent(myArrayString);
+   encodedArrayString1 = encodeURIComponent(myArrayString1);
+   encodedArrayString2 = encodeURIComponent(myArrayString2);
+   encodedArrayString3 = encodeURIComponent(myArrayString3);
+   encodedArrayString4 = encodeURIComponent(myArrayString4);
+   encodedArrayString5 = encodeURIComponent(myArrayString5);
+  console.log(encodedArrayString);
+  console.log(encodedArrayString1);
+  console.log(encodedArrayString2);
+  console.log(encodedArrayString3);
+  console.log(encodedArrayString4);
+  console.log(encodedArrayString5);
+  
+   document.getElementById("quiz1").href = "quiz.html?myArray=" + encodedArrayString;
+   document.getElementById("quiz2").href = "quiz.html?myArray=" + encodedArrayString1;
+   document.getElementById("quiz3").href = "quiz.html?myArray=" + encodedArrayString2;
+   document.getElementById("quiz4").href = "quiz.html?myArray=" + encodedArrayString3;
+   document.getElementById("quiz5").href = "quiz.html?myArray=" + encodedArrayString4;
+   document.getElementById("quiz6").href = "quiz.html?myArray=" + encodedArrayString5;
+
+   
+  
+    } else {
+    
+      findquiz = ["#","#","#","#","#","#","#","#","#"];
+      console.log(findquiz);
+  
+    }
+
+
+
+
+
+
+}
+
+
+
+
+        
+
+} else {
+  console.log("bii");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//enter button js
+let input = document.getElementById("comment-input");
+input.addEventListener("keypress", (event) => {
+
+  try {
+
+if( event.key === "Enter"){
+  event.preventDefault();
+  document.getElementById("submit-comment").click();
+}
+
+   //catch statement
+}  catch (error) {
+
+  console.log("Error" + error);
+
+}
+
+}); 
+
+
+
+//openfile function 
+// to read user local file or video or image
+        //file video reader
+    let openFile = function(event) {
+  let input = event.target;
+
+  let reader = new FileReader();
+  reader.onload = function(){
+    let dataURL = reader.result;
+    let output = document.getElementById('video');
+    let output2 = document.getElementById('video1');
+    output.src = dataURL;
+    output2.src = dataURL;
+  };
+  reader.readAsDataURL(input.files[0]);
+};
+
+// video or image file reader code end
+
+
+
+//heropage start
+
+
+
+ let heropage2;
+
+  heropage2 = document.createElement("div");
+  heropage2.setAttribute("class","heropage2");
+  heropage2.innerHTML = `
+   <img src=${get_obj["img"]} alt="" id="course-image">
+  `;
+
+  document.querySelector(".heropage").append(heropage2);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -567,6 +1023,7 @@ comment_arr.push(comment_obj);
 
 //localstorage set comments
 localStorage.setItem("comments",JSON.stringify(comment_arr));
+location.reload();
 
 }
 
@@ -647,8 +1104,9 @@ function edit(a) {
   try {
 
 document.querySelector(".course-container").style.opacity = "0.7";
-document.querySelector("body").style.backgroundColor = "black";
+document.querySelector(".what-you-learn").style.backgroundColor = "black";
  document.getElementById("edit-comment").style.display = "block";
+ document.getElementById("edit-comment").style.marginTop = "3000px";
  document.getElementById("edit-comment").style.opacity = "1";
  console.log(a);
  const get_editobj = comment.find((e) => e.comment_id === a );
@@ -681,7 +1139,7 @@ function backedit() {
 
 document.getElementById("edit-comment").style.display = "none";
 document.querySelector(".course-container").style.opacity = "1";
-document.querySelector("body").style.backgroundColor = "#F6F8FC";
+document.querySelector(".what-you-learn").style.backgroundColor = "white";
 
   //catch statement
 }  catch (error) {
@@ -769,121 +1227,48 @@ location.reload();
 };
 
 
-//link to watch videos
-if(register[index]["courses"] !== null){
-
-  console.log("hii");
-
-  let detail_div;
-
-  let arr;
-  
-let findcoursepurchased = register[index]["courses"].find((item) => item.obj.id === get_obj.id );
-console.log(findcoursepurchased);
-
-  if(findcoursepurchased !== undefined){
-       
-    arr = [get_obj["courseVideo1"],get_obj["courseVideo2"],get_obj["courseVideo3"],get_obj["courseVideo4"],get_obj["courseVideo5"],get_obj["courseVideo6"],get_obj["courseVideo7"],get_obj["courseVideo8"],get_obj["courseVideo9"]];
-    console.log(arr);
-    
-
-   get_obj["courseVideo1"]
-
-  } else {
-  
-    arr = ["#","#","#","#","#","#","#","#","#"];
-    console.log(arr);
-
-  }
-
-  console.log(arr);
 
 
 
+//   let videos;
 
-  
+//   videos = document.createElement("div");
+//   videos.setAttribute("id","videos");
+//   videos.innerHTML = `
+//   <h1>&emsp;Start Course</h1><br>
+//   <button class="accordion">Beginner's Module</button>
+// <div class="panel">
+// <a class="course-links" id="course-links1"  href="${arr[0]}" onclick="openFile(event)"><li class="begginer-module">${get_obj["courseVideoName1"]}</li></button>
+// <a class="course-links" href="${arr[1]}" target="_blank" onclick="openFile(event)"><li class="begginer-module">${get_obj["courseVideoName2"]}</li></a>
+// <a class="course-links" href="${arr[2]}" target="_blank" onclick="openFile(event)"><li class="begginer-module">${get_obj["courseVideoName3"]}</li></a>
+// </div>
 
- detail_div = document.createElement("div");
- detail_div.setAttribute("class","course-detail-right");
- detail_div.innerHTML = ` <div>
-        <h1 class="course-h1">Course details</h1><br>
-        <h1 class="course-h1">Course Title :</h1>
-        <p class="course-title">${get_obj["title"]}</p>
-        <div class="course-detail-time">
-        <p class="course-detail"><b>Course Timing</b>  <br><br>${get_obj["timing"]}</p>
-        <p class="course-detail"><b>Course Language</b>  <br><br>${get_obj["language"]}</p>
-        <p class="course-detail"><b>Students Intake</b>  <br><br>${get_obj["enrolled"]} Per Batch</p>
-        <p class="course-detail"><b>Course Cost</b>  <br><br>${get_obj["cost"]}</p>
-         </div>
+// <button class="accordion">Intermediate Module</button>
+// <div class="panel">
+// <a class="course-links" href="${arr[3]}"  target="_blank" ><li class="begginer-module">${get_obj["courseVideoName4"]}</li></a>
+// <a class="course-links" href="${arr[4]}"  target="_blank" ><li class="begginer-module">${get_obj["courseVideoName5"]}</li></a>
+// <a class="course-links" href="${arr[5]}"  target="_blank" ><li class="begginer-module">${get_obj["courseVideoName6"]}</li></a>
+// </div>
 
+// <button class="accordion">Advanced Module</button>
+// <div class="panel">
+// <a class="course-links" href="${arr[6]}"  target="_blank" ><li class="begginer-module">${get_obj["courseVideoName7"]}</li></a>
+// <a class="course-links" href="${arr[7]}"  target="_blank" ><li class="begginer-module">${get_obj["courseVideoName8"]}</li></a>
+// <a class="course-links" href="${arr[8]}"  target="_blank" ><li class="begginer-module">${get_obj["courseVideoName9"]}</li></a>
+// </div>
+//   `;
 
-     </div>
-
-        <h1 class="learn-couse">What you'll learn from this course</h1>
-    
-        <ul class="list-learnings">
-          <h2 class="list-learning">Course Description</h2>
-        <p>${get_obj["Description"]}</p>
-          <br>
-          <h2 class="list-learning">${get_obj["top_skills1"][0]}</h2>
-          <li class="list-learning">${get_obj["top_skills1"][1]}</li>
-          <li class="list-learning">${get_obj["top_skills1"][2]}</li>
-          <li class="list-learning">${get_obj["top_skills1"][3]}</li>
-          <li class="list-learning">${get_obj["top_skills1"][4]}</li>
-          <li class="list-learning">${get_obj["top_skills1"][5]}</li>
-          <li class="list-learning">${get_obj["top_skills1"][6]}</li>
-          <li class="list-learning">${get_obj["top_skills1"][7]}</li>
-          <li class="list-learning">${get_obj["top_skills1"][8]}</li>
-          <li class="list-learning">${get_obj["top_skills1"][9]}</li>
-        </ul>
-        
-
-        
-        
-        <ul class="list-learnings">
-          <br>
-          <h2 class="list-learning">Highlights</h2>
-          <li class="list-learning">100% worth of money</li>
-          <li class="list-learning">You will get a certificate once you completed the course</li>
-          <li class="list-learning">You always get 24/7 Chat Support</li>
-          <li class="list-learning">Participate the Live trading session</li>
-        </ul><br>
-        
-        
-        <h1>&emsp;Start Course</h1><br>
-        <button class="accordion">Beginner's Module</button>
-<div class="panel">
-<a class="course-links" id="course-links1"  href="${arr[0]}" onclick="openFile(event)"><li class="begginer-module">${get_obj["courseVideoName1"]}</li></button>
-<a class="course-links" href="${arr[1]}" target="_blank" onclick="openFile(event)"><li class="begginer-module">${get_obj["courseVideoName2"]}</li></a>
-<a class="course-links" href="${arr[2]}" target="_blank" onclick="openFile(event)"><li class="begginer-module">${get_obj["courseVideoName3"]}</li></a>
-</div>
-
-<button class="accordion">Intermediate Module</button>
-<div class="panel">
-<a class="course-links" href="${arr[3]}"  target="_blank" ><li class="begginer-module">${get_obj["courseVideoName4"]}</li></a>
-<a class="course-links" href="${arr[4]}"  target="_blank" ><li class="begginer-module">${get_obj["courseVideoName5"]}</li></a>
-<a class="course-links" href="${arr[5]}"  target="_blank" ><li class="begginer-module">${get_obj["courseVideoName6"]}</li></a>
-</div>
-
-<button class="accordion">Advanced Module</button>
-<div class="panel">
-<a class="course-links" href="${arr[6]}"  target="_blank" ><li class="begginer-module">${get_obj["courseVideoName7"]}</li></a>
-<a class="course-links" href="${arr[7]}"  target="_blank" ><li class="begginer-module">${get_obj["courseVideoName8"]}</li></a>
-<a class="course-links" href="${arr[8]}"  target="_blank" ><li class="begginer-module">${get_obj["courseVideoName9"]}</li></a>
-</div>
+//   document.querySelector(".heropage").append(videos);
 
 
-`;
-
-  
-        document.querySelector(".what-you-learn").append(detail_div);
-
-
-        
-
-} else {
-  console.log("bii");
-}
+//  <button class="add-to-cart" id="add-to-cart">Add to cart</button><br>
+//  <button id="deletecourse" class="delete">Delete from My Courses</button><br>
+//  <button id="deletebookmark" class="delete">Remove from Bookmark</button><br>
+//  <a class="full-access-para" href="">Full Lifetime Access</a>
+//  <div>
+//     <button class="share" id="share" onclick="share()">Share</button><br>
+//     <button class="gift"  onclick="gift()">Gift this course</button><br>
+//  </div>
 
 
 
@@ -891,58 +1276,10 @@ console.log(findcoursepurchased);
 
 
 
-
-
-
-
-
-
-
-
-//enter button js
-let input = document.getElementById("comment-input");
-input.addEventListener("keypress", (event) => {
-
-  try {
-
-if( event.key === "Enter"){
-  event.preventDefault();
-  document.getElementById("submit-comment").click();
-}
-
-   //catch statement
-}  catch (error) {
-
-  console.log("Error" + error);
-
-}
-
-}); 
-
-
-
-//openfile function 
-// to read user local file or video or image
-        //file video reader
-    let openFile = function(event) {
-  let input = event.target;
-
-  let reader = new FileReader();
-  reader.onload = function(){
-    let dataURL = reader.result;
-    let output = document.getElementById('video');
-    let output2 = document.getElementById('video1');
-    output.src = dataURL;
-    output2.src = dataURL;
-  };
-  reader.readAsDataURL(input.files[0]);
-};
-
-// video or image file reader code end
 
 
 // accordian code function start
-var acc = document.getElementsByClassName("accordion");
+let acc = document.getElementsByClassName("accordion");
 let i;
 
 for (i = 0; i < acc.length; i++) {
@@ -969,3 +1306,4 @@ for (i = 0; i < acc.length; i++) {
 }
 
 // accordian code function end
+

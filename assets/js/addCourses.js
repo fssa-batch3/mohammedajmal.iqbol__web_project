@@ -27,6 +27,11 @@ form.addEventListener("submit", (event) => {
  let old_cost = document.getElementById("old-cost").value;
  let Description= document.getElementById("course-description").value;
  let top_skills = document.getElementById("top-skills").value;
+ let instructorname = document.getElementById("instructor-name").value;
+ let instructordesc = document.getElementById("instructor-desc").value;
+ let companycategory = document.getElementById("company-category").value;
+ let offeredcompanyname = document.getElementById("offeredcompany-name").value;
+ let offeredcompanydesc = document.getElementById("offeredcompany-desc").value;
  let courseVideo1 =  document.getElementById("video1").value;
  let courseVideo2 =  document.getElementById("video2").value;
  let courseVideo3 =  document.getElementById("video3").value;
@@ -56,7 +61,9 @@ form.addEventListener("submit", (event) => {
 
 
     let course_obj = {
-     img,title,timing,language,enrolled,cost_type,cost,old_cost,Description,top_skills1,courseVideo1,courseVideo2,courseVideo3,courseVideo4,courseVideo5,courseVideo6,courseVideo7,courseVideo8,courseVideo9,courseVideoName1,courseVideoName2,courseVideoName3,courseVideoName4,courseVideoName5,courseVideoName6,courseVideoName7,courseVideoName8,courseVideoName9,id,datestring,bookmark_img
+     img,title,timing,language,enrolled,cost_type,cost,old_cost,Description,top_skills1,courseVideo1,courseVideo2,courseVideo3,courseVideo4,courseVideo5,courseVideo6,courseVideo7,courseVideo8,courseVideo9,courseVideoName1,courseVideoName2,courseVideoName3,courseVideoName4,courseVideoName5,courseVideoName6,courseVideoName7,
+     courseVideoName8,courseVideoName9,
+     id,datestring,bookmark_img,instructorname,instructordesc,companycategory,offeredcompanyname,offeredcompanydesc
  };
 
 
@@ -110,6 +117,14 @@ console.log(varobj);
     
        alert("course added to my courses");
 
+       const sellercoursedata = JSON.parse(localStorage.getItem("seller_register_arr"));
+
+       let findcoursedata = sellercoursedata[index].sellingCourses.find((item) => item.obj.title );
+     
+       console.log(findcoursedata);
+
+       window.location.href = "../pages/quizquestions.html?title=" + title;
+
    } else {
     //skip part
     alert("you already added this course to my courses");
@@ -141,6 +156,17 @@ console.log(varobj);
 
   alert("course added to my courses");
   
+
+
+
+  const sellercoursedata = JSON.parse(localStorage.getItem("seller_register_arr"));
+
+  let findcoursedata = sellercoursedata[index].sellingCourses.find((item) => item.obj.title );
+
+  console.log(findcoursedata);
+
+  
+ window.location.href = `../pages/quizquestions.html?title=${title}`;
 }
 
 
@@ -165,6 +191,11 @@ console.log(varobj);
  let old_cost = document.getElementById("old-cost").value;
  let Description= document.getElementById("course-description").value;
  let top_skills = document.getElementById("top-skills").value;
+ let instructorname = document.getElementById("instructor-name").value;
+ let instructordesc = document.getElementById("instructor-desc").value;
+ let companycategory = document.getElementById("company-category").value;
+ let offeredcompanyname = document.getElementById("offeredcompany-name").value;
+ let offeredcompanydesc = document.getElementById("offeredcompany-desc").value;
  let courseVideo1 =  document.getElementById("video1").value;
  let courseVideo2 =  document.getElementById("video2").value;
  let courseVideo3 =  document.getElementById("video3").value;
@@ -195,7 +226,8 @@ console.log(varobj);
 
 
      let course_obj = {
-     img,title,timing,language,enrolled,cost_type,cost,old_cost,Description,top_skills1,courseVideo1,courseVideo2,courseVideo3,courseVideo4,courseVideo5,courseVideo6,courseVideo7,courseVideo8,courseVideo9,courseVideoName1,courseVideoName2,courseVideoName3,courseVideoName4,courseVideoName5,courseVideoName6,courseVideoName7,courseVideoName8,courseVideoName9,id,datestring,bookmark_img
+     img,title,timing,language,enrolled,cost_type,cost,old_cost,Description,top_skills1,courseVideo1,courseVideo2,courseVideo3,courseVideo4,courseVideo5,courseVideo6,courseVideo7,courseVideo8,courseVideo9,courseVideoName1,courseVideoName2,courseVideoName3,courseVideoName4,courseVideoName5,
+     courseVideoName6,courseVideoName7,courseVideoName8,courseVideoName9,id,datestring,bookmark_img,instructorname,instructordesc,companycategory,offeredcompanyname,offeredcompanydesc
  };
 
  course_data.push(course_obj);
@@ -225,16 +257,23 @@ console.log(index);
  localStorage.setItem("course_data",add_data);
 
  alert("course added to my courses");
+
+
+ const sellercoursedata = JSON.parse(localStorage.getItem("seller_register_arr"));
+
+ let findcoursedata = sellercoursedata[index].sellingCourses.find((item) => item.obj.title );
+
+ console.log(findcoursedata);
+
+
+ 
+ window.location.href = "../pages/quizquestions.html?title=" + title;
+
  
  }
 
 
 
-
-
-
-
- window.location.href = "../pages/adminCoursesAdd.html";
  
 
 

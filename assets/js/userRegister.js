@@ -21,7 +21,7 @@ form.addEventListener("submit", event => {
   let name = document.getElementById("name").value;
   let age = document.getElementById("age").value;
   // let profile_pic = document.getElementById("profile-pic").value;
-  let gender = document.getElementById("gender").value;
+  let gender = document.getElementById("select").value;
   let mobile_number = document.getElementById("mobile-number").value;
   let about_me = document.getElementById("about-me").value;
   let date_of_birth = document.getElementById("date-of-birth").value;
@@ -50,6 +50,9 @@ form.addEventListener("submit", event => {
 
  } else {
 
+  let name = document.getElementById("name").value;
+  console.log(name);
+
   let age = document.getElementById("age").value;
   console.log(age);
 
@@ -61,19 +64,19 @@ form.addEventListener("submit", event => {
 
   if( password != confirm_password ){
        alert("password not match try again");
-       window.location.href="register.html";
+      //  window.location.href="register.html";
 
 
        
-  } else if(age.length > 3) {
+  }  else if(age.length > 3) {
 
     alert("age must contains less than three");
-    location.reload();
+    // location.reload();
 
-  } else if(mobilenumber.length > 11) {
+  }  else if(mobilenumber.length > 11) {
 
     alert("mobile number must contains 10 numbers");
-    location.reload();
+    // location.reload();
 
   } else {
 

@@ -357,7 +357,7 @@ console.log(index);
 // }
 
       
-      if(localStorage.getItem("payment_arr") !== null ){
+      if(localStorage.getItem("payment_arr") !== null  ?? [] ){
         payment_arr = JSON.parse(localStorage.getItem("payment_arr"));
 
         let card_number = document.getElementById("cardnumber").value; 
@@ -408,8 +408,8 @@ console.log(index);
 
 
 
-        mycourses.push(get_course_obj);
-     localStorage.setItem("add-to-card",JSON.stringify(mycourses));
+    //     mycourses.push(get_course_obj);
+    //  localStorage.setItem("add-to-card",JSON.stringify(mycourses));
     
     
 
@@ -426,19 +426,19 @@ console.log(index);
       "isCoursePurchased" : true,
  } 
 
-    //check match is true / false
-    let objMatch = false;
-for(let i=0;i<mycourses.length;i++){
-  for(let j = 0; j < register[index].courses.length ; j++ ){
-  if( mycourses[i]["id"] !== register[index].courses[j]["id"] ){
-    objMatch = true;
+    // check match is true / false
+//     let objMatch = false;
+// for(let i=0;i<mycourses.length;i++){
+//   for(let j = 0; j < register[index].courses.length ; j++ ){
+//   if( mycourses[i]["id"] !== register[index].courses[j]["id"] ){
+//     objMatch = true;
 
-  }
-}
+//   }
+// }
 
-console.log(objMatch);
-console.log(register[index].courses);
-}
+// console.log(objMatch);
+// console.log(register[index].courses);
+// }
 
 //checked it should return true
 const existobj = register[index].courses.find((event) => event["obj"]["id"] === get_course_obj["id"] );

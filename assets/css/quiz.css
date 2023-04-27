@@ -1,0 +1,26 @@
+.quiz-div {
+    margin-left: 15%;
+    margin-top: 5%;
+    width: 850px;
+    height: 600px;
+    font-family: sans-serif;
+    font-size: 19px;
+    padding: 30px;
+    background-color: beige;
+    border-radius: 10px;
+    overflow-y: scroll;
+}
+#quiz-results {
+    margin-top: 30px;
+}
+.submitbtn {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: dodgerblue;
+    color: white;
+    width: 100px;
+    border: none;
+}
+.submitbtn:hover {
+    transform: scale(1.05);
+}

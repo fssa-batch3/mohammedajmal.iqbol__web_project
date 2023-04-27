@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Courses Quiz</title>
+	<link rel="stylesheet" href="../assets/css/quiz.css">
+</head>
+<body>
+	<div class="quiz-div">
+
+	<div>
+	<h1>Quiz for Course 1</h1>
+	<p>Instructions: Select the best answer for each question.</p>
+</div>
+
+	<form id="quiz-form">
+
+		
+
+		<!-- Add more questions here -->
+
+	
+		
+	</form>
+
+
+
+	<script>
+
+
+		
+// const quizquestions = JSON.parse(localStorage.getItem("quiz_questions_arr"));
+//   console.log(quizquestions); 
+
+//   const url = window.location.search;
+// const userparams = new URLSearchParams(url);
+// const titles = userparams.get("name");
+// console.log(titles);
+  
+//   let findquiz = quizquestions.filter((quiz) => quiz.some(obj => obj.courseName === titles));
+//   console.log(findquiz);
+
+//   console.log(findquiz[0]);
+//   console.log(findquiz[1]);
+//   console.log(findquiz[2]);
+//   console.log(findquiz[3]);
+//   console.log(findquiz[4]);
+//   console.log(findquiz[5]);
+
+
+const urlParams = new URLSearchParams(window.location.search);
+const encodedArrayString = urlParams.get('myArray');
+console.log(encodedArrayString);
+const decodedArrayString = decodeURIComponent(encodedArrayString);
+const myArray = JSON.parse(decodedArrayString);
+console.log(myArray);
+
+
+//   quiz card create
+
+for (let i = 0; i < myArray.length; i++) {
+
+	
+
+  let quizquestionsdiv;
+
+quizquestionsdiv = document.createElement("div");
+quizquestionsdiv.setAttribute("class","quiz-questions");
+quizquestionsdiv.innerHTML = `
+
+		<!-- Question 1 -->
+		<h2>Question ${i+1}</h2>
+		<p>${myArray[i]["question"]}</p>
+		<input type="radio" name="q${i+1}" value="${myArray[i]["option"][0]}" required> a) ${myArray[i]["option"][0]}<br>
+		<input type="radio" name="q${i+1}" value="${myArray[i]["option"][1]}" required> b) ${myArray[i]["option"][1]}<br>
+		<input type="radio" name="q${i+1}" value="${myArray[i]["option"][2]}" required> c) ${myArray[i]["option"][2]}<br>
+		<br>
+`;
+
+document.querySelector("#quiz-form").append(quizquestionsdiv);
+
+
+let quizresultsdiv;
+
+quizresultsdiv = document.createElement("div");
+quizresultsdiv.setAttribute("id","quiz-results");
+
+
+document.querySelector(".quiz-div").append(quizresultsdiv);
+
+}
+
+
+
+  let submit;
+
+  submit = document.createElement("input");
+  submit.setAttribute("class","submitbtn");
+  submit.setAttribute("type","submit");
+  submit.setAttribute("value","submit");
+
+  document.querySelector("#quiz-form").append(submit);
+  
+
+console.log(myArray[0]["answer"]);
+
+// quiz right wrong mark system
+    
+    const form = document.getElementById('quiz-form');
+const resultsContainer = document.getElementById('quiz-results');
+
+form.addEventListener('submit', (event) => {
+	event.preventDefault(); // Prevent form submission
+
+	let score = 0;
+	const answers = {
+		q1: myArray[0]["answer"],
+		q2: myArray[1]["answer"],
+		q3: myArray[2]["answer"],
+
+		// Add more answers here
+	};
+
+	// Check each answer
+	for (const [question, answer] of Object.entries(answers)) {
+		const selected = form.elements[question].value;
+		if (selected === answer) {
+			score++;
+		}
+	}
+
+
+let result;
+	if(score > 1){
+        result = "You are Pass"; 
+	} else {
+		result = "You are fail retake the test";
+	}
+
+	// Display results
+	resultsContainer.innerHTML = result + "  " + `Your Score is ${score} / ${Object.keys(answers).length}`;
+	// resultsContainer.innerHTML = `You got ${score} out of ${Object.keys(answers).length} correct!`;
+});
+
+</script>
+</body>
+</html>

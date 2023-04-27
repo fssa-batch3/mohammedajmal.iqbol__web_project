@@ -1,9 +1,9 @@
 form {
     background-color:antiquewhite;
     width:90%;
-    height:700px;
+    height:780px;
     margin-left: 70px;
-    margin-top: 100px;
+    margin-top: 30px;
     display: flex;
     font-family: sans-serif
 }
@@ -76,6 +76,9 @@ form {
     font-size: 13px;
 }
 .second-row {
+    margin-top: 30px;
+}
+.second-row1 {
     margin-top: 80px;
 }
 #delete {

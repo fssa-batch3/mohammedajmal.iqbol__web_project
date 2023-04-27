@@ -28,14 +28,27 @@
     <label for="name">Name</label>
   </div>
 
+  <br>
+
   <div class="form-floating mb-3" id="passinput">
     <input type="number" class="form-control" id="age" placeholder="name@example.com" required  pattern="[0-9]{2}">
     <label for="age">Age</label>
   </div>
-  <div class="form-floating mb-3" id="passinput">
+
+  <!-- <div class="form-floating mb-3" id="passinput">
     <input type="text" class="form-control" id="gender"  pattern="[A-Za-z]{1,10}" placeholder="name@example.com">
     <label for="gender">Gender</label>
-  </div>
+  </div> -->
+
+  <select class="form-select" id="select" aria-label="Default select example">
+    <option selected>Select Your Gender</option>
+    <option value="male">Male</option>
+    <option value="female">Female</option>
+    <option value="other">Other</option>
+  </select>
+
+  <br>
+  
   <div class="form-floating mb-3" id="passinput">
     <input type="number" class="form-control" id="mobile-number" placeholder="name@example.com" required pattern="[0-9]{10}">
     <label for="mobile-number">Mobile Number</label>

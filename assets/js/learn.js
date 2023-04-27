@@ -431,7 +431,7 @@ let obj = {
 
 //compare object get match objects
 const filtervalues = course_data_arr.filter(
-  (course) => course.cost_type === obj.cost
+  (course) => course.cost < 1
 );
 console.log(filtervalues);
 

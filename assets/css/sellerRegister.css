@@ -65,3 +65,7 @@ input[type=email]:invalid,input[type=password]:invalid,input[type=text]:invalid 
 .login-link {
     margin-left: 50px;
 }
+#select {
+    width:450px;
+    margin-left: 40px;
+}

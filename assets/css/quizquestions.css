@@ -1,10 +1,11 @@
 form {
     background-color:antiquewhite;
     width:90%;
-    height:780px;
+    /* height:780px; */
     margin-left: 70px;
     margin-top: 50px;
     display: flex;
+    flex-wrap: wrap;
     font-family: sans-serif
 }
 .second-row {
@@ -41,8 +42,8 @@ form {
    height:40px;
    border-radius: 5px;
     border: none;
-    margin-left: 0px;
-    margin-top: 630px;
+    margin-left: 100px;
+    margin-top: 430px;
 }
 .submit:hover {
     transform: scale(1.05);
@@ -68,4 +69,7 @@ form {
 }
 #course-cost-label {
     font-size: 13px;
+}
+#coursequiz1question1label {
+    margin-top:65px;
 }

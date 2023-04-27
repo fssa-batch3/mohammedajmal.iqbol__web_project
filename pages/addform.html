@@ -20,85 +20,102 @@
         <div>
         <h1 class="contact-h1">ADD NEW COURSE FORM</h1>
         <br><label for="image-url" class="product-label" >Course Image URL</label>
-        <br><input name="image-url" class="image-url" id="image-url" type="url" placeholder="https://example.com" pattern="https://.*" required>
+        <br><input name="image-url" class="image-url" id="image-url" type="text"  >
 
         <br><br><label for="course-name" class="product-label">Course Name</label>
-        <br><input name="product-name" class="image-url" id="course-name" type="text" placeholder="course name" required>
+        <br><input name="product-name" class="image-url" id="course-name" type="text" placeholder="course name"  >
 
         <br><br><label for="course-timing" class="product-label">Course Timing</label>
-        <br><input name="product-owned-by" class="image-url" id="course-timing" type="text" placeholder="course timing" required>
+        <br><input name="product-owned-by" class="image-url" id="course-timing" type="text" placeholder="course timing"  >
 
         <br><br><label for="course-language" class="product-label">Course Language</label>
-        <br><input name="price" class="image-url" type="text" id="course-language" placeholder="course price" required>
+        <br><input name="price" class="image-url" type="text" id="course-language" placeholder="course price"  >
 
         <br><br><label for="course-intake" class="product-label">Course Intaking Per Batch</label>
-        <br><input name="price" class="image-url" type="number" id="course-intake" placeholder="course intake" required>
+        <br><input name="price" class="image-url" type="number" id="course-intake" placeholder="course intake"  >
 
         <br><br><label for="course-cost-type" class="product-label">Course Cost type</label>
-        <input  list="course-cost-datalist" class="image-url" id="course-cost-type" placeholder="choose course cost" required>
+        <input  list="course-cost-datalist" class="image-url" id="course-cost-type" placeholder="choose course cost"  >
         <datalist id="course-cost-datalist">
           <option value="learn for free">learn for free</option>
           <option value="Paid">Paid</option>
         </datalist>
         
         <br><br><label for="course-cost" class="product-label" id="course-cost-label">Course Cost ( if 'learn for free' put '0' here )</label>
-        <br><input name="email" class="image-url" type="number" id="course-cost" placeholder="course cost" required><br>
+        <br><input name="email" class="image-url" type="number" id="course-cost" placeholder="course cost"  ><br>
+
+
+        <br><br><label for="instructor-name" class="product-label" id="course-cost-label">Instructor Name</label>
+        <br><input name="email" class="image-url" type="text" id="instructor-name" placeholder="Instructor Name"  ><br>
 <br></div>
    
    <div class="second-row">
     <br><label for="old-cost" class="product-label" >Old Cost</label>
-    <br><input name="image-url" class="image-url" id="old-cost" type="number" placeholder="course Old Cost" required>
+    <br><input name="image-url" class="image-url" id="old-cost" type="number" placeholder="course Old Cost"  >
 
     <br><br><label for="course-description" class="product-label">Course Description</label>
-    <br><textarea name="product-name" class="textarea-desc" id="course-description" type="text" placeholder="course Description" required></textarea>
+    <br><textarea name="product-name" class="textarea-desc" id="course-description" type="text" placeholder="course Description"  ></textarea>
 
 
 
     <br><br><label for="top-skills" class="product-label">Top Skills You'll learn</label>
-    <br><textarea name="product-name" class="textarea-desc" id="top-skills" type="text" placeholder="course Top Skills" required></textarea>
+    <br><textarea name="product-name" class="textarea-desc" id="top-skills" type="text" placeholder="course Top Skills"  ></textarea>
 
-    <!-- <br><br><label for="course-videos" class="product-label">Course Videos</label>
-    <br><input name="price" class="image-url" type="file"  id="course-videos" placeholder="course videos" required> -->
+    <br><label for="instructor-desc" class="product-label" id="course-cost-label">Instructor Description</label>
+    <br><input name="email" class="image-url" type="text" id="instructor-desc" placeholder="Instructor desc"  ><br>
 
+    <br><label for="company-category" class="product-label" id="course-cost-label">company Category</label>
+    <br><input name="email" class="image-url" type="text" id="company-category" placeholder="Instructor Name"  ><br>
+
+    <br><label for="offeredcompany-name" class="product-label" id="course-cost-label">Offered Company Name</label>
+    <br><input name="email" class="image-url" type="text" id="offeredcompany-name" placeholder="offered Company Name"  ><br>
+
+    <br><label for="offeredcompany-desc" class="product-label" id="course-cost-label">offered Company Description</label>
+    <br><input name="email" class="image-url" type="text" id="offeredcompany-desc" placeholder="offered Company Description"  ><br>
 </div>
 
-<div class="second-row">
+<div class="second-row1">
   <h3 class="videos-h1">Course Videos Section</h3>
   <br><label for="old-cost" class="product-label">Begginer's Module</label>
-  <br><input name="image-url" class="image-url" id="video1" type="url" pattern="https://.*" placeholder="Beginner's Module Video 1 link" required>
-  <br><input name="image-url" class="image-url" id="video2" type="url" pattern="https://.*" placeholder="Begginer's Module Video 2 link" required>
-  <br><input name="image-url" class="image-url" id="video3" type="url" pattern="https://.*" placeholder="Begginer's Module Video 3 link" required>
+  <br><input name="image-url" class="image-url" id="video1" type="url" pattern="https://.*" placeholder="Beginner's Module Video 1 link"  >
+  <br><input name="image-url" class="image-url" id="video2" type="url" pattern="https://.*" placeholder="Begginer's Module Video 2 link"  >
+  <br><input name="image-url" class="image-url" id="video3" type="url" pattern="https://.*" placeholder="Begginer's Module Video 3 link"  >
 
   <br><br><label for="old-cost" class="product-label" >Intermediate Module</label>
-  <br><input name="image-url" class="image-url" id="video4" type="url" pattern="https://.*" placeholder="Intermediate Module Video 4 link" required>
-  <br><input name="image-url" class="image-url" id="video5" type="url" pattern="https://.*" placeholder="Intermediate Module Video 5 link" required>
-  <br><input name="image-url" class="image-url" id="video6" type="url" pattern="https://.*" placeholder="Intermediate Module Video 6 link" required>
+  <br><input name="image-url" class="image-url" id="video4" type="url" pattern="https://.*" placeholder="Intermediate Module Video 4 link"  >
+  <br><input name="image-url" class="image-url" id="video5" type="url" pattern="https://.*" placeholder="Intermediate Module Video 5 link"  >
+  <br><input name="image-url" class="image-url" id="video6" type="url" pattern="https://.*" placeholder="Intermediate Module Video 6 link"  >
 
   <br><br><label for="old-cost" class="product-label" >Advanced Module</label>
-  <br><input name="image-url" class="image-url" id="video7" type="url" pattern="https://.*" placeholder="Advanced Module Video 7 link" required>
-  <br><input name="image-url" class="image-url" id="video8" type="url" pattern="https://.*" placeholder="Advanced Module Video 8 link" required>
-  <br><input name="image-url" class="image-url" id="video9" type="url" pattern="https://.*" placeholder="Advanced Module Video 9 link" required>
+  <br><input name="image-url" class="image-url" id="video7" type="url" pattern="https://.*" placeholder="Advanced Module Video 7 link"  >
+  <br><input name="image-url" class="image-url" id="video8" type="url" pattern="https://.*" placeholder="Advanced Module Video 8 link"  >
+  <br><input name="image-url" class="image-url" id="video9" type="url" pattern="https://.*" placeholder="Advanced Module Video 9 link"  >
+
+ 
+</div>
+
+<div class="second-row1">
+  <h3 class="videos-h1">Course Videos Section</h3>
+  <br><label for="old-cost" class="product-label">Begginer's Module</label>
+  <br><input name="image-url" class="image-url" id="video1name" type="text" placeholder="Beginner's Module Video 1 Name"  >
+  <br><input name="image-url" class="image-url" id="video2name" type="text" placeholder="Begginer's Module Video 2 Name" >
+  <br><input name="image-url" class="image-url" id="video3name" type="text" placeholder="Begginer's Module Video 3 Name" >
+
+  <br><br><label for="old-cost" class="product-label" >Intermediate Module</label>
+  <br><input name="image-url" class="image-url" id="video4name" type="text" placeholder="Intermediate Module Video 4 Name" >
+  <br><input name="image-url" class="image-url" id="video5name" type="text" placeholder="Intermediate Module Video 5 Name" >
+  <br><input name="image-url" class="image-url" id="video6name" type="text" placeholder="Intermediate Module Video 6 Name"  >
+
+  <br><br><label for="old-cost" class="product-label" >Advanced Module</label>
+  <br><input name="image-url" class="image-url" id="video7name" type="text" placeholder="Advanced Module Video 7 Name"  >
+  <br><input name="image-url" class="image-url" id="video8name" type="text" placeholder="Advanced Module Video 8 Name"  >
+  <br><input name="image-url" class="image-url" id="video9name" type="text" placeholder="Advanced Module Video 9 Name"  >
 
   
 </div>
 
-<div class="second-row">
-  <h3 class="videos-h1">Course Videos Section</h3>
-  <br><label for="old-cost" class="product-label">Begginer's Module</label>
-  <br><input name="image-url" class="image-url" id="video1name" type="text" placeholder="Beginner's Module Video 1 Name" required>
-  <br><input name="image-url" class="image-url" id="video2name" type="text" placeholder="Begginer's Module Video 2 Name" required>
-  <br><input name="image-url" class="image-url" id="video3name" type="text" placeholder="Begginer's Module Video 3 Name" required>
 
-  <br><br><label for="old-cost" class="product-label" >Intermediate Module</label>
-  <br><input name="image-url" class="image-url" id="video4name" type="text" placeholder="Intermediate Module Video 4 Name" required>
-  <br><input name="image-url" class="image-url" id="video5name" type="text" placeholder="Intermediate Module Video 5 Name" required>
-  <br><input name="image-url" class="image-url" id="video6name" type="text" placeholder="Intermediate Module Video 6 Name" required>
-
-  <br><br><label for="old-cost" class="product-label" >Advanced Module</label>
-  <br><input name="image-url" class="image-url" id="video7name" type="text" placeholder="Advanced Module Video 7 Name" required>
-  <br><input name="image-url" class="image-url" id="video8name" type="text" placeholder="Advanced Module Video 8 Name" required>
-  <br><input name="image-url" class="image-url" id="video9name" type="text" placeholder="Advanced Module Video 9 Name" required>
-
+<div>
   
 </div>
 

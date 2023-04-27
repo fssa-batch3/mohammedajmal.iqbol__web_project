@@ -22,6 +22,11 @@ let img = document.getElementById("image-url");
  let old_cost = document.getElementById("old-cost");
  let Description= document.getElementById("course-description");
  let top_skills1 = document.getElementById("top-skills");
+ let instructorname = document.getElementById("instructor-name");
+ let instructordesc = document.getElementById("instructor-desc");
+ let companycategory = document.getElementById("company-category");
+ let offeredcompanyname = document.getElementById("offeredcompany-name");
+ let offeredcompanydesc = document.getElementById("offeredcompany-desc");
  let courseVideo1 =  document.getElementById("video1");
  let courseVideo2 =  document.getElementById("video2");
  let courseVideo3 =  document.getElementById("video3");
@@ -52,15 +57,20 @@ let img = document.getElementById("image-url");
  old_cost.value = get_obj["old_cost"];
  Description.value = get_obj["Description"];
  top_skills1.value = get_obj["top_skills1"];
- courseVideo1.value = get_obj["courseVideo1"]
- courseVideo2.value = get_obj["courseVideo2"]
- courseVideo3.value = get_obj["courseVideo3"]
- courseVideo4.value = get_obj["courseVideo4"]
- courseVideo5.value = get_obj["courseVideo5"]
- courseVideo6.value = get_obj["courseVideo6"]
- courseVideo7.value = get_obj["courseVideo7"]
- courseVideo8.value = get_obj["courseVideo8"]
- courseVideo9.value = get_obj["courseVideo9"]
+ instructorname.value = get_obj["instructorname"];
+ instructordesc.value = get_obj["instructordesc"];
+ companycategory.value = get_obj["companycategory"];
+ offeredcompanyname.value = get_obj["offeredcompanyname"];
+ offeredcompanydesc.value = get_obj["offeredcompanydesc"];
+ courseVideo1.value = get_obj["courseVideo1"];
+ courseVideo2.value = get_obj["courseVideo2"];
+ courseVideo3.value = get_obj["courseVideo3"];
+ courseVideo4.value = get_obj["courseVideo4"];
+ courseVideo5.value = get_obj["courseVideo5"];
+ courseVideo6.value = get_obj["courseVideo6"];
+ courseVideo7.value = get_obj["courseVideo7"];
+ courseVideo8.value = get_obj["courseVideo8"];
+ courseVideo9.value = get_obj["courseVideo9"];
 
  courseVideoName1.value = get_obj["courseVideoName1"];
  courseVideoName2.value = get_obj["courseVideoName2"];
@@ -96,6 +106,11 @@ form.addEventListener("submit", (event) => {
  let old_cost = document.getElementById("old-cost").value;
  let Description= document.getElementById("course-description").value;
  let top_skills1 = document.getElementById("top-skills").value;
+ let instructorname = document.getElementById("instructor-name").value;
+ let instructordesc = document.getElementById("instructor-desc").value;
+ let companycategory = document.getElementById("company-category").value;
+ let offeredcompanyname = document.getElementById("offeredcompany-name").value;
+ let offeredcompanydesc = document.getElementById("offeredcompany-desc").value;
  let courseVideo1 =  document.getElementById("video1").value;
  let courseVideo2 =  document.getElementById("video2").value;
  let courseVideo3 =  document.getElementById("video3").value;
@@ -120,7 +135,7 @@ form.addEventListener("submit", (event) => {
 
 
     let course_obj = {
-     img,title,timing,language,enrolled,cost_type,cost,old_cost,Description,top_skills1,courseVideo1,courseVideo2,courseVideo3,courseVideo4,courseVideo5,courseVideo6,courseVideo7,courseVideo8,courseVideo9,courseVideoName1,courseVideoName2,courseVideoName3,courseVideoName4,courseVideoName5,courseVideoName6,courseVideoName7,courseVideoName8,courseVideoName9,id 
+     img,title,timing,language,enrolled,cost_type,cost,old_cost,Description,top_skills1,courseVideo1,courseVideo2,courseVideo3,courseVideo4,courseVideo5,courseVideo6,courseVideo7,courseVideo8,courseVideo9,courseVideoName1,courseVideoName2,courseVideoName3,courseVideoName4,courseVideoName5,courseVideoName6,courseVideoName7,courseVideoName8,courseVideoName9,id,instructorname,instructordesc,companycategory,offeredcompanyname,offeredcompanydesc
  };
 
 
@@ -164,7 +179,7 @@ localStorage.setItem("seller_register_arr",JSON.stringify(seller_register_arr));
 alert("you have successfully updated your course");
 location.reload();
 
-window.location.href = "../pages/adminCoursesAdd.html";
+window.location.href = "../pages/editquizquestions.html?title=" + title;
 
 
   //catch statement

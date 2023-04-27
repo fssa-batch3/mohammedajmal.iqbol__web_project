@@ -4,6 +4,9 @@ body {
     /* background-color: pink; */
     background-color: #F6F8FC;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 nav {
     width:100%;
@@ -181,7 +184,7 @@ nav {
     background-color: white;
     color: black;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    margin-top: 30px;
+    margin-top: 1000px;
     margin-left: 110px;
     border-radius: 15px;
 }
@@ -218,9 +221,11 @@ strike {
     font-weight: bold;
 }
 .add-to-cart {
-    width:330px;
-    height:30px;
-    margin-left: 40px;
+    width:150px;
+    height:40px;
+    margin-left: -480px;
+    margin-top: 30px;
+    padding: 10px;
     background-color: dodgerblue;
     color: white;
     border: 1px solid dodgerblue;
@@ -238,21 +243,23 @@ strike {
 }
 
 .full-access-para {
-    margin-left: 150px;
+    margin-left: 50px;
+    margin-top: 40px;
+    width: 200px;
     font-family: sans-serif;
     font-size: 14px;
     text-decoration: none;
-    color:black;
+    color:white;
 }
 .full-access-para:hover {
     text-decoration: underline;
-    color:blue;
+    color:white;
 }
 .share,.gift,.earn-coupons {
-    width:330px;
-    height:30px;
+    width:150px;
+    height:40px;
     margin-left: 40px;  
-    margin-top: 13px;
+    margin-top: 30px;
     background-color: dodgerblue;
     color: white;
     border: 1px solid dodgerblue;
@@ -261,18 +268,28 @@ strike {
 .share:hover,.gift:hover,.earn-coupons:hover {
     transform: scale(1.01);
 }
+.navlinks--reached-top {
+  background-color: #f00;
+}
 .what-you-learn {
-    width:800px;
-    height:655px;
+    width:1275px;
+    height:355px;
     background-color: white;
     color:black;
-    margin-top: 25px;
-    margin-left: 70px;
+    margin-left: 50px;
+    position: relative;
+    top: 130px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 4px;
     border-radius: 5px;
 }
+.buttons-div {
+  display: flex;
+  position: relative;
+  right: 100px;
+  top: 20px;
+}
 .course {
-    display: flex;
+    display: none;
     
 }
 .learn-couse {
@@ -302,10 +319,13 @@ strike {
 .course-detail-time {
     display: flex;
     gap:30px;
+    width: 1435px;
+    height: 240px;
     margin-left: 30px;
 }
 .course-container {
-  display: flex;
+  display: block;
+  margin-top:2500px;
 }
 .course-h1 {
   margin-left: 20px;
@@ -328,7 +348,7 @@ strike {
   border-top: 3px solid dodgerblue;
 }
 .course-detail-right::-webkit-scrollbar {
-  display: none;
+  display: none; 
 }
 .course-detail {
   font-size: 17px;
@@ -340,7 +360,7 @@ strike {
   color: #444;
   cursor: pointer;
   padding: 18px;
-  width: 750px;
+  width: 1505px;
   margin-left: 20px;
   border: none;
   text-align: left;
@@ -468,10 +488,12 @@ strike {
   margin-left: 100px;
 }
 .delete {
-  margin-left: 90px;
+  margin-left: 40px;
   width:230px;
-  margin-top: 5px;
-  padding: 5px;
+  height:40px;
+  margin-top: 30px;
+  padding: 10px;
+  border-radius: 5px;
   background-color: dodgerblue;
   color: white;
   border: 1px solid dodgerblue;
@@ -606,4 +628,117 @@ overflow-y: scroll;
 .course-links:hover {
     color: blue;
     text-decoration: underline;
+}
+.heropage {
+  width: 1510px;
+  height: 570px;
+  margin: -24px;
+  background-color: #033E87;
+  color: white;
+}
+.breadcrumblink {
+  margin-left: 20px;
+  position: relative;
+  left: 50px;
+  top: 30px;
+  font-size: 18px;
+  font-family: sans-serif;
+  color: white;
+  text-decoration: none;
+}
+.breadcrumblink:hover {
+  text-decoration: underline;
+}
+.breadcrumblink::after {
+  content: '>';
+  margin-left: 15px;
+}
+.course-details {
+  width: 1300px;
+  position: relative;
+  top: 45px;
+  left: 70px;
+  font-size: 20px;
+  font-family: sans-serif;
+}
+#course-price {
+  position: relative;
+  top: 130px;
+  right: 600px;
+}
+#course-days {
+  position: relative;
+  top: 17px;
+  right: 100px;
+}
+#course-image {
+  width: 500px;
+  height: 300px;
+  border-radius: 20px;
+  position: relative;
+  bottom: 400px;
+  left: 60%;
+  transition: all 0.5s ease-in-out;
+}
+#instruct-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-top: 50px;
+  margin-left: 50px;
+  transition: all 0.5s ease-in-out;
+}
+#course-image:hover ,#instruct-image:hover {
+  transform: scale(1.05);
+}
+.navlinks {
+  width: 1515px;
+  height: 80px;
+  margin-left: -50px;
+  margin-top: 85px;
+  background-color: white;
+  position: sticky;
+  top: 0;
+}
+.link1 {
+    position: relative;
+    top: 30px;
+    left: 50px;
+    margin-left: 30px;
+    text-decoration: none;
+    color: black;
+}
+.link1:hover {
+  text-decoration: underline;
+}
+.instructor-div {
+  display: flex;
+  margin-top: 20px;
+  margin-left: 30px;
+  color: black;
+  font-size: 15px;
+}
+.letters-instuct {
+  margin-top: 50px;
+  margin-left: 30px;
+}
+.instruct-namelink {
+  text-decoration: none;
+  color: dodgerblue;
+}
+.instruct-namelink:hover {
+  text-decoration: underline;
+}
+.offered-by {
+  margin-top: 120px;
+}
+
+#videos {
+  overflow :hidden;
+  height : 599px;
+  border-top: 3px solid dodgerblue;
+  border-bottom: 3px solid dodgerblue;
+}
+#videos::-webkit-scrollbar {
+  display: none;
 }
