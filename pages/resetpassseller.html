@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Verify OTP | User</title>
+    <link rel="stylesheet" href="../assets/css/resetpassseller.css">
+</head>
+<body>
+    
+
+    <form class="form">
+        <p class="heading">Reset Seller password</p>
+        <p class="heading1">Submit your registration email to restore access to<br> your Personal Area. You will receive a link to your<br> new password. If you have any problems, please<br><a href="contact.html" class="link">contact us.</a></p>
+        <!-- <svg class="check" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="60px" height="60px" viewBox="0 0 60 60" xml:space="preserve">  <image id="image0" width="60" height="60" x="0" y="0" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAQAAACQ9RH5AAAABGdBTUEAALGPC/xhBQAAACBjSFJN
+      AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAJcEhZ
+      cwAACxMAAAsTAQCanBgAAAAHdElNRQfnAg0NDzN/r+StAAACR0lEQVRYw+3Yy2sTURTH8W+bNgVf
+      aGhFaxNiAoJou3FVEUQE1yL031BEROjCnf4PLlxILZSGYncuiiC48AEKxghaNGiliAojiBWZNnNd
+      xDza3pl77jyCyPzO8ubcT85wmUkG0qT539In+MwgoxQoUqDAKDn2kSNLlp3AGi4uDt9xWOUTK3xg
+      hVU2wsIZSkxwnHHGKZOxHKfBe6rUqFGlTkPaVmKGn6iYao1ZyhK2zJfY0FZ9ldBzsbMKxZwZjn/e
+      5szGw6UsD5I0W6T+hBhjUjiF7bNInjz37Ruj3igGABjbtpIo3GIh30u4ww5wr3fwfJvNcFeznhBs
+      YgXw70TYX2bY/ulkZhWfzfBbTdtrzjPFsvFI+T/L35jhp5q2owDs51VIVvHYDM9sa/LY8XdtKy1l
+      FXfM8FVN2/X2ajctZxVXzPA5TZvHpfb6CFXxkerUWTOcY11LX9w0tc20inX2mmF4qG3upnNWrOKB
+      hIXLPu3dF1x+kRWq6ysHpkjDl+7eQjatYoOCDIZF3006U0unVSxIWTgTsI3HNP3soSJkFaflMDwL
+      3OoHrph9YsPCJJ5466DyOGUHY3Epg2rWloUxnMjsNw7aw3AhMjwVhgW4HYm9FZaFQZ/bp6QeMRQe
+      hhHehWKXGY7CAuSpW7MfKUZlAUqWdJ3DcbAAB3guZl9yKC4WYLfmT4muFtgVJwvQx7T2t0mnXK6J
+      XlGGyAQvfNkaJ5JBmxnipubJ5HKDbJJsM0eY38QucSx5tJWTVHBwqDDZOzRNmn87fwDoyM4J2hRz
+      NgAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAyMy0wMi0xM1QxMzoxNTo1MCswMDowMKC8JaoAAAAldEVY
+      dGRhdGU6bW9kaWZ5ADIwMjMtMDItMTNUMTM6MTU6NTArMDA6MDDR4Z0WAAAAKHRFWHRkYXRlOnRp
+      bWVzdGFtcAAyMDIzLTAyLTEzVDEzOjE1OjUxKzAwOjAwIIO3fQAAAABJRU5ErkJggg=="></image>
+      </svg> -->
+        <input class="input" placeholder="Enter your Email" type="email" required id="otp-input">
+        <button class="btn1" id="submit">Verify Email</button>
+        <button class="btn2" id="verify">Reset Password</button>
+        <button class="btn3" onclick="back()">Back</button>
+      </form>
+
+
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+
+
+
+
+
+let submit = document.getElementById("submit")
+submit.addEventListener("click", function (e){ 
+     e.preventDefault();
+
+     
+ let email = document.getElementById("otp-input").value;
+ console.log(email);
+
+ let seller_register_arr = JSON.parse(localStorage.getItem("seller_register_arr"));
+ console.log(seller_register_arr);
+
+ //find user obj
+ const get_obj = seller_register_arr.find((user) => user.email === email);
+ console.log(get_obj);
+
+  if(get_obj != undefined) {
+
+   document.getElementById("verify").style.display = "block";
+
+   
+   let otpforuser = Math.floor(100000 + Math.random() * 900000);
+   console.log(otpforuser);
+
+ let body = `
+
+    <h1>Your One-Time Password (OTP) for Account Verification</h1>
+    <p>Dear [${email}],</p>
+    <p>Thank you for signing up for an account on freshstocks. To complete your account registration, please use the following One-Time Password (OTP) to verify your account:</p>
+    <p>Please Use this OTP to Verify   <strong>[${otpforuser}]</strong></p>
+    <p>Please note that this OTP is valid for 5 minutes only. If you do not use it within this time frame, you will need to request a new OTP.</p>
+    <p>To enter the OTP, please follow these steps:</p>
+    <ol>
+      <li>Go to the registration page on our website.</li>
+      <li>Enter your email address and password.</li>
+      <li>When prompted for the OTP, enter the code provided above.</li>
+      <li>Click "Verify" to complete your account registration.</li>
+    </ol>
+    <p>If you have any questions or concerns, please do not hesitate to contact us at ${'freekyajmal@gmail.com'}.</p>
+    <p>Thank you for choosing freshstocks.</p>
+    <p>Best regards,</p>
+    <p>Mohammed Ajmal Admin<br>freshstocks</p>
+
+
+
+    `;
+
+
+    Email.send({
+      SecureToken: "1530a466-611d-443c-bacf-1ea702201285",
+      Host: "smtp.elasticemail.com",
+      Username: "freshstocks",
+      Password: "58CE22F6AE1985ADE3DAA2206C549E191988",
+      To: email,
+      From:"freekyajmal@gmail.com",
+      Subject: "Verification Email by freshstocks",
+      Body: body,
+    }).then(
+      message => {
+        
+        
+        alert(`Please Verify Your Email ( ${email} )  \n Check the Spam folder also`) 
+
+        let msg = prompt("Enter the OTP recieved in your email");
+
+        if (msg == null || msg == "") {
+         alert("It won't be empty");
+        } else {
+
+        //     let otpinput = document.getElementById("otp-input").value;
+        // console.log(otpinput);
+        console.log(msg);
+
+        if( msg == otpforuser ){   
+            alert("Your Email has Been Successfully Verified");
+
+
+
+
+            
+        //email verify done 
+
+                    // const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d){8,}$/; // A regex that matches a password with at least one letter, one number, and at least 8 characters
+           
+                    const passwordPrompt = "Please enter your password (must be at least 8 characters long and contain at least one letter and one number):";
+           
+           let password = prompt(passwordPrompt);
+          
+           //   //password pattern must contain one symbol,number,letters
+           //   while (!passwordRegex.test(password)) {
+           //    password = prompt(passwordPrompt);
+           //    }
+  
+              
+          
+       //    if (password == null || password == "") {
+       //     alert("It won't be empty");
+       //    } else {
+             
+            console.log(get_obj);
+   
+            //assign new in old
+             get_obj.password = password
+             get_obj.confirm_password = password
+  
+  
+             //localset
+             localStorage.setItem("seller_register_arr",JSON.stringify(seller_register_arr));
+             alert("Your Password has been Successfully Updated");
+             window.location.href = "sellerLogin.html";
+              
+       //    }
+
+
+        } else {
+            alert("Email Not Verified OTP Not Match");
+        }
+
+
+
+         
+  
+
+    }
+      
+
+        
+
+
+
+
+
+    
+    }
+      
+    )
+
+} else {
+    alert("You are Not an Existing User of freshstocks. please Register first");
+    window.location.href = 'register.html';
+}
+
+
+
+  });
+
+
+
+
+
+  function back() {
+    window.location.href = "signin.html";
+  }
+
+
+
+    </script>
+</body>
+</html>

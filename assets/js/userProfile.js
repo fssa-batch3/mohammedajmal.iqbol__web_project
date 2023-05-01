@@ -9,11 +9,11 @@ user_profile.innerHTML = `
       <div class="panel panel-primary">
         <div class="panel-heading">
           <h1>User Profile</h1>
-          <h3 class="panel-title" id="panel-title"></h3>
+          <span class="hint--bottom hint--rounded" aria-label="User Name"><h3 class="panel-title" id="panel-title"></h3></span>
         </div>
         <form class="panel-body" id="form">
           <div class="row">
-            <div class="col-md-3 col-lg-3 " > <img alt="User Pic" id="profile-pic"  class="img-circle img-responsive">
+            <div class="col-md-3 col-lg-3 " > <span class="hint--bottom hint--rounded" aria-label="User Avatar"><img alt="User Pic" id="profile-pic"  class="img-circle img-responsive"></span>
               </div>
             <div class=" col-md-9 col-lg-9 " id="form"><br><br>
               <table class="table table-user-information">
@@ -52,11 +52,11 @@ user_profile.innerHTML = `
                       <td><input  id="panel-editprofile1" type="url" placeholder="https://example.com" pattern="https://.*" required></td>
                     </tr>
                   <tr>
-                    <td><button type="button"  class="edit" id="edit" >Edit</button></td>
-                    <td><button type="submit" class="delete" id="delete">Delete</button></td>
+                    <td><span class="hint--bottom hint--rounded" aria-label="Edit User Profile"><button type="button"  class="edit" id="edit" >Edit</button></span></td>
+                    <td><span class="hint--bottom hint--rounded" aria-label="Delete User Profile"><button type="submit" class="delete" id="delete">Delete</button></span></td>
                   </tr>
                   <tr>
-                    <td><button type="button"  class="edit" id="done" onsubmit="edit()" >Done</button></td>
+                    <td><span class="hint--bottom hint--rounded" aria-label="Edit Done User Profile"><button type="button"  class="edit" id="done" onsubmit="edit()" >Done</button></span></td>
                   </tr>
                 </tbody>
               </table>

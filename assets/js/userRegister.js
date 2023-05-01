@@ -97,8 +97,8 @@ form.addEventListener("submit", event => {
 
   console.log(register);
 
- alert("User Registration Successful");
- window.location.href = "signin.html";
+ alert("Please Verify Email \n You have to check the OTP One time Password Sent to You By Us and enter the recieved OTP to Verify Your Account");
+ window.location.href = "emailverify.html?email=" + email;
 
  }
 

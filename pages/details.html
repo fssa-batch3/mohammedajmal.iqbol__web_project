@@ -9,12 +9,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;0,800;0,900;1,600&family=Tilt+Neon&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/hint.css@2.7.0/hint.min.css" rel="stylesheet">
+<link rel="stylesheet" href="hint.css" />
 </head>
 <body>
     <nav>
         <div class="navbar">
             <img class="nav-logo" src="../assets/images/Screenshot 2023-02-11 021952.png" alt="">
-            <input class="search" list="search" type="text" placeholder="Search for courses,videos & Blogs">
+            <span class="hint--bottom hint--rounded" aria-label="Search About Courses"><input class="search" list="search" type="text" placeholder="Search for courses,videos & Blogs"></span>
             <datalist id="search">
                 <option value="warren buffett in anual letter,stays upbeat......">
                 <option value="tesla elon musk fans tout cybertruck demand......">
@@ -28,11 +30,11 @@
                 <option value="Whatsapp to bring i-Message-like-feature to android and iPhone......">
             </datalist>
             <div class="notification">
-              &emsp;&emsp;&emsp; <img class="notificationimg" onclick="profile1()" src="../assets/images/icons8-notification-50.png" alt="notification-img">
+              &emsp;&emsp;&emsp; <span class="hint--bottom hint--rounded" aria-label="Notifications"><img class="notificationimg" onclick="profile1()" src="../assets/images/icons8-notification-50.png" alt="notification-img"></span>
             </div>
             <div class="notification">
                 <div class="dropdown">
-                <img class="notificationimg" onclick="profile1()" src="../assets/images/icons8-translator-50.png" alt="translator-img">
+                  <span class="hint--bottom hint--rounded" aria-label="Language Selector"><img class="notificationimg" onclick="profile1()" src="../assets/images/icons8-translator-50.png" alt="translator-img"></span>
                 <div class="dropdown-content-lang"><br>
                     <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png" alt="translator-img" />&nbsp; English </a>
                     <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png" alt="translator-img" />&nbsp; France</a>
@@ -60,7 +62,7 @@
             </div>
             <div class="notification">
                 <div class="dropdown">
-                <img class="notificationimg" onclick="profile1()" src="../assets/images/icons8-online-support-50.png" alt="support-img">
+                  <span class="hint--bottom hint--rounded" aria-label="Contact Support"><img class="notificationimg" onclick="profile1()" src="../assets/images/icons8-online-support-50.png" alt="support-img"></span>
                 <div class="dropdown-content"><br>
                     <a href="#"><img class="user-dropdown" src="../assets/images/icons8-group-50.png" alt="connect-img"/>&nbsp; Connect With Us</a>
                     <a href="#"><img class="user-dropdown" src="../assets/images/icons8-group-message-50.png" alt="chat-img"/>&nbsp; Chat With Us</a>
@@ -71,7 +73,7 @@
             </div>
             <div class="notification">
                 <div class="dropdown">
-                    <img class="dropbtn" id="user-profile" onclick="profile()" src="" alt="">
+                  <span class="hint--bottom hint--rounded" aria-label="User Profile"><img class="dropbtn" id="user-profile" onclick="profile()" src="" alt=""></span>
                     <div class="dropdown-content"><br>
                       <a href="../pages/userprofile.html"><img class="user-dropdown" src="../assets/images/icons8-group-50.png" alt="icon-accounts-img"/>&nbsp; Accounts</a>
                       <a href="#"><img class="user-dropdown" src="../assets/images/icons8-logout-rounded-50.png" alt="icon-accounts-img"/>&nbsp; Personal Details</a>
@@ -114,8 +116,8 @@
 
 <div class="what-you-learn">
 
-  <textarea type="text" name="comment" id="comment-input" placeholder="comment here"></textarea>
-  <button class="submit-comment" id="submit-comment" >Submit</button>
+  <span class="hint--bottom hint--rounded" aria-label="Use this textarea to Give Comments for this course"> <textarea type="text" name="comment" id="comment-input" placeholder="comment here"></textarea></span>
+  <span class="hint--top hint--rounded" aria-label="Submit Your Comments"><button class="submit-comment" id="submit-comment" >Submit</button></span>
 
 <div id="new-comments">
 

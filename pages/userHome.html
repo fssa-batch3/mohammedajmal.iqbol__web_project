@@ -16,6 +16,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <!--socialmediafontawesome end-->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+<link href="https://cdn.jsdelivr.net/npm/hint.css@2.7.0/hint.min.css" rel="stylesheet">
+<link rel="stylesheet" href="hint.css" />
 </head>
 <body>
      <nav>
@@ -27,35 +29,19 @@
                 <!-- <a href="#" class="navlink">Market</a> -->
                 <div class="dropdown">
                     <a class="dropbtn" href="marketdata.html">Market</a>
-                    <div class="dropdown-content">
-                      <a href="market.html">Global Market List</a>
-                      <a href="stock_market_info.html">Stock Informations</a>
-                      <a href="forex_market_info.html">forex Informations</a>
-                      <a href="crypto_market_info.html">Cryto Informations</a>
-                      <a href="etf_market_info.html">ETF Informations</a>
-                      <a href="indices_info.html">Indices Informations</a>
-                      <a href="mutual_funds_info.html">Exchange SymbolInformations</a>
-                    </div>
+                    
                   </div>
                 <!-- <a href="#" class="navlink">Trade</a> -->
                 <div class="dropdown">
                     <a class="dropbtn" href="live_trading.html">Trade</a>
-                    <div class="dropdown-content">
-                      <a href="live_trading.html">Stocks</a>
-                      <a href="live_trading.html">forex</a>
-                      <a href="live_trading.html">Cryptos</a>
-                    </div>
+
                   </div>
                 <!-- <a href="#" class="navlink">News</a> -->
                 <!-- <a href="#" class="navlink">Learn</a> -->
                 <div class="dropdown">
                     <a class="dropbtn" href="learn.html">Learn</a>
                     <a href="./contact.html" class="navlink" id="contact">Contact</a>
-                    <div class="dropdown-content">
-                      <a href="learn.html">Youtube Videos</a>
-                      <a href="learn.html">Explore Courses</a>
-                      <a href="learn.html">Explore Blogs</a>
-                    </div>
+
                   </div>
 
                   
@@ -66,7 +52,7 @@
             <div class="notification"  id="notification-img">
               
               <div class="dropdown">
-                <img class="notificationimg" onclick="profile1()" src="../assets/images/icons8-notification-50.png" alt="notification-img">
+                <span class="hint--bottom hint--rounded" aria-label="Notifications"><img class="notificationimg" onclick="profile1()" src="../assets/images/icons8-notification-50.png" alt="notification-img"></span>
                 <div class="dropdown-content-notification">
                   <a><div class="notify-head">
 
@@ -127,7 +113,7 @@
             </div>
             <div class="notification">
                 <div class="dropdown1">
-                <img class="notificationimg" onclick="profile1()" src="../assets/images/icons8-translator-50.png" alt="translator-img">
+                  <span class="hint--bottom hint--rounded" aria-label="Lnaguage Selector"><img class="notificationimg" onclick="profile1()" src="../assets/images/icons8-translator-50.png" alt="translator-img"></span>
                 <div class="dropdown-content-lang"><br>
                   <div id="google_translate_element" id="lang"></div>
                     </div>
@@ -136,7 +122,7 @@
             <div class="notification">
 
               <a id="notificationimg" href="contact.html">
-                <img class="notificationimg" src="../assets/images/icons8-online-support-50.png" alt="support-img">
+                <span class="hint--bottom hint--rounded" aria-label="Contact Support"><img class="notificationimg" src="../assets/images/icons8-online-support-50.png" alt="support-img"></span>
               </a>
 
             </div>
@@ -144,9 +130,9 @@
             <div class="notification">
              
                 <!-- js code start userprofile -->
-            <a id="form" href="userprofile.html">
+                <span class="hint--bottom hint--rounded" aria-label="User Profile"><a id="form" href="userprofile.html">
 
-            </a>
+            </a></span>
             </div>
 
         </div>
@@ -590,18 +576,18 @@
                     font-weight: 700; font-size: 16px;">SOCIAL-MEDIA CONNECT LINKS</p>
                   </div><br>
                   <div style="display:flex; flex-wrap: wrap; margin-left:-10px;">
-                    <div><a href="https://www.facebook.com/freeky.ajmal" class="fa fa-facebook" aria-label="footer social media links"></a></div>
-                    <div><a href="https://twitter.com/freaky__ajmal" class="fa fa-twitter" aria-label="footer social media links" ></a></div>
-                    <div><a href="https://www.linkedin.com/in/mohammed-ajmal-479b311b8/" class="fa fa-linkedin" aria-label="footer social media links" ></a></div>
-                    <div><a href="https://www.youtube.com/c/FreshworksInc" class="fa fa-youtube" aria-label="footer social media links" ></a></div>
-                    <div><a href="https://www.instagram.com/freaky__ajmal/" class="fa fa-instagram" aria-label="footer social media links" ></a></div>
+                    <div><span class="hint--top hint--rounded" aria-label="facebook"><a href="https://www.facebook.com/freeky.ajmal" class="fa fa-facebook" aria-label="footer social media links"></a></span></div>
+                    <div><span class="hint--top hint--rounded" aria-label="twitter"><a href="https://twitter.com/freaky__ajmal" class="fa fa-twitter" aria-label="footer social media links" ></a></span></div>
+                    <div><span class="hint--top hint--rounded" aria-label="linkedin"><a href="https://www.linkedin.com/in/mohammed-ajmal-479b311b8/" class="fa fa-linkedin" aria-label="footer social media links" ></a></span></div>
+                    <div><span class="hint--top hint--rounded" aria-label="youtube"><a href="https://www.youtube.com/c/FreshworksInc" class="fa fa-youtube" aria-label="footer social media links" ></a></span></div>
+                    <div><span class="hint--top hint--rounded" aria-label="instagram"><a href="https://www.instagram.com/freaky__ajmal/" class="fa fa-instagram" aria-label="footer social media links" ></a></span></div>
                   </div>
       
                 <div class="newsletter">
-                  <input class="footeremail" type="email" name="email" placeholder="Type your E-mail Here"/>
-                  <button class="submitbtn">
+                  <span class="hint--left hint--rounded" aria-label="User Email"><input class="footeremail" type="email" name="email" placeholder="Type your E-mail Here"/></span>
+                  <span class="hint--right hint--rounded" aria-label="Submit"><button class="submitbtn">
                     Submit
-                  </button>
+                  </button></span>
                 </div>
       
       

@@ -415,6 +415,7 @@ searchbar.addEventListener("input", () => {
   }
 });
 
+
 //search query for all courses end
 
 // user profile show from user register-login

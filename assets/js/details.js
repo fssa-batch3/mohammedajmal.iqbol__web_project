@@ -222,7 +222,7 @@ console.log(titles);
      <a href="#offered-by" class="link1">Offered By</a>
      <a href="#videos" class="link1">Videos</a>
      <a href="#comment" class="link1">Comments</a>
-     <a href="#" class="link1">Contact</a>
+     <a href="contact.html" class="link1">Contact</a>
     </div>
 
 

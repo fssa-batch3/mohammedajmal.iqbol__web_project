@@ -55,14 +55,14 @@
     <div class="hero-letters">
         <div class="contact-form">
             <span class="heading">Contact Us</span>
-            <form action="../pages/contactForm.php" method="post">
+            <form id="submit">
               <label for="name">Name:</label>
               <input type="text" required="">
               <label for="email">Email:</label>
               <input type="email" id="email" name="email" required="">
               <label for="message">Message:</label>
               <textarea id="message" name="message" required=""></textarea>
-              <button type="submit">Submit</button>
+              <button type="submit" id="sub" >Submit</button>
             </form>
           </div>
           
@@ -90,6 +90,34 @@
       }
     }
     </script>
+
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script>
+
+
+  let email = document.getElementById("email").value;
+  console.log(email);
+let submit =document.getElementById("submit")
+submit.addEventListener("submit", function (e)
+ {  e.preventDefault();
+    Email.send({
+      SecureToken: "1530a466-611d-443c-bacf-1ea702201285",
+      Host: "smtp.elasticemail.com",
+      Username: "freekyajmal@gmail.com",
+      Password: "58CE22F6AE1985ADE3DAA2206C549E191988",
+      To: "jayaprakashj2004930@gmail.com",
+      From:"freekyajmal@gmail.com",
+      Subject: "Contact Email",
+      Body: "<html><h2>Hello User</h2><strong>Thank You for Contacting Us</strong><br></br><em>Please Specify the Issue Below</em></html>",
+    }).then(
+      message => alert("We Will Contact You Soon Thank You...!!!")
+    );
+  });
+
+
+
+
+  </script>
 
     </body>
     </html>

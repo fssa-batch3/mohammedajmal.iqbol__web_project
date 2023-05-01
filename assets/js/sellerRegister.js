@@ -81,8 +81,9 @@ form.addEventListener("submit", event => {
 
   console.log(register);
 
- alert("Seller Registration Successful");
- window.location.href = "../pages/sellerLogin.html";
+  alert("Please Verify Email \n You have to check the OTP One time Password Sent to You By Us and enter the recieved OTP to Verify Your Account");
+  window.location.href = "emailverifyseller.html?email=" + email;
+ 
 
  }
 

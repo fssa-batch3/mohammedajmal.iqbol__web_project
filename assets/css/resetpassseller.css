@@ -1,0 +1,133 @@
+.form {
+    width: 450px;
+    height: 510px;
+    margin-left: 450px;
+    margin-top: 190px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    transition: .4s ease-in-out;
+    font-family: sans-serif;
+  }
+  body {
+    background-color:whitesmoke;
+  }
+  
+  .form:hover {
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+    scale: 0.99;
+  }
+  .link {
+    color: #0026C2;
+  }
+  .heading {
+    position: relative;
+    text-align: center;
+    color: black;
+    top: 3em;
+    font-weight: bold;
+  }
+  
+  .heading1 {
+    position: relative;
+    text-align: center;
+    color: black;
+    top: 3em;
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: 300;
+  }
+
+  .check {
+    position: relative;
+    align-self: center;
+    top: 4em;
+  }
+  
+  .input {
+    position: relative;
+    width: 21.5em;
+    height: 2.5em;
+    margin: 1em;
+    margin-left: 50px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    background-color: rgb(235, 235, 235);
+    box-shadow: inset 3px 3px 6px #d1d1d1,
+              inset -3px -3px 6px #ffffff;
+    top: 6.5em;
+    left: 1.5em;
+    padding-left: 15px;
+    transition: .4s ease-in-out;
+  }
+  
+  .input:hover {
+    box-shadow: inset 0px 0px 0px #d1d1d1,
+              inset 0px 0px 0px #ffffff;
+    background-color: lightgrey;
+  }
+  
+  .input:focus {
+    box-shadow: inset 0px 0px 0px #d1d1d1,
+              inset 0px 0px 0px #ffffff;
+    background-color: lightgrey;
+  }
+  
+  .btn1 {
+    position: relative;
+    top: 8.5em;
+    left: 2.8em;
+    width: 23em;
+    height: 3em;
+    margin-left: 30px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    transition: .4s ease-in-out;
+    box-shadow: 1px 1px 3px #b5b5b5,
+               -1px -1px 3px #ffffff;
+  }
+  
+  .btn1:active {
+    box-shadow: inset 3px 3px 6px #b5b5b5,
+              inset -3px -3px 6px #ffffff;
+  }
+  
+  .btn2 {
+    position: relative;
+    top: 9.5em;
+    display: none;
+    left: 2.8em;
+    width: 23em;
+    height: 3em;
+    margin-left: 30px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    transition: .4s ease-in-out;
+    box-shadow: 1px 1px 3px #b5b5b5,
+               -1px -1px 3px #ffffff;
+  }
+
+  .btn3{
+    position: relative;
+    top: 10.5em;
+    left: 2.8em;
+    width: 23em;
+    height: 3em;
+    margin-left: 30px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    transition: .4s ease-in-out;
+    box-shadow: 1px 1px 3px #b5b5b5,
+               -1px -1px 3px #ffffff;
+  }
+  
+  .btn2:active ,.btn3:active{
+    box-shadow: inset 3px 3px 6px #b5b5b5,
+              inset -3px -3px 6px #ffffff;
+  }

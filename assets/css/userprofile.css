@@ -23,10 +23,14 @@
     margin-top: 100px;
   }
   .edit , .delete {
-    padding:5px;
+    padding:10px;
     width:100px;
+    border: none;
+    border-radius: 10px;
+    background-color: dodgerblue;
+    color: white;
   }
-  .edit:hover ,.delete:hover {
+  .edit:hover ,.delete:hover ,.delUserProfile:hover {
     transform: scale(1.05);
   }
  .img-circle {
@@ -50,6 +54,15 @@
 }
 .delUserProfile {
   margin-left: 40%;
+  padding: 10px;
   position: absolute;
-  top:600px;
+  top:685px;
+  left: -140px;
+  border: none;
+  border-radius: 10px;
+  background-color: dodgerblue;
+  color: white;
+}
+.container , .body {
+  background-color: #87CEFA;
 }
