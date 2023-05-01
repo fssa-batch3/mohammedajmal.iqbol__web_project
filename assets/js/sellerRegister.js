@@ -3,7 +3,7 @@
 //seller register page js code start
 
 
-let form = document.getElementById("form");
+let form = document.getElementById("forms");
 form.addEventListener("submit", event => {
   event.preventDefault();
 
@@ -11,15 +11,17 @@ form.addEventListener("submit", event => {
   try {
 
   let seller_register_arr = [];
-  let sellingCourses_arr = [];
+
 
   if(localStorage.getItem("seller_register_arr") !== null ){
       seller_register_arr = JSON.parse(localStorage.getItem("seller_register_arr"));
   }
 
+  let sellingCourses_arr = [];
+
   let name = document.getElementById("name").value;
   let age = document.getElementById("age").value;
-  let gender = document.getElementById("gender").value;
+  let gender = document.getElementById("select").value;
   let mobile_number = document.getElementById("mobile-number").value;
   let about_me = document.getElementById("about-me").value;
   let date_of_birth = document.getElementById("date-of-birth").value;
@@ -27,8 +29,19 @@ form.addEventListener("submit", event => {
   let password = document.getElementById("password").value;
   let confirm_password = document.getElementById("confirm-password").value;
   let sellingCourses = sellingCourses_arr;
-
-
+  let seller_id = Date.now();
+  
+  console.log(name);
+  console.log(age);
+  console.log(gender);
+  console.log(mobile_number);
+  console.log(about_me);
+  console.log(date_of_birth);
+  console.log(email);
+  console.log(password);
+  console.log(confirm_password);
+  console.log(sellingCourses);
+  console.log(seller_id);
  
 
  let match = false;
@@ -54,22 +67,22 @@ form.addEventListener("submit", event => {
 
   if( password != confirm_password ){
        alert("password not match try again");
-       window.location.href="sellerRegister.html";
+      //  window.location.href="sellerRegister.html";
        
   }  else if(age.length > 3) {
 
     alert("age must contains less than three");
-    location.reload();
+    // location.reload();
 
   } else if(mobilenumber.length > 11) {
 
     alert("mobile number must contains 10 numbers");
-    location.reload();
+    // location.reload();
 
   } else {
 
   let register_obj = {
-    name,age,gender,mobile_number,about_me,date_of_birth,email,password,confirm_password, profile_pic : `https://ui-avatars.com/api/?name=${name}`,sellingCourses
+    name,age,gender,mobile_number,about_me,date_of_birth,email,password,confirm_password, profile_pic : `https://ui-avatars.com/api/?name=${name}`,sellingCourses,seller_id
   };
 
   seller_register_arr.push(register_obj);
@@ -93,7 +106,7 @@ form.addEventListener("submit", event => {
    //catch statement
 }  catch (error) {
 
-  console.log("Error" + error);
+  console.error("Error" + error);
 
 }
  
