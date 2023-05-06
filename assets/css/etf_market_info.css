@@ -106,20 +106,6 @@ body {
     position: relative;
     display: inline-block;
   }
-  
-
-
-
-  .dropdown-content-lang a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    font-family: sans-serif;
-    width:150px;
-    border-radius: 30px;
-    font-size: 20px;
-  }
   .dropdown-content-lang a:hover {background-color: #ddd;}
   
   

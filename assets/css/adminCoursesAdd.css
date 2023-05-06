@@ -490,10 +490,6 @@ nav {
     padding: 15px;
     border-radius: 5px;
   }
-
-  .dropdown-content-lang {
-    overflow: hidden;
-  }
   .flexcost {
     display: flex;
     margin-left: 10px;

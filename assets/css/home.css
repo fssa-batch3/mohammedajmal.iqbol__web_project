@@ -925,35 +925,12 @@ hr {
   margin: 0;
 }
 
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  float: none;
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-
 .topnav a:hover, .dropdown:hover .dropbtn {
   background-color: white;
   color: dodgerblue;
 }
 
-.dropdown-content a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-.dropdown:hover .dropdown-content {
+.dropdown:hover {
   display: block;
   top:100;
   
@@ -961,9 +938,6 @@ hr {
 
 @media screen and (max-width: 600px) {
 
-  body {
-    overflow-x: hidden;
-  }
 
   .topnav {
     width: 390px;
@@ -1015,7 +989,7 @@ hr {
     bottom: 90px;
   }
   .topnav.responsive .dropdown {float: none;}
-  .topnav.responsive .dropdown-content {position: relative; }
+  .topnav.responsive {position: relative; }
   .topnav.responsive .dropdown .dropbtn {
     display: block;
     width: 100%;
@@ -1030,15 +1004,6 @@ hr {
 
     
 
-    body {
-      padding: 0px;
-      margin: 0px;
-      /* background-color: pink; */
-      background-color: #F6F8FC;
-      height: 3000px;
-      width: 390px;
-      overflow-x:hidden ;
-  }
   nav {
       width:390px;
       height:70px;
@@ -1069,10 +1034,6 @@ hr {
   .search::placeholder {
       font-size: 17px;
       opacity: 0.7;
-  }
-  .navbar {
-      display: flex;
-      flex-wrap: wrap;
   }
   .notificationimg {
       width:30px;
@@ -1229,10 +1190,6 @@ hr {
         padding-bottom: 10px;
         position: relative;
         bottom:80px;
-    }
-    .herobtnimgflex {
-      display: flex;
-      flex-wrap: wrap;
     }
     .heropara {
         color: black;
@@ -1572,10 +1529,6 @@ hr {
         margin-top: 35%;
     }
     
-    .customerreviewsdiv2 {
-        margin-top: 30%;
-        margin-right: 70px;
-    }
     .customerreviewsdiv1,
     .customerreviewsdiv3,
     .customerreviewsdiv4,

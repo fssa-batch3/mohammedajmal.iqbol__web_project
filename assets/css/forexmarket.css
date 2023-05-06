@@ -91,6 +91,7 @@ body {
   background-color: var(--bs-body-bg);
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  overflow-x: hidden;
 }
 
 hr {
@@ -3391,16 +3392,6 @@ textarea.form-control-lg {
   margin-top: 0;
   margin-left: var(--bs-dropdown-spacer);
 }
-.dropend .dropdown-toggle::after {
-  display: inline-block;
-  margin-left: 0.255em;
-  vertical-align: 0.255em;
-  content: "";
-  border-top: 0.3em solid transparent;
-  border-right: 0;
-  border-bottom: 0.3em solid transparent;
-  border-left: 0.3em solid;
-}
 .dropend .dropdown-toggle:empty::after {
   margin-left: 0;
 }
@@ -3416,22 +3407,7 @@ textarea.form-control-lg {
   margin-right: var(--bs-dropdown-spacer);
 }
 .dropstart .dropdown-toggle::after {
-  display: inline-block;
-  margin-left: 0.255em;
-  vertical-align: 0.255em;
-  content: "";
-}
-.dropstart .dropdown-toggle::after {
   display: none;
-}
-.dropstart .dropdown-toggle::before {
-  display: inline-block;
-  margin-right: 0.255em;
-  vertical-align: 0.255em;
-  content: "";
-  border-top: 0.3em solid transparent;
-  border-right: 0.3em solid;
-  border-bottom: 0.3em solid transparent;
 }
 .dropstart .dropdown-toggle:empty::after {
   margin-left: 0;
@@ -5788,11 +5764,6 @@ textarea.form-control-lg {
   padding: var(--bs-popover-body-padding-y) var(--bs-popover-body-padding-x);
   color: var(--bs-popover-body-color);
 }
-
-.carousel {
-  position: relative;
-}
-
 .carousel.pointer-event {
   touch-action: pan-y;
 }
@@ -7352,10 +7323,6 @@ textarea.form-control-lg {
 
 .flex-grow-1 {
   flex-grow: 1 !important;
-}
-
-.flex-shrink-0 {
-  flex-shrink: 0 !important;
 }
 
 .flex-shrink-1 {
@@ -10830,8 +10797,7 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-html,
-body {
+html {
   height: 100%;
 }
 
@@ -11230,140 +11196,11 @@ body {
   font-size: 0.75rem;
   border-radius: 0.375rem !important;
 }
-
-
-
-.notifications-container {
-  width: 380px;
-  height: auto;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.flex {
-  display: flex;
-}
-
-.flex-shrink-0 {
-  flex-shrink: 0;
-}
-
-.success {
-  padding: 1rem;
-  border-radius: 0.375rem;
-  background-color: rgb(240 253 244);
-}
-
-.succes-svg {
-  color: rgb(74 222 128);
-  width: 1.25rem;
-  height: 1.25rem;
-}
-
-.success-prompt-wrap {
-  margin-left: 0.75rem;
-}
-
-.success-prompt-heading {
-  font-weight: bold;
-  color: rgb(22 101 52);
-}
-
-.success-prompt-prompt {
-  margin-top: 0.5rem;
-  color: rgb(21 128 61);
-}
-
-.success-button-container {
-  display: flex;
-  margin-top: 0.875rem;
-  margin-bottom: -0.375rem;
-  margin-left: -0.5rem;
-  margin-right: -0.5rem;
-}
-
-.success-button-main {
-  padding-top: 0.375rem;
-  padding-bottom: 0.375rem;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-  background-color: #ECFDF5;
-  color: rgb(22 101 52);
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  font-weight: bold;
-  border-radius: 0.375rem;
-  border: none
-}
-
-.success-button-main:hover {
-  background-color: #D1FAE5;
-}
-
-.success-button-secondary {
-  padding-top: 0.375rem;
-  padding-bottom: 0.375rem;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-  margin-left: 0.75rem;
-  background-color: #ECFDF5;
-  color: #065F46;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  border-radius: 0.375rem;
-  border: none;
-}
-
-#rowchart {
-  margin-top: 50px;
-}
 #active-tab {
  background-color: dodgerblue;
 }
 #navbar-brand {
   padding: 15px;
-}
-
-
-
-#rowchart {
-  margin-top: 50px;
-}
-
-#navh1 {
-    padding: 15px;
-}
-#toggleburger {
-    color: black;
-}
-#first-card,#second-card,#third-card {
-    margin-left: 15px;
-}
-#last-card {
-    margin-left: 15px;
-}
-#first-card {
-    background-color: #E9FCD4;
-    border-radius: 30px;
-}
-#second-card {
-    background-color: #D0F2FF;
-    border-radius: 30px;
-}
-#third-card {
-    background-color: #FFE7D9;
-    border-radius: 30px;
-}
-#last-card {
-    background-color: #FFF7CD;
-    border-radius: 30px;
-}
-#oanda_ecc {
- border-radius: 0px;
- width: 1500px;
 }
 .logo-title {
   display: flex;
@@ -11385,9 +11222,6 @@ body {
   margin-top:-100px;
   margin-left:30px;
   font-size: 15px;
-}
-body {
-  overflow-x: hidden;
 }
 #first-icon {
  border-radius: 50%;
@@ -11755,9 +11589,6 @@ input:checked + .slide-container .nav label { display: block; }
       color: black;
   }
   #first-card,#second-card,#third-card {
-      margin-left: 15px;
-  }
-  #last-card {
       margin-left: 15px;
   }
   #first-card {

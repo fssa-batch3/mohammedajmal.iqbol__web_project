@@ -43,12 +43,6 @@ hr {
     padding: 20px;
     background-color: white;
 }
-.user-profile {
-    width:40px;
-    height:40px;
-    margin-top: 10px;
-    margin-left: 50px;
-}
 
   .blinking {
     animation: 1.7s blink ease infinite;
@@ -285,17 +279,6 @@ textarea {
   background-color: inherit;
   font-family: inherit;
   margin: 0;
-}
-
-
-
-.dropdown-content a {
-  float: none;
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
 }
 
 .topnav a:hover, .dropdown:hover .dropbtn {
@@ -601,7 +584,7 @@ hr {
 
 .contact-form .heading {
   font-size: 24px;
-  color: black;;
+  color: black;
   margin-bottom: 12px;
   font-weight: bold;
   display: block;
