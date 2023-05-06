@@ -43,12 +43,6 @@ nav {
     margin-top: 19px;
     margin-left: 40px;
 }
-#user-profile {
-    width:40px;
-    height:40px;
-    margin-top: 10px;
-    margin-left: 50px;
-}
 /*tabs start*/
 /* Style the tab */
 .tab {
@@ -94,82 +88,6 @@ nav {
   }
   /*tabs end*/
 
- 
-  .user-profile {
-    /* background-color: ; */
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-  }
-  
-  .dropdown {
-    position: relative;
-    display: inline-block;
-  }
-  
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    margin-left: -110px;
-  }
-  
-  .dropdown-content-lang {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    margin-left: -50px;
-    overflow-y: scroll;
-    height:400px;
-  }
-
-  .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    font-family: sans-serif;
-    width:250px;
-    border-radius: 30px;
-    font-size: 20px;
-  }
-  .dropdown-content-lang a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    font-family: sans-serif;
-    width:150px;
-    border-radius: 30px;
-    font-size: 20px;
-  }
-  .dropdown-content a:hover {background-color: #ddd;}
-  .dropdown-content-lang a:hover {background-color: #ddd;}
-
-  .dropdown-content-lang a:hover {background-color: #ddd;}
-  .dropdown-content-lang a:hover {background-color: #ddd;}
-
-.dropdown:hover .dropdown-content {display: block;}
-.dropdown:hover .dropdown-content-lang {display: block;}
-
-.dropdown:hover .user-profile {background-color: #3e8e41;}
-
-
-.user-dropdown {
-    width:25px;
-    height:25px;
-    position: relative;
-    top: 5px;
-}
 .live-marquee-heading {
     font-family: sans-serif;
     font-size: 15px;
@@ -623,10 +541,7 @@ overflow-y: scroll;
 .comment-img {
   display: flex;
 }
-#user-profile {
-  border-radius: 50%;
-  margin-top: 10px;
-}
+
 .course-links {
   text-decoration: none;
   color: black;
@@ -853,14 +768,6 @@ overflow-y: scroll;
   width:180px;
 }
 
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  font-family: 'Poppins',sans-serif;
-  width:180px;
-}
 
 .dropdown-content a:hover,.dropdown-content-notification a:hover {background-color: white; color:dodgerblue;}
 
@@ -876,56 +783,8 @@ overflow-y: scroll;
   display: inline-block;
   }
   
-  .dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: white;
-  min-width: 160px;
-  /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-  margin-left: -110px;
-  }
-  
-  .dropdown-content-lang {
-  display: none;
-  position: absolute;
-  background-color: white;
-  width: 150px;
-  /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-  margin-left: -50px;
-  height:375px;
-  }
-  .dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  font-family: sans-serif;
-  width:180px;
-  border-radius: 30px;
-  font-size: 20px;
-  }
-  .dropdown-content-lang a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  font-family: sans-serif;
-  width:150px;
-  border-radius: 30px;
-  font-size: 20px;
-  }
-  .dropdown-content a:hover {background-color: white;}
-  .dropdown-content-lang a:hover {background-color: white;}
-  
-  .dropdown-content-lang a:hover {background-color: white;}
-  .dropdown-content-lang a:hover {background-color: white;}
-  
-  .dropdown1:hover .dropdown-content {display: block;}
-  .dropdown1:hover .dropdown-content-lang {display: block;}
+
+
   
   /* .dropdown1:hover .user-profile {background-color: #3e8e41;} */
   
@@ -999,9 +858,6 @@ overflow-y: scroll;
     font-size: 20px;
   }
   .dropdown-content a:hover {background-color: #ddd;}
-  .dropdown-content-lang a:hover {background-color: #ddd;}
-
-  .dropdown-content-lang a:hover {background-color: #ddd;}
   .dropdown-content-lang a:hover {background-color: #ddd;}
 
 .dropdown:hover .dropdown-content {display: block;}

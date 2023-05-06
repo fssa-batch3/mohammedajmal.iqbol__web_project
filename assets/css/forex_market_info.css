@@ -40,13 +40,6 @@ body {
     margin-top: 19px;
     margin-left: 40px;
   }
-  #user-profile {
-    width:40px;
-    height:40px;
-    margin-top: 10px;
-    margin-left: 50px;
-  }
-  
   
   /* tabs start */
   
@@ -118,26 +111,14 @@ body {
     border-radius: 50%;
     margin-top: 30px;
   }
-  #user-profile {
-    border-radius: 50%;
-    margin-top: 13px;
-  }
+
   
   .dropdown {
     position: relative;
     display: inline-block;
   }
   
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    margin-left: -110px;
-  }
+
   
   .dropdown-content-lang {
     display: none;
@@ -173,12 +154,8 @@ body {
     font-size: 20px;
   }
   .dropdown-content a:hover {background-color: #ddd;}
-  .dropdown-content-lang a:hover {background-color: #ddd;}
+
   
-  .dropdown-content-lang a:hover {background-color: #ddd;}
-  .dropdown-content-lang a:hover {background-color: #ddd;}
-  
-  .dropdown:hover .dropdown-content {display: block;}
   .dropdown:hover .dropdown-content-lang {display: block;}
   
   .dropdown:hover .user-profile {background-color: #3e8e41;}
@@ -252,25 +229,6 @@ body {
 
 
 
-
-  
-
-
-
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: white;
-  min-width: 160px;
-  box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-  padding: 10px;
-  width:210px;
-  font-family: 'Poppins', sans-serif;
-
-}
-
 .dropdown-content-notification {
   display: none;
   position: absolute;
@@ -316,14 +274,6 @@ body {
 .dropdown:hover .dropdown-content ,.dropdown1:hover .dropdown-content , .dropdown:hover .dropdown-content-notification  {display: block; }
 
 .dropdown:hover .dropbtn  ,.dropdown1:hover .dropbtn {background-color: white; }
-
-#user-profile {
-  margin-left: 30px;
-  margin-top: 10px;
-  width:38px;
-  height:38px;
-  border-radius: 50%;
-}
 
 #notification-img {
   margin-left: 3%;
@@ -397,9 +347,7 @@ border-radius: 30px;
 font-size: 20px;
 }
 .dropdown-content a:hover {background-color: white;}
-.dropdown-content-lang a:hover {background-color: white;}
 
-.dropdown-content-lang a:hover {background-color: white;}
 .dropdown-content-lang a:hover {background-color: white;}
 
 .dropdown1:hover .dropdown-content {display: block; overflow: hidden;}

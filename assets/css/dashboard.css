@@ -79,9 +79,6 @@ body {
   .side-bar-content {
       margin-top: 50px;
   }
-  #help-support {
-      margin-top: 5px;
-  }
   .help-support-hr {
     margin-top: 30px;
     width:250px;
@@ -214,15 +211,6 @@ padding:8px;
     position: relative;
     top:50px;
 }
-.maindata {
-    width: 100%;
-    height:500px;
-    background-color: #e8eff9;
-    color: black;
-    z-index:10;  
-    margin-top: 80px;
-    font-family: 'Poppins', sans-serif;
-}
 .coin-div {
     width:200px;
     height:300px;
@@ -289,10 +277,6 @@ padding:8px;
     height:1000px;
     margin-left: 50px;
     font-family: 'Poppins', sans-serif;
-}
-.recent-watchlist-h1 {
-    margin-left: 250px;
-    font-size: 25px;
 }
 .coin-div-recent-watchlist {
     width:1170px;
