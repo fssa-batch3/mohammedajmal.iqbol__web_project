@@ -18,8 +18,12 @@ event.preventDefault();
 
 
 
-
-getData();
+try{
+const data = getData();
+return data;
+} catch (err){
+  console.error(err);
+}
 
 });
 

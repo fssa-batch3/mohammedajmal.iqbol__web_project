@@ -19,11 +19,6 @@
     font-size: 22px;
     text-align: center;
 }
-#emailinput {
-    margin-top: 50px;
-    margin-left: 40px;
-    width:450px;
-}
 input[type=email]:invalid,input[type=password]:invalid,input[type=text]:invalid {
    border-color: red; 
 }

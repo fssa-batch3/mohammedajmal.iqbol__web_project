@@ -23,17 +23,6 @@
   .panel-title {
     margin-top: 100px;
   }
-  .delUserProfile {
-    margin-left: 40%;
-    padding: 10px;
-    position: absolute;
-    top:685px;
-    left: -140px;
-    border: none;
-    border-radius: 10px;
-    background-color: dodgerblue;
-    color: white;
-  }
   .container , .body {
     background-color: #87CEFA;
   }

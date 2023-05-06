@@ -909,11 +909,6 @@ hr {
   display: none;
 }
 
-.dropdown {
-  float: left;
-  overflow: hidden;
-}
-
 .dropdown .dropbtn {
   font-size: 17px;    
   border: none;
@@ -954,7 +949,6 @@ hr {
 }
 
 @media screen and (max-width: 600px) {
-  .topnav.responsive {position: relative; width: 390px; }
   .topnav.responsive .icon {
     position: relative;
     left: 70px;
