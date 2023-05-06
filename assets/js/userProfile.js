@@ -167,7 +167,7 @@ done.addEventListener("click", (event) => {
     let proflink = profile_pic.includes("https://");
     console.log(proflink);
 
-    if (proflink === true ) {
+    if (proflink === true) {
       //assign data
       let assign_data = Object.assign(get_obj, new_obj);
       console.log(assign_data);
@@ -200,35 +200,32 @@ deleteUserProfile.addEventListener("click", (event) => {
 
   //try statement start
   try {
-    
     let register = JSON.parse(localStorage.getItem("register_arr"));
 
-  console.log(get_obj["name"]);
-  let new_obj = {
-    profile_pic: `https://ui-avatars.com/api/?name=${get_obj["name"]}`,
-  };
+    console.log(get_obj["name"]);
+    let new_obj = {
+      profile_pic: `https://ui-avatars.com/api/?name=${get_obj["name"]}`,
+    };
 
-  console.log("hi");
+    console.log("hi");
 
-  //assign data
-  let assign_data = Object.assign(get_obj, new_obj);
-  console.log(assign_data);
+    //assign data
+    let assign_data = Object.assign(get_obj, new_obj);
+    console.log(assign_data);
 
-  let index = register_arr.indexOf(get_obj);
-  console.log(index);
+    let index = register_arr.indexOf(get_obj);
+    console.log(index);
 
-  register_arr[index] = assign_data;
+    register_arr[index] = assign_data;
 
-  localStorage.setItem("register_arr", JSON.stringify(register_arr));
-  alert("your changes have been changed");
-  location.reload();
+    localStorage.setItem("register_arr", JSON.stringify(register_arr));
+    alert("your changes have been changed");
+    location.reload();
 
-  //catch catches the error
-} catch (error) {
-
- console.log("Error" + error );
-
-}
+    //catch catches the error
+  } catch (error) {
+    console.log("Error" + error);
+  }
 });
 
 //delete user
@@ -240,27 +237,23 @@ clear.addEventListener("click", (event) => {
 
   //try statement works when code runs perfectly
   try {
+    let index = register_arr.indexOf(get_obj);
+    //  console.log(index);
+    //  let index1 = login.indexOf(get_obj);
+    let msg = confirm("are you sure you want to delete");
+    if (msg != true) {
+      return false;
+    } else {
+      register_arr.splice(index, 1);
+      //  login.splice(index1,1);
+      localStorage.setItem("register_arr", JSON.stringify(register_arr));
+      window.location.href = "register.html";
+    }
 
-  let index = register_arr.indexOf(get_obj);
-  //  console.log(index);
-  //  let index1 = login.indexOf(get_obj);
-  let msg = confirm("are you sure you want to delete");
-  if (msg != true) {
-    return false;
-  } else {
-    register_arr.splice(index, 1);
-    //  login.splice(index1,1);
-    localStorage.setItem("register_arr", JSON.stringify(register_arr));
-    window.location.href = "register.html";
+    ///catch catches the error
+  } catch (error) {
+    console.log("Error" + error);
   }
-
-  ///catch catches the error
-}  catch (error) {
-
-   console.log("Error" + error );
-
-}
-
 });
 
 //userprofile page js code end

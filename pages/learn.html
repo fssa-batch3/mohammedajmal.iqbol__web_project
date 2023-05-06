@@ -376,7 +376,8 @@ user_profile.setAttribute("src", get_obj["profile_pic"]);
 document.querySelector("#dropuser").prepend(user_profile);
 
 function googleTranslateElementInit() {
-  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+  const translateElement = new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+  return translateElement;
 }
 
 

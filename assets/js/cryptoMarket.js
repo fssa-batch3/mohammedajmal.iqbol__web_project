@@ -1,5 +1,6 @@
 //crypto market page js code start
 
+//headers and options i get from rapidapi
 const options = {
   method: "GET",
   headers: {
@@ -8,8 +9,7 @@ const options = {
   },
 };
 
-//try statement
-try {
+//fetch api get response
   fetch(
     "https://coinranking1.p.rapidapi.com/coins?referenceCurrencyUuid=yhjMzLPhuIDl&timePeriod=24h&tiers%5B0%5D=1&orderBy=marketCap&orderDirection=desc&limit=50&offset=0",
     options
@@ -47,11 +47,9 @@ try {
         document.querySelector("#rowdiv").append(rowdiv);
       }
     })
+    //catch statement
     .catch((err) => console.error(err));
 
-  //catch statement
-} catch (error) {
-  console.log("Error" + error);
-}
+
 
 //crypto market page js code end

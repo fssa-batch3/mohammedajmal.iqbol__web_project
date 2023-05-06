@@ -25,7 +25,7 @@
             <img class="nav-logo" src="../assets/images/Screenshot 2023-02-11 021952.png" alt="">
            
             <div class="navlinks">
-                <a href="./about.html" class="navlink">About</a>&emsp;
+                <a href="./userabout.html" class="navlink">About</a>&emsp;
                 <!-- <a href="#" class="navlink">Market</a> -->
                 <div class="dropdown">
                     <a class="dropbtn" href="marketdata.html">Market</a>
@@ -40,7 +40,7 @@
                 <!-- <a href="#" class="navlink">Learn</a> -->
                 <div class="dropdown">
                     <a class="dropbtn" href="learn.html">Learn</a>
-                    <a href="./contact.html" class="navlink" id="contact">Contact</a>
+                    <a href="./userContact.html" class="navlink" id="contact">Contact</a>
 
                   </div>
 
@@ -152,7 +152,11 @@
           <div class="herobtnimgflex">
             <form action="learn.html">
               <button class="herobtn1">Explore free Trading Courses</button></form>
-          <img  class="peopleimg" src="../assets/images/team.png" alt=""><span class="herouserpara"><marquee  scrollamount="2">500 members joined us <br> in the past 7-days.</marquee></span>
+          <img  class="peopleimg" src="../assets/images/team.png" alt=""><div class="herouserpara">
+            <span class="marquee">
+              500 members joined us <br> in the past 7-days.
+            </span>
+          </div>
       </div>
       
       
@@ -650,7 +654,8 @@
 
 
 function googleTranslateElementInit() {
-  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+  const translateElement = new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+  return translateElement;
 }
 
 </script>

@@ -3,7 +3,9 @@
 //api call new
 
 const options = {
+  //method GET 
   method: "GET",
+  //headers from rapidAPI 
   headers: {
     "X-RapidAPI-Key": "0dbd38fc8dmsh7004146a64a1761p17226ejsnceab381ff0ef",
     "X-RapidAPI-Host": "currency-conversion-and-exchange-rates.p.rapidapi.com",
@@ -11,13 +13,14 @@ const options = {
 };
 
 //try statement
-try {
   let x;
   let y;
+  //fetch method request
   fetch(
     "https://currency-conversion-and-exchange-rates.p.rapidapi.com/latest?from=USD&to=EUR%2CGBP",
     options
   )
+     //.then rewsponse get from api
     .then((response) => response.json())
     .then((response) => {
       console.log(response);
@@ -28,7 +31,7 @@ try {
 
       console.log(y);
 
-      //card create
+      //card create from api call
       for (let i = 0; i < 150; i++) {
         let values = Object.keys(y)[i];
 
@@ -49,12 +52,9 @@ try {
         document.querySelector("#rowcardsdiv").append(rowdiv);
       }
     })
+    //catch statement
     .catch((err) => console.error(err));
 
-  //catch statement
-} catch (error) {
-  console.log("Error" + error);
-}
 
 //search query for search bar code start
 let searchbar = document.getElementById("searchbar");

@@ -23,9 +23,27 @@
   .panel-title {
     margin-top: 100px;
   }
+  .delUserProfile {
+    margin-left: 40%;
+    padding: 10px;
+    position: absolute;
+    top:685px;
+    left: -140px;
+    border: none;
+    border-radius: 10px;
+    background-color: dodgerblue;
+    color: white;
+  }
+  .container , .body {
+    background-color: #87CEFA;
+  }
   .edit , .delete {
-    padding:5px;
+    padding:10px;
     width:100px;
+    border: none;
+    border-radius: 10px;
+    background-color: dodgerblue;
+    color: white;
   }
   .edit:hover ,.delete:hover {
     transform: scale(1.05);
@@ -52,5 +70,5 @@
 .delUserProfile {
   margin-left: 45%;
   position: absolute;
-  top:600px;
+  top:695px;
 }

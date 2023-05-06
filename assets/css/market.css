@@ -455,8 +455,13 @@ nav {
 #notification-img {
   margin-left: 3%;
 }
-
-
+.stock-flex {
+  display: flex;
+}
+.breadcrumb {
+  margin-top: 35px;
+  margin-left: 25px;
+}
 .user-profile {
 /* background-color: ; */
 color: white;

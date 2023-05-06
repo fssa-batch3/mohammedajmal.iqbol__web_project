@@ -300,7 +300,8 @@ function homeon() {
 
          
 function googleTranslateElementInit() {
-  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+  const translateElement = new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+  return translateElement;
 }
 
 

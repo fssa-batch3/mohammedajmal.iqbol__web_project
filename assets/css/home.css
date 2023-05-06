@@ -37,6 +37,9 @@ hr {
     font-size: 17px;
     opacity: 0.7;
 }
+.login1 {
+  width: 200px;
+}
 .navbar {
     display: flex;
     flex-wrap: wrap;
@@ -86,7 +89,7 @@ hr {
     margin-left: 10px;
   }
   .login {
-    margin-left: 300px;
+    margin-left:150px;
     margin-top: 20px;
     padding: 5px;
     width:80px;
@@ -106,7 +109,7 @@ hr {
   }
   .registration {
     margin-top: 20px;
-    margin-left: 0px;
+    margin-left: 50px;
     padding:5px;
     width:150px;
     height:35px;
@@ -191,6 +194,33 @@ hr {
     left:70px;
     text-align: start;
     opacity: 0.7;
+    width: 300px;
+    overflow: hidden;
+    animation: marquee 20s linear infinite;
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(50%);
+    }
+    50% {
+      transform: translateX(35%);
+    }
+    20% {
+      transform: translateX(10%);
+    }
+    100% {
+      transform: translateX(-5%);
+    }
+    90% {
+      transform: translateX(0%);
+    }
+    50% {
+      transform: translateX(35%);
+    }
+    100% {
+      transform: translateX(50%);
+    }
   }
   .tradingview-widget-container {
     margin-top: 160px;
@@ -1078,6 +1108,7 @@ hr {
     }
     .navlink {
       margin-left: 30px;
+      width: 500px;
       text-decoration: none;
       color:black;
       font-family: sans-serif;

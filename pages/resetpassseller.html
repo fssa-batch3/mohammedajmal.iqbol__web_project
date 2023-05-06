@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Email Verify OTP | User</title>
     <link rel="stylesheet" href="../assets/css/resetpassseller.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("xJczW25BwYvEu6S51");
+        })();
+        </script>
 </head>
 <body>
     
@@ -70,38 +76,46 @@ submit.addEventListener("click", function (e){
 
  let body = `
 
-    <h1>Your One-Time Password (OTP) for Account Verification</h1>
-    <p>Dear [${email}],</p>
-    <p>Thank you for signing up for an account on freshstocks. To complete your account registration, please use the following One-Time Password (OTP) to verify your account:</p>
-    <p>Please Use this OTP to Verify   <strong>[${otpforuser}]</strong></p>
-    <p>Please note that this OTP is valid for 5 minutes only. If you do not use it within this time frame, you will need to request a new OTP.</p>
-    <p>To enter the OTP, please follow these steps:</p>
-    <ol>
-      <li>Go to the registration page on our website.</li>
-      <li>Enter your email address and password.</li>
-      <li>When prompted for the OTP, enter the code provided above.</li>
-      <li>Click "Verify" to complete your account registration.</li>
-    </ol>
-    <p>If you have any questions or concerns, please do not hesitate to contact us at ${'freekyajmal@gmail.com'}.</p>
-    <p>Thank you for choosing freshstocks.</p>
-    <p>Best regards,</p>
-    <p>Mohammed Ajmal Admin<br>freshstocks</p>
+ Dear [${email}],
 
+Thank you for signing up for an account on freshstocks. To complete your account registration, please use the following One-Time Password (OTP) to verify your account:
+
+Please Use this OTP to Verify [${otpforuser}]
+
+Please note that this OTP is valid for 5 minutes only. If you do not use it within this time frame, you will need to request a new OTP.
+
+To enter the OTP, please follow these steps:
+
+Go to the registration page on our website.
+Enter your email address and password.
+When prompted for the OTP, enter the code provided above.
+Click "Verify" to complete your account registration.
+If you have any questions or concerns, please do not hesitate to contact us at ${'freekyajmal@gmail.com'}.
+
+Thank you for choosing freshstocks.
 
 
     `;
 
 
-    Email.send({
-      SecureToken: "1530a466-611d-443c-bacf-1ea702201285",
-      Host: "smtp.elasticemail.com",
-      Username: "freshstocks",
-      Password: "58CE22F6AE1985ADE3DAA2206C549E191988",
-      To: email,
-      From:"freekyajmal@gmail.com",
-      Subject: "Verification Email by freshstocks",
-      Body: body,
-    }).then(
+    // Email.send({
+    //   SecureToken: "1530a466-611d-443c-bacf-1ea702201285",
+    //   Host: "smtp.elasticemail.com",
+    //   Username: "freshstocks",
+    //   Password: "58CE22F6AE1985ADE3DAA2206C549E191988",
+    //   To: email,
+    //   From:"freekyajmal@gmail.com",
+    //   Subject: "Verification Email by freshstocks",
+    //   Body: body,
+    // }).then(
+
+    let params = {from_name: "freekyajmal@gmail.com",
+               to_name: email,
+               message: body,
+              }
+
+emailjs.send("service_sp6m68x","template_uo2qcla",params)
+.then(
       message => {
         
         

@@ -9,7 +9,6 @@ const options = {
 };
 
 //try statement
-try {
   let x;
   fetch(
     "https://seeking-alpha.p.rapidapi.com/news/v2/list?category=market-news%3A%3Aall&size=20&number=1",
@@ -44,11 +43,9 @@ try {
         document.querySelector("#rowdiv").append(rowdiv);
       }
     })
+    //catch statement
     .catch((err) => console.error(err));
 
-  //catch statement
-} catch (error) {
-  console.log("Error" + error);
-}
+
 
 //market news page js code end

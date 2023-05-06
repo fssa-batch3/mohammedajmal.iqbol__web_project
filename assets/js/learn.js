@@ -1,54 +1,43 @@
 //js tabs code start
 function openCity(evt, cityName) {
-
   //try statement
   try {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace("active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
 
+    document.getElementById("default").style.display = "none";
 
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
+    //catch statement
+  } catch (error) {
+    console.log("Error" + error);
   }
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace("active", "");
-  }
-  document.getElementById(cityName).style.display = "block";
-  evt.currentTarget.className += " active";
-
-  document.getElementById("default").style.display = "none";
-
-  //catch statement
-}  catch (error) {
-
-  console.log("Error" + error);
-
-}
-
 }
 
 //return to home tabs function
 function homeon() {
-
   //try statement
   try {
-
-  document.getElementById("default").style.display = "block";
-  document.getElementById("my-courses").style.display = "none";
-  document.getElementById("blogs").style.display = "none";
-  document.getElementById("latest-courses").style.display = "none";
-  document.getElementById("youtube-videos").style.display = "none";
-  document.getElementById("free-courses").style.display = "none";
-  document.getElementById("live-courses").style.display = "none";
+    document.getElementById("default").style.display = "block";
+    document.getElementById("my-courses").style.display = "none";
+    document.getElementById("blogs").style.display = "none";
+    document.getElementById("latest-courses").style.display = "none";
+    document.getElementById("youtube-videos").style.display = "none";
+    document.getElementById("free-courses").style.display = "none";
+    document.getElementById("live-courses").style.display = "none";
 
     //catch statement
-}  catch (error) {
-
-  console.log("Error" + error);
-
-}
-
+  } catch (error) {
+    console.log("Error" + error);
+  }
 }
 
 //blogs data JSON
@@ -166,8 +155,6 @@ for (i = 0; i < blogs_data.length; i++) {
   const cards = document.getElementsByClassName("first-course3");
 
   searchbar.addEventListener("input", () => {
-
-
     for (let i = 0; i < cards.length; i++) {
       const element = cards[i];
       if (
@@ -257,144 +244,120 @@ for (i = 0; i < course_data.length; i++) {
 //bookmark icon toggle button function
 
 function toggle(id) {
-
   //try statement
   try {
+    let get_click_obj;
+    console.log(id);
 
+    //find clicked course
+    get_click_obj = course_data.find((e) => e.id === id);
+    console.log(get_click_obj);
 
-  let get_click_obj;
-  console.log(id);
+    //adding key bookmark = true
+    get_click_obj.bookmark = true;
 
-  //find clicked course
-  get_click_obj = course_data.find((e) => e.id === id);
-  console.log(get_click_obj);
+    //create object to assign
+    let bookmark_obj = {
+      bookmark_img: "../assets/images/icons8-add-bookmark-50_bookmarked.png",
+    };
 
-  //adding key bookmark = true
-  get_click_obj.bookmark = true;
+    //assign this source with previous source
+    let assignObj = Object.assign(get_click_obj, bookmark_obj);
+    console.log(assignObj);
 
-  //create object to assign
-  let bookmark_obj = {
-    bookmark_img : "../assets/images/icons8-add-bookmark-50_bookmarked.png",
-  };
+    //find clicked object index
+    let index = course_data.indexOf(get_click_obj);
+    console.log(index);
 
-  //assign this source with previous source
-  let assignObj = Object.assign(get_click_obj,bookmark_obj);
-  console.log(assignObj);
+    //assign new value to old one
+    course_data[index] = assignObj;
 
-  //find clicked object index
-  let index = course_data.indexOf(get_click_obj);
-  console.log(index);
+    //set new value to localstorage
+    localStorage.setItem("course_data", JSON.stringify(course_data));
 
-  //assign new value to old one
-  course_data[index] = assignObj;
+    console.log(get_click_obj);
 
-  //set new value to localstorage
-  localStorage.setItem("course_data",JSON.stringify(course_data));
+    //setting bookmark array to bookmark key in user object start
+    let register = JSON.parse(localStorage.getItem("register_arr"));
+    console.log(register);
 
-  console.log(get_click_obj);
+    let loggin = JSON.parse(localStorage.getItem("login_arr"));
+    console.log(loggin);
 
+    const get_user_obj = register.find((event) => event.email === loggin);
+    console.log(get_user_obj);
 
+    let index1 = register.indexOf(get_user_obj);
+    console.log(index1);
 
-  //setting bookmark array to bookmark key in user object start
-  let register = JSON.parse(localStorage.getItem("register_arr"));
-  console.log(register);
+    console.log(register[index1].bookmarks);
 
-  let loggin = JSON.parse(localStorage.getItem("login_arr"));
-  console.log(loggin);
+    //user per count bookmark
+    if (register[index1].bookmarks != null) {
+      let bookmark_id = {
+        obj: get_click_obj,
+      };
 
-  const get_user_obj = register.find((event) => event.email === loggin);
-  console.log(get_user_obj);
-  
-  let index1 = register.indexOf(get_user_obj);
-  console.log(index1);
+      // console.log(objMatch);
+      console.log(register[index1].bookmarks);
+      console.log(id);
+      // };
 
+      //checked it should return true
+      //check for duplicates
+      const already_exist_obj = register[index1].bookmarks.find(
+        (e) => e.obj.id === get_click_obj.id
+      );
+      console.log(already_exist_obj);
 
-console.log(register[index1].bookmarks);
+      if (already_exist_obj === undefined) {
+        // alert("this course is already purchased by you");
+        let index = register.indexOf(get_user_obj);
+        console.log(index);
 
+        register[index].bookmarks.push(bookmark_id);
+        localStorage.setItem("register_arr", JSON.stringify(register));
 
+        alert("course Added to Bookmarks");
+        window.location.href = "learn.html";
+      } else {
+        //skip part
+        alert("course Already Added to Bookmarks");
+        window.location.href = "learn.html";
+      }
+    } else {
+      let bookmark_obj = [];
 
+      let bookmark_id = {
+        obj: get_click_obj,
+      };
 
-  
- 
+      bookmark_obj.push(bookmark_id);
 
+      let user_obj = {
+        bookmarks: bookmark_obj,
+      };
 
-//user per count bookmark
-if( register[index1].bookmarks != null ) {   
- 
-  let bookmark_id = {
-       "obj" : get_click_obj,
-  } 
+      let user_id_assign = Object.assign(get_user_obj, user_obj);
+      console.log(user_id_assign);
 
+      let index = register.indexOf(get_user_obj);
+      console.log(index);
 
-// console.log(objMatch);
-console.log(register[index1].bookmarks);
-console.log(id);
-// };
+      register[index] = user_id_assign;
 
-//checked it should return true
-    //check for duplicates
-    const already_exist_obj = register[index1].bookmarks.find((e) => e.obj.id === get_click_obj.id);
-    console.log(already_exist_obj);
-
- if(already_exist_obj === undefined){
-  
-  // alert("this course is already purchased by you");
-  let index = register.indexOf(get_user_obj);
-  console.log(index);
-
-  register[index].bookmarks.push(bookmark_id);
-  localStorage.setItem("register_arr",JSON.stringify(register));
-
-  alert("course Added to Bookmarks");
+      localStorage.setItem("register_arr", JSON.stringify(register));
+      alert("course Added to Bookmarks");
       window.location.href = "learn.html";
+    }
 
- } else {
-  //skip part
-  alert("course Already Added to Bookmarks");
-      window.location.href = "learn.html";
-  
- } 
-
-} else {
-let bookmark_obj = [];
-
-let bookmark_id = {
-       "obj" : get_click_obj,
-  } 
-
-  bookmark_obj.push(bookmark_id);
-        
-let user_obj = {
-"bookmarks" : bookmark_obj,
-};
-
-let user_id_assign = Object.assign(get_user_obj,user_obj);
-console.log(user_id_assign);
-
-let index = register.indexOf(get_user_obj);
-console.log(index);
-
-register[index] = user_id_assign;
-
-localStorage.setItem("register_arr",JSON.stringify(register));
-alert("course Added to Bookmarks");
-    window.location.href = "learn.html";
-
-}
-
-  //catch statement
-}  catch (error) {
-
-  console.log("Error" + error);
-
-}
-
-
+    //catch statement
+  } catch (error) {
+    console.log("Error" + error);
+  }
 }
 
 //bookmark course function end
-
-
 
 //search query for all courses start
 //search query
@@ -415,7 +378,6 @@ searchbar.addEventListener("input", () => {
   }
 });
 
-
 //search query for all courses end
 
 // user profile show from user register-login
@@ -431,9 +393,7 @@ let obj = {
 };
 
 //compare object get match objects
-const filtervalues = course_data_arr.filter(
-  (course) => course.cost < 1
-);
+const filtervalues = course_data_arr.filter((course) => course.cost < 1);
 console.log(filtervalues);
 
 // free courses card create
@@ -753,7 +713,6 @@ for (i = course_data_arr.length - 1; i < course_data_arr.length; i++) {
 
 //my courses start
 
-
 let register = JSON.parse(localStorage.getItem("register_arr"));
 console.log(register);
 
@@ -773,28 +732,21 @@ console.log(index);
 const allCourses = JSON.parse(localStorage.getItem("course_data"));
 console.log(allCourses);
 
-
-
-
-
-
 let register_array = JSON.parse(localStorage.getItem("register_arr"));
 console.log(register_array);
 
 let login = JSON.parse(localStorage.getItem("login_arr"));
-  console.log(login);
+console.log(login);
 
 const get_user_objs = register_array.find((event) => event.email === login);
-  console.log(get_user_objs);
-  
-  let index1 = register_array.indexOf(get_user_objs);
-  console.log(index1);
+console.log(get_user_objs);
 
+let index1 = register_array.indexOf(get_user_objs);
+console.log(index1);
 
-    let registerbookmark = register_array[index1]["bookmarks"] ?? [];
+let registerbookmark = register_array[index1]["bookmarks"] ?? [];
 
-    console.log(registerbookmark);
-
+console.log(registerbookmark);
 
 // //bookamrk card create from JSON object
 let bookmark_div;
@@ -803,48 +755,74 @@ for (i = 0; i < registerbookmark.length; i++) {
   bookmark_div.setAttribute("class", "first-course2-stocks");
   bookmark_div.setAttribute(
     "href",
-    "details.html?name=" + register_array[index1]["bookmarks"][i]["obj"]["title"]
+    "details.html?name=" +
+      register_array[index1]["bookmarks"][i]["obj"]["title"]
   );
   let cost = "";
   let discount = "";
 
-  if (register_array[index1]["bookmarks"][i]["obj"]["cost"] === "learn for free") {
+  if (
+    register_array[index1]["bookmarks"][i]["obj"]["cost"] === "learn for free"
+  ) {
     cost += " ";
     discount += 100;
   } else {
     cost += "₹" + " ";
-    discount += 100 - (register_array[index1]["bookmarks"][i]["obj"]["cost"] / register_array[index1]["bookmarks"][i]["obj"]["old_cost"]) * 100;
+    discount +=
+      100 -
+      (register_array[index1]["bookmarks"][i]["obj"]["cost"] /
+        register_array[index1]["bookmarks"][i]["obj"]["old_cost"]) *
+        100;
   }
   bookmark_div.innerHTML = `<div>
                                   <img class="course-img-stocks" src=${
-                                    register_array[index1]["bookmarks"][i]["obj"]["img"]
+                                    register_array[index1]["bookmarks"][i][
+                                      "obj"
+                                    ]["img"]
                                   } alt="">
                               </div>
                               <div>
                                   <h3 class="course-title">${
-                                    register_array[index1]["bookmarks"][i]["obj"]["title"]
+                                    register_array[index1]["bookmarks"][i][
+                                      "obj"
+                                    ]["title"]
                                   }</h3>
                                   <div class="course-details">
                                       <p class="course-timing">${
-                                        "<b>Dur :</b>" + register_array[index1]["bookmarks"][i]["obj"]["timing"]
+                                        "<b>Dur :</b>" +
+                                        register_array[index1]["bookmarks"][i][
+                                          "obj"
+                                        ]["timing"]
                                       }</p>
                                       <p class="course-ln">&emsp;${
                                         "<b>Lang : </b>" +
-                                        register_array[index1]["bookmarks"][i]["obj"]["language"]
+                                        register_array[index1]["bookmarks"][i][
+                                          "obj"
+                                        ]["language"]
                                       }</p>
                                       <p class="course-enrolled">&emsp;${
                                         "<b>Enr :</b>" +
-                                        register_array[index1]["bookmarks"][i]["obj"]["enrolled"] +
+                                        register_array[index1]["bookmarks"][i][
+                                          "obj"
+                                        ]["enrolled"] +
                                         " " +
                                         "Enrolled"
                                       }</p>
                                   </div>
                                <div class="flexcost">
                                <h3 class="course-cost">${
-                                "₹" + " " + register_array[index1]["bookmarks"][i]["obj"]["cost"]
+                                 "₹" +
+                                 " " +
+                                 register_array[index1]["bookmarks"][i]["obj"][
+                                   "cost"
+                                 ]
                                }</h3>
                                <strike class="course-oldcost" >${
-                                 "₹" + " " + register_array[index1]["bookmarks"][i]["obj"]["old_cost"]
+                                 "₹" +
+                                 " " +
+                                 register_array[index1]["bookmarks"][i]["obj"][
+                                   "old_cost"
+                                 ]
                                }</strike>
                                <p class="course-discount" >${
                                  Math.floor(discount) + " " + "% discount"
@@ -856,21 +834,15 @@ for (i = 0; i < registerbookmark.length; i++) {
   document.querySelector(".scroll-bookmarks-div4").append(bookmark_div);
 }
 
-
-
 //bookamrk card create from JSON object end
-
-
 
 let registerArr = JSON.parse(localStorage.getItem("register_arr"));
 console.log(registerArr);
 
 console.log(index);
 
-
 console.log(registerArr[index]["courses"]);
 
-  
 //card create from parsed object JSON
 let my_courses;
 
@@ -878,7 +850,10 @@ for (i = 0; i < registerArr[index]["courses"].length; i++) {
   my_courses = document.createElement("a");
   my_courses.setAttribute("class", "first-course2-stocks");
   // console.log(registerArr[index]["courses"][i]["obj"]["title"]);
-  my_courses.setAttribute("href", "details.html?name=" + registerArr[index]["courses"][i]["obj"]["title"]);
+  my_courses.setAttribute(
+    "href",
+    "details.html?name=" + registerArr[index]["courses"][i]["obj"]["title"]
+  );
   let cost = "";
   let discount = "";
 
@@ -888,7 +863,10 @@ for (i = 0; i < registerArr[index]["courses"].length; i++) {
   } else {
     cost += "₹" + " ";
     discount +=
-      100 - (registerArr[index]["courses"][i]["obj"]["cost"] / registerArr[index]["courses"][i]["obj"]["old_cost"]) * 100;
+      100 -
+      (registerArr[index]["courses"][i]["obj"]["cost"] /
+        registerArr[index]["courses"][i]["obj"]["old_cost"]) *
+        100;
   }
   my_courses.innerHTML = `<div>
                              <img class="course-img-stocks" src=${
@@ -897,32 +875,49 @@ for (i = 0; i < registerArr[index]["courses"].length; i++) {
                              </div>
                              <div>
                                  <h3 class="course-title">${
-                                   registerArr[index]["courses"][i]["obj"]["title"]
+                                   registerArr[index]["courses"][i]["obj"][
+                                     "title"
+                                   ]
                                  }</h3>
                                  <div class="course-details">
                                        <p class="course-timing">${
-                                         "<b>Dur :</b>" + registerArr[index]["courses"][i]["obj"]["timing"]
+                                         "<b>Dur :</b>" +
+                                         registerArr[index]["courses"][i][
+                                           "obj"
+                                         ]["timing"]
                                        }</p>
                                        <p class="course-ln">&emsp;${
                                          "<b>Lang : </b>" +
-                                         registerArr[index]["courses"][i]["obj"]["language"]
+                                         registerArr[index]["courses"][i][
+                                           "obj"
+                                         ]["language"]
                                        }</p>
                                        <p class="course-enrolled">&emsp;${
                                          "<b>Enr :</b>" +
-                                         registerArr[index]["courses"][i]["obj"]["enrolled"] +
+                                         registerArr[index]["courses"][i][
+                                           "obj"
+                                         ]["enrolled"] +
                                          " " +
                                          "Enrolled"
                                        }</p>
                                    </div>
                                  <div class="flexcost">
                                 <h3 class="course-cost">${
-                                  cost + " " + registerArr[index]["courses"][i]["obj"]["cost"]
+                                  cost +
+                                  " " +
+                                  registerArr[index]["courses"][i]["obj"][
+                                    "cost"
+                                  ]
                                 }</h3>
                                 <strike class="course-oldcost" >${
-                                  "₹" + " " + registerArr[index]["courses"][i]["obj"]["old_cost"]
+                                  "₹" +
+                                  " " +
+                                  registerArr[index]["courses"][i]["obj"][
+                                    "old_cost"
+                                  ]
                                 }</strike>
                                 <p class="course-discount" >${
-                                 Math.floor(discount) + " " + "% discount"
+                                  Math.floor(discount) + " " + "% discount"
                                 }</p>
                                 </div>
                              </div> `;
@@ -931,26 +926,16 @@ for (i = 0; i < registerArr[index]["courses"].length; i++) {
   document.querySelector(".scroll-courses-div-mycourses").append(my_courses);
 }
 
-
-
-
-
-
-
-
-
-
-
 // create mycourses when finished payment or when click buy course button end
-
 
 //google translate start
 
 function googleTranslateElementInit() {
-  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+  const translateElement =  new google.translate.TranslateElement(
+    { pageLanguage: "en" },
+    "google_translate_element"
+  );
+  return translateElement;
 }
 
 //google translate end
-
-
-     

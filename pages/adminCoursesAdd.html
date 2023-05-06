@@ -9,16 +9,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;0,800;0,900;1,600&family=Tilt+Neon&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/hint.css@2.7.0/hint.min.css" rel="stylesheet">
+<link rel="stylesheet" href="hint.css" />
 </head>
 <body>
     <nav>
         <div class="navbar">
           <img class="nav-logo" src="../assets/images/Screenshot 2023-02-11 021952.png" alt="">
-          <input class="search" type="text" placeholder="Search for courses,videos & Blogs" id="searchbar">
+          <span class="hint--bottom hint--info hint--rounded" aria-label="Search for Your Courses"><input class="search" type="text" placeholder="Search for courses,videos & Blogs" id="searchbar"></span>
           <div class="notification"  id="notification-img">
                   
             <div class="dropdown">
-              <img class="notificationimg" onclick="profile1()" src="../assets/images/icons8-notification-50.png" alt="notification-img">
+              <span class="hint--bottom hint--info hint--rounded" aria-label="notification"><img class="notificationimg" onclick="profile1()" src="../assets/images/icons8-notification-50.png" alt="notification-img"></span>
               <div class="dropdown-content-notification">
                 <a><div class="notify-head">
     
@@ -79,7 +81,7 @@
           </div>
           <div class="notification">
               <div class="dropdown1">
-              <img class="notificationimg" onclick="profile1()" src="../assets/images/icons8-translator-50.png" alt="translator-img">
+                <span class="hint--bottom hint--info hint--rounded" aria-label="Language Selector"><img class="notificationimg" onclick="profile1()" src="../assets/images/icons8-translator-50.png" alt="translator-img"></span>
               <div class="dropdown-content-lang"><br>
                 <div id="google_translate_element" id="lang"></div>
                   </div>
@@ -88,15 +90,15 @@
           <div class="notification">
     
             <a id="notificationimg" href="contact.html">
-              <img class="notificationimg" src="../assets/images/icons8-online-support-50.png" alt="support-img">
+              <span class="hint--bottom hint--info hint--rounded" aria-label="Contact Support"><img class="notificationimg" src="../assets/images/icons8-online-support-50.png" alt="support-img"></span>
             </a>
     
           </div>
             <div class="notification">
-                <a class="dropdown" id="dropuser" href="sellerprofile.html">
+              <span class="hint--bottom hint--info hint--rounded" aria-label="User Profile"><a class="dropdown" id="dropuser" href="sellerprofile.html">
                     
                   
-                </a>
+                </a></span>
     
       </div>
     
@@ -106,7 +108,7 @@
 
         <div class="tab">
             <button class="tablinks active" onclick="homeon()">Home</button>
-            <a class="addcourse-link" href="addform.html" >Add Course</a>
+            <span class="hint--right hint--info hint--rounded" aria-label="Add New Courses"><a class="addcourse-link" href="addform.html" >Add Course</a></span>
           </div> 
 
 
