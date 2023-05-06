@@ -3,7 +3,6 @@
 //api data
 
 //try statement
-try {
 
   const options = {
     method: "GET",
@@ -17,76 +16,77 @@ try {
 newticker.addEventListener("click",(event) => {
 event.preventDefault();
 
- let tickervalue = document.getElementById("search").value;
- console.log(tickervalue);
 
 
-let x;
 
-fetch(
-  `https://alpha-vantage.p.rapidapi.com/query?interval=5min&function=TIME_SERIES_INTRADAY&symbol=${tickervalue}&datatype=json&output_size=compact`,
-  options
-)
-  .then((res) => res.json())
-  .then((data) => {
-  
+getData();
 
-    x = data["Time Series (5min)"];
-
-  const labels = Object.keys(x).reverse();
-  const prices = Object.values(x)
-    .map((item) => parseFloat(item["4. close"]))
-    .reverse();
-  const ctx = document.getElementById("myChart").getContext("2d");
-  new Chart(ctx, {
-    type: "line",
-    data: {
-      labels: labels,
-      datasets: [
-        {
-          label: `${tickervalue} Stock Price`,
-          data: prices,
-          // backgroundColor: "#E9FCD4", // Customize chart appearance
-          // borderColor: "rgba(75, 192, 192, 1)",
-          backgroundColor: "rgba(78, 115, 223, 0.2)",
-borderColor: "rgba(78, 115, 223, 1)",
-pointBackgroundColor: "rgba(78, 115, 223, 1)",
-pointBorderColor: "#fff",
-pointHoverBackgroundColor: "#fff",
-pointHoverBorderColor: "rgba(78, 115, 223, 1)",
-          borderWidth: 0,
-        },
-      ],
-    },
-    options: {
-      responsive: true,
-      scales: {
-        x: {
-          display: true,
-          title: "Time",
-        },
-        y: {
-          display: true,
-          title: "Price",
-        },
-      },
-    },
-  });
-
-  })
-
-  
-})
-
-  //catch statement
-} catch (error) {
-  console.log("Error" + error);
-}
-
+});
 
 
 //stock market data page js code end
 
 
 
+async function getData() {
+  try{
+   //try block
+   let tickervalue = document.getElementById("search").value;
+   console.log(tickervalue);
 
+   let response = await fetch(`https://alpha-vantage.p.rapidapi.com/query?interval=5min&function=TIME_SERIES_INTRADAY&symbol=${tickervalue}&datatype=json&output_size=compact`,options)
+   let data = await response.json()
+
+   let x = data["Time Series (5min)"];
+
+   const labels = Object.keys(x).reverse();
+   const prices = Object.values(x)
+     .map((item) => parseFloat(item["4. close"]))
+     .reverse();
+   const ctx = document.getElementById("myChart").getContext("2d");
+   new Chart(ctx, {
+     type: "line",
+     data: {
+       labels: labels,
+       datasets: [
+         {
+           label: `${tickervalue} Stock Price`,
+           data: prices,
+           // backgroundColor: "#E9FCD4", // Customize chart appearance
+           // borderColor: "rgba(75, 192, 192, 1)",
+           backgroundColor: "rgba(78, 115, 223, 0.2)",
+ borderColor: "rgba(78, 115, 223, 1)",
+ pointBackgroundColor: "rgba(78, 115, 223, 1)",
+ pointBorderColor: "#fff",
+ pointHoverBackgroundColor: "#fff",
+ pointHoverBorderColor: "rgba(78, 115, 223, 1)",
+           borderWidth: 0,
+         },
+       ],
+     },
+     options: {
+       responsive: true,
+       scales: {
+         x: {
+           display: true,
+           title: "Time",
+         },
+         y: {
+           display: true,
+           title: "Price",
+         },
+       },
+     },
+   });
+ 
+
+
+
+
+
+  } catch(err) {
+    //catch block when error occured
+    console.error( "Error" + err);
+  }
+
+}

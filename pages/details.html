@@ -222,7 +222,8 @@ for(let i=0;i<comments.length;i++){
 }
 
 function googleTranslateElementInit() {
-  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+  const translateElement = new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+  return translateElement;
 }
 
 
