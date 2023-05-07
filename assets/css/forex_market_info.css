@@ -105,7 +105,12 @@ body {
     position: relative;
     display: inline-block;
   }
-  
+  #user-profile {
+    width:40px;
+    height:40px;
+    margin-top: 10px;
+    margin-left: 50px;
+}
   .dropdown:hover .user-profile {background-color: #3e8e41;}
   
   

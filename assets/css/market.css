@@ -262,6 +262,12 @@ nav {
   margin-top: 35px;
   margin-left: 25px;
 }
+#user-profile {
+  width:40px;
+  height:40px;
+  margin-top: 10px;
+  margin-left: 50px;
+}
 .user-profile {
 /* background-color: ; */
 color: white;

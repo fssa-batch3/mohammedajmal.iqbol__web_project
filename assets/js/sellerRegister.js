@@ -78,7 +78,7 @@ form.addEventListener("submit", (event) => {
           email,
           password,
           confirm_password,
-          profile_pic: `https://ui-avatars.com/api/?name=${name}`,
+          profile_pic: `https://ui-avatars.com/api/?name=${name}&background=random`,
           sellingCourses,
           seller_id,
         };

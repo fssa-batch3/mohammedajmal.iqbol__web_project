@@ -216,7 +216,12 @@ body {
 .dropdown:hover .dropdown-content ,.dropdown1:hover .dropdown-content , .dropdown:hover .dropdown-content-notification  {display: block; }
 
 .dropdown:hover .dropbtn  ,.dropdown1:hover .dropbtn {background-color: white; }
-
+#user-profile {
+  width:40px;
+  height:40px;
+  margin-top: 10px;
+  margin-left: 50px;
+}
 
 #notification-img {
   margin-left: 3%;

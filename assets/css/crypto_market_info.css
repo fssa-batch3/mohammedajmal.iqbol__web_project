@@ -101,7 +101,12 @@ body {
     font-family: "Poppins", sans-serif;
     color:black;
   }
-
+  #user-profile {
+    width:40px;
+    height:40px;
+    margin-top: 10px;
+    margin-left: 50px;
+}
   .dropdown {
     position: relative;
     display: inline-block;

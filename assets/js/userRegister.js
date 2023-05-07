@@ -130,7 +130,7 @@ form.addEventListener("submit", (event) => {
           email,
           password : hashedpassword,
           confirm_password : hashedconfirm_password,
-          profile_pic: `https://ui-avatars.com/api/?name=${name}`,
+          profile_pic: `https://ui-avatars.com/api/?name=${name}&background=random`,
           courses,
           user_id,
         };

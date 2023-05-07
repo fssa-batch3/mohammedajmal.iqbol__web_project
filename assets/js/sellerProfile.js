@@ -241,7 +241,7 @@ deleteUserProfile.addEventListener("click", (event) => {
 
     console.log(get_seller_obj["name"]);
     let new_obj = {
-      profile_pic: `https://ui-avatars.com/api/?name=${get_seller_obj["name"]}`,
+      profile_pic: `https://ui-avatars.com/api/?name=${get_seller_obj["name"]}&background=random`,
     };
 
     console.log("hi");

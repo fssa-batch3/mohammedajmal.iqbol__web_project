@@ -4,31 +4,28 @@
 const register_arr = JSON.parse(localStorage.getItem("register_arr"));
 console.log(register_arr);
 
-
 let cloudinaryData;
 //file input from user local to cloud storage and link generate
-const fileInput = document.getElementById('image-url');
-fileInput.addEventListener('change', () => {
+const fileInput = document.getElementById("image-url");
+fileInput.addEventListener("change", () => {
   const file = fileInput.files[0];
 
   const formData = new FormData();
-  formData.append('file', file);
-  formData.append('upload_preset', 'whd23pts'); // Replace with your upload preset name
+  formData.append("file", file);
+  formData.append("upload_preset", "whd23pts"); // Replace with your upload preset name
 
-  fetch('https://api.cloudinary.com/v1_1/dvgctptr1/auto/upload', {
-    method: 'POST',
+  fetch("https://api.cloudinary.com/v1_1/dvgctptr1/auto/upload", {
+    method: "POST",
     body: formData,
   })
-    .then(response => response.json())
-    .then(data => {
-      
-      console.log(data)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
 
-      cloudinaryData = data.url; 
-      console.log(cloudinaryData); 
-      
+      cloudinaryData = data.url;
+      console.log(cloudinaryData);
     })
-    .catch(error => console.error(error));
+    .catch((error) => console.error(error));
 });
 
 //form submit event start
@@ -43,8 +40,7 @@ form.addEventListener("submit", (event) => {
   if (localStorage.getItem("course_data") !== null) {
     course_data = JSON.parse(localStorage.getItem("course_data"));
 
-  console.log(cloudinaryData);
-
+    console.log(cloudinaryData);
 
     //for adding new course these are course details we get from user.
     let img = cloudinaryData;

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Email Verify OTP | User</title>
     <link rel="stylesheet" href="../assets/css/emailverify.css">
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" integrity="sha384-D81346AD0E3C8D784965BD2EF457E039418942C6EEA1E70E735FDB76ED2846F895EE87348398054F262C49DED82020CF"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script type="text/javascript">
         (function () {
             emailjs.init("xJczW25BwYvEu6S51");
@@ -44,8 +44,8 @@
 
 
 
-      <script src="https://smtpjs.com/v3/smtp.js" integrity="sha384-065CCA0092B398086506B1955AC4168221874FA7CE5BA7FC6DCB02EBF42A4D07531D35A35C99DD2DF712A9B6A744FF5E"></script>
-      <script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
 
 
  let url = window.location.search;
@@ -90,16 +90,6 @@ Thank you for choosing freshstocks.
     `;
 
 
-    // Email.send({
-    //   SecureToken: "1530a466-611d-443c-bacf-1ea702201285",
-    //   Host: "smtp.elasticemail.com",
-    //   Username: "freshstocks",
-    //   Password: "58CE22F6AE1985ADE3DAA2206C549E191988",
-    //   To: email,
-    //   From:"mohammedajmal.iqbol@fssa.freshworks.com",
-    //   Subject: "Verification Email by freshstocks",
-    //   Body: body,
-    // }).then(
 
     let params = {from_name: "freekyajmal@gmail.com",
                to_name: email,
@@ -110,7 +100,6 @@ emailjs.send("service_sp6m68x","template_uo2qcla",params)
 .then(
       message => {
         
-    //    if( message === "OK" ) {
         
         alert(`Please Verify Your Email ( ${email} )  \n Check the Spam folder also`) 
 
@@ -130,16 +119,12 @@ emailjs.send("service_sp6m68x","template_uo2qcla",params)
             window.location.href = "signin.html";
         } else {
             alert("Email Not Verified OTP Not Match");
-            // window.location.href = "register.html";
+            
         }
 
         });
 
 
-
-    //    }
-    
-    
     }
       
     );

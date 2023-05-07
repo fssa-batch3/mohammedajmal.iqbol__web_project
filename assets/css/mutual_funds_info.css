@@ -288,6 +288,12 @@ width:150px;
 border-radius: 30px;
 font-size: 20px;
 }
+#user-profile {
+  width:40px;
+  height:40px;
+  margin-top: 10px;
+  margin-left: 50px;
+}
 .dropdown-content a:hover {background-color: white;}
 
 .dropdown-content-lang a:hover {background-color: white;}
