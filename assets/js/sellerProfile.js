@@ -1,5 +1,7 @@
 //seller profile page js code start
 
+
+//js dynamic page
 let seller_profile;
 
 seller_profile = document.createElement("div");
@@ -89,6 +91,7 @@ const gender = document.getElementById("panel-gender");
 const email = document.getElementById("panel-email");
 const phone_number = document.getElementById("panel-number");
 
+//seller registered details show in these inputs
 username.value = get_obj["name"];
 age.value = get_obj["age"];
 profile_pic.src = get_obj["profile_pic"];
@@ -160,7 +163,7 @@ fileInput.addEventListener('change', () => {
 
 
 
-
+//when click edited or done button new vlaues assign instead of old values
 let done = document.getElementById("done");
 done.addEventListener("click", (event) => {
   event.preventDefault();
@@ -207,10 +210,13 @@ done.addEventListener("click", (event) => {
 
       seller_register_arr[index] = assign_data;
 
+      //set to local
       localStorage.setItem(
         "seller_register_arr",
         JSON.stringify(seller_register_arr)
       );
+      
+      //alerting the seller
       alert("your changes have been changed");
       location.reload();
 

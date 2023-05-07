@@ -328,8 +328,6 @@ try {
         parseFloat(date["4b. close (CNY)"])
       ); // Get the closing prices as values
 
-      // const exchangeRate = data3['Realtime Currency Exchange Rate']['5. Exchange Rate'];
-
       const ctx2 = document.getElementById("cryptoChart").getContext("2d");
 
       // Create a chart using Chart.js
@@ -397,7 +395,7 @@ try {
         },
       });
 
-      //api call front card
+      //api call front card create from api response
 
       let rowdiv = document.createElement("div");
       rowdiv.setAttribute("class", "notifications-container");

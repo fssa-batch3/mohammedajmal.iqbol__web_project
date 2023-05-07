@@ -29,6 +29,7 @@ fileInput.addEventListener("change", () => {
 });
 
 //form submit event start
+//seller can add courses when he/she submit the form with valid details
 let form = document.getElementById("form");
 form.addEventListener("submit", (event) => {
   event.preventDefault();

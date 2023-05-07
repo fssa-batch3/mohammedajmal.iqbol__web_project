@@ -1,5 +1,6 @@
 //market news page js code start
 
+//required params contains api key and host permissions 
 const options = {
   method: "GET",
   headers: {
@@ -25,8 +26,6 @@ const options = {
       for (let i = 0; i < 20; i++) {
         let rowdiv = document.createElement("a");
         rowdiv.setAttribute("id", "card");
-        //  rowdiv.setAttribute("href",`${coinNames[i]["coinrankingUrl"]}`);
-        //  rowdiv.setAttribute("style",`background-color: ${coinNames[i]["color"]};`);
         rowdiv.innerHTML = `
     <div><img class="card_load" src=${x[i]["links"]["uriImage"]}></div>
     <div class="card_load_extreme_title">${x[i]["attributes"]["title"]}</div>

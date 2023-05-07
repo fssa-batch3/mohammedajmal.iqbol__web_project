@@ -69,12 +69,11 @@ console.log(get_obj);
 
 //link to watch videos
 if (register[index]["courses"] !== null) {
-  console.log("hii");
 
 
   let arr;
 
-  //is counrsepurchased key is true then get the obj from array called register[index]["courses"]
+  //is coursepurchased key is true then get the obj from array called register[index]["courses"]
 
   let findcoursepurchased = register[index]["courses"].find(
     (item) => item.obj.id === get_obj.id
@@ -122,13 +121,6 @@ if (register[index]["courses"] !== null) {
   );
 
   console.log(question.subarrays[0].obj);
-
-  // let findquiz = quizquestions.filter((quiz) => quiz.some(obj => obj.courseName === titles));
-  // console.log(findquiz);
-
-  // console.log(findquiz[0]);
-
-  //  console.log(findquiz.length);
 
   // for findquiz[1] we encode array in URL Params
 
@@ -395,7 +387,6 @@ if (register[index]["courses"] !== null) {
     console.log(findcoursepurchased);
 
     if (findcoursepurchased !== undefined) {
-      // console.log(question.subarrays[i]);
 
       let myArray = question.subarrays[0].obj;
       let myArray1 = question.subarrays[1].obj;
@@ -447,6 +438,7 @@ if (register[index]["courses"] !== null) {
   }
 } else {
   console.log(".");
+  //skip part
 }
 
 //enter button js
@@ -464,23 +456,6 @@ input.addEventListener("keypress", (event) => {
     console.log("Error" + error);
   }
 });
-
-//openfile function
-// to read user local file or video or image
-//file video reader
-let openFile = function (event) {
-  let input = event.target;
-
-  let reader = new FileReader();
-  reader.onload = function () {
-    let dataURL = reader.result;
-    let output = document.getElementById("video");
-    let output2 = document.getElementById("video1");
-    output.src = dataURL;
-    output2.src = dataURL;
-  };
-  reader.readAsDataURL(input.files[0]);
-};
 
 // video or image file reader code end
 

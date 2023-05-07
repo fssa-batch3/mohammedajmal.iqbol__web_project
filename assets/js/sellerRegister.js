@@ -1,5 +1,7 @@
 //seller register page js code start
 
+
+//seller form submit event function
 let form = document.getElementById("forms");
 form.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -16,6 +18,7 @@ form.addEventListener("submit", (event) => {
 
     let sellingCourses_arr = [];
 
+    //seller register details get from his/her input
     let name = document.getElementById("name").value;
     let age = document.getElementById("age").value;
     let gender = document.getElementById("select").value;
@@ -40,6 +43,7 @@ form.addEventListener("submit", (event) => {
     console.log(sellingCourses);
     console.log(seller_id);
 
+    //check he/she is already exists or not
     let match = false;
     for (let i = 0; i < seller_register_arr.length; i++) {
       if (seller_register_arr[i]["email"] === email) {
@@ -83,16 +87,20 @@ form.addEventListener("submit", (event) => {
           seller_id,
         };
 
+        //push obj into array
         seller_register_arr.push(register_obj);
 
+        //set to local
         let register = JSON.stringify(seller_register_arr);
         localStorage.setItem("seller_register_arr", register);
 
         console.log(register);
 
+        //alerting the seller
         alert(
           "Please Verify Email \n You have to check the OTP One time Password Sent to You By Us and enter the recieved OTP to Verify Your Account"
         );
+        //redirect he/she into next window
         window.location.href = "emailverifyseller.html?email=" + email;
       }
     }

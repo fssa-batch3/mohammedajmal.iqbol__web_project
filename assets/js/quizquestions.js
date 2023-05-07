@@ -3,7 +3,7 @@
 
 
 
-
+//quiz js dynamic questions input 18 input boxes
 for(let i=0;i<18;i++) {
 
     let div; 
@@ -27,6 +27,7 @@ for(let i=0;i<18;i++) {
     
     };
     
+    //submit buttton
     let button = document.createElement("button");
     button.setAttribute("class","submit");
     button.setAttribute("id","btn");
@@ -38,13 +39,16 @@ for(let i=0;i<18;i++) {
 
 
     // add to localstorage
+    //submit buttton event
 
     let submit = document.getElementById("form");
     submit.addEventListener("submit",(event) => {
     event.preventDefault();
 
+    //new array
     const values = [];
 
+    //18 input values
     for (let i = 0; i < 18; i++) {
 
         const question = document.querySelector(`#coursequiz1question${i+1}`).value;
@@ -58,6 +62,7 @@ for(let i=0;i<18;i++) {
 console.log(seller_register_arr); 
 
 
+//urlparams get title
 const url = window.location.search;
 const userparams = new URLSearchParams(url);
 const titles = userparams.get("title");
@@ -71,8 +76,7 @@ console.log(find_seller_obj);
 console.log(find_seller_obj);
 
 }
-
-    //  console.log(question);
+     //object inside correct position ques , options , answer
      let obj = {
         question,
         option : [ option1 ,option2 ,option3 ],
@@ -80,6 +84,7 @@ console.log(find_seller_obj);
         courseName : titles,
      };
 
+     //push obj into array
      values.push(obj);
   
     }
@@ -88,13 +93,16 @@ console.log(find_seller_obj);
     const quiz_questions_arr = JSON.parse(localStorage.getItem("quiz_questions_arr"));
     console.log(quiz_questions_arr);
     
+    //if not null
   if(quiz_questions_arr !== null ){
 
+    //parse existing one
     newArray = JSON.parse(localStorage.getItem("quiz_questions_arr")); 
     
     let slicedArray;
     let subarrays = [];
 
+    //change 18 obj into 6 arr contains 3 obj each
         for (let i = 0; i < values.length; i += 3) {
       slicedArray = values.slice(i, i + 3);
 
@@ -119,6 +127,7 @@ console.log(find_seller_obj);
 
   } else {
 
+    //if arr is null create new arr
     let newArray = [];
 
     let slicedArray;
@@ -138,6 +147,7 @@ console.log(find_seller_obj);
       subarrays
     };
 
+    //push obj into arr
     newArray.push(newArrays);
 
     

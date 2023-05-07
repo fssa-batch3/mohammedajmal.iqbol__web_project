@@ -53,8 +53,6 @@ async function getData() {
          {
            label: `${tickervalue} Stock Price`,
            data: prices,
-           // backgroundColor: "#E9FCD4", // Customize chart appearance
-           // borderColor: "rgba(75, 192, 192, 1)",
            backgroundColor: "rgba(78, 115, 223, 0.2)",
  borderColor: "rgba(78, 115, 223, 1)",
  pointBackgroundColor: "rgba(78, 115, 223, 1)",
