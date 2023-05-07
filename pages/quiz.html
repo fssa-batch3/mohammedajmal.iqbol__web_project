@@ -16,8 +16,6 @@
 
 		
 
-		<!-- Add more questions here -->
-
 	
 		
 	</form>
@@ -27,25 +25,7 @@
 	<script>
 
 
-		
-// const quizquestions = JSON.parse(localStorage.getItem("quiz_questions_arr"));
-//   console.log(quizquestions); 
-
-//   const url = window.location.search;
-// const userparams = new URLSearchParams(url);
-// const titles = userparams.get("name");
-// console.log(titles);
-  
-//   let findquiz = quizquestions.filter((quiz) => quiz.some(obj => obj.courseName === titles));
-//   console.log(findquiz);
-
-//   console.log(findquiz[0]);
-//   console.log(findquiz[1]);
-//   console.log(findquiz[2]);
-//   console.log(findquiz[3]);
-//   console.log(findquiz[4]);
-//   console.log(findquiz[5]);
-
+	
 
 const urlParams = new URLSearchParams(window.location.search);
 const encodedArrayString = urlParams.get('myArray');
@@ -138,7 +118,7 @@ let result;
 
 	// Display results
 	resultsContainer.innerHTML = result + "  " + `Your Score is ${score} / ${Object.keys(answers).length}`;
-	// resultsContainer.innerHTML = `You got ${score} out of ${Object.keys(answers).length} correct!`;
+	
 });
 
 </script>
