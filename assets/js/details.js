@@ -71,7 +71,6 @@ console.log(get_obj);
 if (register[index]["courses"] !== null) {
   console.log("hii");
 
-  let detail_div;
 
   let arr;
 
@@ -594,6 +593,7 @@ addtocart.addEventListener("click", (cart) => {
         
                  
                      `;
+                     console.log(body);
 
           let params = {
             from_name: "freekyajmal@gmail.com",
@@ -682,6 +682,7 @@ addtocart.addEventListener("click", (cart) => {
         
                  
                      `;
+                     console.log(body);
 
         let params = {
           from_name: "freekyajmal@gmail.com",
@@ -808,29 +809,13 @@ delete_mycourses.addEventListener("click", (deletecourse) => {
     let msg = confirm(
       "Are you sure You want to delete this course from My Courses"
     );
-    if (msg != true) {
+
+    const msgConfirmed = msg !== true;
+
+    if (msgConfirmed) {
       return false;
     } else {
-      // let user_obj = {
-      //   "user_id" : null,
-      // };
-
-      // let user_id_assign = Object.assign(get_obj,user_obj);
-      // console.log(user_id_assign);
-
-      // let index = course_data.indexOf(get_obj);
-      // console.log(index);
-
-      // course_data[index] = user_id_assign;
-
-      // localStorage.setItem("course_data",JSON.stringify(course_data));
-
-      // register[index1].courses.splice(index1,1);
-
-      // //if message == true do this
-      // mycourses.splice(index,1);
-      // localStorage.setItem("add-to-card",JSON.stringify(mycourses));
-
+  
       let getObjs = register[index1].courses.find(
         (event) => event.obj.id === get_mycourses.obj.id
       );
@@ -898,7 +883,9 @@ delete_bookmark.addEventListener("click", (deletecourse) => {
     let msg = confirm(
       "Are you sure You want to Remove this course from Your Bookmarks"
     );
-    if (msg != true) {
+
+    const msgConfirmed = msg !== true;
+    if (msgConfirmed) {
       return false;
     } else {
       //find index
@@ -969,8 +956,6 @@ createcomment.addEventListener("click", (event) => {
   try {
     const comment_input = document.getElementById("comment-input").value;
     console.log(comment_input);
-
-    const comment_value = document.getElementById("comment-letters");
 
     // if array not null do this
     if (localStorage.getItem("comments") != null) {

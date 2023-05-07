@@ -35,7 +35,8 @@ login.addEventListener("submit", (event) => {
       }
     }
 
-    if (match == true) {
+    const matched = match == true;
+    if (matched) {
       alert("seller login successfully");
       window.location.href = "../pages/adminCoursesAdd.html";
     } else {

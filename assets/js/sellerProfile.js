@@ -9,8 +9,8 @@ seller_profile.innerHTML = `
 <div class="panel panel-primary">
   <div class="panel-heading">
     <h1>Seller Profile</h1>
-    <span class="hint--bottom hint--info hint--rounded" aria-label="User Name"><h3 class="panel-title" id="panel-title"></h3></span>
-  </div>
+    <span class="hint--bottom hint--info hint--rounded" aria-label="User Name"><input type="text" class="panel-title" id="panel-title" disabled /></span>
+  </div>&emsp;
   <form class="panel-body" id="form">
     <div class="row">
       <div class="col-md-3 col-lg-3 " > <span class="hint--bottom hint--info hint--rounded" aria-label="User Profile"><img alt="User Pic" id="profile-pic"  class="img-circle img-responsive"></span>
@@ -49,7 +49,7 @@ seller_profile.innerHTML = `
             </tr>
             <tr>
                 <td id="panel-editprofile">New Profile Link</td>
-                <td><input  id="panel-editprofile1" type="url" placeholder="https://example.com" pattern="https://.*" required></td>
+                <td><input  id="panel-editprofile1" type="file" required /></td>
               </tr>
             <tr>
               <td><span class="hint--bottom hint--info hint--rounded" aria-label="Edit Profile"><button type="button"  class="edit" id="edit" >Edit</button></span></td>
@@ -80,7 +80,7 @@ let get_obj = seller_register_arr.find((Reg) => seller_login == Reg["email"]);
 
 console.log(get_obj);
 
-const name = document.getElementById("panel-title");
+const username = document.getElementById("panel-title");
 const age = document.getElementById("panel-age");
 const profile_pic = document.getElementById("profile-pic");
 const about_me = document.getElementById("panel-about");
@@ -89,7 +89,7 @@ const gender = document.getElementById("panel-gender");
 const email = document.getElementById("panel-email");
 const phone_number = document.getElementById("panel-number");
 
-name.innerHTML = get_obj["name"];
+username.value = get_obj["name"];
 age.value = get_obj["age"];
 profile_pic.src = get_obj["profile_pic"];
 about_me.value = get_obj["about_me"];
@@ -127,6 +127,40 @@ edit.addEventListener("click", (event) => {
   }
 });
 
+
+
+
+
+//local image to http link image
+let cloudinaryData;
+//file input from user local to cloud storage and link generate
+const fileInput = document.getElementById('panel-editprofile1');
+fileInput.addEventListener('change', () => {
+  const file = fileInput.files[0];
+
+  const formData = new FormData();
+  formData.append('file', file);
+  formData.append('upload_preset', 'whd23pts'); // Replace with your upload preset name
+
+  fetch('https://api.cloudinary.com/v1_1/dvgctptr1/auto/upload', {
+    method: 'POST',
+    body: formData,
+  })
+    .then(response => response.json())
+    .then(data => {
+      
+      console.log(data)
+
+      cloudinaryData = data.url; 
+      console.log(cloudinaryData); 
+      
+    })
+    .catch(error => console.error(error));
+});
+
+
+
+
 let done = document.getElementById("done");
 done.addEventListener("click", (event) => {
   event.preventDefault();
@@ -150,7 +184,7 @@ done.addEventListener("click", (event) => {
     let gender = document.getElementById("panel-gender").value;
     let email = document.getElementById("panel-email").value;
     let mobile_number = document.getElementById("panel-number").value;
-    let profile_pic = document.getElementById("panel-editprofile1").value;
+    let profile_pic = cloudinaryData;
 
     let new_obj = {
       age,
@@ -163,10 +197,7 @@ done.addEventListener("click", (event) => {
 
     console.log("hi");
 
-    let proflink = profile_pic.includes("https://");
-    console.log(proflink);
 
-    if (proflink === true) {
       //assign data
       let assign_data = Object.assign(get_obj, new_obj);
       console.log(assign_data);
@@ -182,10 +213,7 @@ done.addEventListener("click", (event) => {
       );
       alert("your changes have been changed");
       location.reload();
-    } else {
-      alert("please add your Valid profile link");
-      location.reload();
-    }
+
 
     //catch statement
   } catch (error) {

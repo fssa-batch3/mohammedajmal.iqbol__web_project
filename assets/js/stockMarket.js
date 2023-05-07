@@ -13,19 +13,16 @@
   };
   
   let newticker = document.getElementById("submit");
-newticker.addEventListener("click",(event) => {
-event.preventDefault();
-
-
-
-try{
-const data = getData();
-return data;
-} catch (err){
-  console.error(err);
-}
-
-});
+  newticker.addEventListener("click", async (event) => {
+    event.preventDefault();
+    try {
+      const data = await getData();
+      // Handle the resolved data here
+    } catch (err) {
+      console.error(err);
+    }
+  });
+  
 
 
 //stock market data page js code end

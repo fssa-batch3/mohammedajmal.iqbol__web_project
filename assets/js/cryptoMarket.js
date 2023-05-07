@@ -24,9 +24,7 @@ const options = {
 
       console.log(coinNames); // Array of coin names
 
-      //api call
-      let rowdiv;
-
+      //card create
       for (let i = 0; i < 50; i++) {
         let rowdiv = document.createElement("a");
         rowdiv.setAttribute("id", "card");

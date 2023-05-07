@@ -21,10 +21,7 @@ const options = {
       x = response.data;
       console.log(x);
 
-      //    //api call
-      let rowdiv;
-      // console.log(x)
-
+      // card create using api response
       for (let i = 0; i < 20; i++) {
         let rowdiv = document.createElement("a");
         rowdiv.setAttribute("id", "card");
