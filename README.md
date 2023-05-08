@@ -6,7 +6,7 @@ Market Research : https://docs.google.com/document/d/1bvJH0O-uaBRsUnB2iGJB5HD8__
 
 Userflow : https://drive.google.com/file/d/1rHpxKdlMyPLv_IHi_iLAH494TIQ6qagt/view?usp=share_link
 
-Wireframe : https://drive.google.com/file/d/1-7wSzABWOs9dMf2X6TWQoBv0x9tKjAra/view?usp=share_link
+Wireframe : https://drive.google.com/drive/u/0/folders/1kDu4RGFSiBuNe_1GUBYGXiURoZ628Zgx
 
 // My web progress table
 
