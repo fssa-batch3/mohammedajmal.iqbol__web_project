@@ -12,16 +12,16 @@
     },
   };
   
-  let newticker = document.getElementById("submit");
-  newticker.addEventListener("click", async (event) => {
-    event.preventDefault();
-    try {
-      const data = await getData();
-      // Handle the resolved data here
-    } catch (err) {
-      console.error(err);
-    }
+let newticker = document.getElementById("submit");
+newticker.addEventListener("click", (event) => {
+  event.preventDefault();
+  getData().then((data) => {
+    // Handle the resolved data here
+    return data;
+  }).catch((err) => {
+    console.error(err);
   });
+});
   
 
 
