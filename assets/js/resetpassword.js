@@ -20,8 +20,10 @@ submit.addEventListener("click", function (e){
    document.getElementById("verify").style.display = "block";
 
     //random password generator   
-   let otpforuser = Math.floor(100000 + Math.random() * 900000);
-   console.log(otpforuser);
+    let randomArray = new Uint32Array(1);
+    window.crypto.getRandomValues(randomArray);
+    let otpforuser = randomArray[0] % 900000 + 100000;
+    console.log(otpforuser);
 
    //body content of email
  let body = `

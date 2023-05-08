@@ -17,7 +17,9 @@ submit.addEventListener("click", function (e) {
 
 
   //generate random otp for seller
-  let otpforuser = Math.floor(100000 + Math.random() * 900000);
+  let randomArray = new Uint32Array(1);
+  window.crypto.getRandomValues(randomArray);
+  let otpforuser = randomArray[0] % 900000 + 100000;
   console.log(otpforuser);
 
   //body content of the email
