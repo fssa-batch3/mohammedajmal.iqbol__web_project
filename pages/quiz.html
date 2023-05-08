@@ -3,6 +3,7 @@
 <head>
 	<title>Courses Quiz</title>
 	<link rel="stylesheet" href="../assets/css/quiz.css">
+	<script src="https://cdn.jsdelivr.net/npm/dompurify@2.3.0/dist/purify.min.js"></script>
 </head>
 <body>
 	<div class="quiz-div">
@@ -41,22 +42,24 @@ for (let i = 0; i < myArray.length; i++) {
 
 	
 
-  let quizquestionsdiv;
+// Create the quizquestionsdiv element
+let quizquestionsdiv = document.createElement("div");
+quizquestionsdiv.setAttribute("class", "quiz-questions");
 
-quizquestionsdiv = document.createElement("div");
-quizquestionsdiv.setAttribute("class","quiz-questions");
+// Sanitize and insert the myArray data into the quizquestionsdiv element
 quizquestionsdiv.innerHTML = `
-
-		<!-- Question 1 -->
-		<h2>Question ${i+1}</h2>
-		<p>${myArray[i]["question"]}</p>
-		<input type="radio" name="q${i+1}" value="${myArray[i]["option"][0]}" required> a) ${myArray[i]["option"][0]}<br>
-		<input type="radio" name="q${i+1}" value="${myArray[i]["option"][1]}" required> b) ${myArray[i]["option"][1]}<br>
-		<input type="radio" name="q${i+1}" value="${myArray[i]["option"][2]}" required> c) ${myArray[i]["option"][2]}<br>
-		<br>
+    <!-- Question ${i+1} -->
+    <h2>Question ${i+1}</h2>
+    <p>${DOMPurify.sanitize(myArray[i]["question"])}</p>
+    <input type="radio" name="q${i+1}" value="${DOMPurify.sanitize(myArray[i]["option"][0])}" required> a) ${DOMPurify.sanitize(myArray[i]["option"][0])}<br>
+    <input type="radio" name="q${i+1}" value="${DOMPurify.sanitize(myArray[i]["option"][1])}" required> b) ${DOMPurify.sanitize(myArray[i]["option"][1])}<br>
+    <input type="radio" name="q${i+1}" value="${DOMPurify.sanitize(myArray[i]["option"][2])}" required> c) ${DOMPurify.sanitize(myArray[i]["option"][2])}<br>
+    <br>
 `;
 
+// Append the quizquestionsdiv element to the quiz form
 document.querySelector("#quiz-form").append(quizquestionsdiv);
+
 
 
 let quizresultsdiv;
