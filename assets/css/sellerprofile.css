@@ -34,7 +34,15 @@
     background-color: dodgerblue;
     color: white;
   }
-  .edit:hover ,.delete:hover {
+  #delUserProfile {
+    padding:10px;
+    width:200px;
+    border: none;
+    border-radius: 10px;
+    background-color: dodgerblue;
+    color: white;
+  }
+  .edit:hover ,.delete:hover , #delUserProfile:hover {
     transform: scale(1.05);
   }
  .img-circle {

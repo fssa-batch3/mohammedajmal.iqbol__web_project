@@ -52,7 +52,7 @@ Thank you for choosing freshstocks.
              }
 
 //email sending event function
-emailjs.send("service_sp6m68x","template_uo2qcla",params)
+emailjs.send("service_sp6m68x","template_1veprt4",params)
 .then(
      message => {
        

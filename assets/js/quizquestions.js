@@ -12,14 +12,14 @@ for(let i=0;i<18;i++) {
       div.setAttribute("id",`coursequiz1question${i+1}label`);
       div.innerHTML = `
       <br><label for="image-url" class="product-label">CourseQuizQuestion${i+1}</label>
-            <br><input name="image-url" class="image-url" id="coursequiz1question${i+1}"  placeholder="Quiz Option Question" type="text">
+            <br><input name="image-url" class="image-url" id="coursequiz1question${i+1}"  placeholder="Quiz Option Question" type="text" value="What is trading ?" />
       
             <br><br><label for="image-url" class="product-label">CourseQuiz1Options</label>
-            <br><input name="image-url" class="image-url" id="coursequiz${i+1}option1" placeholder="Quiz Option 1" type="text">
-            <br><input name="image-url" class="image-url" id="coursequiz${i+1}option2" placeholder="Quiz Option 2" type="text">
-            <br><input name="image-url" class="image-url" id="coursequiz${i+1}option3" placeholder="Quiz Option 3" type="text">
+            <br><input name="image-url" class="image-url" id="coursequiz${i+1}option1" placeholder="Quiz Option 1" type="text" value="buy sell of goods" />
+            <br><input name="image-url" class="image-url" id="coursequiz${i+1}option2" placeholder="Quiz Option 2" type="text" value="buy sell of sweets" />
+            <br><input name="image-url" class="image-url" id="coursequiz${i+1}option3" placeholder="Quiz Option 3" type="text" value="changing the old money into new" />
             <br><br><label for="image-url" class="product-label">CourseQuiz1Answers</label>
-            <br><input name="image-url" class="image-url" id="coursequiz1answer${i+1}"  placeholder="Quiz Answer" type="text">
+            <br><input name="image-url" class="image-url" id="coursequiz1answer${i+1}"  placeholder="Quiz Answer" type="text" value="buy sell of goods" />
       `;
     
     
