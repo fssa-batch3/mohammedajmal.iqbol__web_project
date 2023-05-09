@@ -135,9 +135,9 @@ fileInput.addEventListener('change', () => {
 
   const formData = new FormData();
   formData.append('file', file);
-  formData.append('upload_preset', 'whd23pts'); // Replace with your upload preset name
+  formData.append('upload_preset', 'ml_default'); // Replace with your upload preset name
 
-  fetch('https://api.cloudinary.com/v1_1/dvgctptr1/auto/upload', {
+  fetch('https://api.cloudinary.com/v1_1/dwkjxihmr/auto/upload', {
     method: 'POST',
     body: formData,
   })

@@ -11,11 +11,11 @@ seller_profile.innerHTML = `
 <div class="panel panel-primary">
   <div class="panel-heading">
     <h1>Seller Profile</h1>
-    <span class="hint--bottom hint--info hint--rounded" aria-label="User Name"><input type="text" class="panel-title" id="panel-title" disabled /></span>
+    <span class="hint--bottom hint--info hint--rounded" aria-label="Seller Name"><input type="text" class="panel-title" id="panel-title" disabled /></span>
   </div>&emsp;
   <form class="panel-body" id="form">
     <div class="row">
-      <div class="col-md-3 col-lg-3 " > <span class="hint--bottom hint--info hint--rounded" aria-label="User Profile"><img alt="User Pic" id="profile-pic"  class="img-circle img-responsive"></span>
+      <div class="col-md-3 col-lg-3 " > <span class="hint--bottom hint--info hint--rounded" aria-label="Seller Profile"><img alt="User Pic" id="profile-pic"  class="img-circle img-responsive"></span>
         </div>
       <div class=" col-md-9 col-lg-9 " id="form"><br><br>
         <table class="table table-user-information">
@@ -143,9 +143,9 @@ fileInput.addEventListener('change', () => {
 
   const formData = new FormData();
   formData.append('file', file);
-  formData.append('upload_preset', 'whd23pts'); // Replace with your upload preset name
+  formData.append('upload_preset', 'ml_default'); // Replace with your upload preset name
 
-  fetch('https://api.cloudinary.com/v1_1/dvgctptr1/auto/upload', {
+  fetch('https://api.cloudinary.com/v1_1/dwkjxihmr/auto/upload', {
     method: 'POST',
     body: formData,
   })
