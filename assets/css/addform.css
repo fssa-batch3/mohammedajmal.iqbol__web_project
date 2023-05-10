@@ -37,12 +37,13 @@ form {
 .submit {
     background-color:burlywood;
     color:white;
-   width:100px;
+   width:150px;
    height:40px;
    border-radius: 5px;
     border: none;
-    margin-left: 0px;
-    margin-top: 630px;
+    position: relative;
+    top: 650px;
+    right: 400px;
 }
 .submit:hover {
     transform: scale(1.05);

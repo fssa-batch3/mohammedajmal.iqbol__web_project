@@ -120,3 +120,61 @@ element.style.display = "none";
 }
 }
 });
+
+
+
+
+
+//user details show
+let tr;
+
+for (let i = 0; i < registerUsers.length; i++) {
+    
+    console.log(registerUsers[i]["courses"].length);
+    
+    tr = document.createElement("tr");
+    tr.setAttribute("class","user_details");
+    tr.innerHTML = `
+    
+    <th id="user-id-header">${registerUsers[i]["user_id"]}</th>
+    <td>${registerUsers[i]["name"]}</td>
+    <td>${registerUsers[i]["courses"].length}</td>
+    <td>${registerUsers[i]["email"]}</td>
+    <th>${registerUsers[i]["date_of_birth"]}</th>
+    <td>${registerUsers[i]["age"]}</td>
+    <td>${registerUsers[i]["gender"]}</td>
+    <td>${registerUsers[i]["mobile_number"]}</td>
+
+`;
+
+document.querySelector("#insertusers").append(tr);
+
+
+}
+
+
+
+//seller details show
+let trtag;
+
+for (let i = 0; i < registerSellers.length; i++) {
+    
+    trtag = document.createElement("tr");
+    trtag.setAttribute("class","seller_details");
+    trtag.innerHTML = `
+    
+    <th id="user-id-header">${registerSellers[i]["seller_id"]}</th>
+    <td>${registerSellers[i]["name"]}</td>
+    <td>${registerSellers[i]["sellingCourses"].length}</td>
+    <td>${registerSellers[i]["email"]}</td>
+    <th>${registerSellers[i]["date_of_birth"]}</th>
+    <td>${registerSellers[i]["age"]}</td>
+    <td>${registerSellers[i]["gender"]}</td>
+    <td>${registerSellers[i]["mobile_number"]}</td>
+
+`;
+
+document.querySelector("#insertsellers").append(trtag);
+
+
+}

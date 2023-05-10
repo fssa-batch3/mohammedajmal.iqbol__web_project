@@ -35,10 +35,9 @@ form {
    height:40px;
    border-radius: 5px;
     border: none;
-    margin-left: 0px;
-    margin-top: 630px;
     position: relative;
-    right: 350px;
+    top: 680px;
+    right: 320px;
 }
 .delete {
     background-color:burlywood;
@@ -48,7 +47,7 @@ form {
    border-radius: 5px;
     border: none;
     margin-left: 0px;
-    margin-top: 630px;
+    margin-top: 600px;
 }
 .submit:hover ,.delete:hover {
     transform: scale(1.05);

@@ -127,30 +127,14 @@
                                             <th id="user-name-header">Name</th>
                                             <th id="user-courses-header">No of Courses Bought</th>
                                             <th id="user-email-header">email</th>
+                                            <th id="user-email-header">Date Of Birth</th>
                                             <th id="user-age-header">Age</th>
                                             <th id="user-gender-header">gender</th>
                                             <th id="user-number-header">mobile number</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
-                                        <tr>
-                                            <th id="user-id-header">User ID</th>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td>61</td>
-                                            <td>2011/04/25</td>
-                                            <td>$320,800</td>
-                                        </tr>
-                                        <tr>
-                                            <th id="user-id-header">User ID</th>
-                                            <td>Garrett Winters</td>
-                                            <td>Accountant</td>
-                                            <td>Tokyo</td>
-                                            <td>63</td>
-                                            <td>2011/07/25</td>
-                                            <td>$170,750</td>
-                                        </tr>
+                                    <tbody id="insertusers">
+                                      
                                         
                                     </tbody>
                                 </table>
@@ -176,5 +160,41 @@
         <script src="../assets/js/scripts.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" integrity="" crossorigin="anonymous" ></script>
         <script src="../assets/js/datatables-simple-demo.js"></script>
+
+        <script>
+
+
+ //get parsed data
+ const registerUsers = JSON.parse(localStorage.getItem("register_arr"));
+ console.log(registerUsers);
+
+ //user details show
+let tr;
+
+for (let i = 0; i < registerUsers.length; i++) {
+    
+    console.log(registerUsers[i]["courses"].length);
+    
+    tr = document.createElement("tr");
+    tr.setAttribute("class","user_details");
+    tr.innerHTML = `
+    
+    <th id="user-id-header">${registerUsers[i]["user_id"]}</th>
+    <td>${registerUsers[i]["name"]}</td>
+    <td>${registerUsers[i]["courses"].length}</td>
+    <td>${registerUsers[i]["email"]}</td>
+    <th>${registerUsers[i]["date_of_birth"]}</th>
+    <td>${registerUsers[i]["age"]}</td>
+    <td>${registerUsers[i]["gender"]}</td>
+    <td>${registerUsers[i]["mobile_number"]}</td>
+
+`;
+
+document.querySelector("#insertusers").append(tr);
+
+
+}
+
+        </script>
     </body>
 </html>

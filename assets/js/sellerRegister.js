@@ -20,22 +20,20 @@ form.addEventListener("submit", (event) => {
 
     //seller register details get from his/her input
     let name = document.getElementById("name").value;
-    let age = document.getElementById("age").value;
     let gender = document.getElementById("select").value;
     let mobile_number = document.getElementById("mobile-number").value;
-    let about_me = document.getElementById("about-me").value;
     let date_of_birth = document.getElementById("date-of-birth").value;
     let email = document.getElementById("email").value;
     let password = document.getElementById("password").value;
     let confirm_password = document.getElementById("confirm-password").value;
     let sellingCourses = sellingCourses_arr;
+    let address = "Please Enter Your Address";
+    let about_me = "Write About Yourself";
     let seller_id = Date.now();
 
     console.log(name);
-    console.log(age);
     console.log(gender);
     console.log(mobile_number);
-    console.log(about_me);
     console.log(date_of_birth);
     console.log(email);
     console.log(password);
@@ -56,8 +54,6 @@ form.addEventListener("submit", (event) => {
     if (match == true) {
       alert("user already exists");
     } else {
-      let age = document.getElementById("age").value;
-      console.log(age);
 
       let mobilenumber = document.getElementById("mobile-number").value;
       console.log(mobilenumber);
@@ -65,20 +61,17 @@ form.addEventListener("submit", (event) => {
       if (password != confirm_password) {
         alert("password not match try again");
         //  window.location.href="sellerRegister.html";
-      } else if (age.length > 3) {
-        alert("age must contains less than three");
-        // location.reload();
       } else if (mobilenumber.length > 11) {
         alert("mobile number must contains 10 numbers");
         // location.reload();
       } else {
         let register_obj = {
           name,
-          age,
           gender,
           mobile_number,
-          about_me,
           date_of_birth,
+          address,
+          about_me,
           email,
           password,
           confirm_password,

@@ -37,7 +37,7 @@ user_profile.innerHTML = `
                     </tr>
                     <tr>
                       <td>Home Address</td>
-                      <td>Street in, State</td>
+                      <td><input id="panel-address" type="text" disabled ></td>
                     </tr>
                     <tr>
                       <td>Email</td>
@@ -78,19 +78,39 @@ let get_obj = register_arr.find((Reg) => login == Reg["email"]);
 
 console.log(get_obj);
 
+
+
 const username = document.getElementById("panel-title");
 const age = document.getElementById("panel-age");
 const profile_pic = document.getElementById("profile-pic");
 const about_me = document.getElementById("panel-about");
+const address = document.getElementById("panel-address");
 const date_of_birth = document.getElementById("panel-dob");
 const gender = document.getElementById("panel-gender");
 const email = document.getElementById("panel-email");
 const phone_number = document.getElementById("panel-number");
 
+let birthDate = get_obj["date_of_birth"];
+
+function calculateAge(birthDate) {
+  const today = new Date();
+  const birth = new Date(birthDate);
+  let age = today.getFullYear() - birth.getFullYear();
+  const month = today.getMonth() - birth.getMonth();
+  const day = today.getDate() - birth.getDate();
+
+  if (month < 0 || (month === 0 && day < 0)) {
+    age--;
+  }
+
+  return age;
+}
+
 username.value = get_obj["name"];
-age.value = get_obj["age"];
+age.value = calculateAge(birthDate);
 profile_pic.src = get_obj["profile_pic"];
 about_me.value = get_obj["about_me"];
+address.value = get_obj["address"];
 date_of_birth.innerHTML = get_obj["date_of_birth"];
 gender.value = get_obj["gender"];
 email.value = get_obj["email"];
@@ -109,9 +129,10 @@ edit.addEventListener("click", (event) => {
   //try statement
   try {
     document.getElementById("panel-title").disabled = false;
-    document.getElementById("panel-age").disabled = false;
+    document.getElementById("panel-age").disabled = true;
     document.getElementById("profile-pic").disabled = false;
     document.getElementById("panel-about").disabled = false;
+    document.getElementById("panel-address").disabled = false;
     document.getElementById("panel-dob").disabled = false;
     document.getElementById("panel-gender").disabled = false;
     document.getElementById("panel-email").disabled = true;
@@ -165,6 +186,7 @@ done.addEventListener("click", (event) => {
     document.getElementById("panel-age").disabled = true;
     document.getElementById("profile-pic").disabled = true;
     document.getElementById("panel-about").disabled = true;
+    document.getElementById("panel-address").disabled = true;
     document.getElementById("panel-dob").disabled = true;
     document.getElementById("panel-gender").disabled = true;
     document.getElementById("panel-email").disabled = true;
@@ -175,6 +197,7 @@ done.addEventListener("click", (event) => {
     let age = document.getElementById("panel-age").value;
     // let profile_pic = document.getElementById("profile-pic").value;
     let about_me = document.getElementById("panel-about").value;
+    let address = document.getElementById("panel-address").value;
     // let date_of_birth = document.getElementById("panel-dob").value;
     let gender = document.getElementById("panel-gender").value;
     let email = document.getElementById("panel-email").value;
@@ -185,6 +208,7 @@ done.addEventListener("click", (event) => {
       name,
       age,
       about_me,
+      address,
       gender,
       email,
       mobile_number,

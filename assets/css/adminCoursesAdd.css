@@ -54,6 +54,11 @@ nav {
     background-color: white;
     margin-top: 10px;
   }
+  .tab2 {
+    margin-top: -32px;
+    margin-left: 170px;
+    font-family: sans-serif;
+  }
   
   /* Style the buttons inside the tab */
   .tab button {

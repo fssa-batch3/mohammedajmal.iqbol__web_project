@@ -77,16 +77,15 @@ form.addEventListener("submit", (event) => {
     let courses_arr = [];
 
     let name = document.getElementById("name").value;
-    let age = document.getElementById("age").value;
-    // let profile_pic = document.getElementById("profile-pic").value;
     let gender = document.getElementById("select").value;
     let mobile_number = document.getElementById("mobile-number").value;
-    let about_me = document.getElementById("about-me").value;
     let date_of_birth = document.getElementById("date-of-birth").value;
     let email = document.getElementById("email").value;
     let password = document.getElementById("password").value;
     let confirm_password = document.getElementById("confirm-password").value;
     let courses = courses_arr;
+    let address = "Please Enter Your Address";
+    let about_me = "Write About Yourself";
     let user_id = Date.now();
 
     let match = false;
@@ -104,29 +103,23 @@ form.addEventListener("submit", (event) => {
       let name = document.getElementById("name").value;
       console.log(name);
 
-      let age = document.getElementById("age").value;
-      console.log(age);
-
       let mobilenumber = document.getElementById("mobile-number").value;
       console.log(mobilenumber);
 
       if (password != confirm_password) {
         alert("password not match try again");
         //  window.location.href="register.html";
-      } else if (age.length > 3) {
-        alert("age must contains less than three");
-        // location.reload();
       } else if (mobilenumber.length > 11) {
         alert("mobile number must contains 10 numbers");
         // location.reload();
       } else {
         let register_obj = {
           name,
-          age,
           gender,
           mobile_number,
-          about_me,
           date_of_birth,
+          address,
+          about_me,
           email,
           password : hashedpassword,
           confirm_password : hashedconfirm_password,

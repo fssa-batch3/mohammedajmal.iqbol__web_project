@@ -34,13 +34,8 @@
               <label for="name">Username</label>
             </div>
 <br>
-            <div class="form-floating mb-3" id="passinput">
-              <input type="number" class="form-control" id="age" placeholder="name@example.com" required
-                pattern="\d{3}|\d{8}">
-              <label for="age">Age</label>
-            </div>
     
-            <select class="form-select" id="select" aria-label="Default select example">
+            <select class="form-select" id="select" aria-label="Default select example"  required>
               <option selected>Select Your Gender</option>
               <option value="male">Male</option>
               <option value="female">Female</option>
@@ -50,22 +45,20 @@
             <br>
 
             <div class="form-floating mb-3" id="passinput">
-              <input type="number" class="form-control" id="mobile-number" placeholder="name@example.com" required
-                pattern="[0-9]{10}" maxlength="10">
+              <input type="text" class="form-control" id="mobile-number" placeholder="name@example.com" required
+                pattern="[0-9]{10}" title="It should Contain 10 Numbers" maxlength="10">
               <label for="mobile-number">Mobile Number</label>
             </div>
-          </div>
-          <div>
-            <div class="form-floating mb-3" id="passinput">
-              <input type="text" class="form-control" id="about-me" placeholder="name@example.com"
-              
-                title="About Me (Must contain 150 to 200 words)" >
-              <label for="about-me">About me</label>
-            </div>
+
             <div class="form-floating mb-3" id="passinput">
               <input type="date" class="form-control" id="date-of-birth" required/>
               <label for="date-of-birth">Date of Birth</label>
             </div>
+
+          </div>
+          <div>
+            <br>
+            <br>
             <div class="form-floating mb-3" id="passinput">
               <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
               <label for="email">Email address</label>

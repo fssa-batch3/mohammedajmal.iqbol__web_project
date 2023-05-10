@@ -89,7 +89,7 @@ hr {
     margin-left: 10px;
   }
   .login {
-    margin-left:150px;
+    margin-left:200px;
     margin-top: 20px;
     padding: 5px;
     width:80px;
@@ -109,7 +109,7 @@ hr {
   }
   .registration {
     margin-top: 20px;
-    margin-left: 50px;
+    margin-left: 100px;
     padding:5px;
     width:150px;
     height:35px;
@@ -179,7 +179,7 @@ hr {
     height:60px;
     position: relative;
     top:120px;
-    left:50px;
+    left:70px;
    }
   .herobtnimgflex {
     display: flex;
@@ -191,7 +191,7 @@ hr {
       color: black;
       position: relative;
     top:135px;
-    left:70px;
+    left:80px;
     text-align: start;
     opacity: 0.7;
     width: 300px;
