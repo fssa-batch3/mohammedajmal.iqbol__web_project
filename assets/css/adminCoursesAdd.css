@@ -59,6 +59,37 @@ nav {
     margin-left: 170px;
     font-family: sans-serif;
   }
+  .tab3 {
+    margin-left: 340px;
+    margin-top: -22px;
+    font-family: sans-serif;
+  }
+  .tab4 {
+    margin-left: 470px;
+    margin-top: -27px;
+    font-family: sans-serif;
+  }
+  #sellersales {
+    padding: 10px;
+    background-color: lavender;
+    border: none;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.05);
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+  }
+  #logout {
+    padding: 10px;
+    background-color: lavender;
+    border: none;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.05);
+    font-weight: bold;
+  }
+  #logout:hover , #sellersales:hover {
+    transform: scale(1.05);
+  }
   
   /* Style the buttons inside the tab */
   .tab button {

@@ -11,7 +11,7 @@ seller_profile.innerHTML = `
 <div class="panel panel-primary">
   <div class="panel-heading">
     <h1>Seller Profile</h1>
-    <span class="hint--bottom hint--info hint--rounded" aria-label="Seller Name"><input type="text" class="panel-title" id="panel-title" disabled /></span>
+    <span class="hint--bottom hint--info hint--rounded" aria-label="Seller Name"><h1 type="text" class="panel-title" id="panel-title" disabled /></h1></span>
   </div>&emsp;
   <form class="panel-body" id="form">
     <div class="row">
@@ -92,9 +92,24 @@ const gender = document.getElementById("panel-gender");
 const email = document.getElementById("panel-email");
 const phone_number = document.getElementById("panel-number");
 
+let birthDate = get_obj["date_of_birth"];
+function calculateAge(birthDate) {
+  const today = new Date();
+  const birth = new Date(birthDate);
+  let age = today.getFullYear() - birth.getFullYear();
+  const month = today.getMonth() - birth.getMonth();
+  const day = today.getDate() - birth.getDate();
+
+  if (month < 0 || (month === 0 && day < 0)) {
+    age--;
+  }
+
+  return age;
+}
+
 //seller registered details show in these inputs
-username.value = get_obj["name"];
-age.value = get_obj["age"];
+username.innerText = get_obj["name"];
+age.value = calculateAge(birthDate);
 profile_pic.src = get_obj["profile_pic"];
 about_me.value = get_obj["about_me"];
 address.value = get_obj["address"];
@@ -114,8 +129,7 @@ edit.addEventListener("click", (event) => {
   event.preventDefault();
 
   try {
-    document.getElementById("panel-title").disabled = false;
-    document.getElementById("panel-age").disabled = false;
+    document.getElementById("panel-age").disabled = true;
     document.getElementById("profile-pic").disabled = false;
     document.getElementById("panel-about").disabled = false;
     document.getElementById("panel-address").disabled = false;
@@ -171,8 +185,15 @@ let done = document.getElementById("done");
 done.addEventListener("click", (event) => {
   event.preventDefault();
 
+  let datas;
+  if(cloudinaryData !== undefined){
+    datas = cloudinaryData;
+  } else {
+    datas = get_obj["profile_pic"];
+  }
+  console.log(datas);
+
   try {
-    document.getElementById("panel-title").disabled = true;
     document.getElementById("panel-age").disabled = true;
     document.getElementById("profile-pic").disabled = true;
     document.getElementById("panel-about").disabled = true;
@@ -192,7 +213,7 @@ done.addEventListener("click", (event) => {
     let gender = document.getElementById("panel-gender").value;
     let email = document.getElementById("panel-email").value;
     let mobile_number = document.getElementById("panel-number").value;
-    let profile_pic = cloudinaryData;
+    let profile_pic = datas;
 
     let new_obj = {
       age,

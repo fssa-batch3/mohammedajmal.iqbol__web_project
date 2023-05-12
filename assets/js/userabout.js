@@ -32,3 +32,13 @@ function myFunction() {
     const translateElement = new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
     return translateElement;
   }
+
+
+  window.addEventListener('scroll', () => {
+    const scrollTop = document.documentElement.scrollTop;
+    const documentHeight = document.documentElement.scrollHeight;
+    const windowHeight = document.documentElement.clientHeight;
+    const scrolled = scrollTop / (documentHeight - windowHeight) * 100;
+    document.getElementById("myBar").style.width = `${scrolled}%`;
+  });
+  

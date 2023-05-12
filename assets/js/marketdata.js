@@ -459,3 +459,27 @@ try {
 }
 
 //market data front page dashboard js code end
+
+
+
+
+//logout function
+
+ let logout = document.getElementById("logout");
+ logout.addEventListener("click",(event) => {
+ event.preventDefault();
+
+ let confirmlogout = confirm("Are You Sure You Want to LogOut ?");
+
+ if(confirmlogout === true ){
+
+localStorage.removeItem("login_arr");
+
+//new tab with back option in browser.
+let newWindow = window.open("../index.html", '_blank', "noopener,noreferrer");
+window.close();
+newWindow.focus();
+
+ }
+
+ });

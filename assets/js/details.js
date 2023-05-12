@@ -212,16 +212,9 @@ if (register[index]["courses"] !== null) {
          <br>
          <h2 class="list-learning">Top Skills You'll Learn</h2>
          <br>
-         <h2 class="list-learning">${get_obj["top_skills1"][0]}</h2>
-         <li class="list-learning">${get_obj["top_skills1"][1]}</li>
-         <li class="list-learning">${get_obj["top_skills1"][2]}</li>
-         <li class="list-learning">${get_obj["top_skills1"][3]}</li>
-         <li class="list-learning">${get_obj["top_skills1"][4]}</li>
-         <li class="list-learning">${get_obj["top_skills1"][5]}</li>
-         <li class="list-learning">${get_obj["top_skills1"][6]}</li>
-         <li class="list-learning">${get_obj["top_skills1"][7]}</li>
-         <li class="list-learning">${get_obj["top_skills1"][8]}</li>
-         <li class="list-learning">${get_obj["top_skills1"][9]}</li>
+        <div id="list-learn">
+     
+        </div>
        </ul>
        
 
@@ -370,6 +363,32 @@ if (register[index]["courses"] !== null) {
 
   //append or add this whole html (heropage) inside the (.heropage) class
   document.querySelector(".heropage").append(heropage);
+
+
+  let splitval = get_obj["top_skills"].split(".");
+console.log(splitval);
+  //list tag for top skills split loop tag create
+  let listlearn;
+
+  for(let i=0;i<splitval.length-1;i++){
+
+  listlearn = document.createElement("li");
+  listlearn.setAttribute("class","list-learning");
+  listlearn.innerHTML = splitval[i];
+  
+  document.querySelector("#list-learn").append(listlearn);
+
+  }
+  
+  // <li class="list-learning">${}</li>
+  // <li class="list-learning">${get_obj["top_skills1"][1]}</li>
+  // <li class="list-learning">${get_obj["top_skills1"][2]}</li>
+  // <li class="list-learning">${get_obj["top_skills1"][3]}</li>
+  // <li class="list-learning">${get_obj["top_skills1"][4]}</li>
+  // <li class="list-learning">${get_obj["top_skills1"][5]}</li>
+  // <li class="list-learning">${get_obj["top_skills1"][6]}</li>
+  // <li class="list-learning">${get_obj["top_skills1"][7]}</li>
+  // <li class="list-learning">${get_obj["top_skills1"][8]}</li>
 
   //five variables create
   let encodedArrayString;

@@ -9,7 +9,7 @@ user_profile.innerHTML = `
       <div class="panel panel-primary">
         <div class="panel-heading">
           <h1>User Profile</h1>
-          <span class="hint--bottom hint--rounded" aria-label="User Name"><input type="text" class="panel-title" id="panel-title" disabled /></span>
+          <span class="hint--bottom hint--rounded" aria-label="User Name"><h1 typse="text" class="panel-title" id="panel-title" disabled /></h1></span>
         </div>&emsp;
         <form class="panel-body" id="form">
           <div class="row">
@@ -106,7 +106,7 @@ function calculateAge(birthDate) {
   return age;
 }
 
-username.value = get_obj["name"];
+username.innerText = get_obj["name"];
 age.value = calculateAge(birthDate);
 profile_pic.src = get_obj["profile_pic"];
 about_me.value = get_obj["about_me"];
@@ -128,7 +128,6 @@ edit.addEventListener("click", (event) => {
 
   //try statement
   try {
-    document.getElementById("panel-title").disabled = false;
     document.getElementById("panel-age").disabled = true;
     document.getElementById("profile-pic").disabled = false;
     document.getElementById("panel-about").disabled = false;
@@ -180,9 +179,15 @@ let done = document.getElementById("done");
 done.addEventListener("click", (event) => {
   event.preventDefault();
 
+  let datas;
+  if(cloudinaryData !== undefined){
+    datas = cloudinaryData;
+  } else {
+    datas = get_obj["profile_pic"];
+  }
+  console.log(datas);
   //try statement
   try {
-    document.getElementById("panel-title").disabled = true;
     document.getElementById("panel-age").disabled = true;
     document.getElementById("profile-pic").disabled = true;
     document.getElementById("panel-about").disabled = true;
@@ -193,7 +198,6 @@ done.addEventListener("click", (event) => {
     document.getElementById("panel-number").disabled = true;
     document.getElementById("done").style.display = "none";
 
-     let name = document.getElementById("panel-title").value;
     let age = document.getElementById("panel-age").value;
     // let profile_pic = document.getElementById("profile-pic").value;
     let about_me = document.getElementById("panel-about").value;
@@ -202,10 +206,9 @@ done.addEventListener("click", (event) => {
     let gender = document.getElementById("panel-gender").value;
     let email = document.getElementById("panel-email").value;
     let mobile_number = document.getElementById("panel-number").value;
-    let profile_pic = cloudinaryData;
+    let profile_pic = datas;
 
     let new_obj = {
-      name,
       age,
       about_me,
       address,

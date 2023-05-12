@@ -11373,3 +11373,6 @@ body {
 #first-icon {
  border-radius: 50%;
 }
+#logout {
+  border: none;
+}

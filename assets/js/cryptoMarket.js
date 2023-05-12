@@ -2,11 +2,11 @@
 
 //headers and options i get from rapidapi
 const options = {
-  method: "GET",
-  headers: {
-    "X-RapidAPI-Key": "0dbd38fc8dmsh7004146a64a1761p17226ejsnceab381ff0ef",
-    "X-RapidAPI-Host": "coinranking1.p.rapidapi.com",
-  },
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '5209d67708msh2b4c4487ee24df4p1a9455jsn60b60f48436e',
+		'X-RapidAPI-Host': 'coinranking1.p.rapidapi.com'
+	}
 };
 
 //fetch api get response

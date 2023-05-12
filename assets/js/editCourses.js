@@ -22,7 +22,7 @@ let cost_type = document.getElementById("course-cost-type");
 let cost = document.getElementById("course-cost");
 let old_cost = document.getElementById("old-cost");
 let Description = document.getElementById("course-description");
-let top_skills1 = document.getElementById("top-skills");
+let top_skills = document.getElementById("top-skills");
 let instructorname = document.getElementById("instructor-name");
 let instructordesc = document.getElementById("instructor-desc");
 let companycategory = document.getElementById("company-category");
@@ -47,6 +47,7 @@ let courseVideoName6 = document.getElementById("video6name");
 let courseVideoName7 = document.getElementById("video7name");
 let courseVideoName8 = document.getElementById("video8name");
 let courseVideoName9 = document.getElementById("video9name");
+title.disabled = true;
 
 //showing old values for seller in input
 img.value = get_obj["img"];
@@ -58,7 +59,7 @@ cost_type.value = get_obj["cost_type"];
 cost.value = get_obj["cost"];
 old_cost.value = get_obj["old_cost"];
 Description.value = get_obj["Description"];
-top_skills1.value = get_obj["top_skills1"];
+top_skills.value = get_obj["top_skills"];
 instructorname.value = get_obj["instructorname"];
 instructordesc.value = get_obj["instructordesc"];
 companycategory.value = get_obj["companycategory"];
@@ -118,10 +119,19 @@ let form = document.getElementById("form");
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
+
+  let datas;
+  if(cloudinaryData !== undefined){
+    datas = cloudinaryData;
+  } else {
+    datas = get_obj["img"];
+  }
+  console.log(datas);
+
   //try statement
   try {
     //get new values for courses from seller
-    let img = cloudinaryData;
+    let img = datas;
     let title = document.getElementById("course-name").value;
     let timing = document.getElementById("course-timing").value;
     let language = document.getElementById("course-language").value;
@@ -130,7 +140,7 @@ form.addEventListener("submit", (event) => {
     let cost = document.getElementById("course-cost").value;
     let old_cost = document.getElementById("old-cost").value;
     let Description = document.getElementById("course-description").value;
-    let top_skills1 = document.getElementById("top-skills").value;
+    let top_skills = document.getElementById("top-skills").value;
     let instructorname = document.getElementById("instructor-name").value;
     let instructordesc = document.getElementById("instructor-desc").value;
     let companycategory = document.getElementById("company-category").value;
@@ -171,7 +181,7 @@ form.addEventListener("submit", (event) => {
       cost,
       old_cost,
       Description,
-      top_skills1,
+      top_skills,
       courseVideo1,
       courseVideo2,
       courseVideo3,
