@@ -1,17 +1,13 @@
 //course data JSON parse
 const course_data = JSON.parse(localStorage.getItem("course_data"));
-console.log(course_data);
 
 //url params start
 const url = window.location.search;
 const urlParams = new URLSearchParams(url);
 const username = urlParams.get("name");
-console.log(username);
 
 // find object from matching title
 const get_obj = course_data.find((event) => event.title === username);
-
-console.log(get_obj);
 
 //card create and show the card data here
 let details_div;
@@ -49,21 +45,16 @@ let detail_div;
 
 //register array parse from local
 let register = JSON.parse(localStorage.getItem("register_arr"));
-console.log(register);
 
 //login array parse from local
 let loggin = JSON.parse(localStorage.getItem("login_arr"));
-console.log(loggin);
 
 //get obj from two array
 const get_user_obj = register.find((event) => event.email === loggin);
-console.log(get_user_obj);
 
 //find index from the finded obj in array
 let index = register.indexOf(get_user_obj);
-console.log(index);
 
-console.log(get_obj);
 
 // all js full page dynamic start
 
@@ -78,7 +69,6 @@ if (register[index]["courses"] !== null) {
   let findcoursepurchased = register[index]["courses"].find(
     (item) => item.obj.id === get_obj.id
   );
-  console.log(findcoursepurchased);
 
   //is not exist or coursepurchased is true then user will see te videos
   if (findcoursepurchased !== undefined) {
@@ -93,25 +83,20 @@ if (register[index]["courses"] !== null) {
       get_obj["courseVideo8"],
       get_obj["courseVideo9"],
     ];
-    console.log(arr);
   } else {
     //else we can't see any course videos
     arr = ["#", "#", "#", "#", "#", "#", "#", "#", "#"];
-    console.log(arr);
   }
 
   //within the arr all course videos are there
-  console.log(arr);
 
   //parse the quizquestionarr from local which contains quiz questions/options/answers
   const quizquestions = JSON.parse(localStorage.getItem("quiz_questions_arr"));
-  console.log(quizquestions);
 
   //url params get name value
   const url = window.location.search;
   const userparams = new URLSearchParams(url);
   const titles = userparams.get("name");
-  console.log(titles);
 
   //find titles are equal if true it returns a object
   const question = quizquestions.find((obj1) =>
@@ -120,16 +105,7 @@ if (register[index]["courses"] !== null) {
     )
   );
 
-  console.log(question.subarrays[0].obj);
-
   // for findquiz[1] we encode array in URL Params
-
-  console.log(question.subarrays[0].obj);
-  console.log(question.subarrays[1].obj);
-  console.log(question.subarrays[2].obj);
-  console.log(question.subarrays[3].obj);
-  console.log(question.subarrays[4].obj);
-  console.log(question.subarrays[5].obj);
 
   // js details page fully dynamic
   //give all values to show in respective places in this page
@@ -366,7 +342,6 @@ if (register[index]["courses"] !== null) {
 
 
   let splitval = get_obj["top_skills"].split(".");
-console.log(splitval);
   //list tag for top skills split loop tag create
   let listlearn;
 
@@ -403,7 +378,6 @@ console.log(splitval);
     let findcoursepurchased = register[index]["courses"].find(
       (item) => item.obj.id === get_obj.id
     );
-    console.log(findcoursepurchased);
 
     if (findcoursepurchased !== undefined) {
 
@@ -429,12 +403,6 @@ console.log(splitval);
       encodedArrayString3 = encodeURIComponent(myArrayString3);
       encodedArrayString4 = encodeURIComponent(myArrayString4);
       encodedArrayString5 = encodeURIComponent(myArrayString5);
-      console.log(encodedArrayString);
-      console.log(encodedArrayString1);
-      console.log(encodedArrayString2);
-      console.log(encodedArrayString3);
-      console.log(encodedArrayString4);
-      console.log(encodedArrayString5);
 
       //give redirect link for respective quizes.
       document.getElementById("quiz1").href =
@@ -452,11 +420,9 @@ console.log(splitval);
     } else {
       //coursenotpurchased means courses doesn't contain quiz.
       findquiz = ["#", "#", "#", "#", "#", "#", "#", "#", "#"];
-      console.log(findquiz);
     }
   }
 } else {
-  console.log(".");
   //skip part
 }
 
@@ -472,7 +438,7 @@ input.addEventListener("keypress", (event) => {
 
     //catch statement
   } catch (error) {
-    console.log("Error" + error);
+    console.error("Error" + error);
   }
 });
 
@@ -504,25 +470,19 @@ addtocart.addEventListener("click", (cart) => {
       window.location.href = "coursePayment.html?name=" + username;
     } else {
       let registerArr = JSON.parse(localStorage.getItem("register_arr"));
-      console.log(registerArr);
 
       let loggin = JSON.parse(localStorage.getItem("login_arr"));
-      console.log(loggin);
 
       const get_user_obj = registerArr.find((event) => event.email === loggin);
-      console.log(get_user_obj);
 
       let index = registerArr.indexOf(get_user_obj);
-      console.log(index);
 
       //find index
       let index1 = registerArr.indexOf(get_user_obj);
-      console.log(index1);
 
       //add to card user
 
       const register_arr = JSON.parse(localStorage.getItem("register_arr"));
-      console.log(register_arr);
 
       if (register_arr[index].courses != null) {
         let courses_id = {
@@ -530,26 +490,13 @@ addtocart.addEventListener("click", (cart) => {
           isCoursePurchased: true,
         };
 
-        //     //check match is true / false
-        //     let objMatch = false;
-        //   for(let i=0;i< mycourses.length;i++){
-        //   for(let j = 0; j < register_arr[index].courses.length; j++ ){
-        //   if( mycourses[i]["id"] !== register_arr[index].courses[j]["id"] ){
 
-        //     //check mycourses === register/courses array
-        //     objMatch = true;
-
-        //   }
-        // }
-
-        console.log(get_obj);
         // };
 
         // find object from match id
         const varobj = register_arr[index]["courses"].find(
           (e) => e.obj.id === get_obj.id
         );
-        console.log(varobj);
 
         //checked it should return true
 
@@ -587,7 +534,6 @@ addtocart.addEventListener("click", (cart) => {
         
                  
                      `;
-                     console.log(body);
 
           let params = {
             from_name: "freekyajmal@gmail.com",
@@ -610,9 +556,9 @@ addtocart.addEventListener("click", (cart) => {
           emailjs
             .send("service_sp6m68x", "template_uo2qcla", params)
             .then((message) => {
-              console.log(message);
+              message;
             })
-            .catch((err) => console.log(err));
+            .catch((err) => console.error(err));
 
           localStorage.setItem("register_arr", JSON.stringify(registerArr));
           //skip this part
@@ -639,10 +585,8 @@ addtocart.addEventListener("click", (cart) => {
         };
 
         let user_id_assign = Object.assign(get_user_obj, user_obj);
-        console.log(user_id_assign);
 
         let index1 = registerArr.indexOf(get_user_obj);
-        console.log(index1);
 
         registerArr[index] = user_id_assign;
 
@@ -676,7 +620,6 @@ addtocart.addEventListener("click", (cart) => {
         
                  
                      `;
-                     console.log(body);
 
         let params = {
           from_name: "freekyajmal@gmail.com",
@@ -699,9 +642,9 @@ addtocart.addEventListener("click", (cart) => {
         emailjs
           .send("service_sp6m68x", "template_uo2qcla", params)
           .then((message) => {
-            console.log(message);
+            message;
           })
-          .catch((err) => console.log(err));
+          .catch((err) => console.error(err));
 
         localStorage.setItem("register_arr", JSON.stringify(registerArr));
       }
@@ -711,7 +654,7 @@ addtocart.addEventListener("click", (cart) => {
 
     //catch statement
   } catch (error) {
-    console.log("Error" + error);
+    console.error("Error" + error);
   }
 });
 
@@ -760,9 +703,6 @@ function giftback() {
 const urls = window.location.search;
 const urlparams = new URLSearchParams(urls);
 const usernames = urlParams.get("name");
-console.log(usernames);
-
-// console.log(register[index1]);
 
 // delete course eventlistener when click
 let delete_mycourses = document.getElementById("deletecourse");
@@ -772,30 +712,23 @@ delete_mycourses.addEventListener("click", (deletecourse) => {
   try {
     //JSON parse mycourses
     let register = JSON.parse(localStorage.getItem("register_arr"));
-    console.log(register);
 
     let loggin = JSON.parse(localStorage.getItem("login_arr"));
-    console.log(loggin);
 
     const get_user_obj = register.find((event) => event.email === loggin);
-    console.log(get_user_obj);
 
     let indexx = register.indexOf(get_user_obj);
-    console.log(indexx);
 
     //find clicked course by find method
     const get_mycourses = register[indexx].courses.find(
       (course) => course.obj.title === usernames
     );
-    console.log(get_mycourses);
 
     // find clicked index from mycourses array
     let index = register[indexx].courses.indexOf(get_mycourses);
-    console.log(index);
 
     //find index
     let index1 = register.indexOf(get_user_obj);
-    console.log(index1);
 
     //courses id splice find object
 
@@ -813,10 +746,8 @@ delete_mycourses.addEventListener("click", (deletecourse) => {
       let getObjs = register[index1].courses.find(
         (event) => event.obj.id === get_mycourses.obj.id
       );
-      console.log(getObjs);
 
       let findValIndex = register[index1].courses.indexOf(getObjs);
-      console.log(findValIndex);
 
       register[index1].courses.splice(findValIndex, 1);
       localStorage.setItem("register_arr", JSON.stringify(register));
@@ -828,7 +759,7 @@ delete_mycourses.addEventListener("click", (deletecourse) => {
 
     //catch statement
   } catch (error) {
-    console.log("Error" + error);
+    console.error("Error" + error);
   }
 });
 
@@ -844,34 +775,26 @@ delete_bookmark.addEventListener("click", (deletecourse) => {
   try {
     //bookmark JSON parse from localstorage
     let register = JSON.parse(localStorage.getItem("register_arr"));
-    console.log(register);
 
     let loggin = JSON.parse(localStorage.getItem("login_arr"));
-    console.log(loggin);
 
     const get_user_obj = register.find((event) => event.email === loggin);
-    console.log(get_user_obj);
 
     let index1 = register.indexOf(get_user_obj);
-    console.log(index1);
 
     //find bookmarrk object by title
     const get_bookmark = register[index1].bookmarks.find(
       (course) => course.obj.title === usernames
     );
-    console.log(get_bookmark);
 
     //find bookmark obj with course_data
     const get_course = course_data.find((course) => course.title === usernames);
-    console.log(get_course);
 
     // find index by match object from course_data
     const course_index = course_data.indexOf(get_course);
-    console.log(course_index);
 
     // find index by match object from bookmark
     const index = register[index1].bookmarks.indexOf(get_bookmark);
-    console.log(index);
 
     //confirm message to remove bookmark
     let msg = confirm(
@@ -884,17 +807,14 @@ delete_bookmark.addEventListener("click", (deletecourse) => {
     } else {
       //find index
       let index1 = register.indexOf(get_user_obj);
-      console.log(index1);
 
       //remove bookmark id from bookmark key in user object
 
       let getObjs = register[index1].bookmarks.find(
         (event) => event.obj.id === get_bookmark.obj.id
       );
-      console.log(getObjs);
 
       let findValIndex = register[index1].bookmarks.indexOf(getObjs);
-      console.log(findValIndex);
 
       register[index1].bookmarks.splice(index, 1);
       localStorage.setItem("register_arr", JSON.stringify(register));
@@ -909,7 +829,6 @@ delete_bookmark.addEventListener("click", (deletecourse) => {
 
       //assign this source with previous source
       let assignObj = Object.assign(get_course, bookmark_obj);
-      console.log(assignObj);
 
       //assign new value to old one
       course_data[course_index] = assignObj;
@@ -922,25 +841,20 @@ delete_bookmark.addEventListener("click", (deletecourse) => {
 
     //catch statement
   } catch (error) {
-    console.log("Error" + error);
+    console.error("Error" + error);
   }
 });
 
 // parse register array JSON
 const register_arr = JSON.parse(localStorage.getItem("register_arr"));
-console.log(register_arr);
 
 // parse login array JSON
 const login = JSON.parse(localStorage.getItem("login_arr"));
-console.log(login);
 
 // get user profile from user login
 const get_objs = register_arr.find((Reg) => login == Reg["email"]);
-console.log(get_objs);
 
 document.getElementById("dropusers").src = get_objs.profile_pic;
-
-//  console.log(get_objs.email);
 
 // comment card create when clicks
 let createcomment = document.getElementById("submit-comment");
@@ -949,7 +863,6 @@ createcomment.addEventListener("click", (event) => {
 
   try {
     const comment_input = document.getElementById("comment-input").value;
-    console.log(comment_input);
 
     // if array not null do this
     if (localStorage.getItem("comments") != null) {
@@ -1011,7 +924,7 @@ createcomment.addEventListener("click", (event) => {
 
     //catch statement
   } catch (error) {
-    console.log("Error" + error);
+    console.error("Error" + error);
   }
 });
 
@@ -1025,7 +938,6 @@ const comment = JSON.parse(localStorage.getItem("comments")) ?? [];
 let findcomments = comment.filter(
   (event) => event.course_title === get_obj.title
 );
-console.log(findcomments);
 
 // if(findcomments === null){
 //   return
@@ -1046,7 +958,6 @@ for (let i = 0; i < findcomments.length; i++) {
     <button class="comment-edit-delete2_block" id="comment-edit-delete2" onclick="deletecomment(${findcomments[i]["comment_id"]})">Delete</button>
     </div>`;
     // onclick=`+comment[i]["comment_id"]+`
-    console.log(findcomments[i]["comment_input"]);
   } else {
     //user id same means edit delete button display none
     comment_div.innerHTML = `<div class="comment-img">
@@ -1062,7 +973,6 @@ for (let i = 0; i < findcomments.length; i++) {
 }
 
 //if else for show comments
-console.log(comment);
 
 let editObj;
 //edit function new popup div
@@ -1073,22 +983,18 @@ function edit(a) {
     document.getElementById("edit-comment").style.display = "block";
     document.getElementById("edit-comment").style.marginTop = "3000px";
     document.getElementById("edit-comment").style.opacity = "1";
-    console.log(a);
     const get_editobj = comment.find((e) => e.comment_id === a);
-    console.log(get_editobj);
-    console.log(get_editobj["comment_input"]);
+    
 
     const input = document.getElementById("comment-edit");
     input.value = get_editobj["comment_input"];
-
-    //  console.log(input);
 
     // return get_editobj;
     editObj = get_editobj;
 
     //catch statement
   } catch (error) {
-    console.log("Error" + error);
+    console.error("Error" + error);
   }
 }
 
@@ -1100,7 +1006,7 @@ function backedit() {
 
     //catch statement
   } catch (error) {
-    console.log("Error" + error);
+    console.error("Error" + error);
   }
 }
 
@@ -1118,13 +1024,10 @@ function submitedit() {
       user_id,
     };
 
-    console.log(obj);
 
     let edit_assign = Object.assign(editObj, obj);
-    console.log(edit_assign);
 
     const index = comment.indexOf(editObj);
-    console.log(index);
 
     comment[index] = edit_assign;
 
@@ -1134,23 +1037,20 @@ function submitedit() {
 
     //catch statement
   } catch (error) {
-    console.log("Error" + error);
+    console.error("Error" + error);
   }
 }
 
 // to get return vslue from edit function
 function editSubmit(editObj) {
-  console.log(editObj);
 }
 
 // delete comment function when click delete button
 function deletecomment(a) {
   try {
     const get_editobj = comment.find((e) => e.comment_id === a);
-    console.log(get_editobj);
 
     const index = comment.indexOf(get_editobj);
-    console.log(index);
 
     comment.splice(index, 1);
 
@@ -1160,7 +1060,7 @@ function deletecomment(a) {
 
     //catch statement
   } catch (error) {
-    console.log("Error" + error);
+    console.error("Error" + error);
   }
 }
 
@@ -1181,7 +1081,7 @@ for (i = 0; i < acc.length; i++) {
 
       //catch statement
     } catch (error) {
-      console.log("Error" + error);
+      console.error("Error" + error);
     }
   });
 }

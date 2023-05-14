@@ -8,7 +8,6 @@ password.addEventListener(
   (userInputPassword, saltAndHashedPassword) => {
 
     let register_data = JSON.parse(localStorage.getItem("register_arr"));
-    console.log(register_data);
     
     let datasall;
     // if( event.key === 'Enter' ){
@@ -16,10 +15,8 @@ password.addEventListener(
       datasall = register_data[i]["password"];
     }
 
-    console.log(datasall);
     // function encryptPassword(password) {
     let passwordval = document.getElementById("password").value;
-    console.log(passwordval);
 
     try {
       const saltAndHashedPassword = datasall;
@@ -31,11 +28,9 @@ password.addEventListener(
         passwordval + CryptoJS.enc.Hex.parse(salt)
       );
 
-      console.log(hashedPassword.toString() === storedHash);
-
       hashedpassword = hashedPassword.toString() === storedHash;
 
-      console.log(hashedpassword);
+
       // Compare the hashed user input password with the stored hash
       return hashedPassword.toString() === storedHash;
     } catch (error) {
@@ -57,7 +52,6 @@ login.addEventListener("submit", (event) => {
   //try statement
   try {
     let register_data = JSON.parse(localStorage.getItem("register_arr"));
-    console.log(register_data);
 
     let email = document.getElementById("email").value;
     let password = document.getElementById("password").value;
@@ -78,14 +72,18 @@ login.addEventListener("submit", (event) => {
 
     if (match == true) {
       alert("user login successfully");
-      window.location.href = "userHome.html";
+
+let newWindow = window.open("../pages/userHome.html", '_blank', "noopener,noreferrer");
+window.close();
+newWindow.focus();
+
     } else {
       alert("invalid user credentials");
     }
 
     //catch statement
   } catch (error) {
-    console.log("Error" + error);
+    console.error("Error" + error);
   }
 });
 

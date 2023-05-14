@@ -10,12 +10,9 @@ function renderclock() {
 
  //get parsed data
  const registerUsers = JSON.parse(localStorage.getItem("register_arr"));
- console.log(registerUsers);
-
 
   //get parsed data
   const registerSellers = JSON.parse(localStorage.getItem("seller_register_arr"));
- console.log(registerSellers);
 
 
 //show total users and sellers in chart
@@ -129,8 +126,6 @@ element.style.display = "none";
 let tr;
 
 for (let i = 0; i < registerUsers.length; i++) {
-    
-    console.log(registerUsers[i]["courses"].length);
     
     tr = document.createElement("tr");
     tr.setAttribute("class","user_details");

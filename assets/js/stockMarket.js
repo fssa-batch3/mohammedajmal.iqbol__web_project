@@ -178,15 +178,11 @@ async function getData() {
   try{
    //try block
    let tickervalue = document.getElementById("search").value;
-   console.log(tickervalue);
-
-   console.log(stockdata);
 
    let tickersymbol;
    for (const key in stockdata) {
         if(key.toLowerCase().includes(tickervalue.toLowerCase())){
                 tickersymbol = stockdata[key];
-                console.log(tickersymbol);
         }
    }
 
@@ -240,7 +236,22 @@ async function getData() {
 
   } catch(err) {
     //catch block when error occured
+    document.getElementById('card-body').innerHTML = 'Sorry, No results found';
+    alert("Sorry, No results found \nThis Page is going to Reload");
+      window.location.reload();
     console.error( "Error" + err);
   }
 
 }
+
+
+
+      const myButton = document.getElementById("submit");
+const loadingDiv = document.getElementById("loading");
+
+myButton.addEventListener("click", function() {
+  loadingDiv.style.display = "block"; // Show loading div
+  setTimeout(function() {
+    loadingDiv.style.display = "none"; // Hide loading div after 5 seconds
+  }, 2500);
+});

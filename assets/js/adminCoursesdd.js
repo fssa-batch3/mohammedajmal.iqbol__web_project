@@ -5,17 +5,12 @@ const course_data = JSON.parse(localStorage.getItem("course_data"));
 const seller_register = JSON.parse(localStorage.getItem("seller_register_arr"));
 //login array parse
 const seller_login = JSON.parse(localStorage.getItem("seller_login_arr"));
-console.log(seller_login);
 
 //check user
 const get_seller_obj = seller_register.find((event) => event.email === seller_login);
-console.log(get_seller_obj);
 
 //find index of seller obj
 let index = seller_register.indexOf(get_seller_obj);
-
-//seller selling courses array
-console.log(seller_register[index]["sellingCourses"]);
 
 
 
@@ -80,15 +75,12 @@ console.log(seller_register[index]["sellingCourses"]);
         
     //register array parse
 const seller_register_arr = JSON.parse(localStorage.getItem("seller_register_arr"));
-console.log(seller_register_arr);
 
 //login array parse
 const seller_login_arr = JSON.parse(localStorage.getItem("seller_login_arr"));
-console.log(seller_login_arr);
 
 //check user
 const get_obj = seller_register_arr.find((event) => event.email === seller_login_arr);
-console.log(get_obj);
 
 //img tag create in js for seller profile
 let seller_profile;

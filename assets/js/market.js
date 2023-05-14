@@ -2,13 +2,10 @@
 
 
            const register_arr = JSON.parse(localStorage.getItem("register_arr"));
-           console.log(register_arr);
        
            const login_arr = JSON.parse(localStorage.getItem("login_arr"));
-           console.log(login_arr);
        
            const get_obj = register_arr.find( event => event.email === login_arr);
-           console.log(get_obj);
             
        //user profile
              let user_profile;
@@ -35,7 +32,6 @@
        
             x = parsedData.markets;
        
-           console.log(x)
            createtag(x)
        
        
@@ -43,7 +39,7 @@
         })
        
        .catch((err) => {
-           console.log(err + "OOps Something went wrong..!!");
+           console.error(err + "OOps Something went wrong..!!");
        });
        
        

@@ -3,7 +3,6 @@
 let url = window.location.search;
 let urlParams = new URLSearchParams(url);
 let email = urlParams.get("email");
-console.log(email);
 
 
 //when click submit this event will happen
@@ -16,7 +15,6 @@ submit.addEventListener("click", function (e){
   document.getElementById("verify").style.display = "block";
 
   
-
 let randomArray = new Uint32Array(1);
 window.crypto.getRandomValues(randomArray);
 let otpforuser = randomArray[0] % 900000 + 100000;
@@ -68,12 +66,16 @@ emailjs.send("service_sp6m68x","template_1veprt4",params)
        event.preventDefault();
 
        let otpinput = document.getElementById("otp-input").value;
-       console.log(otpinput);
 
        //if verified success if not unsuccess
        if( otpinput == otpforuser ){   
            alert("Your Email has Been Successfully Verified");
-           window.location.href = "signin.html";
+
+
+           let newWindow = window.open("../pages/userHome.html", '_blank', "noopener,noreferrer");
+           window.close();
+           newWindow.focus();
+           
        } else {
            alert("Email Not Verified OTP Not Match");
            

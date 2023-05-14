@@ -74,13 +74,9 @@ document.querySelector(".container").append(seller_profile);
 const seller_register_arr = JSON.parse(
   localStorage.getItem("seller_register_arr")
 );
-console.log(seller_register_arr);
 const seller_login = JSON.parse(localStorage.getItem("seller_login_arr"));
-console.log(seller_login);
 
 let get_obj = seller_register_arr.find((Reg) => seller_login == Reg["email"]);
-
-console.log(get_obj);
 
 const username = document.getElementById("panel-title");
 const age = document.getElementById("panel-age");
@@ -143,7 +139,7 @@ edit.addEventListener("click", (event) => {
 
     //catch statement
   } catch (error) {
-    console.log("Error" + error);
+    console.error("Error" + error);
   }
 });
 
@@ -169,10 +165,10 @@ fileInput.addEventListener('change', () => {
     .then(response => response.json())
     .then(data => {
       
-      console.log(data)
+      data;
 
       cloudinaryData = data.url; 
-      console.log(cloudinaryData); 
+      console.error(cloudinaryData); 
       
     })
     .catch(error => console.error(error));
@@ -191,7 +187,6 @@ done.addEventListener("click", (event) => {
   } else {
     datas = get_obj["profile_pic"];
   }
-  console.log(datas);
 
   try {
     document.getElementById("panel-age").disabled = true;
@@ -225,15 +220,10 @@ done.addEventListener("click", (event) => {
       profile_pic,
     };
 
-    console.log("hi");
-
-
       //assign data
       let assign_data = Object.assign(get_obj, new_obj);
-      console.log(assign_data);
 
       let index = seller_register_arr.indexOf(get_obj);
-      console.log(index);
 
       seller_register_arr[index] = assign_data;
 
@@ -250,13 +240,12 @@ done.addEventListener("click", (event) => {
 
     //catch statement
   } catch (error) {
-    console.log("Error" + error);
+    console.error("Error" + error);
   }
 });
 
 //delete user profile
 let deleteUserProfile = document.getElementById("delUserProfile");
-console.log(deleteUserProfile);
 deleteUserProfile.addEventListener("click", (event) => {
   event.preventDefault();
 
@@ -270,21 +259,15 @@ deleteUserProfile.addEventListener("click", (event) => {
     let get_seller_obj = seller_register.find(
       (event) => event.email === seller_login
     );
-    console.log(get_seller_obj);
 
-    console.log(get_seller_obj["name"]);
     let new_obj = {
       profile_pic: `https://ui-avatars.com/api/?name=${get_seller_obj["name"]}&background=random`,
     };
 
-    console.log("hi");
-
     //assign data
     let assign_data = Object.assign(get_seller_obj, new_obj);
-    console.log(assign_data);
 
     let index = seller_register.indexOf(get_seller_obj);
-    console.log(index);
 
     seller_register[index] = assign_data;
 
@@ -297,7 +280,7 @@ deleteUserProfile.addEventListener("click", (event) => {
 
     //catch catches the error
   } catch (error) {
-    console.log("Error" + error);
+    console.error("Error" + error);
   }
 });
 
@@ -310,7 +293,6 @@ clear.addEventListener("click", (event) => {
 
   try {
     let index = seller_register_arr.indexOf(get_obj);
-    //  console.log(index);
     //  let index1 = login.indexOf(get_obj);
     let msg = confirm("are you sure you want to delete");
     if (msg != true) {
@@ -327,8 +309,26 @@ clear.addEventListener("click", (event) => {
 
     //catch statement
   } catch (error) {
-    console.log("Error" + error);
+    console.error("Error" + error);
   }
 });
 
 //seller profile page js code end
+
+
+
+const fileInput1 = document.getElementById('panel-editprofile1');
+const loadingDiv = document.getElementById("loading");
+const body = document.getElementById("body");
+const container = document.getElementById("container");
+
+fileInput1.addEventListener("change", function() {
+  loadingDiv.style.display = "block"; // Show loading div
+  body.style.backgroundColor = "white";
+  container.style.backgroundColor = "white";
+  setTimeout(function() {
+    loadingDiv.style.display = "none"; // Hide loading div after 5 seconds
+    body.style.backgroundColor = "#87CEFA";
+    container.style.backgroundColor = "#87CEFA";
+  }, 4500);
+});

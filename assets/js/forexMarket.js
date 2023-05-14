@@ -23,13 +23,11 @@ const options = {
      //.then rewsponse get from api
     .then((response) => response.json())
     .then((response) => {
-      console.log(response);
 
       x = response;
 
       y = response.rates;
 
-      console.log(y);
 
       //card create from api call
       for (let i = 0; i < 150; i++) {
@@ -73,3 +71,19 @@ searchbar.addEventListener("input", () => {
 });
 
 //forex market page js code end
+
+
+
+//page loader 
+window.onload = function() {
+  // Show the loading screen
+  document.getElementById("loading").classList.remove("hide");
+
+  document.querySelector("#rowcardsdiv").classList.add("hide");
+
+  // Hide the loading screen after 5 seconds
+  setTimeout(function() {
+    document.getElementById("loading").classList.add("hide");
+    document.querySelector("#rowcardsdiv").classList.remove("hide");
+  }, 2500);
+};

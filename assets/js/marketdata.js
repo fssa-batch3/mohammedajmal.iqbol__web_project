@@ -15,17 +15,15 @@ setInterval(renderclock, 1000);
 try {
   //get parsed data
   const registerUsers = JSON.parse(localStorage.getItem("register_arr"));
-  console.log(registerUsers);
 
   //get parsed data
   const registerSellers = JSON.parse(
     localStorage.getItem("seller_register_arr")
   );
-  console.log(registerSellers);
 
-  var xValues = ["Total Users", "Total Sellers"];
-  var yValues = [registerUsers.length, registerSellers.length];
-  var barColors = ["#2b5797", "#1e7145"];
+  let xValues = ["Total Users", "Total Sellers"];
+  let yValues = [registerUsers.length, registerSellers.length];
+  let barColors = ["#2b5797", "#1e7145"];
 
   new Chart("myChart", {
     type: "doughnut",
@@ -46,18 +44,18 @@ try {
     },
   });
 
-  var xValues = ["New Users Joined Past Week", "New Sellers Joined Past Week"];
-  var yValues = [registerUsers.length, registerSellers.length];
-  var barColors = ["#2b5797", "#1e7145"];
+  let xValues2 = ["New Users Joined Past Week", "New Sellers Joined Past Week"];
+  let yValues2 = [registerUsers.length, registerSellers.length];
+  let barColors2 = ["#2b5797", "#1e7145"];
 
   new Chart("myChart1", {
     type: "doughnut",
     data: {
-      labels: xValues,
+      labels: xValues2,
       datasets: [
         {
-          backgroundColor: barColors,
-          data: yValues,
+          backgroundColor: barColors2,
+          data: yValues2,
         },
       ],
     },
@@ -69,18 +67,18 @@ try {
     },
   });
 
-  var xValues = ["New Users Joined Past Week", "New Sellers Joined Past Week"];
-  var yValues = [registerUsers.length, registerSellers.length];
-  var barColors = ["#2b5797", "#1e7145"];
+  let xValues3 = ["New Users Joined Past Week", "New Sellers Joined Past Week"];
+  let yValues3 = [registerUsers.length, registerSellers.length];
+  let barColors3 = ["#2b5797", "#1e7145"];
 
   new Chart("myChart2", {
     type: "doughnut",
     data: {
-      labels: xValues,
+      labels: xValues3,
       datasets: [
         {
-          backgroundColor: barColors,
-          data: yValues,
+          backgroundColor: barColors3,
+          data: yValues3,
         },
       ],
     },
@@ -94,7 +92,7 @@ try {
 
   //catch statement
 } catch (error) {
-  console.log("Error" + error);
+  console.error("Error" + error);
 }
 
 //search query for search bar code start
@@ -116,7 +114,7 @@ searchbar.addEventListener("input", () => {
 
     //catch statement
   } catch (error) {
-    console.log("Error" + error);
+    console.error("Error" + error);
   }
 });
 
@@ -223,18 +221,6 @@ try {
         data11,
         data12,
       ] = data;
-      console.log("Data 1:", data1["Time Series (5min)"]);
-      console.log("Data 2:", data2["Time Series (Digital Currency Daily)"]);
-      console.log("Data 3:", data3["Time Series (Digital Currency Daily)"]);
-      console.log("Data 4:", data4["data"]);
-      console.log("Data 5:", data5);
-      console.log("Data 6:", data6);
-      console.log("Data 7:", data7);
-      console.log("Data 8:", data8);
-      console.log("Data 9:", data9);
-      console.log("Data 10:", data10);
-      console.log("Data 11:", data11);
-      console.log("Data 12:", data12);
 
       x = data1["Time Series (5min)"];
       y = data2["Time Series (Digital Currency Daily)"];
@@ -292,8 +278,6 @@ try {
       const datas = Object.values(y)
         .map((item) => parseFloat(item["4a. close (USD)"]))
         .reverse();
-      console.log(label);
-      console.log(datas);
 
       const ctx1 = document
         .getElementById("optionMoversChart")
@@ -365,8 +349,7 @@ try {
         crudelabels.push(a[i]["date"]);
         crudevalues.push(a[i]["value"]);
       }
-      console.log(crudelabels);
-      console.log(crudevalues);
+
       // Get the dates and reverse the order for chronological display
 
       const ctx3 = document.getElementById("crudeChart").getContext("2d");
@@ -455,7 +438,7 @@ try {
 
   //catch statement
 } catch (error) {
-  console.log("Error" + error);
+  console.error("Error" + error);
 }
 
 //market data front page dashboard js code end
@@ -483,3 +466,18 @@ newWindow.focus();
  }
 
  });
+
+
+//page loader 
+window.onload = function() {
+  // Show the loading screen
+  document.getElementById("loading").classList.remove("hide");
+
+  document.querySelector("#row").classList.add("hide");
+
+  // Hide the loading screen after 5 seconds
+  setTimeout(function() {
+    document.getElementById("loading").classList.add("hide");
+    document.querySelector("#row").classList.remove("hide");
+  }, 3000);
+};

@@ -31,21 +31,14 @@ form.addEventListener("submit", (event) => {
     let about_me = "Write About Yourself";
     let seller_id = Date.now();
 
-    console.log(name);
-    console.log(gender);
-    console.log(mobile_number);
-    console.log(date_of_birth);
-    console.log(email);
-    console.log(password);
-    console.log(confirm_password);
-    console.log(sellingCourses);
-    console.log(seller_id);
-
     //check he/she is already exists or not
     let match = false;
+    let matches = false;
     for (let i = 0; i < seller_register_arr.length; i++) {
       if (seller_register_arr[i]["email"] === email) {
         match = true;
+      }  else if (seller_register_arr[i]["name"] === name) {
+        matches = true;
       } else {
         match = false;
       }
@@ -53,10 +46,12 @@ form.addEventListener("submit", (event) => {
 
     if (match == true) {
       alert("user already exists");
+    } else if (matches == true) {
+      alert("UserName Already Exists Try With Different Name")
+      return;
     } else {
 
       let mobilenumber = document.getElementById("mobile-number").value;
-      console.log(mobilenumber);
 
       if (password != confirm_password) {
         alert("password not match try again");
@@ -87,7 +82,8 @@ form.addEventListener("submit", (event) => {
         let register = JSON.stringify(seller_register_arr);
         localStorage.setItem("seller_register_arr", register);
 
-        console.log(register);
+        localStorage.setItem("seller_login_arr",JSON.stringify(email));
+        
 
         //alerting the seller
         alert(

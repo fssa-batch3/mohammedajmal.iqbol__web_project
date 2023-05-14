@@ -59,21 +59,16 @@ for(let i=0;i<18;i++) {
   
 
         const seller_register_arr = JSON.parse(localStorage.getItem("seller_register_arr"));
-console.log(seller_register_arr); 
 
 
 //urlparams get title
 const url = window.location.search;
 const userparams = new URLSearchParams(url);
 const titles = userparams.get("title");
-console.log(titles);
 
 for(let i=0;i<seller_register_arr.length;i++){
 
 let find_seller_obj = seller_register_arr[i].sellingCourses.find((event) => event.obj.title === titles );
-console.log(find_seller_obj);
-
-console.log(find_seller_obj);
 
 }
      //object inside correct position ques , options , answer
@@ -88,10 +83,8 @@ console.log(find_seller_obj);
      values.push(obj);
   
     }
-    console.log(values);
 
     const quiz_questions_arr = JSON.parse(localStorage.getItem("quiz_questions_arr"));
-    console.log(quiz_questions_arr);
     
     //if not null
   if(quiz_questions_arr !== null ){
@@ -119,9 +112,7 @@ console.log(find_seller_obj);
     };
 
     newArray.push(newArrays);
-    
-    console.log(newArray);
- 
+
     localStorage.setItem("quiz_questions_arr",JSON.stringify(newArray));
     window.location.href = "../pages/adminCoursesAdd.html";
 
@@ -149,9 +140,6 @@ console.log(find_seller_obj);
 
     //push obj into arr
     newArray.push(newArrays);
-
-    
-    console.log(newArray);
  
     localStorage.setItem("quiz_questions_arr",JSON.stringify(newArray));
     window.location.href = "../pages/adminCoursesAdd.html";

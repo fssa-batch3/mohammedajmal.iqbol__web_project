@@ -9,7 +9,6 @@ login.addEventListener("submit", (event) => {
     let seller_register_arr = JSON.parse(
       localStorage.getItem("seller_register_arr")
     );
-    console.log(seller_register_arr);
 
     let email = document.getElementById("email").value;
     let password = document.getElementById("password").value;
@@ -38,14 +37,17 @@ login.addEventListener("submit", (event) => {
     const matched = match == true;
     if (matched) {
       alert("seller login successfully");
-      window.location.href = "../pages/adminCoursesAdd.html";
+
+      let newWindow = window.open("../pages/adminCoursesAdd.html", '_blank', "noopener,noreferrer");
+window.close();
+newWindow.focus();
     } else {
       alert("invalid seller credentials");
     }
 
     //catch statement
   } catch (error) {
-    console.log("Error" + error);
+    console.error("Error" + error);
   }
 });
 

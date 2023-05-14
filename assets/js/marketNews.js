@@ -12,18 +12,16 @@ const options = {
 //try statement
   let x;
   fetch(
-    "https://seeking-alpha.p.rapidapi.com/news/v2/list?category=market-news%3A%3Aall&size=20&number=1",
+    "https://seeking-alpha.p.rapidapi.com/news/v2/list?category=market-news%3A%3Aall&size=40&number=1",
     options
   )
     .then((response) => response.json())
     .then((response) => {
-      console.log(response);
 
       x = response.data;
-      console.log(x);
 
       // card create using api response
-      for (let i = 0; i < 20; i++) {
+      for (let i = 0; i < 40; i++) {
         let rowdiv = document.createElement("a");
         rowdiv.setAttribute("id", "card");
         rowdiv.innerHTML = `
@@ -45,3 +43,19 @@ const options = {
 
 
 //market news page js code end
+
+
+
+//page loader 
+window.onload = function() {
+  // Show the loading screen
+  document.getElementById("loading").classList.remove("hide");
+
+  document.querySelector("#rowdiv").classList.add("hide");
+
+  // Hide the loading screen after 5 seconds
+  setTimeout(function() {
+    document.getElementById("loading").classList.add("hide");
+    document.querySelector("#rowdiv").classList.remove("hide");
+  }, 3000);
+};

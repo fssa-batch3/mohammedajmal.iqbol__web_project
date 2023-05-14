@@ -12,6 +12,7 @@ table {
     width: 100%;
     max-width: 800px;
     margin: 0 auto;
+    margin-top: 20px;
     font-family: sans-serif;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   }
@@ -31,3 +32,14 @@ table {
     background-color: #f2f2f2;
   }
   
+.search {
+  padding: 10px;
+  width: 55%;
+  border-radius: 3px;
+  border: 1px solid grey;
+  margin-left: 332px;
+}
+.search:focus {
+  outline-color:  dodgerblue;
+  opacity: 0.6;
+}

@@ -12,6 +12,10 @@
 
     <div class="currecnylist">
         <h1 class="heading">forex Currency List by freshstocks</h1>
+
+        <div class="search-contaainer">
+            <input type="search" name="search" id="search" class="search" placeholder="Search for Symbol And Names Here" />
+        </div>
          <table class="tabletag"> 
             <thead>
                 <tr>
@@ -226,6 +230,7 @@ let tablerow;
 for( const key in forexdata ){
 
 tablerow = document.createElement("tr");
+tablerow.setAttribute("class","trtags")
 tablerow.innerHTML = `
                     <td>${key}</td>
                     <td>${forexdata[key]}</td>
@@ -236,6 +241,26 @@ document.querySelector("#tablebody").append(tablerow);
 }
 
 
+//searchbar 
+
+let searchbar = document.getElementById("search");
+searchbar.addEventListener("input" , () => {
+
+   let cards = document.getElementsByClassName("trtags");
+for( let i=0; i<cards.length;i++ ) {
+
+    let element = cards[i];
+
+   if( element.innerHTML.toLowerCase().includes(searchbar.value.toLowerCase())){
+       
+    element.style.display = "block";
+   } else {
+    element.style.display = "none";
+
+   }
+
+}
+})
 
 
 

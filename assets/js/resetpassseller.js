@@ -7,14 +7,11 @@ submit.addEventListener("click", function (e){
 
      
  let email = document.getElementById("otp-input").value;
- console.log(email);
 
  let seller_register_arr = JSON.parse(localStorage.getItem("seller_register_arr"));
- console.log(seller_register_arr);
 
  //find user obj
  const get_obj = seller_register_arr.find((user) => user.email === email);
- console.log(get_obj);
 
  //if he is already a seller means only he can reset his/her passwrod
   if(get_obj != undefined) {
@@ -25,7 +22,6 @@ submit.addEventListener("click", function (e){
    let randomArray = new Uint32Array(1);
 window.crypto.getRandomValues(randomArray);
 let otpforuser = randomArray[0] % 900000 + 100000;
-console.log(otpforuser);
 
    //body content of the email
  let body = `
@@ -72,8 +68,6 @@ emailjs.send("service_sp6m68x","template_1veprt4",params)
          alert("It won't be empty");
         } else {
 
-        
-        console.log(msg);
 
         if( msg == otpforuser ){   
             alert("Your Email has Been Successfully Verified");
@@ -83,9 +77,6 @@ emailjs.send("service_sp6m68x","template_1veprt4",params)
         //email verify done 
            
            let password = prompt("Please enter your password Should Contain One letter One Symbol 8 Characters");
-          
-        
-            console.log(get_obj);
    
             //assign new in old
              get_obj.password = password

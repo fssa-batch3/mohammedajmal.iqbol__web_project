@@ -5,8 +5,6 @@ let password = document.getElementById("password");
 let hashedpassword;
 password.addEventListener("input", () => {
 
-  console.log(password.value);
-
   // function encryptPassword(password) {
   let passwordval = document.getElementById("password").value;
 
@@ -18,8 +16,6 @@ password.addEventListener("input", () => {
     const hashedPassword = CryptoJS.SHA256(passwordval + salt);
 
     hashedpassword = salt.toString() + " " + hashedPassword.toString();
-
-    console.log(salt.toString() + " " + hashedPassword.toString());
 
     // Return the salt and hashed password as a string
     return salt.toString() + " " + hashedPassword.toString();
@@ -35,11 +31,8 @@ let confirm_password = document.getElementById("confirm-password");
 let hashedconfirm_password;
 confirm_password.addEventListener("input", () => {
 
-  // console.log(confirm_password.value);
-
   // function encryptPassword(password) {
   let confirm_password = document.getElementById("confirm-password").value;
-  console.log(confirm_password);
 
   try {
     // Generate a random salt value
@@ -49,8 +42,6 @@ confirm_password.addEventListener("input", () => {
     const hashedPassword = CryptoJS.SHA256(confirm_password + salt);
 
     hashedconfirm_password = salt.toString() + " " + hashedPassword.toString();
-
-    console.log(salt.toString() + " " + hashedPassword.toString());
 
     // Return the salt and hashed password as a string
     return salt.toString() + " " + hashedPassword.toString();
@@ -89,9 +80,12 @@ form.addEventListener("submit", (event) => {
     let user_id = Date.now();
 
     let match = false;
+    let matches = false;
     for (let i = 0; i < register_arr.length; i++) {
       if (register_arr[i]["email"] === email) {
         match = true;
+      } else if (register_arr[i]["name"] === name) {
+        matches = true;
       } else {
         match = false;
       }
@@ -99,12 +93,16 @@ form.addEventListener("submit", (event) => {
 
     if (match == true) {
       alert("user already exists");
+      return;
+    } else if (matches == true) {
+      alert("UserName Already Exists Try With Different Name")
+      return;
     } else {
       let name = document.getElementById("name").value;
-      console.log(name);
 
       let mobilenumber = document.getElementById("mobile-number").value;
-      console.log(mobilenumber);
+
+      let email = document.getElementById("email").value;
 
       if (password != confirm_password) {
         alert("password not match try again");
@@ -133,7 +131,7 @@ form.addEventListener("submit", (event) => {
         let register = JSON.stringify(register_arr);
         localStorage.setItem("register_arr", register);
 
-        console.log(register);
+        localStorage.setItem("login_arr",JSON.stringify(email));
 
         alert(
           "Please Verify Email \n You have to check the OTP One time Password Sent to You By Us and enter the recieved OTP to Verify Your Account"

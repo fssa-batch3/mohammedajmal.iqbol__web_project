@@ -70,13 +70,9 @@ user_profile.innerHTML = `
 document.querySelector(".container").append(user_profile);
 
 const register_arr = JSON.parse(localStorage.getItem("register_arr"));
-console.log(register_arr);
 const login = JSON.parse(localStorage.getItem("login_arr"));
-console.log(login);
 
 let get_obj = register_arr.find((Reg) => login == Reg["email"]);
-
-console.log(get_obj);
 
 
 
@@ -142,7 +138,7 @@ edit.addEventListener("click", (event) => {
 
     //catch statement
   } catch (error) {
-    console.log("Error" + error);
+    console.error("Error" + error);
   }
 });
 
@@ -164,10 +160,9 @@ fileInput.addEventListener('change', () => {
     .then(response => response.json())
     .then(data => {
       
-      console.log(data)
+      data;
 
       cloudinaryData = data.url; 
-      console.log(cloudinaryData); 
       
     })
     .catch(error => console.error(error));
@@ -185,7 +180,6 @@ done.addEventListener("click", (event) => {
   } else {
     datas = get_obj["profile_pic"];
   }
-  console.log(datas);
   //try statement
   try {
     document.getElementById("panel-age").disabled = true;
@@ -218,15 +212,11 @@ done.addEventListener("click", (event) => {
       profile_pic,
     };
 
-    console.log("hi");
-
 
       //assign data
       let assign_data = Object.assign(get_obj, new_obj);
-      console.log(assign_data);
 
       let index = register_arr.indexOf(get_obj);
-      console.log(index);
 
       register_arr[index] = assign_data;
 
@@ -237,34 +227,27 @@ done.addEventListener("click", (event) => {
 
     //catch statement
   } catch (error) {
-    console.log("Error" + error);
+    console.error("Error" + error);
   }
 });
 
 //delete user profile
 let deleteUserProfile = document.getElementById("delUserProfile");
-console.log(deleteUserProfile);
 deleteUserProfile.addEventListener("click", (event) => {
   event.preventDefault();
 
   //try statement start
   try {
     let register = JSON.parse(localStorage.getItem("register_arr"));
-    console.log(register);
 
-    console.log(get_obj["name"]);
     let new_obj = {
       profile_pic: `https://ui-avatars.com/api/?name=${get_obj["name"]}&background=random`,
     };
 
-    console.log("hi");
-
     //assign data
     let assign_data = Object.assign(get_obj, new_obj);
-    console.log(assign_data);
 
     let index = register_arr.indexOf(get_obj);
-    console.log(index);
 
     register_arr[index] = assign_data;
 
@@ -274,7 +257,7 @@ deleteUserProfile.addEventListener("click", (event) => {
 
     //catch catches the error
   } catch (error) {
-    console.log("Error" + error);
+    console.error("Error" + error);
   }
 });
 
@@ -288,7 +271,6 @@ clear.addEventListener("click", (event) => {
   //try statement works when code runs perfectly
   try {
     let index = register_arr.indexOf(get_obj);
-    //  console.log(index);
     //  let index1 = login.indexOf(get_obj);
     let msg = confirm("are you sure you want to delete");
     if (msg != true) {
@@ -302,8 +284,26 @@ clear.addEventListener("click", (event) => {
 
     ///catch catches the error
   } catch (error) {
-    console.log("Error" + error);
+    console.error("Error" + error);
   }
 });
 
 //userprofile page js code end
+
+
+
+const fileInput1 = document.getElementById('panel-editprofile1');
+const loadingDiv = document.getElementById("loading");
+const body = document.getElementById("body");
+const container = document.getElementById("container");
+
+fileInput1.addEventListener("change", function() {
+  loadingDiv.style.display = "block"; // Show loading div
+  body.style.backgroundColor = "white";
+  container.style.backgroundColor = "white";
+  setTimeout(function() {
+    loadingDiv.style.display = "none"; // Hide loading div after 5 seconds
+    body.style.backgroundColor = "#87CEFA";
+    container.style.backgroundColor = "#87CEFA";
+  }, 4500);
+});

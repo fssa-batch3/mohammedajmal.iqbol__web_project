@@ -2,7 +2,6 @@
 
 //register array parsed from local
 const register_arr = JSON.parse(localStorage.getItem("register_arr"));
-console.log(register_arr);
 
 let cloudinaryData;
 //file input from user local to cloud storage and link generate
@@ -21,10 +20,7 @@ fileInput.addEventListener("change", () => {
   })
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
-
       cloudinaryData = data.url;
-      console.log(cloudinaryData);
     })
     .catch((error) => console.error(error));
 });
@@ -41,8 +37,6 @@ form.addEventListener("submit", (event) => {
   //if this array already have value then parse the old one from local
   if (localStorage.getItem("course_data") !== null) {
     course_data = JSON.parse(localStorage.getItem("course_data"));
-
-    console.log(cloudinaryData);
 
     //for adding new course these are course details we get from user.
     let img = cloudinaryData;
@@ -131,23 +125,18 @@ form.addEventListener("submit", (event) => {
     const seller_register_arr = JSON.parse(
       localStorage.getItem("seller_register_arr")
     );
-    console.log(seller_register_arr);
 
     //seller login array parse from local
     const seller_login_arr = JSON.parse(
       localStorage.getItem("seller_login_arr")
     );
-    console.log(seller_login_arr);
 
     //find now loggedin object using two arrays
     let find_seller_obj = seller_register_arr.find(
       (event) => event.email === seller_login_arr
     );
-    console.log(find_seller_obj);
-
     //find index for logged in user from register array
     let index = seller_register_arr.indexOf(find_seller_obj);
-    console.log(index);
 
     //courses add to seller object inside array
 
@@ -161,7 +150,6 @@ form.addEventListener("submit", (event) => {
       const varobj = seller_register_arr[index]["sellingCourses"].find(
         (e) => e.obj.title === course_obj.title
       );
-      console.log(varobj);
 
       //checked it should return undefined
 
@@ -174,7 +162,6 @@ form.addEventListener("submit", (event) => {
 
         //puh obj into array
         course_data.push(course_obj);
-        console.log(course_data);
 
         //making array to stringify
         const add_data = JSON.stringify(course_data);
@@ -193,7 +180,6 @@ form.addEventListener("submit", (event) => {
           (item) => item.obj.title
         );
 
-        console.log(findcoursedata);
 
         //href anker redirect to quiz page + its title URLParams
         window.location.href = "../pages/quizquestions.html?title=" + title;
@@ -222,11 +208,9 @@ form.addEventListener("submit", (event) => {
 
       //assign object new in old
       let user_id_assign = Object.assign(find_seller_obj, user_obj);
-      console.log(user_id_assign);
 
       //find the index of older obj from the array
       let index1 = seller_register_arr.indexOf(find_seller_obj);
-      console.log(index1);
 
       //assigning the new in old
       seller_register_arr[index] = user_id_assign;
@@ -250,7 +234,6 @@ form.addEventListener("submit", (event) => {
         (item) => item.obj.title
       );
 
-      console.log(findcoursedata);
 
       //href anker redirect to quiz page + its title URLParams
       window.location.href = `../pages/quizquestions.html?title=${title}`;
@@ -348,22 +331,18 @@ form.addEventListener("submit", (event) => {
     const seller_register_arr = JSON.parse(
       localStorage.getItem("seller_register_arr")
     );
-    console.log(seller_register_arr);
 
     const seller_login_arr = JSON.parse(
       localStorage.getItem("seller_login_arr")
     );
-    console.log(seller_login_arr);
 
     //find seller obj
     let find_seller_obj = seller_register_arr.find(
       (event) => event.email === seller_login_arr
     );
-    console.log(find_seller_obj);
 
     //find seller obj index from array
     let index = seller_register_arr.indexOf(find_seller_obj);
-    console.log(index);
 
     //push obj into array
     seller_register_arr[index].sellingCourses.push(courses_id);
@@ -389,8 +368,6 @@ form.addEventListener("submit", (event) => {
     let findcoursedata = sellercoursedata[index].sellingCourses.find(
       (item) => item.obj.title
     );
-
-    console.log(findcoursedata);
 
     //href anker redirect to quiz adding page using URLParams title
     window.location.href = "../pages/quizquestions.html?title=" + title;

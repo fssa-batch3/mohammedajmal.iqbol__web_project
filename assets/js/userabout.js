@@ -10,35 +10,98 @@ function myFunction() {
 
      //arr parsed from local
       const register_arr = JSON.parse(localStorage.getItem("register_arr"));
-      console.log(register_arr);
   
       const login_arr = JSON.parse(localStorage.getItem("login_arr"));
-      console.log(login_arr);
   
       const get_obj = register_arr.find( event => event.email === login_arr);
-      console.log(get_obj);
        
-        //user profile show
-        let user_profile;
+        if( get_obj !== undefined ){
+
+
+        //   <div class="topnav" id="myTopnav">
+        //   <a href="../index.html" class="active"><img class="nav-logo" src="../assets/images/Screenshot 2023-02-11 021952.png" alt=""></a>
+        //   <div class="navlinks">
+        //     <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+        //   <a href="../pages/userabout.html" class="navlink">About</a>
+        //   <a href="../pages/marketdata.html" class="navlink">Market</a>
+        //   <a href="../pages/live_trading.html" class="navlink">Trade</a>
+        //   <a href="../pages/learn.html" class="navlink">Learn</a>
+        //   <a href="../pages/userContact.html" class="navlink">Contact</a>&emsp;
+        //   <a class="notificationimg" href="#language"> <div id="google_translate_element" id="lang"></div></a>
+        //   <a class="notificationimg" href="userContact.html"><img class="notificationimage" src="../assets/images/icons8-online-support-50.png" alt=""></a>
+        //   <a id="form" class="user-profile" href="userprofile.html">
+    
+        //   </a>
+        //   </div>
+        // </div>
+
+
+        let div;
+
+        div = document.createElement("div");
+        div.setAttribute("class","topnav");
+        div.setAttribute("id","myTopnav");
+        div.innerHTML = `
+        
+        <a href="../index.html" class="active"><img class="nav-logo" src="../assets/images/Screenshot 2023-02-11 021952.png" alt=""></a>
+        <div class="navlinks">
+          <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+        <a href="../pages/userabout.html" class="navlink">About</a>
+        <a href="../pages/marketdata.html" class="navlink">Market</a>
+        <a href="../pages/live_trading.html" class="navlink">Trade</a>
+        <a href="../pages/learn.html" class="navlink">Learn</a>
+        <a href="../pages/userContact.html" class="navlink">Contact</a>&emsp;
+        <a class="notificationimg" href="#language"> <div id="google_translate_element" id="lang"></div></a>
+        <a class="notificationimg" href="userContact.html"><img class="notificationimage" src="../assets/images/icons8-online-support-50.png" alt=""></a>
+        <a id="form" class="user-profile" href="userprofile.html">
   
+        </a>
+        </div>
+`;
+       document.querySelector("body").prepend(div);
+
+                       //user profile show
+                       let user_profile;
   
-        user_profile = document.createElement("img");
-        user_profile.setAttribute("id","user-profile");
-        user_profile.setAttribute("src", get_obj["profile_pic"]);
-        document.querySelector("#form").append(user_profile);
-  
+       
+                       user_profile = document.createElement("img");
+                       user_profile.setAttribute("id","user-profile");
+                       user_profile.setAttribute("src", get_obj["profile_pic"]);
+                       document.querySelector("#form").append(user_profile);
+         
+
+        } else {
+
+          
+        let div2;
+
+        div2 = document.createElement("div");
+        div2.setAttribute("class","topnav");
+        div2.setAttribute("id","myTopnav");
+        div2.innerHTML = ` <a href="../index.html" class="active"><img class="nav-logo" src="../assets/images/Screenshot 2023-02-11 021952.png" alt=""></a>
+        <div class="navlinks">
+          <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+        <a href="../pages/about.html" class="navlink">About</a>
+        <a href="../pages/marketdata.html" class="navlink">Market</a>
+        <a href="#" class="navlink">Trade</a>
+        <a href="#" class="navlink">Learn</a>
+        <a href="../pages/contact.html" class="navlink">Contact</a>
+        <a class="login1" href="#contact"> <div class="notification">
+          <form action="../pages/user_personas.html"><button class="login"  alt="">Log In</button></form>
+        </div></a>
+        <a class="login2" href="#contact"><div class="notification">
+          <form action="../pages/user_personas.html"><button class="registration"  alt="">FREE TRIAL</button></form>
+          </div></a>
+        </div>`;
+
+        document.querySelector("body").prepend(div2);
+        }
+
+
+
   //google translate
   function googleTranslateElementInit() {
     const translateElement = new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
     return translateElement;
   }
-
-
-  window.addEventListener('scroll', () => {
-    const scrollTop = document.documentElement.scrollTop;
-    const documentHeight = document.documentElement.scrollHeight;
-    const windowHeight = document.documentElement.clientHeight;
-    const scrolled = scrollTop / (documentHeight - windowHeight) * 100;
-    document.getElementById("myBar").style.width = `${scrolled}%`;
-  });
   

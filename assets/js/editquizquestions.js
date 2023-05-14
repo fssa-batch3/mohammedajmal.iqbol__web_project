@@ -1,12 +1,10 @@
 //editquizquestions array parse from local
 const quizquestions = JSON.parse(localStorage.getItem("quiz_questions_arr"));
-console.log(quizquestions);
 
 //url get title from tab location.search
 const url = window.location.search;
 const userparams = new URLSearchParams(url);
 const titles = userparams.get("title");
-console.log(titles);
 
 //find quiz using titles from url if match returns a object
 const question = quizquestions.find((obj1) =>
@@ -14,13 +12,9 @@ const question = quizquestions.find((obj1) =>
     obj2.obj.find((obj3) => obj3.courseName === titles)
   )
 );
-console.log(question);
-
-console.log(question.subarrays[0].obj);
 
 //find index of the returned object
 let findindex = quizquestions.indexOf(question);
-console.log(findindex);
 
 //new array
 let flatArr = [];
@@ -36,8 +30,6 @@ for (let i = 0; i < question.subarrays.length; i++) {
     }
   }
 }
-
-console.log(flatArr);
 
 //loop for to place the old values of respective quiz
 for (let i = 0; i < 18; i++) {
@@ -108,7 +100,6 @@ submit.addEventListener("submit", (event) => {
 
   // const values = [];
   const quizquestions = JSON.parse(localStorage.getItem("quiz_questions_arr"));
-  console.log(quizquestions);
 
   if (question !== null) {
     let newarr = [];
@@ -137,8 +128,7 @@ submit.addEventListener("submit", (event) => {
       };
 
       newarr.push(obj);
-      console.log(obj);
-      console.log(newarr);
+
     }
 
     let slicedArray;
@@ -159,10 +149,6 @@ submit.addEventListener("submit", (event) => {
     };
 
     //  newArray.push(newArrays);
-
-    console.log(subarrays);
-
-    console.log(findindex);
 
     quizquestions[findindex] = newArrays;
 
@@ -199,10 +185,8 @@ submit.addEventListener("submit", (event) => {
       //  values.push(obj);
 
       let assign = Object.assign(editobj, obj);
-      console.log(assign);
 
       flatArr[i] = assign;
-      console.log(flatArr);
 
       const chunkSize = 3;
       const result = [];
@@ -210,9 +194,6 @@ submit.addEventListener("submit", (event) => {
       for (let i = 0; i < flatArr.length; i += chunkSize) {
         result.push(flatArr.slice(i, i + chunkSize));
       }
-
-      console.log(result);
-
       // localStorage.setItem("quiz_questions_arr",JSON.stringify(result));
     }
   }
@@ -225,29 +206,21 @@ submit1.addEventListener("click", (event) => {
   event.preventDefault();
 
   const quizquestions = JSON.parse(localStorage.getItem("quiz_questions_arr"));
-  console.log(quizquestions);
 
   const url = window.location.search;
   const userparams = new URLSearchParams(url);
   const titles = userparams.get("title");
-  console.log(titles);
 
   const question = quizquestions.find((obj1) =>
     obj1.subarrays.find((obj2) =>
       obj2.obj.find((obj3) => obj3.courseName === titles)
     )
   );
-  console.log(question);
-
-  console.log(question.subarrays[0].obj);
 
   let findindex = quizquestions.indexOf(question);
-  console.log(findindex);
 
   //delete the index from array
   quizquestions.splice(findindex, 1);
-
-  console.log(quizquestions);
 
   //local set removed object new array
   localStorage.setItem("quiz_questions_arr", JSON.stringify(quizquestions));

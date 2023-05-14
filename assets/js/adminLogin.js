@@ -8,7 +8,6 @@ event.preventDefault();
 
 //arr parse from local
   let register_data = JSON.parse(localStorage.getItem("register_arr"));
- console.log(register_data);
 
  
  //check email and pass 

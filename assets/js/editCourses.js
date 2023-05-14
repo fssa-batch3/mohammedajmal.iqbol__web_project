@@ -4,13 +4,11 @@
 const url = window.location.search;
 const userparams = new URLSearchParams(url);
 const id = parseInt(userparams.get("id"));
-console.log(id);
 
 //parse array from local
 const course_data = JSON.parse(localStorage.getItem("course_data"));
-console.log(course_data);
+
 const get_obj = course_data.find((Reg) => Reg.id == id);
-console.log(get_obj);
 
 //get values from seller for new editing courses
 let img = document.getElementById("image-url");
@@ -103,11 +101,8 @@ fileInput.addEventListener('change', () => {
   })
     .then(response => response.json())
     .then(data => {
-      
-      console.log(data)
 
-      cloudinaryData = data.url; 
-      console.log(cloudinaryData); 
+      cloudinaryData = data.url;  
       
     })
     .catch(error => console.error(error));
@@ -126,7 +121,6 @@ form.addEventListener("submit", (event) => {
   } else {
     datas = get_obj["img"];
   }
-  console.log(datas);
 
   //try statement
   try {
@@ -211,33 +205,26 @@ form.addEventListener("submit", (event) => {
     const seller_register_arr = JSON.parse(
       localStorage.getItem("seller_register_arr")
     );
-    console.log(seller_register_arr);
 
     const seller_login_arr = JSON.parse(
       localStorage.getItem("seller_login_arr")
     );
-    console.log(seller_login_arr);
 
     let find_seller_obj = seller_register_arr.find(
       (event) => event.email === seller_login_arr
     );
-    console.log(find_seller_obj);
 
     let indexx = seller_register_arr.indexOf(find_seller_obj);
-    console.log(indexx);
 
     let a = seller_register_arr[indexx]["sellingCourses"];
 
     let findid = a.find((event) => event.obj.id === id);
-    console.log(findid);
 
     //find index from obj in array
     let findindex = a.indexOf(findid);
-    console.log(findindex);
 
     //find index
     let index = course_data.indexOf(get_obj);
-    console.log(index);
 
     //replace new values on old values
     course_data[index] = course_obj;
@@ -262,7 +249,7 @@ form.addEventListener("submit", (event) => {
 
     //catch statement
   } catch (error) {
-    console.log("Error" + error);
+    console.error("Error" + error);
   }
 });
 
@@ -278,29 +265,23 @@ removeUser.addEventListener("click", (event) => {
     const seller_register_arr = JSON.parse(
       localStorage.getItem("seller_register_arr")
     );
-    console.log(seller_register_arr);
 
     const seller_login_arr = JSON.parse(
       localStorage.getItem("seller_login_arr")
     );
-    console.log(seller_login_arr);
 
     let find_seller_obj = seller_register_arr.find(
       (event) => event.email === seller_login_arr
     );
-    console.log(find_seller_obj);
 
     let indexx = seller_register_arr.indexOf(find_seller_obj);
-    console.log(indexx);
 
     //find clicked course by find method
     const get_mycourses = seller_register_arr[indexx].sellingCourses.find(
       (course) => course.obj.id === id
     );
-    console.log(get_mycourses);
 
     let index = course_data.indexOf(get_obj);
-    console.log(index);
 
     let msg = confirm("are you sure you want to delete");
     if (msg !== true) {
@@ -313,12 +294,10 @@ removeUser.addEventListener("click", (event) => {
       let getObjs = seller_register_arr[indexx].sellingCourses.find(
         (event) => event.obj.id === get_mycourses.obj.id
       );
-      console.log(getObjs);
 
       //find index for that obj
       let findValIndex =
         seller_register_arr[indexx].sellingCourses.indexOf(getObjs);
-      console.log(findValIndex);
 
       //delete from the array
       seller_register_arr[indexx].sellingCourses.splice(findValIndex, 1);
@@ -333,7 +312,7 @@ removeUser.addEventListener("click", (event) => {
 
     //catch statement
   } catch (error) {
-    console.log("Error" + error);
+    console.error("Error" + error);
   }
 });
 

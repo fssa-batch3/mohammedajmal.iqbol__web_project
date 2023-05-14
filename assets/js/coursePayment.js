@@ -1,13 +1,9 @@
 //parse arr from local
 const register_arr = JSON.parse(localStorage.getItem("register_arr"));
-console.log(register_arr);
 
 const login_arr = JSON.parse(localStorage.getItem("login_arr"));
-console.log(login_arr);
 
 const get_obj = register_arr.find(event => event.email === login_arr);
-console.log(get_obj);
-
 
 //user profile show in navbar
 let user_profile;
@@ -24,22 +20,16 @@ document.querySelector("#dropuser").prepend(user_profile);
 //payment add course 
 
 const course_data = JSON.parse(localStorage.getItem("course_data"));
-console.log(course_data);
 
 const mycourses = JSON.parse(localStorage.getItem("add-to-card"));
-console.log(mycourses);
 
 //url params get name from url
 const url = window.location.search;
 const urlParams = new URLSearchParams(url);
 const username = urlParams.get("name");
-console.log(username);
 
 //check url and course title
 const get_course_obj = course_data.find((event) => event.title === username);
-console.log(get_course_obj["id"]);
-
-
 
 
 //when user click this paybtn. payment event will happen and this function will run
@@ -53,20 +43,14 @@ pay_btn.addEventListener("click", (event) => {
 
 
     let loggin = JSON.parse(localStorage.getItem("login_arr"));
-    console.log(loggin);
 
     //user obj find from reg login arr 
     const get_user_obj = register.find((event) => event.email === loggin);
-    console.log(get_user_obj);
 
     //find index from the user obj
     let index = register.indexOf(get_user_obj);
-    console.log(index);
-
 
     const mycourses = JSON.parse(localStorage.getItem("add-to-card"));
-    console.log(mycourses);
-
 
      //if not null means this code will happen
     if (localStorage.getItem("payment_arr") !== null ?? []) {
@@ -142,11 +126,11 @@ pay_btn.addEventListener("click", (event) => {
         emailjs.send("service_sp6m68x", "template_uo2qcla", params)
             .then(message => {
 
-                console.log(message)
+                message
 
             })
             //catch block catches an error
-            .catch(err => console.log(err));
+            .catch(err => console.error(err));
 
 
     //set to local by this name payment_arr
@@ -234,10 +218,10 @@ pay_btn.addEventListener("click", (event) => {
         emailjs.send("service_sp6m68x", "template_uo2qcla", params)
             .then(message => {
 
-                console.log(message)
+                message;
 
             })
-            .catch(err => console.log(err));
+            .catch(err => console.error(err));
 
 
         //set into loal
@@ -262,7 +246,6 @@ pay_btn.addEventListener("click", (event) => {
 
         //checked it should return true
         const existobj = register[index].courses.find((event) => event["obj"]["id"] === get_course_obj["id"]);
-        console.log(existobj);
 
 
        //if this course not in that array means it will show undefined
@@ -295,10 +278,8 @@ pay_btn.addEventListener("click", (event) => {
         };
 
         let user_id_assign = Object.assign(get_user_obj, user_obj);
-        console.log(user_id_assign);
 
         let index = register.indexOf(get_user_obj);
-        console.log(index);
 
         register[index] = user_id_assign;
 

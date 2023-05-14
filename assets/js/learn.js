@@ -18,7 +18,7 @@ function openCity(evt, cityName) {
 
     //catch statement
   } catch (error) {
-    console.log("Error" + error);
+    console.error("Error" + error);
   }
 }
 
@@ -36,7 +36,7 @@ function homeon() {
 
     //catch statement
   } catch (error) {
-    console.log("Error" + error);
+    console.error("Error" + error);
   }
 }
 
@@ -145,7 +145,6 @@ for (i = 0; i < blogs_data.length; i++) {
                        </div>
                     <h3 class="course-cost">${blogs_data[i]["blog_cost"]}</h3>
                    </div> `;
-  //  console.log(course_div4);
 
   document.querySelector(".scroll-courses-div4").append(course_div4);
 
@@ -234,7 +233,6 @@ for (i = 0; i < course_data.length; i++) {
                                 }</p>
                                 </div>
                                </div> `;
-  console.log(course_div_stocks);
 
   document
     .querySelector(".scroll-courses-div-stocks")
@@ -247,11 +245,9 @@ function toggle(id) {
   //try statement
   try {
     let get_click_obj;
-    console.log(id);
 
     //find clicked course
     get_click_obj = course_data.find((e) => e.id === id);
-    console.log(get_click_obj);
 
     //adding key bookmark = true
     get_click_obj.bookmark = true;
@@ -263,11 +259,9 @@ function toggle(id) {
 
     //assign this source with previous source
     let assignObj = Object.assign(get_click_obj, bookmark_obj);
-    console.log(assignObj);
 
     //find clicked object index
     let index = course_data.indexOf(get_click_obj);
-    console.log(index);
 
     //assign new value to old one
     course_data[index] = assignObj;
@@ -275,22 +269,14 @@ function toggle(id) {
     //set new value to localstorage
     localStorage.setItem("course_data", JSON.stringify(course_data));
 
-    console.log(get_click_obj);
-
     //setting bookmark array to bookmark key in user object start
     let register = JSON.parse(localStorage.getItem("register_arr"));
-    console.log(register);
 
     let loggin = JSON.parse(localStorage.getItem("login_arr"));
-    console.log(loggin);
 
     const get_user_obj = register.find((event) => event.email === loggin);
-    console.log(get_user_obj);
 
     let index1 = register.indexOf(get_user_obj);
-    console.log(index1);
-
-    console.log(register[index1].bookmarks);
 
     //user per count bookmark
     if (register[index1].bookmarks != null) {
@@ -298,22 +284,15 @@ function toggle(id) {
         obj: get_click_obj,
       };
 
-      // console.log(objMatch);
-      console.log(register[index1].bookmarks);
-      console.log(id);
-      // };
-
       //checked it should return true
       //check for duplicates
       const already_exist_obj = register[index1].bookmarks.find(
         (e) => e.obj.id === get_click_obj.id
       );
-      console.log(already_exist_obj);
 
       if (already_exist_obj === undefined) {
         // alert("this course is already purchased by you");
         let index = register.indexOf(get_user_obj);
-        console.log(index);
 
         register[index].bookmarks.push(bookmark_id);
         localStorage.setItem("register_arr", JSON.stringify(register));
@@ -339,10 +318,8 @@ function toggle(id) {
       };
 
       let user_id_assign = Object.assign(get_user_obj, user_obj);
-      console.log(user_id_assign);
 
       let index = register.indexOf(get_user_obj);
-      console.log(index);
 
       register[index] = user_id_assign;
 
@@ -353,7 +330,7 @@ function toggle(id) {
 
     //catch statement
   } catch (error) {
-    console.log("Error" + error);
+    console.error("Error" + error);
   }
 }
 
@@ -394,7 +371,6 @@ let obj = {
 
 //compare object get match objects
 const filtervalues = course_data_arr.filter((course) => course.cost < 1);
-console.log(filtervalues);
 
 // free courses card create
 let course_div_freecourses;
@@ -407,6 +383,7 @@ for (i = 0; i < filtervalues.length; i++) {
     "details.html?name=" + filtervalues[i]["title"]
   );
   let discount = 100;
+  //need change the jquerry code
   course_div_freecourses.innerHTML = `<div>
                                  <img class="course-img-stocks" src=${
                                    filtervalues[i]["img"]
@@ -444,7 +421,6 @@ for (i = 0; i < filtervalues.length; i++) {
                               }</p>
                               </div>
                              </div> `;
-  //  console.log(course_div_freecourses);
 
   document.querySelector(".scroll-courses-div").append(course_div_freecourses);
 }
@@ -464,7 +440,6 @@ let live_obj = {
 const filtervalue = course_data_arr.filter(
   (course) => course.timing === live_obj.timing
 );
-console.log(filtervalue);
 
 //create card live courses
 let course_div_livecourses;
@@ -478,7 +453,7 @@ for (i = 0; i < filtervalue.length; i++) {
   );
   let cost = "";
   let discount = "";
-
+// jquerry
   if (filtervalue[i]["cost"] === "learn for free") {
     cost += " ";
     discount += 100;
@@ -524,7 +499,6 @@ for (i = 0; i < filtervalue.length; i++) {
                                   }</p>
                                   </div>
                                </div> `;
-  //  console.log(course_div_stocks);
 
   document
     .querySelector(".scroll-courses-div-videos")
@@ -593,7 +567,6 @@ for (i = course_data_arr.length - 1; i < course_data_arr.length; i++) {
                                 }</p>
                                 </div>
                              </div> `;
-  //  console.log(course_div_latestcourses);
 
   document
     .querySelector(".scroll-courses-div5")
@@ -702,7 +675,6 @@ for (i = course_data_arr.length - 1; i < course_data_arr.length; i++) {
 //                      </div>
 //                      </div>
 //                  </div> `;
-//   //  console.log(course_div5);
 
 //   document.querySelector(".scroll-courses-div-youtube").append(course_div5);
 // }
@@ -714,39 +686,27 @@ for (i = course_data_arr.length - 1; i < course_data_arr.length; i++) {
 //my courses start
 
 let register = JSON.parse(localStorage.getItem("register_arr"));
-console.log(register);
 
 let loggin = JSON.parse(localStorage.getItem("login_arr"));
-console.log(loggin);
 
 const get_user_obj = register.find((event) => event.email === loggin);
-console.log(get_user_obj);
 
 //JSON data from localstorage parse
 const mycourses = JSON.parse(localStorage.getItem("add-to-card"));
-console.log(mycourses);
 
 let index = register.indexOf(get_user_obj);
-console.log(index);
 
 const allCourses = JSON.parse(localStorage.getItem("course_data"));
-console.log(allCourses);
 
 let register_array = JSON.parse(localStorage.getItem("register_arr"));
-console.log(register_array);
 
 let login = JSON.parse(localStorage.getItem("login_arr"));
-console.log(login);
 
 const get_user_objs = register_array.find((event) => event.email === login);
-console.log(get_user_objs);
 
 let index1 = register_array.indexOf(get_user_objs);
-console.log(index1);
 
 let registerbookmark = register_array[index1]["bookmarks"] ?? [];
-
-console.log(registerbookmark);
 
 // //bookamrk card create from JSON object
 let bookmark_div;
@@ -829,7 +789,6 @@ for (i = 0; i < registerbookmark.length; i++) {
                                }</p>
                                </div>
                               </div> `;
-  console.log(bookmark_div);
 
   document.querySelector(".scroll-bookmarks-div4").append(bookmark_div);
 }
@@ -837,11 +796,6 @@ for (i = 0; i < registerbookmark.length; i++) {
 //bookamrk card create from JSON object end
 
 let registerArr = JSON.parse(localStorage.getItem("register_arr"));
-console.log(registerArr);
-
-console.log(index);
-
-console.log(registerArr[index]["courses"]);
 
 //card create from parsed object JSON
 let my_courses;
@@ -849,7 +803,6 @@ let my_courses;
 for (i = 0; i < registerArr[index]["courses"].length; i++) {
   my_courses = document.createElement("a");
   my_courses.setAttribute("class", "first-course2-stocks");
-  // console.log(registerArr[index]["courses"][i]["obj"]["title"]);
   my_courses.setAttribute(
     "href",
     "details.html?name=" + registerArr[index]["courses"][i]["obj"]["title"]
@@ -921,7 +874,6 @@ for (i = 0; i < registerArr[index]["courses"].length; i++) {
                                 }</p>
                                 </div>
                              </div> `;
-  //  console.log(my_courses);
 
   document.querySelector(".scroll-courses-div-mycourses").append(my_courses);
 }
@@ -944,15 +896,12 @@ function googleTranslateElementInit() {
 
    //register array parse
    const register_arr = JSON.parse(localStorage.getItem("register_arr"));
-   console.log(register_arr);
    
    //login array parse
    const login_arr = JSON.parse(localStorage.getItem("login_arr"));
-   console.log(login_arr);
    
    //check user
    const get_obj = register_arr.find((event) => event.email === login_arr);
-   console.log(get_obj);
    
    //img tag create in js
    let user_profile;
