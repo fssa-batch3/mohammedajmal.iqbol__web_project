@@ -552,11 +552,11 @@ addtocart.addEventListener("click", (cart) => {
             Course_offered_company_desc: get_obj["offeredcompanydesc"],
             Course_link: window.location,
           };
-
+let x;
           emailjs
             .send("service_sp6m68x", "template_uo2qcla", params)
             .then((message) => {
-              message;
+              x = message;
             })
             .catch((err) => console.error(err));
 
@@ -636,13 +636,13 @@ addtocart.addEventListener("click", (cart) => {
           Course_instructor_desc: get_obj["instructordesc"],
           Course_offered_company_name: get_obj["offeredcompanyname"],
           Course_offered_company_desc: get_obj["offeredcompanydesc"],
-          Course_link: window.location,
+          Course_link: window.location.href,
         };
-
+let y;
         emailjs
           .send("service_sp6m68x", "template_uo2qcla", params)
           .then((message) => {
-            message;
+            y = message;
           })
           .catch((err) => console.error(err));
 

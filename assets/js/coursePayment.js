@@ -121,12 +121,12 @@ pay_btn.addEventListener("click", (event) => {
             Course_link: window.location,
 
         }
-
+let x;
         //email send event
         emailjs.send("service_sp6m68x", "template_uo2qcla", params)
             .then(message => {
 
-                message
+                x = message
 
             })
             //catch block catches an error
@@ -213,12 +213,12 @@ pay_btn.addEventListener("click", (event) => {
             Course_link: window.location,
 
         }
-
+let y;
         //email send event 
         emailjs.send("service_sp6m68x", "template_uo2qcla", params)
             .then(message => {
 
-                message;
+               y = message;
 
             })
             .catch(err => console.error(err));

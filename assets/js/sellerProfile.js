@@ -157,7 +157,7 @@ fileInput.addEventListener('change', () => {
   const formData = new FormData();
   formData.append('file', file);
   formData.append('upload_preset', 'ml_default'); // Replace with your upload preset name
-
+let x;
   fetch('https://api.cloudinary.com/v1_1/dwkjxihmr/auto/upload', {
     method: 'POST',
     body: formData,
@@ -165,9 +165,9 @@ fileInput.addEventListener('change', () => {
     .then(response => response.json())
     .then(data => {
       
-      data;
+      x = data;
 
-      cloudinaryData = data.url; 
+      cloudinaryData = x.url; 
       console.error(cloudinaryData); 
       
     })
