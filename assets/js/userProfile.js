@@ -57,6 +57,7 @@ user_profile.innerHTML = `
                   </tr>
                   <tr>
                     <td><span class="hint--bottom hint--rounded" aria-label="Edit Done User Profile"><button type="button"  class="edit" id="done" onsubmit="edit()" >Done</button></span></td>
+                    <td><span class="hint--bottom hint--rounded" aria-label="LogOut"><button type="button"  class="edit" id="logout" onsubmit="edit()" >LogOut</button></span></td>
                   </tr>
                 </tbody>
               </table>
@@ -307,4 +308,27 @@ fileInput1.addEventListener("change", function() {
     body.style.backgroundColor = "#87CEFA";
     container.style.backgroundColor = "#87CEFA";
   }, 4500);
+});
+
+
+
+//logout function
+
+let logout = document.getElementById("logout");
+logout.addEventListener("click",(event) => {
+event.preventDefault();
+
+let confirmlogout = confirm("Are You Sure You Want to LogOut ?");
+
+if(confirmlogout === true ){
+
+localStorage.removeItem("login_arr");
+
+//new tab with back option in browser.
+let newWindow = window.open("../index.html", "noopener,noreferrer");
+window.close();
+newWindow.focus();
+
+}
+
 });

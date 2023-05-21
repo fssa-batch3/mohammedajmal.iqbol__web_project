@@ -76,7 +76,6 @@ form.addEventListener("submit", (event) => {
     let courseVideoName7 = document.getElementById("video7name").value;
     let courseVideoName8 = document.getElementById("video8name").value;
     let courseVideoName9 = document.getElementById("video9name").value;
-    let top_skills1 = top_skills.split(".");
     let bookmark_img = "../assets/images/icons8-add-bookmark-50.png";
     let id = Date.now();
 
@@ -93,7 +92,7 @@ form.addEventListener("submit", (event) => {
       cost,
       old_cost,
       Description,
-      top_skills1,
+      top_skills,
       courseVideo1,
       courseVideo2,
       courseVideo3,
@@ -278,7 +277,6 @@ form.addEventListener("submit", (event) => {
     let courseVideoName7 = document.getElementById("video7name").value;
     let courseVideoName8 = document.getElementById("video8name").value;
     let courseVideoName9 = document.getElementById("video9name").value;
-    let top_skills1 = top_skills.split(".");
     let bookmark_img = "../assets/images/icons8-add-bookmark-50.png";
     let id = Date.now();
 
@@ -293,7 +291,7 @@ form.addEventListener("submit", (event) => {
       cost,
       old_cost,
       Description,
-      top_skills1,
+      top_skills,
       courseVideo1,
       courseVideo2,
       courseVideo3,

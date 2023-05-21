@@ -1,3 +1,10 @@
+let login_array = JSON.parse(localStorage.getItem("login_arr"));
+console.log(login_array);
+
+if(login_array === null){
+  window.location.href = "../pages/signin.html";
+}
+
 //course data JSON parse
 const course_data = JSON.parse(localStorage.getItem("course_data"));
 
@@ -106,7 +113,6 @@ if (register[index]["courses"] !== null) {
   );
 
   // for findquiz[1] we encode array in URL Params
-
   // js details page fully dynamic
   //give all values to show in respective places in this page
   let heropage;
@@ -173,7 +179,7 @@ if (register[index]["courses"] !== null) {
      <a href="#offered-by" class="link1">Offered By</a>
      <a href="#videos" class="link1">Videos</a>
      <a href="#comment" class="link1">Comments</a>
-     <a href="contact.html" class="link1">Contact</a>
+     <a href="../pages/userContact.html" class="link1">Contact</a>
     </div>
 
 
@@ -184,12 +190,12 @@ if (register[index]["courses"] !== null) {
    
        <ul class="list-learnings">
          <h2 class="list-learning">Course Description</h2>
-       <p>${get_obj["Description"]}</p>
+       <p class="course-desc">${get_obj["Description"]}</p>
          <br>
          <h2 class="list-learning">Top Skills You'll Learn</h2>
          <br>
         <div id="list-learn">
-     
+        
         </div>
        </ul>
        
@@ -207,7 +213,7 @@ if (register[index]["courses"] !== null) {
 
 
 
-       <div>
+       <div class="instructorcontainer">
        <p class="learn-couse" id="instructor">Instructor</p>
 
        <div class="instructor-div">
@@ -254,8 +260,8 @@ if (register[index]["courses"] !== null) {
 
 
 
-       <div class="offered-by" id="videos">
-       <p class="learn-couse" id="about">Videos</p>
+       <div class="offered-by-videos" id="videos">
+       <p class="learn-couse" id="about1">Videos</p>
 
 
 
@@ -323,11 +329,27 @@ if (register[index]["courses"] !== null) {
 
 
 
-
-       
        <div class="offered-by" id="comment">
        <p class="learn-couse" id="about">Comments</p>
+      
+       <div class="what-you-learn">
 
+       <span class="hint--bottom hint--rounded" aria-label="Use this textarea to Give Comments for this course"> <textarea type="text" name="comment" id="comment-input" placeholder="comment here"></textarea></span>
+       <span class="hint--top hint--rounded" aria-label="Submit Your Comments"><button class="submit-comment" id="submit-comment" >Submit</button></span>
+     
+     <div id="new-comments">
+     
+           
+     </div>
+     
+     <br>
+     <br>
+     <br>
+     <br>
+     
+     </div>
+     
+     </div>
 
 
        </div>
@@ -467,7 +489,10 @@ addtocart.addEventListener("click", (cart) => {
     // check if else by cost
     if (get_obj["cost"] != "0") {
       alert("You have to make Payment to Access the Course");
-      window.location.href = "coursePayment.html?name=" + username;
+      // window.location.href = "coursePayment.html?name=" + username;
+      let newWindow = window.open(`coursePayment.html?name=${username}`,"noopener,noreferrer");
+      window.close();
+      newWindow.focus();
     } else {
       let registerArr = JSON.parse(localStorage.getItem("register_arr"));
 
@@ -981,7 +1006,8 @@ function edit(a) {
     document.querySelector(".course-container").style.opacity = "0.7";
     document.querySelector(".what-you-learn").style.backgroundColor = "black";
     document.getElementById("edit-comment").style.display = "block";
-    document.getElementById("edit-comment").style.marginTop = "3000px";
+    document.getElementById("edit-comment").style.marginTop = "2600px";
+    document.getElementById("edit-comment").style.width = "500px";
     document.getElementById("edit-comment").style.opacity = "1";
     const get_editobj = comment.find((e) => e.comment_id === a);
     

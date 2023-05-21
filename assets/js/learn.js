@@ -1,3 +1,10 @@
+let login_array = JSON.parse(localStorage.getItem("login_arr"));
+console.log(login_array);
+
+if(login_array === null){
+  window.location.href = "../pages/signin.html";
+}
+
 //js tabs code start
 function openCity(evt, cityName) {
   //try statement
@@ -899,7 +906,7 @@ function googleTranslateElementInit() {
    
    //login array parse
    const login_arr = JSON.parse(localStorage.getItem("login_arr"));
-   
+
    //check user
    const get_obj = register_arr.find((event) => event.email === login_arr);
    

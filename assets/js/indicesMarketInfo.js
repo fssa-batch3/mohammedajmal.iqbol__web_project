@@ -1,5 +1,11 @@
    //userprofile show
-
+   let login_array = JSON.parse(localStorage.getItem("login_arr"));
+   console.log(login_array);
+   
+   if(login_array === null){
+     window.location.href = "../pages/signin.html";
+   }
+   
 
    const register_arr = JSON.parse(localStorage.getItem("register_arr"));
 

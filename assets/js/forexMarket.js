@@ -1,4 +1,11 @@
 //forex market page js code start
+let login_array = JSON.parse(localStorage.getItem("login_arr"));
+console.log(login_array);
+
+if(login_array === null){
+  window.location.href = "../pages/signin.html";
+}
+
 
 //api call new
 

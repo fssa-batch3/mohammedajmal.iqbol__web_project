@@ -4,8 +4,12 @@ const register_arr = JSON.parse(localStorage.getItem("register_arr"));
 
 const login_arr = JSON.parse(localStorage.getItem("login_arr"));
 
+
+if(login_arr === null){
+  window.location.href = "../pages/signin.html";
+}
+
 const get_obj = register_arr.find( event => event.email === login_arr);
- 
 
 //show user profile
   let user_profile;
@@ -15,6 +19,8 @@ const get_obj = register_arr.find( event => event.email === login_arr);
   user_profile.setAttribute("id","user-profile");
   user_profile.setAttribute("src", get_obj["profile_pic"]);
   document.querySelector("#form").append(user_profile);
+
+
 
 
   //google translate

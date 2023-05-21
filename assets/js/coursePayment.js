@@ -1,3 +1,10 @@
+let login_array = JSON.parse(localStorage.getItem("login_arr"));
+console.log(login_array);
+
+if(login_array === null){
+  window.location.href = "../pages/signin.html";
+}
+
 //parse arr from local
 const register_arr = JSON.parse(localStorage.getItem("register_arr"));
 
@@ -33,8 +40,8 @@ const get_course_obj = course_data.find((event) => event.title === username);
 
 
 //when user click this paybtn. payment event will happen and this function will run
-const pay_btn = document.getElementById("paybtn");
-pay_btn.addEventListener("click", (event) => {
+const paydone = document.getElementById("paydone");
+paydone.addEventListener("submit", (event) => {
     event.preventDefault();
 
 
@@ -50,26 +57,23 @@ pay_btn.addEventListener("click", (event) => {
     //find index from the user obj
     let index = register.indexOf(get_user_obj);
 
-    const mycourses = JSON.parse(localStorage.getItem("add-to-card"));
-
      //if not null means this code will happen
     if (localStorage.getItem("payment_arr") !== null ?? []) {
         payment_arr = JSON.parse(localStorage.getItem("payment_arr"));
 
-        let card_number = document.getElementById("cardnumber").value;
-        let expiry_month = document.getElementById("month").value;
-        let expiry_year = document.getElementById("year").value;
-        let security_code = document.getElementById("securitycode").value;
+        let transactionid = document.getElementById("transactionid").value;
+        let utrnumber = document.getElementById("utrnumber").value;
+        let user_id = get_user_obj.user_id;
         let payment_id = Date.now();
 
         //obj inside set this values
         let payment_obj = {
-            card_number, expiry_month, expiry_year, security_code, payment_id
+            transactionid, utrnumber, payment_id , user_id
         };
-
         //push this obj to array
         payment_arr.push(payment_obj);
 
+     
 
         //email send to User that he bought the course
 
@@ -146,20 +150,20 @@ let x;
         //new array create without pushing
         let payment_arr = [];
 
-        let card_number = document.getElementById("cardnumber").value;
-        let expiry_month = document.getElementById("month").value;
-        let expiry_year = document.getElementById("year").value;
-        let security_code = document.getElementById("securitycode").value;
+        let transactionid = document.getElementById("transactionid").value;
+        let utrnumber = document.getElementById("utrnumber").value;
+        let user_id = get_user_obj.user_id;
         let payment_id = Date.now();
 
 
         //set values to obj
         let payment_obj = {
-            card_number, expiry_month, expiry_year, security_code, payment_id
+            transactionid, utrnumber, payment_id , user_id
         };
 
-        //push obj into array
-        payment_arr.push(payment_obj);
+            //push this obj to array
+            payment_arr.push(payment_obj);
+          
 
 
 
@@ -248,6 +252,7 @@ let y;
         const existobj = register[index].courses.find((event) => event["obj"]["id"] === get_course_obj["id"]);
 
 
+
        //if this course not in that array means it will show undefined
         if (existobj === undefined) {
 
@@ -259,6 +264,7 @@ let y;
             //skip this part
             alert("this course is already added");
         }
+
 
     } else {
 

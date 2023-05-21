@@ -23,5 +23,17 @@
 </div>
 <div class="footer"> Copyright 2021-2023, freshstocks</div>
 
+
+<script>
+
+let login_array = JSON.parse(localStorage.getItem("login_arr"));
+console.log(login_array);
+
+if(login_array === null){
+  window.location.href = "../pages/signin.html";
+}
+
+
+</script>
 </body>
 </html>

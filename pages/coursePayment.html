@@ -154,94 +154,40 @@
             <h1 class="heroh1">PAYMENT PAGE</h1>
 
             <div class="paymentbody">
-                <h1>Payment method</h1>
+                <h1>Pay Via UPI</h1>
+                <p>After Successful Payment Enter the Details Below</p>
 
                 <div class="paymenttwocontainer">
                     <div class="creditcardsideleft">
 
                         <div class="creditcarddiv">
                             <input type="radio" name="radio" id="radioactive" checked />&nbsp;
-                            <p class="creditcardpara">Credit card</p>
-                            <img class="creditcardimg" src="../assets/website images/Screenshot 2022-12-27 162307.png"
+                            <p class="creditcardpara"> UPI / PhonePe</p>
+                            <img class="creditcardimg" src="../assets/images/Screenshot 2023-05-21 162542.png"
                                 alt="creditcardimg">
                         </div>
-                        <form action="../thankyou.html">
+                        <form id="paydone">
 
-                            <p class="creditcardpara">Card number</p>
-                            <input type="number" name="" value="4232389874898325" id="cardnumber" maxlength="16"
-                                placeholder="Enter your 16 digit card number" required />
+                            <p class="creditcardpara">Transaction ID</p>
+                            <input type="text" name="cardnumber"  id="transactionid" pattern="[A-Z0-9]{23}"
+                            placeholder="Transaction ID" required title="This is the Transaction ID format T2305152110519255698761" value="T2305152110519255698761" />
 
                             <div class="expirydiv">
-                                <div>
-                                    <p class="creditcardpara">Expiration date</p>
-                                    <select name="year" id="month">
-                                        <option value="Month">Month</option>
-                                        <option value="Jan">Jan</option>
-                                        <option value="Feb">Feb</option>
-                                        <option value="Mar">Mar</option>
-                                        <option value="Apr">Apr</option>
-                                        <option value="May">May</option>
-                                        <option value="Jun">Jun</option>
-                                        <option value="Jul">Jul</option>
-                                        <option value="Aug">Aug</option>
-                                        <option value="Sep">Sep</option>
-                                        <option value="Oct">Oct</option>
-                                        <option value="Nov">Nov</option>
-                                        <option value="Dec">Dec</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <select name="year" id="year">
-                                        <option value="Year">Year</option>
-                                        <option value="2023">2023</option>
-                                        <option value="2024">2024</option>
-                                        <option value="2025">2025</option>
-                                        <option value="2026">2026</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <p class="creditcardpara">Security code</p>
-                                    <input type="password" name="securitycode" id="securitycode" value="383"
-                                        placeholder="three digits cvv" maxlength="3" required />
-                                </div>
+                                <p class="creditcardpara">UTR ID</p>
+                            <input type="text" name="cardnumber" id="utrnumber" 
+                               pattern="[0-9]{12}" placeholder="Unique Transaction Reference (UTR) Number" title="This is the UTR ID format 313561332724" value="123456789012" required />
                             </div>
 
                             <p class="termsandconditions">By clicking the button,you agree to the Terms and Conditions
                             </p>
 
-                            <button id="paybtn" class="paybtn">Pay Now</button>
+                            <button id="paybtn" class="paybtn">Submit Payment</button>
                         </form>
                     </div>
 
                     <div class="creditrightdiv">
 
-                        <div class="creditcarddiv2">
-                            <input type="radio" name="radio" id="radioactive">&nbsp;
-                            <p class="creditcardpara">Paypal</p>
-                            <img class="creditcardimg" src="../assets/website images/Screenshot 2022-12-27 162307.png"
-                                alt="creditcardimg">
-                        </div>
-                        <br>
-                        <div class="creditcarddiv2">
-                            <input type="radio" name="radio" id="radioactive">&nbsp;
-                            <p class="creditcardpara">UPI</p>
-                            <img class="creditcardimg" src="../assets/website images/Screenshot 2022-12-27 162307.png"
-                                alt="creditcardimg">
-                        </div>
-                        <br>
-                        <div class="creditcarddiv2">
-                            <input type="radio" name="radio" id="radioactive">&nbsp;
-                            <p class="creditcardpara">Google Pay</p>
-                            <img class="creditcardimg" src="../assets/website images/Screenshot 2022-12-27 162307.png"
-                                alt="creditcardimg">
-                        </div>
-                        <br>
-                        <div class="creditcarddiv2">
-                            <input type="radio" name="radio" id="radioactive">&nbsp;
-                            <p class="creditcardpara">Phonepe</p>
-                            <img class="creditcardimg" src="../assets/website images/Screenshot 2022-12-27 162307.png"
-                                alt="creditcardimg">
-                        </div>
+                       <img class="phonepeqr" src="../assets/images/PhonePeQR_Tamilnad Mercantile Bank  - 4793.png" alt="">
 
                     </div>
                 </div>

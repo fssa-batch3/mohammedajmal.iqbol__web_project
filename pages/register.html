@@ -10,7 +10,6 @@
   <link rel="stylesheet" href="../pages/bundle.html">
   <script src="../assets/js/bundle.js"></script>
   </head>
-
 <body>
   <main class="fullpage">
 
@@ -29,11 +28,10 @@
             <div class="form-floating" id="emailinput">
               <input type="text" class="form-control" id="name" placeholder="Password" required
               pattern="[A-Za-z0-9_]{1,15}" 
-                title="Username (letters and numbers only, no punctuation or special characters)">
+                title="Username (letters and numbers only, no punctuation or special characters)" value="Ajmal">
               <label for="name">Username</label>
             </div>
 <br>
-    
             <select class="form-select" id="select" aria-label="Default select example"  required>
               <option selected>Select Your Gender</option>
               <option value="male">Male</option>
@@ -44,13 +42,13 @@
             <br>
 
             <div class="form-floating mb-3" id="passinput">
-              <input type="text" class="form-control" id="mobile-number" placeholder="name@example.com" required
+              <input type="text" class="form-control" id="mobile-number" placeholder="name@example.com" required value="9500320194"
                 pattern="[0-9]{10}" title="It should Contain 10 Numbers" >
               <label for="mobile-number">Mobile Number</label>
             </div>
 
             <div class="form-floating mb-3" id="passinput">
-              <input type="date" class="form-control" id="date-of-birth" required/>
+              <input type="date" class="form-control" id="date-of-birth" value="2004-12-26" required/>
               <label for="date-of-birth">Date of Birth</label>
             </div>
 
@@ -59,18 +57,18 @@
             <br>
             <br>
             <div class="form-floating mb-3" id="passinput">
-              <input type="email" class="form-control" id="email" placeholder="name@example.com" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[cC][oO][mM]$" title="Please Enter the Valid Email" />
+              <input type="email" class="form-control" id="email" placeholder="name@example.com" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[cC][oO][mM]$" value="freekyajmal@gmail.com" title="Please Enter the Valid Email" />
               <label for="email">Email address</label>
             </div>
             <div class="form-floating" id="passinput">
               <input type="password" class="form-control" id="password" placeholder="Password" required
-              pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=\S+$).{8,}$"
+              pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=\S+$).{8,}$" 
                 title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
               <label for="password">Password</label>
             </div>
             <div class="form-floating" id="passinput">
               <input type="password" class="form-control" id="confirm-password" placeholder="Password" required
-              pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=\S+$).{8,}$"
+              pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=\S+$).{8,}$" 
                 title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
               <label for="confirm-password">Confirm Password</label>
             </div>
