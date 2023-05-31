@@ -1003,7 +1003,7 @@ let editObj;
 //edit function new popup div
 function edit(a) {
   try {
-    document.querySelector(".course-container").style.opacity = "0.7";
+    document.querySelector(".course-container").style.opacity = "1";
     document.querySelector(".what-you-learn").style.backgroundColor = "black";
     document.getElementById("edit-comment").style.display = "block";
     document.getElementById("edit-comment").style.marginTop = "2600px";

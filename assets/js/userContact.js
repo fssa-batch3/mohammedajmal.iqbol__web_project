@@ -15,7 +15,7 @@ submit.addEventListener("submit", function (e) {
 //required params to send email
 let params = {from_name: "freekyajmal@gmail.com",
                to_name: email,
-               message: `Hello ${email}This Is Your Message ${message}Thank You Conacting Us.`,}
+               message: `Hello ${email}This Is Your Message ${message}Thank You Contacting Us.`,}
 
                //email send event
 emailjs.send("service_sp6m68x","template_uo2qcla",params)
@@ -72,7 +72,6 @@ function myFunction() {
           <a class="notificationimg" href="#language"> <div id="google_translate_element" id="lang"></div></a>
           <a class="notificationimg" href="userContact.html"><img class="notificationimage" src="../assets/images/icons8-online-support-50.png" alt=""></a>
           <a id="form" class="user-profile" href="userprofile.html">
-    
           </a>
         </div> `;
         

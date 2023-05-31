@@ -586,42 +586,42 @@ for (i = course_data_arr.length - 1; i < course_data_arr.length; i++) {
 
 // youtube video JSON data
 
-// const videos_data = [
-//   {
-//     source: "https://www.youtube.com/embed/dV00JxVDBd",
-//     video_title: "How to Start Trading Stocks..",
-//     video_creator: "Ricky Gutierezz",
-//     video_language: "English",
-//     video_hashtag: " #finance #forex",
-//   },
-//   {
-//     source: "https://www.youtube.com/embed/tDmMOzNgTHI",
-//     video_title: "How to learn Day Trading..",
-//     video_creator: "The Urban Fight",
-//     video_language: "English",
-//     video_hashtag: " #finance #forex",
-//   },
-//   {
-//     source: "https://www.youtube.com/embed/eynxyoKgpng",
-//     video_title: "Learn to do Technical Ana..",
-//     video_creator: "The Trading Channel",
-//     video_language: "English",
-//     video_hashtag: " #finance #money",
-//   },
-//   {
-//     source: "https://www.youtube.com/embed/9-LagvSLbOA",
-//     video_title: "How To Read Stock Charts..",
-//     video_creator: "Learn App",
-//     video_language: "English",
-//     video_hashtag: " #money #Indicator",
-//   },
-//   {
-//     source: "https://www.youtube.com/embed/hEUALimWs7E",
-//     video_title: "The best CandleSticks Pat..",
-//     video_creator: "The Trading Channel",
-//     video_language: "English",
-//     video_hashtag: " #finance #money",
-//   },
+const videos_data = [
+  {
+    source: "https://www.youtube.com/embed/dV00JxVDBd",
+    video_title: "How to Start Trading Stocks..",
+    video_creator: "Ricky Gutierezz",
+    video_language: "English",
+    video_hashtag: " #finance #forex",
+  },
+  {
+    source: "https://www.youtube.com/embed/tDmMOzNgTHI",
+    video_title: "How to learn Day Trading..",
+    video_creator: "The Urban Fight",
+    video_language: "English",
+    video_hashtag: " #finance #forex",
+  },
+  {
+    source: "https://www.youtube.com/embed/eynxyoKgpng",
+    video_title: "Learn to do Technical Ana..",
+    video_creator: "The Trading Channel",
+    video_language: "English",
+    video_hashtag: " #finance #money",
+  },
+  {
+    source: "https://www.youtube.com/embed/9-LagvSLbOA",
+    video_title: "How To Read Stock Charts..",
+    video_creator: "Learn App",
+    video_language: "English",
+    video_hashtag: " #money #Indicator",
+  },
+  {
+    source: "https://www.youtube.com/embed/hEUALimWs7E",
+    video_title: "The best CandleSticks Pat..",
+    video_creator: "The Trading Channel",
+    video_language: "English",
+    video_hashtag: " #finance #money",
+  },
 //   {
 //     source: "https://www.youtube.com/embed/MSzOocvljqc",
 //     video_title: "What is Support & Resistance..",
@@ -657,34 +657,34 @@ for (i = course_data_arr.length - 1; i < course_data_arr.length; i++) {
 //     video_language: "English",
 //     video_hashtag: " #finance #money",
 //   },
-// ];
+];
 
 // card create for videos tab section
 
-// let course_div5;
-// for (i = 0; i < videos_data.length; i++) {
-//   course_div5 = document.createElement("div");
-//   course_div5.setAttribute("class", "first-course3");
-//   course_div5.setAttribute(
-//     "href",
-//     "details.html?name=" + videos_data[i]["video_title"]
-//   );
-//   course_div5.innerHTML = `<div>
-//       <iframe class="course-img" width="560" height="315" src=${videos_data[i]["source"]}  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-//                  </div>
-//                  <div>
-//                      <h3 class="course-title">${videos_data[i]["video_title"]}</h3>
-//                      <div class="course-details-videos">
-//                          <p class="course-timing">${videos_data[i]["video_creator"]}</p>
-//                         <div class="course-details">
-//                          <p class="course-ln">${videos_data[i]["video_language"]}</p>
-//                         &emsp; <p class="course-enrolled">${videos_data[i]["video_hashtag"]}</p>
-//                      </div>
-//                      </div>
-//                  </div> `;
+let course_div5;
+for (i = 0; i < videos_data.length; i++) {
+  course_div5 = document.createElement("div");
+  course_div5.setAttribute("class", "first-course3");
+  course_div5.setAttribute(
+    "href",
+    "details.html?name=" + videos_data[i]["video_title"]
+  );
+  course_div5.innerHTML = `<div>
+      <iframe class="course-img" width="560" height="315" src=${videos_data[i]["source"]}  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                 </div>
+                 <div>
+                     <h3 class="course-title">${videos_data[i]["video_title"]}</h3>
+                     <div class="course-details-videos">
+                         <p class="course-timing">${videos_data[i]["video_creator"]}</p>
+                        <div class="course-details">
+                         <p class="course-ln">${videos_data[i]["video_language"]}</p>
+                        &emsp; <p class="course-enrolled">${videos_data[i]["video_hashtag"]}</p>
+                     </div>
+                     </div>
+                 </div> `;
 
-//   document.querySelector(".scroll-courses-div-youtube").append(course_div5);
-// }
+  document.querySelector(".scroll-courses-div-youtube").append(course_div5);
+}
 
 //youtube videos tab end
 
